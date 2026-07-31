@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leader session 4 · Risk, dependencies and escalation - learn AI + project management with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-project-management-with-phoebe</a> / Leader session 4 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI + Project Management with Phoebe · Leader track · Session 4 of 6</div>
+    <h1>Risk, dependencies and escalation: <span class="accent">the signals worth waking up for</span></h1>
+    <p class="sub">Point AI at a delivery week and it will surface twenty things. Two of them matter. Tonight you learn which two, why a hard gate is the one thing a cheerful summariser will always smooth over, and how to build an escalation that survives a steerco: the decision, the options with their real costs, your recommendation, and the date after which the option expires.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Leader track</span>
+      <span class="chip audience">Heads of delivery</span>
+      <span class="chip audience">Sponsors</span>
+      <span class="chip audience">Escalation drill</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Where we are</span>
+      <span class="a2" style="flex:4">3-20 · Signals, hard gates</span>
+      <span class="a3" style="flex:5">20-42 · Triage and rewrite drills</span>
+      <span class="a4" style="flex:1">42-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we are</h2>
+    </div>
+    <p class="lede">a1 drew the line between drafting and judgment. a2 built the governed setup. a3 gave you a seven-point rubric for the plans you sign, and ended on the finding that always comes next: a dependency nobody confirmed is not a plan defect, it is an open risk. Tonight we pick that up. Northwind is in week nine, its M3 gate has moved from 10 August to a 24 August forecast, and the question in front of the sponsor is not "what happened" - it is "what do you want me to decide, and by when".</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill peach">★ Try it now prompt</span>
+      <span class="pill inkpill">Official sources covered</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      A working filter for which AI-surfaced early warnings to trust and which to kill on sight, the ability to tell a soft dependency from a hard gate in someone else's cheerful summary, the four-part anatomy of an escalation a sponsor can act on in ninety seconds, and a rewritten Northwind escalation you could send tomorrow.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: SIGNAL VS NOISE ============ -->
+  <section class="section" id="signal-noise">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers PMBOK 7 uncertainty domain</span>
+      <h2>Early warnings: what to trust, what to kill <span class="tag concept">7 min live</span></h2>
+    </div>
+    <p class="lede">Early-warning detection is one of the three places AI lands first in delivery, and it is the one most likely to be oversold. The honest version is narrow and genuinely useful: a model with your risk register, your plan and your last four reports is excellent at <em>noticing what changed</em>. It is worthless at <em>predicting what people will do</em>. Those two capabilities look identical on the page, which is the whole problem.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Signal versus noise in AI early warnings: keep verifiable changes, counts and ages; kill invented probabilities, false trends, sentiment reads and predictions about people">
+        <style>
+          .a4sT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .a4sI { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .a4sX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .a4sXm { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .a4sN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .a4sH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <text class="a4sH" x="30" y="32">WHAT A MACHINE CAN VERIFY</text>
+        <text class="a4sH" x="460" y="32">WHAT ONLY THE ROOM KNOWS</text>
+        <rect x="30" y="46" width="390" height="156" rx="12" fill="#0E3A5C"/>
+        <text class="a4sT" x="52" y="80">Signal - keep it</text>
+        <text class="a4sX" x="52" y="106">a risk whose trigger has actually fired</text>
+        <text class="a4sX" x="52" y="128">the same failure three nights running</text>
+        <text class="a4sX" x="52" y="150">an action that has rolled for five weeks</text>
+        <text class="a4sX" x="52" y="172">this week diffed against last week</text>
+        <rect x="460" y="46" width="390" height="156" rx="12" fill="#9CC4DE"/>
+        <text class="a4sI" x="482" y="80">Noise - kill it</text>
+        <text class="a4sXm" x="482" y="106">a probability the model made up</text>
+        <text class="a4sXm" x="482" y="128">a two-point wobble called a trend</text>
+        <text class="a4sXm" x="482" y="150">sentiment read off meeting notes</text>
+        <text class="a4sXm" x="482" y="172">any guess about who might resign</text>
+        <rect x="30" y="222" width="820" height="58" rx="12" fill="#EAF2F8"/>
+        <text class="a4sXm" x="52" y="246">AI is good at diffing, counting and remembering. It is bad at guessing what people will do.</text>
+        <text class="a4sXm" x="52" y="266">Keep what a machine can check. Kill what only a human in the room could know.</text>
+        <rect x="30" y="302" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="a4sN" x="54" y="314">The best AI early warning is boring: this changed, that did not, this has been open 11 days.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - keep the verifiable, kill the invented; the useful signals are the dull ones</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The three things it is genuinely good at<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Diffing this week against last week.</strong> Humans are terrible at this. You read the report, it feels familiar, and you miss that the DQ pass rate has been quietly flat at 96.4% for three weeks while the commentary has said "improving" every time. A machine holding four reports does not get bored.</li>
+          <li><strong>Spotting a risk whose trigger has fired.</strong> Your register says R-11 triggers if DQ sits below the 99% gate for two consecutive weeks. That is a rule. A model can check it against the numbers every Monday without anyone remembering to.</li>
+          <li><strong>Noticing the action that has been rolling.</strong> "Chase Veridian" has moved forward five weeks in a row, in five different reports, and nobody noticed because each individual roll looked reasonable. Age is a fact. It is also the single most reliable predictor of an action that is never going to happen.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Five weeks of "next week".</strong> A delivery lead asked her workspace for every action that had moved more than twice. Nine came back. Eight were noise. The ninth was ticket VN-2291 - chase Veridian on the POS extract SLA - which had been rolled five times and was now eleven days open with the vendor. The delay was not the problem. The problem was that five weeks of rolling had turned an unconfirmed dependency into a live risk without a single person deciding to let it happen.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The three things it is genuinely bad at<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Probability.</strong> Ask for the likelihood of a risk and you will get a number. It will be confident, it will be plausible, and it is generated, not calculated. There is no data behind "68%". A generated probability is worse than no probability, because it survives the trip to the steerco slide where nobody can interrogate it.</li>
+          <li><strong>Knowing which vendor will deliver.</strong> That knowledge lives in Priya N.'s head, built from four years of watching Veridian miss soft deadlines and hit contractual ones. No document in your workspace contains it. The model can tell you the SLA says 5 days and the ticket is 11 days old - facts. It cannot tell you whether this vendor is about to come good.</li>
+          <li><strong>People.</strong> It cannot tell you Marcus is exhausted, that Sofia is interviewing elsewhere, or that Dan has quietly stopped believing in the M5 date. Sentiment analysis on meeting notes is the most seductive false signal in this whole space: it produces a chart, and the chart is measuring how someone writes, not how they feel.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>The one-question filter</strong>
+          For any AI-surfaced warning ask: <em>could I verify this from a document or a system in under a minute?</em> Trigger fired, ticket age, count of failed runs, gate distance - yes. Likelihood, mood, intent, whether they will make it - no. Keep the first kind, kill the second, and never let the second kind reach a slide.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why the noise is so convincing<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Because it is written in the same register as the signal. "R-07 likelihood has increased to high given deteriorating vendor engagement" and "VN-2291 has been open 11 days against a 5-day SLA" look equally authoritative. One is an assertion with nothing underneath it, the other is a fact you can click, and nothing in the prose tells them apart. PMBOK's uncertainty domain separates what you can characterise from what you can only prepare for: AI is strong on characterisation - what is true now, what changed, what threshold has been crossed - and adds nothing to preparation, which is judgment, options and appetite. PMI's 2026 AI standard carries risk as one of its eight equally weighted principles, paired with governance and data quality, for exactly this reason: a confident output built on thin data is itself the risk, and the guardrail is human oversight with real intervention triggers rather than a review that rubber-stamps whatever arrived.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: HARD GATES ============ -->
+  <section class="section" id="hard-gates">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · the failure mode that stops programmes</span>
+      <h2>The hard gates AI keeps smoothing over <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">A soft dependency slips and the programme absorbs it. A hard gate stops the programme dead. The difference is enormous, it is obvious once someone says it out loud, and it is invisible in a fluent summary - because a model summarising cheerfully will describe both of them in the same reasonable tone.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Northwind R-03: the plan that reads beautifully and cannot happen<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Northwind's risk register has R-03: data-engineer hiring gap. It is not a delay risk. It is a hard gate before M4, because you cannot build a modelled warehouse with nobody to build it - no compression, no partial credit, no working around it with overtime. Zero engineers produces zero model, at any date you choose to write down. Now read how the draft plan handles it: <em>"M4 build begins immediately on M3 sign-off with no gap."</em> That sentence is not wrong about the sequence. It is silent about the requirement. The plan flows, the dates line up, and the assumption underneath it - two people who have not been hired - never appears on the page at all.</p>
+        <table class="clean">
+          <thead><tr><th></th><th>Soft dependency</th><th>Hard gate</th></tr></thead>
+          <tbody>
+            <tr><td>Example</td><td>The glossary sign-off is a week late</td><td>R-03: no data engineer before M4</td></tr>
+            <tr><td>What slipping costs</td><td>Absorbed, or float is consumed</td><td>The next milestone cannot start at all</td></tr>
+            <tr><td>Recovery levers</td><td>Resequence, parallelise, trim scope</td><td>Only one: remove the constraint</td></tr>
+            <tr><td>How a draft describes it</td><td>"minor slip, being managed"</td><td>"minor slip, being managed"</td></tr>
+            <tr><td>Who must know</td><td>The delivery lead</td><td>The sponsor, immediately</td></tr>
+          </tbody>
+        </table>
+        <p>Row four is the point of this session. Both read identically in the summary. You cannot detect the difference by reading better, so you detect it by asking a structural question instead: <strong>for each item on this list, is there any version of the next milestone that starts without it?</strong> If the answer is no, it is a gate, and it goes to the sponsor this week rather than next.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Six weeks of green.</strong> A programme reported amber-then-green for six weeks on a workstream whose entire delivery depended on two contractors nobody had approved. Every weekly summary was accurate: design was progressing, the environment was ready, the backlog was groomed. All true, all irrelevant. When the build date arrived there was nobody to build, and the sponsor's first question was the right one - "when did you know?" The honest answer was week two. The summary had simply never been asked whether anything on it was a gate.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Making a model surface gates instead of smoothing them<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The fix is a standing instruction in your workspace, not a better weekly prompt. Cheerful smoothing is a default, and defaults are changed once.</p>
+        <div class="prompt-box good"><span class="label">★ Try it now - the anti-smoothing rule for your house rules</span>HARD GATES (apply to every plan, report or risk summary you draft)
+
+Before summarising status, separate items into two lists:
+
+BLOCKING   the next milestone cannot start without it at all - missing
+           people, environment, approval, data or signature.
+NON-BLOCKING  everything else, including anything that can be
+           resequenced, compressed, parallelised or absorbed.
+
+For every BLOCKING item give one line: what is missing, who owns removing
+it, the last date it can go without moving the next milestone, and
+whether that date has passed.
+
+Never soften a blocking item. Not "minor", not "being managed", not "on
+track to resolve". If it is unresolved, say unresolved and give the date.
+If the plan assumes a person, a budget or an approval that is not in the
+pack, name it as an assumption before anything else.</div>
+        <div class="callout tip">
+          <strong>The sponsor's version of the same question</strong>
+          Two things make the rule work: it defines blocking structurally, so the model classifies rather than judges, and it bans the softening vocabulary outright, because "being managed" is exactly the phrase that lets a gate travel through four reports unnoticed. If you sit on the sponsor's side of the table you need only one line: "which of these can we not start without?" It cuts through any summary, AI-drafted or not.
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: THE ESCALATION ============ -->
+  <section class="section" id="escalation">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the artifact that has to survive a room</span>
+      <h2>The escalation that survives a steerco <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Most escalations fail for the same reason: they report a situation instead of requesting a decision. The sponsor reads it, feels concerned, asks two questions nobody can answer, and the item rolls to next month - by which point the option that mattered has expired. Four parts fix this permanently.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anatomy of a defensible escalation: the decision needed, two or three costed options, your named recommendation, and the date the option expires">
+        <style>
+          .a4eT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .a4eI { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .a4eX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .a4eXi { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .a4eXm { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .a4eN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .a4eH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <text class="a4eH" x="30" y="32">FOUR PARTS, IN THIS ORDER, ON ONE PAGE</text>
+        <rect x="30" y="46" width="195" height="106" rx="12" fill="#072538"/>
+        <text class="a4eT" x="52" y="80">The decision</text>
+        <text class="a4eX" x="52" y="104">one sentence, so a</text>
+        <text class="a4eX" x="52" y="122">yes or no ends it</text>
+        <rect x="240" y="46" width="195" height="106" rx="12" fill="#0E3A5C"/>
+        <text class="a4eT" x="262" y="80">The options</text>
+        <text class="a4eX" x="262" y="104">two or three, each</text>
+        <text class="a4eX" x="262" y="122">with its real cost in</text>
+        <text class="a4eX" x="262" y="140">money, time or scope</text>
+        <rect x="450" y="46" width="195" height="106" rx="12" fill="#2C6A99"/>
+        <text class="a4eT" x="472" y="80">Your pick</text>
+        <text class="a4eX" x="472" y="104">named, with the</text>
+        <text class="a4eX" x="472" y="122">reason in one line -</text>
+        <text class="a4eX" x="472" y="140">never a menu alone</text>
+        <rect x="660" y="46" width="195" height="106" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="a4eI" x="682" y="80">The expiry</text>
+        <text class="a4eXi" x="682" y="104">the date after which</text>
+        <text class="a4eXi" x="682" y="122">this option is gone,</text>
+        <text class="a4eXi" x="682" y="140">and what goes then</text>
+        <rect x="30" y="184" width="825" height="58" rx="12" fill="#EAF2F8"/>
+        <text class="a4eXm" x="52" y="208">An escalation with no decision is a complaint. With no expiry it is a complaint with data.</text>
+        <text class="a4eXm" x="52" y="228">Steercos do not fail because the news is bad. They fail because nothing can be decided.</text>
+        <rect x="30" y="286" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="a4eN" x="54" y="298">Elena V. can say yes in ninety seconds when all four parts are there. That is the bar.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - decision, costed options, your recommendation, expiry date; all four or it rolls</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The Northwind M3 case, in four parts<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>The position.</strong> Week nine. M3 was gated 10 August, forecast is now 24 August. Six of nine sources landing at 812k rows a night, DQ pass rate 96.4% against a 99% gate, NWD-412 failed the CDC load three consecutive nights. Behind it, R-03 means M4 has nobody to build it.</li>
+          <li><strong>Decision.</strong> Approve the M3 gate move to 24 August, or fund two contract data engineers for four weeks to hold the original ladder.</li>
+          <li><strong>Options with real costs.</strong> Option A: move the gate to 24 August. Cost - M4 and everything behind it moves two weeks, and D-15 keeps the legacy warehouse running in parallel for longer. Option B: fund two contract data engineers for four weeks at approximately £38k, holding M4's start. Cost - the money, plus onboarding time Marcus L. does not currently have.</li>
+          <li><strong>Recommendation.</strong> Yours, named, with one reason. Not a menu handed to the sponsor to sort out.</li>
+          <li><strong>Expiry.</strong> The decision is needed by 8 August. After that, contractor lead time means option B cannot land before M4 anyway, and M4 slips whichever way the sponsor votes. This is the part people leave out and the part that changes behaviour: "we need a decision" gets read, "we need a decision by 8 August or the second option stops existing" gets decided.</li>
+          <li><strong>What AI may and may not touch here.</strong> It can assemble the evidence - ticket ids, dates, gate distance, decision log lines - force the four parts, and list the questions Elena V. will ask. It must not write the recommendation, which carries your name, or the costs: the £38k comes from procurement, the four weeks from Marcus, the lead time from the contract. Never from a draft.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The escalation that finally moved.</strong> A delivery lead had raised the same resourcing concern in four consecutive steercos. Each time it was noted, each time it rolled. The fifth time she wrote two options with numbers against them and one line: "after the 8th, option B cannot land in time and this becomes a slip, not a choice." The sponsor approved in under two minutes. Nothing about the underlying problem had changed. What changed was that for the first time there was something to say yes to, and a reason not to say it next month.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why the escalation is where rail three bites hardest<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A named human signs it. PMI's standard puts human oversight with real intervention triggers at the centre of AI-assisted delivery, and the escalation is the single artifact where that matters most, because it is the one that ends in somebody spending money or accepting a slip. A status report that is slightly wrong gets corrected next week. An escalation that is slightly wrong gets acted on. So the collation can be drafted, the shape can be enforced by a rule, and the two things that decide the outcome - the recommendation and the numbers - come from people with names, every time.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 2</span>
+      <h2>Triage six early warnings: keep two, kill four <span class="tag demo">★ 12 min · everyone triages</span></h2>
+    </div>
+    <p class="lede">Northwind's Monday scan surfaced these six. Exactly two belong in front of a human this week. Four should be killed, and you should be able to say why in one sentence each. Four minutes on your own, then compare.</p>
+
+    <div class="steps">
+      <div class="step"><p><strong>W1.</strong> "The plan has M4 build starting immediately on M3 sign-off. No named data engineer is assigned to M4 in the owner list, and no requisition appears in the pack. Risk R-03 is open."</p></div>
+      <div class="step"><p><strong>W2.</strong> "R-07 vendor SLA: likelihood has increased to 72% based on deteriorating engagement signals across recent correspondence."</p></div>
+      <div class="step"><p><strong>W3.</strong> "Ticket NWD-412 records a failed CDC load on three consecutive nights. Nightly volume is 812k rows and 6 of 9 sources are landing."</p></div>
+      <div class="step"><p><strong>W4.</strong> "Open actions rose from 9 last week to 12 this week, indicating workload pressure on the delivery team."</p></div>
+      <div class="step"><p><strong>W5.</strong> "DQ pass rate moved from 96.6% to 96.4% week on week, continuing a downward trend."</p></div>
+      <div class="step"><p><strong>W6.</strong> "Sentiment across the last three stand-up notes is more negative than the preceding three weeks, suggesting declining team morale."</p></div>
+    </div>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The triage answers - open after you have made your calls<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th></th><th>Call</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td>W1</td><td><strong>KEEP</strong></td><td>A hard gate stated as a fact about the pack, verifiable in a minute. R-03 has no owner assigned to M4 and the plan assumes people who do not exist. This is the escalation.</td></tr>
+            <tr><td>W2</td><td>Kill</td><td>72% is generated, not calculated. There is no data behind it. The verifiable version is the one to keep instead: VN-2291 has been open 11 days against a 5-day SLA. Ask Priya N. for the judgment.</td></tr>
+            <tr><td>W3</td><td><strong>KEEP</strong></td><td>Three consecutive failures is a countable threshold, and it is the mechanism behind the M3 slip. It also tells you the 24 August forecast has a cause, not a hope, behind it.</td></tr>
+            <tr><td>W4</td><td>Kill</td><td>A count is not a signal. Twelve fresh actions is a healthy week; three actions rolled five times is a problem. Ask for age and owner, not volume. The useful version of W4 is "which actions have moved more than twice".</td></tr>
+            <tr><td>W5</td><td>Kill</td><td>Two points is not a trend, and 0.2 points is inside the noise. Distance to the 99% gate has not meaningfully changed. Keep watching it, do not surface it - and note that R-11 triggers on a rule, which has not fired.</td></tr>
+            <tr><td>W6</td><td>Kill</td><td>Sentiment on meeting notes measures how somebody writes, not how the team feels. If you are worried about morale, the instrument is a conversation with Marcus L., not a chart.</td></tr>
+          </tbody>
+        </table>
+        <p>The pattern in the four kills: two invented a number (W2, W5), one counted the wrong thing (W4), and one measured a proxy for something it cannot see (W6). Every one would have looked perfectly respectable on a slide.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 2</span>
+      <h2>Rewrite a weak escalation into a defensible one <span class="tag demo">★ 10 min · build your own</span></h2>
+    </div>
+    <p class="lede">Here is the escalation Northwind's draft pack actually produced. Read it, then rebuild it using the four parts before you look at the version below. Ten minutes, on paper, alone or in pairs. The strong version is not longer because it says more - it is longer because it stopped hiding.</p>
+
+    <div class="prompt-box bad"><span class="label">The weak version - what actually got drafted</span>ESCALATION - Northwind data platform, week 9
+
+We are concerned about the vendor and may need more resource. The ingest
+workstream is experiencing some challenges and M3 is now expected to be
+later than originally planned. The team is working hard to recover the
+position and we are managing the risks closely.
+
+We would welcome the steerco's support.</div>
+
+    <div class="steps">
+      <div class="step"><p>Find the decision. There is not one. Write the single sentence the sponsor is being asked to say yes or no to.</p></div>
+      <div class="step"><p>Find the options. There are none. Write two, and put a real cost against each - money, time or scope. Take the numbers from the canon, not from your imagination.</p></div>
+      <div class="step"><p>Find the recommendation. Absent, and "we would welcome support" is not one. Pick an option and give a one-line reason.</p></div>
+      <div class="step"><p>Find the expiry. Absent, which is why this item will roll. Write the date after which one of the options stops existing, and what happens then. Then delete every softening word - "some challenges", "working hard", "managing closely", "concerned" - because each one is doing the job a number should be doing.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ The defensible version - all four parts, one page</span>ESCALATION - Northwind data platform, week 9
+For decision at steerco, 6 Aug. Owner: delivery lead. Sponsor: Elena V.
+
+DECISION NEEDED
+Approve the M3 gate move from 10 Aug to 24 Aug, OR fund two contract
+data engineers for four weeks to hold the original M4 start.
+
+POSITION
+6 of 9 sources landing, 812k rows/night. DQ 96.4% against a 99% gate.
+NWD-412: CDC load failed 3 consecutive nights. M3 forecast 24 Aug,
+sourced from Marcus L. and nightly throughput. VN-2291 open 11 days
+with Veridian (R-07). Hard gate behind it: R-03, nobody assigned to M4.
+
+OPTIONS
+A. Move the M3 gate to 24 Aug. Cost: M4 and all after it move ~2 weeks;
+   legacy warehouse runs parallel longer (D-15). No new spend.
+B. Fund 2 contract data engineers, 4 weeks, approx GBP 38k. Cost: the
+   spend plus onboarding time Marcus L. does not have, and it holds the
+   M4 start only if approved in time.
+
+RECOMMENDATION
+Option A. The 24 Aug forecast is evidence-based and contractors cannot
+be productive before M4 starts, so B buys risk rather than time.
+
+DECISION BY 8 AUG
+After 8 Aug, contractor lead time means option B cannot land before M4:
+this stops being a choice and becomes a slip. Escalate to Elena V. direct
+if the steerco does not resolve it on 6 Aug.</div>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>"Concerned" is not a status.</strong> A sponsor kept a list of words she sent straight back: concerned, challenges, closely, shortly, broadly. Her rule was that each one is a number wearing a coat. It sounded pedantic for about a month, and then the escalations arriving at her steerco started containing dates and costs, and the meetings got forty minutes shorter. She had not asked for better writing. She had made vagueness cost more than precision.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Try it yourself - this week <span class="tag exercise">◐ 30-45 min total</span></h2>
+    </div>
+    <ul>
+      <li>Take your live risk register and mark every item blocking or non-blocking using the one test: is there any version of the next milestone that starts without it? Count how many blocking items your last status report described as "being managed".</li>
+      <li>Ask your team for every action that has moved more than twice. Not the action count - the age. Expect one uncomfortable answer, and find one number on a current slide that came from a model rather than a person or a system. Delete it or source it. There is usually one.</li>
+      <li>Add the anti-smoothing rule to your PMO's house rules and write the banned words down, then rewrite your most recent real escalation into the four parts. If you cannot find an expiry date for it, that tells you why it rolled.</li>
+    </ul>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">Taught from the delivery canon and PMI's public AI guidance. Certification (PMP, PMI-ACP) and the full normative text of the AI standard stay with PMI. This session covers:</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMBOK Guide 7th ed. - uncertainty performance domain</span><span class="note">Parts 1-3 · characterising risk, options, response and appetite</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMI - Standard for AI in Portfolio, Program and Project Management (2026)</span><span class="note">Parts 1-3 · the risk principle, oversight with real intervention triggers</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">This course, PM track b4 - dependencies, gates and the critical path</span><span class="note">Part 2 · finding the hard gate in the dependency map</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">This course, PM track b5 - a risk register that maintains itself</span><span class="note">Part 1 · triggers, ageing, and the weekly scan in working depth</span></div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · A weekly scan reports "R-07 likelihood has increased to 72%". What do you do with it?</p>
+      <button class="qopt" type="button">A · Put it on the steerco slide - a quantified risk is stronger than a qualitative one</button>
+      <button class="qopt" type="button">B · Kill the number and replace it with the verifiable fact: VN-2291 open 11 days against a 5-day SLA</button>
+      <button class="qopt" type="button">C · Ask the model to recalculate it with more supporting context</button>
+      <p class="qwhy">A generated probability has no data behind it, and it survives to the slide precisely because it looks rigorous. Keep what a machine can verify - ticket age, gate distance, failed run counts - and get the likelihood judgment from Priya N., who knows the vendor.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · Northwind's summary says R-03 is "a minor resourcing slip, being managed". Why is that dangerous?</p>
+      <button class="qopt" type="button">A · It understates the cost of contractors</button>
+      <button class="qopt" type="button">B · It should have named an owner</button>
+      <button class="qopt" type="button">C · R-03 is a hard gate, not a slip - M4 cannot start at all with nobody to build the model, and the phrasing makes a stopper look absorbable</button>
+      <p class="qwhy">A soft dependency slips and is absorbed. A hard gate stops the programme. A cheerful summariser describes both in the same reasonable tone, so use the structural test instead: is there any version of the next milestone that starts without this?</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Which part is missing from "we are concerned about the vendor and may need more resource"?</p>
+      <button class="qopt" type="button">A · All four - no decision, no costed options, no recommendation, no expiry date</button>
+      <button class="qopt" type="button">B · Only the recommendation; the situation is described adequately</button>
+      <button class="qopt" type="button">C · Only the cost figures</button>
+      <p class="qwhy">It reports a feeling, not a request. A defensible escalation names the decision, gives two or three options with real costs, carries your recommendation, and states the date after which an option expires. Without the expiry it rolls to next month, by which time it is a slip rather than a choice.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Leader session 4 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Good at</b><span>diffing week on week, triggers that have fired, actions that have rolled. Memory and comparison.</span></div>
+      <div class="cheat-item"><b>Bad at</b><span>probability, which vendor will deliver, and anything about how a person feels or what they will do.</span></div>
+      <div class="cheat-item"><b>The one-question filter</b><span>Could I verify this from a document or system in under a minute? If not, kill it.</span></div>
+      <div class="cheat-item"><b>Hard gate test</b><span>Is there any version of the next milestone that starts without this? No means gate, and the sponsor hears it this week.</span></div>
+      <div class="cheat-item"><b>R-03 in one line</b><span>You cannot model a warehouse with nobody to build it. No compression, no partial credit.</span></div>
+      <div class="cheat-item"><b>Banned vocabulary</b><span>concerned, challenges, closely, being managed, working hard. Each one is a number wearing a coat.</span></div>
+      <div class="cheat-item"><b>Escalation, four parts</b><span>the decision · two or three costed options · your named recommendation · the expiry date.</span></div>
+      <div class="cheat-item"><b>The expiry line</b><span>"After 8 Aug this stops being a choice and becomes a slip." That is what gets it decided.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Leader session 4 of 6 · learn-ai-project-management-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="a3-plans-you-can-trust.html">← Previous: Plans you can trust</a> &nbsp;·&nbsp; <a href="a5-reporting-cadence.html">Next: The reporting cadence →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>learn AI + project management with phoebe - a two-track course for people who deliver</title>
+<link rel="stylesheet" href="assets/style.css?v=1">
+<style>
+  .stats-row { display: flex; gap: 2.4rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .stat b { display: block; font-size: 2.1rem; font-weight: 800; line-height: 1.05; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: .72rem; opacity: .85; text-transform: uppercase; letter-spacing: .09em; font-weight: 600; }
+
+  .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .course-card {
+    border: 1px solid var(--hairline);
+    border-top: 4px solid var(--diff, var(--indigo));
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-decoration: none;
+    color: var(--ink);
+    background: #fff;
+    transition: box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+    position: relative;
+  }
+  .course-card:hover { border-color: var(--indigo-soft); border-top-color: var(--diff, var(--indigo)); box-shadow: 0 8px 28px rgba(14,58,92,.15); transform: translateY(-3px); }
+  .course-card .cicon { font-size: 1.7rem; line-height: 1; }
+  .course-card .cnum { font-size: .72rem; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: .1em; }
+  .course-card h3 { font-size: 1.05rem; font-weight: 800; line-height: 1.3; }
+  .course-card p { font-size: .85rem; color: var(--muted); flex: 1; }
+  .course-card .meta { display: flex; gap: .4rem; flex-wrap: wrap; }
+
+  .diff-legend { display: flex; gap: 1rem; margin-top: 1.6rem; font-size: .74rem; color: var(--muted); font-weight: 600; flex-wrap: wrap; }
+  .diff-legend i { display: inline-block; width: .85rem; height: .35rem; border-radius: 999px; margin-right: .35rem; vertical-align: middle; }
+
+  .paths { margin-top: 2.6rem; }
+  .paths h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .3rem; }
+  .paths .plede { color: var(--muted); font-size: .92rem; margin-bottom: .8rem; }
+  .path { display: flex; gap: .55rem; align-items: center; padding: .75rem 0; border-bottom: .5px solid var(--hairline); flex-wrap: wrap; }
+  .path:last-child { border-bottom: none; }
+  .path b { min-width: 15.5rem; font-size: .9rem; }
+  .path .pstep { background: var(--indigo-50); color: var(--indigo); border-radius: 999px; padding: .16rem .68rem; font-weight: 700; font-size: .8rem; text-decoration: none; transition: all .12s ease; }
+  .path .pstep:hover { background: var(--indigo); color: #fff; }
+  .path .parr { color: var(--faint); font-weight: 700; }
+
+  .mm-section { margin-top: 1.6rem; }
+  .mm-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .2rem; }
+  .mm-section .mm-lede { color: var(--muted); font-size: .92rem; margin-bottom: .4rem; }
+  .mm-wrap { border: 1px solid var(--hairline); border-radius: var(--radius); background: linear-gradient(180deg,#fff,#E9F1F7); padding: .6rem; overflow-x: auto; }
+  .mm-svg { width: 100%; height: auto; display: block; max-width: 60rem; margin: 0 auto; min-width: 34rem; }
+  .mm-link { cursor: pointer; text-decoration: none; }
+  .mm-node rect { transition: opacity .15s ease, filter .15s ease; }
+  .mm-node text { pointer-events: none; }
+  .mm-link:hover .mm-node rect { filter: brightness(1.06); }
+  .mm-edge { transition: opacity .15s ease; }
+
+  .rail { margin-top: 1.4rem; border: 1px solid var(--hairline); border-left: 4px solid var(--amber); border-radius: var(--radius); background: var(--amber-50); padding: 1rem 1.2rem; font-size: .9rem; }
+  .rail b { color: var(--amber-ink); }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI + Project Management with Phoebe</div>
+    <h1>Two tracks for people who <span class="accent">actually have to deliver</span></h1>
+    <p class="sub">A leader track for heads of delivery and PMO leads - where AI helps, where it quietly wrecks trust, and how to govern it without slowing anything down. And a PM track that builds the whole delivery toolkit with Claude sitting next to you: charter, milestones, dependencies, risk register, status report, escalations, and a weekly pack that runs itself. One running programme carries all sixteen sessions. Around half of project professionals say AI already touches their work, while only about a fifth have real hands-on experience. This closes that gap - without ever letting the model commit a date.</p>
+    <div class="stats-row">
+      <div class="stat"><b data-count="2">2</b><span>tracks</span></div>
+      <div class="stat"><b data-count="16">16</b><span>sessions</span></div>
+      <div class="stat"><b data-count="45">45</b><span>min per session</span></div>
+      <div class="stat"><b data-count="1">1</b><span>running programme</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>The leader track 🤝 <span style="font-size:.85rem;font-weight:600;color:var(--muted)">· for heads of delivery, PMO leads &amp; sponsors · 6 x 45 min · no tooling required</span></h2>
+      <p class="plede">Thinking mode: what AI actually changes about delivery, what it must never touch, how to review an AI-drafted plan without reading every line, and how to roll it out to a PMO with a quality bar instead of a vibe. Each session ends with the questions to ask your PMs.</p>
+    </div>
+    <div class="course-grid">
+      <a class="course-card" href="courses/a1-what-ai-changes.html" style="--diff:#34D399">
+        <span class="cicon">🧭</span>
+        <span class="cnum">Leader 1 · easy</span>
+        <h3>What AI changes about delivery</h3>
+        <p>Split the PM week into artifact labour and judgment. What genuinely moves, what does not, and PMI's line on human oversight.</p>
+        <span class="meta"><span class="pill amber">▶ Leaders start here</span></span>
+      </a>
+      <a class="course-card" href="courses/a2-governed-setup.html" style="--diff:#34D399">
+        <span class="cicon">🔐</span>
+        <span class="cnum">Leader 2 · easy</span>
+        <h3>The governed setup</h3>
+        <p>Workspaces, connectors and permissions - and the one-page policy for what never goes into a prompt.</p>
+        <span class="meta"><span class="pill light">Policy exercise</span></span>
+      </a>
+      <a class="course-card" href="courses/a3-plans-you-can-trust.html" style="--diff:#FBBF24">
+        <span class="cicon">📐</span>
+        <span class="cnum">Leader 3 · medium</span>
+        <h3>Plans you can trust</h3>
+        <p>The review rubric for an AI-drafted plan: invented dates, orphan owners, missing gates, dependencies nobody confirmed.</p>
+        <span class="meta"><span class="pill light">Review rubric</span></span>
+      </a>
+      <a class="course-card" href="courses/a4-risk-deps-escalation.html" style="--diff:#FBBF24">
+        <span class="cicon">⚠️</span>
+        <span class="cnum">Leader 4 · medium</span>
+        <h3>Risk, dependencies &amp; escalation</h3>
+        <p>Early-warning signals worth trusting, the hard gates AI keeps smoothing over, and an escalation that survives a steerco.</p>
+        <span class="meta"><span class="pill light">Escalation drill</span></span>
+      </a>
+      <a class="course-card" href="courses/a5-reporting-cadence.html" style="--diff:#FB923C">
+        <span class="cicon">📊</span>
+        <span class="cnum">Leader 5 · deciding</span>
+        <h3>The reporting cadence</h3>
+        <p>A weekly rhythm a machine can maintain and a human can defend - plus the six checks that make a report actionable.</p>
+        <span class="meta"><span class="pill light">Cadence design</span></span>
+      </a>
+      <a class="course-card" href="courses/a6-rollout-to-pmo.html" style="--diff:#FB923C">
+        <span class="cicon">🚀</span>
+        <span class="cnum">Leader 6 · deciding</span>
+        <h3>Rolling it out to a PMO</h3>
+        <p>Pilot design, the quality bar, what to measure, and how to get adoption from PMs who have been burned before.</p>
+        <span class="meta"><span class="pill light">Rollout plan</span></span>
+      </a>
+    </div>
+
+    <div class="paths">
+      <h2>The PM track 🛠️ <span style="font-size:.85rem;font-weight:600;color:var(--muted)">· for PMs, TPMs &amp; delivery leads · 10 x 45 min · one running programme, no code</span></h2>
+      <p class="plede">Hands on the real artifacts, week by week, on the Northwind data platform programme: workspace, charter, milestones, dependencies, risk register, the status report (with a live simulator), meeting-to-actions, escalations, the connected weekly pack, and a full delivery week as a capstone.</p>
+    </div>
+    <div class="course-grid">
+      <a class="course-card" href="courses/b1-workspace-setup.html" style="--diff:#34D399">
+        <span class="cicon">🗂️</span>
+        <span class="cnum">PM 1 · easy</span>
+        <h3>Your programme workspace</h3>
+        <p>One workspace per programme, the six-document context pack, and the house rules you will reuse for years.</p>
+        <span class="meta"><span class="pill amber">▶ PMs start here</span></span>
+      </a>
+      <a class="course-card" href="courses/b2-mandate-to-charter.html" style="--diff:#FBBF24">
+        <span class="cicon">📜</span>
+        <span class="cnum">PM 2 · medium</span>
+        <h3>Mandate to charter</h3>
+        <p>A vague sponsor email becomes a scoped charter: context, priorities, non-goals, and the questions you must ask back.</p>
+        <span class="meta"><span class="pill light">Charter draft</span></span>
+      </a>
+      <a class="course-card" href="courses/b3-milestones-wbs.html" style="--diff:#FBBF24">
+        <span class="cicon">🪜</span>
+        <span class="cnum">PM 3 · medium</span>
+        <h3>Milestone architecture &amp; WBS</h3>
+        <p>Ladder M1-M6 with real gate criteria, decompose the work, and get the dates from the team - never from the model.</p>
+        <span class="meta"><span class="pill light">Milestone table</span></span>
+      </a>
+      <a class="course-card" href="courses/b4-dependencies-critical-path.html" style="--diff:#FB923C">
+        <span class="cicon">🔗</span>
+        <span class="cnum">PM 4 · hands-on</span>
+        <h3>Dependencies &amp; critical path</h3>
+        <p>Extract dependencies from raw meeting notes, find the hard gate everyone forgot, and render the map in Mermaid.</p>
+        <span class="meta"><span class="pill light">Dependency map</span></span>
+      </a>
+      <a class="course-card" href="courses/b5-risk-register.html" style="--diff:#FBBF24">
+        <span class="cicon">🎲</span>
+        <span class="cnum">PM 5 · medium</span>
+        <h3>A risk register that maintains itself</h3>
+        <p>Probability x impact, named triggers and owners, and a weekly refresh that surfaces what actually moved.</p>
+        <span class="meta"><span class="pill light">Live RAID log</span></span>
+      </a>
+      <a class="course-card" href="courses/b6-status-report-simulator.html" style="--diff:#FBBF24">
+        <span class="cicon">📈</span>
+        <span class="cnum">PM 6 · medium</span>
+        <h3>The status report</h3>
+        <p>Watch a fluent, empty report climb from 24 to 100 as you feed it the six things a steerco actually needs.</p>
+        <span class="meta"><span class="pill light">★ interactive: pm-live</span></span>
+      </a>
+      <a class="course-card" href="courses/b7-meetings-to-actions.html" style="--diff:#34D399">
+        <span class="cicon">🗒️</span>
+        <span class="cnum">PM 7 · easy</span>
+        <h3>Meetings to actions</h3>
+        <p>Turn a messy steerco into decisions, actions and owners - and keep a decision log that stops the relitigating.</p>
+        <span class="meta"><span class="pill light">Decision log</span></span>
+      </a>
+      <a class="course-card" href="courses/b8-stakeholder-comms.html" style="--diff:#FBBF24">
+        <span class="cicon">🗣️</span>
+        <span class="cnum">PM 8 · medium</span>
+        <h3>Stakeholders, escalations &amp; hard messages</h3>
+        <p>One truth, three audiences. Draft the escalation that gets a decision, and the bad-news message you can stand behind.</p>
+        <span class="meta"><span class="pill light">Escalation draft</span></span>
+      </a>
+      <a class="course-card" href="courses/b9-connect-the-system.html" style="--diff:#FB923C">
+        <span class="cicon">⚙️</span>
+        <span class="cnum">PM 9 · hands-on</span>
+        <h3>Connect the system</h3>
+        <p>Connectors to Jira, Notion and Sheets, your house rules as a reusable skill, and a weekly pack that runs on schedule.</p>
+        <span class="meta"><span class="pill light">Weekly pack</span></span>
+      </a>
+      <a class="course-card" href="courses/b10-capstone-delivery-week.html" style="--diff:#F87171">
+        <span class="cicon">🏁</span>
+        <span class="cnum">PM 10 · hardest</span>
+        <h3>Capstone: one full delivery week</h3>
+        <p>Monday to Friday of Northwind's recovery week, end to end - and the list of things you never delegate.</p>
+        <span class="meta"><span class="pill light">Full week run</span></span>
+      </a>
+    </div>
+    <div class="diff-legend">
+      <span><i style="background:#34D399"></i>easy - everyone</span>
+      <span><i style="background:#FBBF24"></i>medium</span>
+      <span><i style="background:#FB923C"></i>hands-on / deciding</span>
+      <span><i style="background:#F87171"></i>hardest</span>
+    </div>
+
+    <div class="rail">
+      <b>The three rails this whole course runs on:</b> context beats prompting - a weak draft means a missing document, not a weak prompt. The dates come from the team - AI drafts the structure of a plan, never the commitments. And a named human signs it - every artifact that leaves the workspace has one accountable person who read it. Northwind is a fictional retailer and every number in it is invented.
+    </div>
+
+    <div class="paths">
+      <h2>Choose your path 🗺️</h2>
+      <p class="plede">Two doors, one programme. Leaders set the guardrails and the quality bar; PMs build the artifacts behind them.</p>
+      <div class="path"><b>🤝 Leader (no tooling)</b>
+        <a class="pstep" href="courses/a1-what-ai-changes.html">a1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/a2-governed-setup.html">a2</a><span class="parr">→</span>
+        <a class="pstep" href="courses/a3-plans-you-can-trust.html">a3</a><span class="parr">→</span>
+        <a class="pstep" href="courses/a4-risk-deps-escalation.html">a4</a><span class="parr">→</span>
+        <a class="pstep" href="courses/a5-reporting-cadence.html">a5</a><span class="parr">→</span>
+        <a class="pstep" href="courses/a6-rollout-to-pmo.html">a6</a>
+      </div>
+      <div class="path"><b>🛠️ PM (the toolkit)</b>
+        <a class="pstep" href="courses/b1-workspace-setup.html">b1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b2-mandate-to-charter.html">b2</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b3-milestones-wbs.html">b3</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b4-dependencies-critical-path.html">b4</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b5-risk-register.html">b5</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b6-status-report-simulator.html">b6</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b7-meetings-to-actions.html">b7</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b8-stakeholder-comms.html">b8</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b9-connect-the-system.html">b9</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b10-capstone-delivery-week.html">b10</a>
+      </div>
+      <div class="path"><b>🌱 Curious follower (a taste)</b>
+        <a class="pstep" href="courses/a1-what-ai-changes.html">a1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b1-workspace-setup.html">b1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b6-status-report-simulator.html">b6</a>
+      </div>
+      <div class="path"><b>🚀 Full journey (govern AND deliver)</b>
+        <a class="pstep" href="courses/a1-what-ai-changes.html">a1-a6</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b1-workspace-setup.html">b1-b10</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mm-section">
+    <h2>The knowledge map 🧠</h2>
+    <p class="mm-lede">Both tracks at a glance - hover a session to spotlight its concepts, click any node to jump in.</p>
+    <div class="mm-wrap"><div id="mindmap"></div></div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>learn-ai-project-management-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a> · the by-hand prequel: <a href="https://phoebefu6.github.io/learn-tech-project-pmo-with-phoebe/">learn tech project PMO ↗</a> · sources: PMI AI standard (2026) + PMBOK 7 + Anthropic docs</span>
+  </footer>
+</main>
+
+<script>
+window.MINDMAP_DATA = {
+  title: "AI +\nProject mgmt",
+  centerColor: "#072538",
+  sessions: [
+    { label: "What AI\nchanges", href: "courses/a1-what-ai-changes.html", color: "#34D399",
+      concepts: [
+        { label: "Artifact vs judgment", href: "courses/a1-what-ai-changes.html" },
+        { label: "Human oversight", href: "courses/a1-what-ai-changes.html" } ] },
+    { label: "Governed\nsetup", href: "courses/a2-governed-setup.html", color: "#34D399",
+      concepts: [
+        { label: "Permissions", href: "courses/a2-governed-setup.html" },
+        { label: "What never goes in", href: "courses/a2-governed-setup.html" } ] },
+    { label: "Plans you\ncan trust", href: "courses/a3-plans-you-can-trust.html", color: "#FBBF24",
+      concepts: [
+        { label: "Invented dates", href: "courses/a3-plans-you-can-trust.html" },
+        { label: "Orphan owners", href: "courses/a3-plans-you-can-trust.html" },
+        { label: "Review rubric", href: "courses/a3-plans-you-can-trust.html" } ] },
+    { label: "Risk &\nescalation", href: "courses/a4-risk-deps-escalation.html", color: "#FBBF24",
+      concepts: [
+        { label: "Early warnings", href: "courses/a4-risk-deps-escalation.html" },
+        { label: "Hard gates", href: "courses/a4-risk-deps-escalation.html" } ] },
+    { label: "Reporting\ncadence", href: "courses/a5-reporting-cadence.html", color: "#FB923C",
+      concepts: [
+        { label: "Weekly rhythm", href: "courses/a5-reporting-cadence.html" },
+        { label: "The six checks", href: "courses/a5-reporting-cadence.html" } ] },
+    { label: "Roll out\nto a PMO", href: "courses/a6-rollout-to-pmo.html", color: "#FB923C",
+      concepts: [
+        { label: "Pilot design", href: "courses/a6-rollout-to-pmo.html" },
+        { label: "Adoption metrics", href: "courses/a6-rollout-to-pmo.html" } ] },
+    { label: "Programme\nworkspace", href: "courses/b1-workspace-setup.html", color: "#34D399",
+      concepts: [
+        { label: "Context pack", href: "courses/b1-workspace-setup.html" },
+        { label: "House rules", href: "courses/b1-workspace-setup.html" },
+        { label: "The three rails", href: "courses/b1-workspace-setup.html" } ] },
+    { label: "Mandate to\ncharter", href: "courses/b2-mandate-to-charter.html", color: "#FBBF24",
+      concepts: [
+        { label: "Scope + non-goals", href: "courses/b2-mandate-to-charter.html" },
+        { label: "Questions back", href: "courses/b2-mandate-to-charter.html" } ] },
+    { label: "Milestones\n& WBS", href: "courses/b3-milestones-wbs.html", color: "#FBBF24",
+      concepts: [
+        { label: "Gate criteria", href: "courses/b3-milestones-wbs.html" },
+        { label: "Decomposition", href: "courses/b3-milestones-wbs.html" } ] },
+    { label: "Dependencies\n& path", href: "courses/b4-dependencies-critical-path.html", color: "#FB923C",
+      concepts: [
+        { label: "Hard gates", href: "courses/b4-dependencies-critical-path.html" },
+        { label: "Critical path", href: "courses/b4-dependencies-critical-path.html" } ] },
+    { label: "Risk\nregister", href: "courses/b5-risk-register.html", color: "#FBBF24",
+      concepts: [
+        { label: "Triggers + owners", href: "courses/b5-risk-register.html" },
+        { label: "Weekly refresh", href: "courses/b5-risk-register.html" } ] },
+    { label: "Status\nreport", href: "courses/b6-status-report-simulator.html", color: "#FBBF24",
+      concepts: [
+        { label: "The six checks", href: "courses/b6-status-report-simulator.html" },
+        { label: "RAG rule", href: "courses/b6-status-report-simulator.html" },
+        { label: "The GAPS block", href: "courses/b6-status-report-simulator.html" } ] },
+    { label: "Meetings\nto actions", href: "courses/b7-meetings-to-actions.html", color: "#34D399",
+      concepts: [
+        { label: "Decision log", href: "courses/b7-meetings-to-actions.html" },
+        { label: "RAID hygiene", href: "courses/b7-meetings-to-actions.html" } ] },
+    { label: "Stakeholder\ncomms", href: "courses/b8-stakeholder-comms.html", color: "#FBBF24",
+      concepts: [
+        { label: "One truth, 3 audiences", href: "courses/b8-stakeholder-comms.html" },
+        { label: "Hard messages", href: "courses/b8-stakeholder-comms.html" } ] },
+    { label: "Connect\nthe system", href: "courses/b9-connect-the-system.html", color: "#FB923C",
+      concepts: [
+        { label: "Connectors (MCP)", href: "courses/b9-connect-the-system.html" },
+        { label: "Skills + schedules", href: "courses/b9-connect-the-system.html" } ] },
+    { label: "Capstone\nweek", href: "courses/b10-capstone-delivery-week.html", color: "#F87171",
+      concepts: [
+        { label: "Monday to Friday", href: "courses/b10-capstone-delivery-week.html" },
+        { label: "Never delegate", href: "courses/b10-capstone-delivery-week.html" } ] }
+  ]
+};
+</script>
+<script src="assets/mindmap.js?v=1"></script>
+<script src="assets/app.js?v=1"></script>
+</body>
+</html>

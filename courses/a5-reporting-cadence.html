@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leader session 5 · The reporting cadence - learn AI + project management with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-project-management-with-phoebe</a> / Leader session 5 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI + Project Management with Phoebe · Leader track · Session 5 of 6</div>
+    <h1>The reporting cadence: <span class="accent">a rhythm a machine can maintain and a human can defend</span></h1>
+    <p class="sub">Reporting is where your delivery function becomes visible to the rest of the organisation. Get the cadence right and AI quietly removes a day of assembly work every week. Get it wrong and you industrialise a beautiful, confident, unreadable report that nobody challenges because nobody can. Tonight you design the week, set the quality bar, and write the one rule that makes a colour mean something.</p>
+    <div class="chip-row">
+      <span class="chip level">🟠 Leader track</span>
+      <span class="chip audience">Heads of delivery</span>
+      <span class="chip audience">PMO leads</span>
+      <span class="chip audience">Cadence design</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-20 · The rhythm and the six checks</span>
+      <span class="a3" style="flex:5">20-42 · Your cadence + the RAG rule</span>
+      <span class="a4" style="flex:1">42-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we are</h2>
+    </div>
+    <p class="lede">In a1 you split the delivery job into what AI drafts and what only a person decides. In a2 you set the governed boundary: what goes into a workspace, what never does, who is allowed to connect what. In a3 you built a review rubric for AI-drafted plans, and in a4 you did the same for risk, dependencies and escalation. Those four sessions were about artifacts your team produces. Tonight is different. Reporting is the artifact the <em>organisation</em> consumes, weekly, forever. It is where your function is judged, and it is the single most common first place AI lands in a delivery team - which makes it the most common place to go fluently, confidently wrong at scale.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill peach">★ Try it now prompt</span>
+      <span class="pill inkpill">Official sources covered</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      A five-day reporting rhythm with the two human checkpoints marked, the six checks translated into what each one buys you and what breaks without it, a written RAG rule your sponsor can agree in one meeting, and a way to spot the new failure mode - the report that has become too good to carry a warning.
+    </div>
+  </section>
+
+  <section class="section" id="rhythm">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the measurement domain + where AI lands first</span>
+      <h2>The week, as a loop <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Most reporting is not a process, it is a Friday afternoon. Somebody assembles four threads, a ticket export and a spreadsheet into a document, ships it at six, and starts again on Monday. That works until the person is on leave, or the programme doubles, or the sponsor asks for a second one. A cadence fixes it: five small stops instead of one large heroic one, each with an owner, and only two of them needing a human in the room.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 316" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The reporting week as a five-stop loop: Monday refresh, Tuesday sweep, Wednesday draft, Thursday decide, Friday sign, with Thursday and Friday marked as the only stops that require a human">
+        <style>
+          .a5cT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .a5cTi { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .a5cX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .a5cXi { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .a5cXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .a5cM { font: 400 12.5px Inter, sans-serif; fill: #5F7183; }
+          .a5cN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .a5cH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <defs>
+          <marker id="a5cAh" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="#9CC4DE"/>
+          </marker>
+        </defs>
+        <text class="a5cH" x="26" y="30">FIVE STOPS · ONE LOOP · TWO OF THEM NEED A PERSON</text>
+        <rect x="26" y="46" width="150" height="112" rx="12" fill="#072538"/>
+        <text class="a5cT" x="42" y="76">Mon · Refresh</text>
+        <text class="a5cX" x="42" y="100">plan, risks and</text>
+        <text class="a5cX" x="42" y="118">last report in</text>
+        <text class="a5cX" x="42" y="142">PMO analyst</text>
+        <rect x="184" y="46" width="150" height="112" rx="12" fill="#0E3A5C"/>
+        <text class="a5cT" x="200" y="76">Tue · Sweep</text>
+        <text class="a5cX" x="200" y="100">risk and gate</text>
+        <text class="a5cX" x="200" y="118">forecasts moved</text>
+        <text class="a5cX" x="200" y="142">PM + risk owner</text>
+        <rect x="342" y="46" width="150" height="112" rx="12" fill="#2C6A99"/>
+        <text class="a5cT" x="358" y="76">Wed · Draft</text>
+        <text class="a5cX" x="358" y="100">report drafted,</text>
+        <text class="a5cX" x="358" y="118">gaps block read</text>
+        <text class="a5cX" x="358" y="142">AI drafts, PM cuts</text>
+        <rect x="500" y="46" width="150" height="112" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="a5cTi" x="516" y="76">Thu · Decide</text>
+        <text class="a5cXw" x="516" y="100">steerco takes</text>
+        <text class="a5cXw" x="516" y="118">the ask, logs it</text>
+        <text class="a5cXw" x="516" y="142">sponsor decides</text>
+        <rect x="658" y="46" width="150" height="112" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="a5cTi" x="674" y="76">Fri · Sign</text>
+        <text class="a5cXw" x="674" y="100">decisions logged,</text>
+        <text class="a5cXw" x="674" y="118">actions sent out</text>
+        <text class="a5cXw" x="674" y="142">PM signs it</text>
+        <path d="M 733 158 L 733 194 L 101 194 L 101 170" fill="none" stroke="#9CC4DE" stroke-width="2" marker-end="url(#a5cAh)"/>
+        <text class="a5cM" x="330" y="186">and the loop starts again on Monday</text>
+        <rect x="26" y="212" width="827" height="54" rx="12" fill="#EAF2F8"/>
+        <text class="a5cXi" x="46" y="236">Three stops are assembly work a machine can hold all week without getting tired.</text>
+        <text class="a5cXi" x="46" y="256">Two are judgment. Thursday nobody can automate, Friday nobody should.</text>
+        <rect x="26" y="284" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="a5cN" x="50" y="296">If a stop needs a meeting to happen, it is not a drafting stop. Protect those two, move the rest.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the reporting week as five small stops, with the two that require a person marked in warm</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The five stops, and who owns each one<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The point of naming stops is that each one becomes small enough to survive a holiday. Nobody has to be heroic on a Friday, because Friday is now fifteen minutes of reading and signing.</p>
+        <ul>
+          <li><strong>Monday - refresh the context pack.</strong> Swap in the current plan, the current risk register, and last week's report. Five minutes, usually a PMO analyst. A stale pack is the most expensive failure in this whole cadence, because it produces confidently wrong answers about last month's programme, which is far harder to catch than obvious nonsense.</li>
+          <li><strong>Tuesday - risk and dependency sweep.</strong> What moved: gate forecasts, new risks, risks that closed, dependencies that slipped underneath you. On Northwind this is the stop where R-03, the data-engineer hiring gate, gets its honest forecast before it becomes a surprise.</li>
+          <li><strong>Wednesday - draft plus the gaps block.</strong> The draft is cheap. The gaps block is the valuable half: the list of things the material could not support. Read that first, then go and fill it from people.</li>
+          <li><strong>Thursday - steerco and decisions.</strong> The ask gets answered, or it does not, and either way it gets logged with an id and a date. No model participates in this stop.</li>
+          <li><strong>Friday - log and actions out.</strong> Decisions written into the log, actions distributed with one owner and one date each, report signed by a named human and sent.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The programme that survived a holiday.</strong> A head of delivery ran a portfolio where one PM assembled every weekly pack alone. She took two weeks off in August and the pack simply did not go out - twice. Nobody noticed until a dependent team built a sprint on a date that had moved. After the cadence went in, the Monday refresh and Wednesday draft ran without her, and the cover person's whole job was Thursday and Friday: attend, decide, sign. The pack went out both weeks she was away, and the delta section is what caught the moved date.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why the two human stops are Thursday and Friday<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>You could put a person at all five stops. Plenty of organisations do, call it oversight, and get nothing for it - because review that happens everywhere happens nowhere. PMI's 2026 AI standard is unusually direct about this: oversight needs clear structures, roles, authority and guardrails, with real intervention triggers, rather than a perfunctory review layered over everything.</p>
+        <p>So concentrate the human where intervention is actually possible. Thursday is where a decision gets taken, and a model cannot take one. Friday is where accountability attaches: one name, and that person read it, especially the numbers.</p>
+        <p>Monday, Tuesday and Wednesday are assembly. If something goes wrong there, Thursday and Friday catch it, which is what an intervention trigger means in practice. Two real checkpoints beat five ceremonial ones every time.</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="six-checks">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · the quality bar, from the leader's chair</span>
+      <h2>The six checks, and what each one buys you <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">Your PMs build these in the PM track. You need something different: the ability to pick up any report in your portfolio and know in thirty seconds whether it can be acted on. Six checks, and each missing one produces a specific, recognisable failure - not a vague drop in quality. Learn the failures and you can review by symptom. Send your PMs to session b6 in the PM track to feel it: the same six checks are scored live there, a Northwind week 9 report climbing from 24 out of 100 with every lever off to 100 with all six on. Watching the score jump when the RAG rule goes in does more for adoption than any memo you will write.</p>
+
+    <table class="clean">
+      <thead><tr><th>The check</th><th>What it buys you</th><th>The failure when it is missing</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Status by a written RAG rule</strong></td><td>A colour that two people read the same way, stated in the report itself</td><td>The colour is a mood. Amber runs for eleven weeks and nobody acts, because nobody agreed what it meant</td></tr>
+        <tr><td><strong>The delta since last week</strong></td><td>Movement, which is the only thing a sponsor can actually steer</td><td>A 14-day slip reads exactly like a stable plan. The photograph is fine, the film is missing</td></tr>
+        <tr><td><strong>One named owner and one date per action</strong></td><td>A commitment a specific person can be held to next week</td><td>Orphan actions. "Follow up on data quality" reappears for a month, reworded each time</td></tr>
+        <tr><td><strong>Decisions taken, logged</strong></td><td>An audit trail, and an end to relitigating settled things</td><td>The same decision gets taken three times, slightly differently, by three different groups</td></tr>
+        <tr><td><strong>Evidence behind every claim</strong></td><td>A report that can be challenged, which is the only kind that can be trusted</td><td>Unfalsifiable prose. "Quality is looking reasonable" cannot be argued with or relied on</td></tr>
+        <tr><td><strong>The ask</strong></td><td>A steerco that decides something instead of nodding at something</td><td>It is a broadcast. The real escalation then happens in a corridor, off the record</td></tr>
+      </tbody>
+    </table>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Reading a report by symptom, in thirty seconds<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>You are not grading prose. You are looking for six structural features, and their absence is visible before you read a sentence.</p>
+        <ul>
+          <li><strong>Scan for a colour and a rule on the same page.</strong> If the rule is not restated, it lives in someone's head and you have a mood ring.</li>
+          <li><strong>Scan for two numbers of the same kind.</strong> This week and last week. One number is a photograph.</li>
+          <li><strong>Scan the actions column for names.</strong> Any instance of "the team", "engineering" or "TBC" that has been TBC for three weeks is a finding.</li>
+          <li><strong>Scan for ids and for the last paragraph.</strong> D-14, R-07, NWD-412, a metric with a denominator - no ids means no evidence, whatever the adjectives say. And if the closing paragraph does not name a decision, options with costs and an expiry date, the report was written to inform, not to move anything.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Amber for eleven weeks.</strong> A programme reported amber every week for a quarter with no written definition of amber. Every steerco nodded. In week twelve it went red, and the sponsor asked why nobody had flagged it. The honest answer was that everybody had - in a colour nobody had defined. The report was never lying. It simply could not carry information, and no amount of AI drafting would have changed that, because the missing thing was a rule, not a paragraph.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What the checks look like on Northwind week 9<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Northwind is nine weeks in. M3, raw ingest signed off, was gated for 10 August and now forecasts 24 August. Six of nine sources are landing, 812k rows a night, and data quality is 96.4% against a 99% gate. Here is the same week with the checks on and off.</p>
+        <table class="clean">
+          <thead><tr><th>Check off</th><th>Check on</th></tr></thead>
+          <tbody>
+            <tr><td>"Amber - some challenges with ingest"</td><td>"Amber: M3 forecasts 24 August against a 10 August gate, with a recovery plan attached. Amber means a gate is 2 or more weeks late and recoverable"</td></tr>
+            <tr><td>"Data quality is improving"</td><td>"DQ 96.4% this week against 96.1% last week, gate is 99%. Ticket NWD-412"</td></tr>
+            <tr><td>"The team will chase the vendor"</td><td>"Priya N. to hold the Veridian escalation call by 6 August, VN-2291"</td></tr>
+            <tr><td>"We discussed contract cover"</td><td>"D-14, 29 July, Elena V.: hold contract cover pending the 6 August vendor call"</td></tr>
+            <tr><td>"We may need more resource"</td><td>"Decision needed by 8 August: 2 contract engineers for 4 weeks, about 38k, or M4 moves. After 8 August the option lapses"</td></tr>
+          </tbody>
+        </table>
+        <p>Nothing in the right column is longer prose. It is the same length with facts in it. That is the whole shift.</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="too-good">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the failure nobody warns you about</span>
+      <h2>When the reports get too good <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">Here is the failure mode that only appears after AI drafting works. Every report in your portfolio becomes well-structured, correctly formatted, evenly toned and pleasant to read. And you quietly lose a signal you had been using for years without ever writing it down: the sound of a PM who was worried. PMBOK 7's stakeholder and measurement domains both treat the report as a two-way instrument - it informs, and the reaction to it informs you back. Uniform tone attacks the second half, so you have to replace that channel on purpose.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 356" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One report read by three audiences: the sponsor, a dependent team and the delivery team, and what each of them actually needs from it">
+        <style>
+          .a5rT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .a5rTi { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .a5rX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .a5rXi { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .a5rXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .a5rN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .a5rH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <defs>
+          <marker id="a5rAh" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="#9CC4DE"/>
+          </marker>
+        </defs>
+        <text class="a5rH" x="26" y="30">ONE REPORT · THREE READERS · THREE DIFFERENT JOBS</text>
+        <rect x="26" y="44" width="265" height="76" rx="12" fill="#072538"/>
+        <text class="a5rT" x="46" y="74">The sponsor</text>
+        <text class="a5rX" x="46" y="98">reads it once, for thirty seconds</text>
+        <rect x="307" y="44" width="265" height="76" rx="12" fill="#0E3A5C"/>
+        <text class="a5rT" x="327" y="74">A dependent team</text>
+        <text class="a5rX" x="327" y="98">reads it to plan their own week</text>
+        <rect x="588" y="44" width="265" height="76" rx="12" fill="#2C6A99"/>
+        <text class="a5rT" x="608" y="74">The delivery team</text>
+        <text class="a5rX" x="608" y="98">reads it to see themselves in it</text>
+        <line x1="158" y1="122" x2="158" y2="139" stroke="#9CC4DE" stroke-width="2" marker-end="url(#a5rAh)"/>
+        <line x1="439" y1="122" x2="439" y2="139" stroke="#9CC4DE" stroke-width="2" marker-end="url(#a5rAh)"/>
+        <line x1="720" y1="122" x2="720" y2="139" stroke="#9CC4DE" stroke-width="2" marker-end="url(#a5rAh)"/>
+        <rect x="26" y="146" width="265" height="90" rx="12" fill="#9CC4DE"/>
+        <text class="a5rTi" x="46" y="174">Actually needs</text>
+        <text class="a5rXi" x="46" y="198">the ask, the date, the cost</text>
+        <text class="a5rXi" x="46" y="216">of not deciding this week</text>
+        <rect x="307" y="146" width="265" height="90" rx="12" fill="#9CC4DE"/>
+        <text class="a5rTi" x="327" y="174">Actually needs</text>
+        <text class="a5rXi" x="327" y="198">the dates that move theirs,</text>
+        <text class="a5rXi" x="327" y="216">and one name to call</text>
+        <rect x="588" y="146" width="265" height="90" rx="12" fill="#9CC4DE"/>
+        <text class="a5rTi" x="608" y="174">Actually needs</text>
+        <text class="a5rXi" x="608" y="198">the gaps block, and what</text>
+        <text class="a5rXi" x="608" y="216">was escalated for them</text>
+        <rect x="26" y="252" width="827" height="66" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="a5rTi" x="46" y="280">Write it only for the sponsor and the other two stop reading</text>
+        <text class="a5rXw" x="46" y="304">and those two are the readers who used to catch your errors for free.</text>
+        <rect x="26" y="326" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="a5rN" x="50" y="338">A perfect report nobody reads is worse than a rough one three teams argue with.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the same weekly report, and the three different jobs it has to do</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Three habits that keep the signal<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>You cannot un-improve the writing, and you should not want to. What you can do is stop relying on tone as your early-warning system and replace it with three deliberate habits.</p>
+        <ul>
+          <li><strong>Read the gaps block, not just the report.</strong> The report is what could be supported. The gaps block is what could not - the action with no real owner, the number nobody could source, the date that came from an assumption. Three weeks of gaps blocks tells you more about a programme than three months of reports, and it is the part that has not been smoothed.</li>
+          <li><strong>Ask one question no report can answer.</strong> Every week, one PM, one question: "what are you worried about that is not in here?" or "what would you tell me if this were not written down?" It takes ninety seconds and it restores the channel the tone used to carry.</li>
+          <li><strong>Watch for the report nobody reads.</strong> Drafting is cheap now, so reports grow. A five-page pack that is beautiful and unread is a worse instrument than the scruffy one page people argued with. If nobody has challenged a line in a month, that is not quality. That is silence.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The PM who stopped sounding worried.</strong> A delivery lead had one PM whose reports she always read twice, because when he was anxious his sentences got shorter. After the team standardised on a drafted format, his reports read exactly like everyone else's - clean, complete, calm. Two months later a vendor issue surfaced late, and when she went back through the packs the warning was there every week, in the gaps block, in a line about an owner nobody could confirm. She had been reading the report and skipping the gaps. Now the gaps block goes first in her portfolio review, and the reports go second.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 2</span>
+      <h2>Design your own cadence <span class="tag demo">★ 12 min · everyone builds</span></h2>
+    </div>
+    <p class="lede">Take your own reporting week and fill a five-day grid: what is drafted, what is reviewed, and who signs. Do it for one real programme, not the portfolio - the portfolio version is just this repeated. Most people find they have three stops crammed into one afternoon and no owner named for any of them.</p>
+
+    <div class="steps">
+      <div class="step"><p>Write down what actually happens today, honestly. Who assembles the pack, on which day, from how many sources, and how long it takes them.</p></div>
+      <div class="step"><p>Split it into the five stops. Refresh, sweep, draft, decide, sign. Some of yours will be empty, which is the finding.</p></div>
+      <div class="step"><p>Put a named person against each stop - a role is not enough, because a role cannot be on leave. Then name the cover person for each.</p></div>
+      <div class="step"><p>Mark the two stops that require a human in the room. If you have marked more than two, ask what intervention each one is actually capable of - review with no power to change anything is theatre. Then write the one thing that would break the loop, which is usually the Monday refresh, because it is small, boring and nobody's actual job.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ Try it now - the cadence grid, fill it in</span>PROGRAMME: ..........   REPORT GOES OUT: .......... at ..........
+MON  refresh the pack        done by: ..........   cover: ..........
+     current plan, current risk register, last week's report go in
+TUE  risk + dependency sweep done by: ..........   cover: ..........
+     gate forecasts moved, risks opened and closed, deps slipped
+WED  draft + gaps block      AI drafts   gaps read first by: ..........
+     the gaps block is read BEFORE the report, and filled from people
+THU  steerco + decisions     HUMAN REQUIRED   chaired by: ..........
+     the ask is answered or refused, and logged with an id and a date
+FRI  log + actions out       HUMAN REQUIRED   signed by: ..........
+     one owner and one date per action, a named human signs, then send
+HARD LENGTH: one page weekly. HARD RULE: no colour without the rule beside it.</div>
+
+    <div class="prompt-box bad"><span class="label">The cadence almost everyone actually has</span>MON-THU  nothing
+FRI      one person assembles four threads, a ticket export and a spreadsheet
+         into a document between 2pm and 6pm, then sends it
+         reviewed by: nobody   signed by: whoever sent it   cover: none</div>
+
+    <div class="callout tip">
+      <strong>Why the bad one is worse than it looks</strong>
+      It is not the four hours. It is that the pack has one point of failure, no review that could change anything, and no stop where a slip gets noticed before it is written down. Adding AI to that Friday afternoon makes the document faster and the programme no safer. The cadence, not the drafting, is what buys you the safety.
+    </div>
+  </section>
+
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 2</span>
+      <h2>Write the RAG rule with your sponsor <span class="tag demo">★ 10 min · build your own</span></h2>
+    </div>
+    <p class="lede">This is the highest-value fifteen minutes in the leader track, and it is one meeting. An agreed, written RAG rule turns a colour from an opinion into information, and it is the only one of the six checks that a PM cannot install alone - it needs your sponsor's agreement, which means it needs you.</p>
+
+    <table class="clean">
+      <thead><tr><th>Colour</th><th>A workable default to start from</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Green</strong></td><td>Every live gate forecasts on or before its date, and no critical risk is open above the agreed threshold</td></tr>
+        <tr><td><strong>Amber</strong></td><td>A gate forecasts 2 or more weeks late, and a credible recovery plan is attached to this report</td></tr>
+        <tr><td><strong>Red</strong></td><td>A gate is unrecoverable without a steerco decision on scope, money or the date</td></tr>
+      </tbody>
+    </table>
+
+    <div class="steps">
+      <div class="step"><p>Take the default above into the meeting already written. Never open with "how should we define amber" - you will get a philosophy session. Open with a draft and invite edits.</p></div>
+      <div class="step"><p>Test it against three real past weeks from your own portfolio. If the rule would have coloured a week differently from how you actually coloured it, that is the conversation worth having.</p></div>
+      <div class="step"><p>Agree the threshold numbers out loud: how many weeks late is amber, what counts as a critical risk, and who can overrule the rule. Somebody usually can, and it is better to name them than to discover them.</p></div>
+      <div class="step"><p>Agree that the rule gets restated in one line inside every report, then put it in the house rules file the same day, before anyone's memory of the meeting drifts. That one line removes the "what does amber mean here" conversation that eats the first ten minutes of every steerco.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ The script for the one meeting - fifteen minutes</span>"I want five minutes on one thing: what amber means.
+Right now our reports use a colour we have never written down, so you and I read it
+differently. That is why amber can run for a quarter without anyone acting.
+
+Here is a draft rule. Green: every live gate forecasts on or before its date and no
+critical risk is open above our threshold. Amber: a gate is 2 or more weeks late and
+there is a credible recovery plan attached. Red: the gate is unrecoverable without a
+decision from you on scope, money or the date.
+
+I have run our last three weeks against it. Two would have been coloured the same.
+Week 9 would have gone amber a fortnight earlier than it did.
+Two questions. Is 2 weeks the right amber threshold for you? And who can overrule the
+rule when the rule and the room disagree?
+If you are happy, it goes in every report as one line, starting Friday."</div>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>Fifteen minutes, then nine months of arguments that did not happen.</strong> A PMO lead had spent two years watching steercos open with a debate about what the colour meant. She took a drafted rule to her sponsor, tested it against three past weeks, and got it agreed before the coffee arrived. The rule itself was unremarkable. What changed was that the first ten minutes of every steerco stopped being about interpretation and started being about the ask - and the programme that had been amber for a quarter was red within two weeks, on purpose, with a decision attached.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Try it yourself - this week <span class="tag exercise">◐ 30-45 min total</span></h2>
+    </div>
+    <ul>
+      <li>Fill the five-day grid for one real programme, with named people and named cover. Note which stop has no owner today.</li>
+      <li>Book the fifteen minutes with your sponsor and take the drafted RAG rule in with you. Do not go in with a question.</li>
+      <li>Pick three reports from your portfolio at random and score them against the six checks. Write down which check is missing most often - it is almost always the ask or the rule.</li>
+      <li>Ask one PM the question no report can answer: what are you worried about that is not in here. Then do it again next week with a different PM.</li>
+      <li>Set a hard length for the weekly report in your house rules, before drafting makes everything three pages. Then send your PMs to the b6 simulator and ask what their own last report scored out of six, without asking whose is whose.</li>
+    </ul>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">Taught from the delivery reporting canon, PMI's public AI guidance, and the Northwind case carried through both tracks. Certification and the full normative text of PMI's standards stay with PMI. This session covers:</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMBOK Guide 7 - measurement and stakeholder performance domains</span><span class="note">Parts 1-3 · what a report is for, and who it has to serve</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMI - AI in project management, adoption reporting</span><span class="note">Part 0 · status reporting as the most common first use</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">PMI - Standard for AI in Portfolio, Program and Project Management (2026)</span><span class="note">Part 1 · oversight with real intervention triggers, not perfunctory review</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">PM track b6 - the status report live simulator</span><span class="note">Part 2 · the same six checks, scored lever by lever</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · You are designing the reporting week. How many stops should require a human in the room, and which?</p>
+      <button class="qopt" type="button">A · All five, so there is oversight at every stage of the cadence</button>
+      <button class="qopt" type="button">B · Two - the steerco where a decision is taken, and the signature before it goes out</button>
+      <button class="qopt" type="button">C · None, once the context pack refreshes itself automatically</button>
+      <p class="qwhy">Oversight that happens everywhere happens nowhere. PMI's standard asks for real intervention triggers, not a review layer over everything. Concentrate the human where intervention is possible: the decision, and the signature.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · Every report in your portfolio is now well-structured, evenly toned and pleasant to read. What have you lost?</p>
+      <button class="qopt" type="button">A · Nothing - consistency across a portfolio is the goal</button>
+      <button class="qopt" type="button">B · Only formatting variety, which never carried information anyway</button>
+      <button class="qopt" type="button">C · The tone signal you were reading without knowing it, so you now have to read the gaps block and ask a live question</button>
+      <p class="qwhy">You used to hear when a PM was worried. Uniform drafting removes that channel, so replace it deliberately: read the gaps block before the report, and ask one PM a week what is worrying them that is not written down.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · A programme has reported amber for eleven consecutive weeks. What is the first thing to fix?</p>
+      <button class="qopt" type="button">A · The RAG rule - write it down, get the sponsor to agree it, restate it in every report</button>
+      <button class="qopt" type="button">B · The PM, who is clearly avoiding the difficult conversation</button>
+      <button class="qopt" type="button">C · The report template, which needs a stronger summary section</button>
+      <p class="qwhy">Eleven weeks of amber is the classic undefined-colour failure. Without a written rule the colour is a mood, so nobody can act on it and nobody can argue with it. One fifteen-minute meeting fixes it permanently.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Leader session 5 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>The five stops</b><span>Mon refresh · Tue sweep · Wed draft + gaps · Thu decide · Fri log and sign.</span></div>
+      <div class="cheat-item"><b>Two human points</b><span>Thursday nobody can automate, Friday nobody should. Everything else is assembly.</span></div>
+      <div class="cheat-item"><b>The six checks</b><span>rule-based status · delta · owner and date · decisions logged · evidence · the ask.</span></div>
+      <div class="cheat-item"><b>Review by symptom</b><span>no rule = a mood · no delta = a photograph · no name = an orphan · no ask = a broadcast.</span></div>
+      <div class="cheat-item"><b>The RAG rule</b><span>green on or before the date · amber 2+ weeks late with a recovery plan · red needs a steerco decision.</span></div>
+      <div class="cheat-item"><b>Take a draft, not a question</b><span>the rule gets agreed in one meeting if you walk in with it already written.</span></div>
+      <div class="cheat-item"><b>The too-good report</b><span>uniform tone removes your early warning. Read the gaps block first, ask one live question.</span></div>
+      <div class="cheat-item"><b>Guard the length</b><span>drafting is cheap, so reports grow. One page weekly, defended in the house rules.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Leader session 5 of 6 · learn-ai-project-management-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="a4-risk-deps-escalation.html">← Previous: Risk, dependencies and escalation</a> &nbsp;·&nbsp; <a href="a6-rollout-to-pmo.html">Next: Rolling it out to a PMO →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

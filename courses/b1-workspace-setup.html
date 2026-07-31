@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PM session 1 · Your programme workspace - learn AI + project management with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-project-management-with-phoebe</a> / PM session 1 of 10</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI + Project Management with Phoebe · PM track · Session 1 of 10</div>
+    <h1>Your programme workspace: <span class="accent">context in, artifacts out, your name on it</span></h1>
+    <p class="sub">Most PMs open a chat window, paste a mess, and get back fluent nonsense. Tonight you build the other thing: one workspace per programme, loaded with the documents that make an answer possible, governed by house rules you write once. By the end you have a live Northwind workspace and the three rails that keep every later session honest.</p>
+    <div class="chip-row">
+      <span class="chip level">🟢 PM track</span>
+      <span class="chip audience">PMs · TPMs · delivery leads</span>
+      <span class="chip audience">Claude, any plan · no code</span>
+      <span class="chip time">Start here</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · What actually changes</span>
+      <span class="a3" style="flex:5">18-42 · Build-along: the workspace</span>
+      <span class="a4" style="flex:1">42-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>How this track works</h2>
+    </div>
+    <p class="lede">Ten sessions, all hands-on, all on one running programme: <strong>Northwind</strong>, a fictional retailer building a governed data platform from a raw dump through to production BI. If you took <em>learn tech project PMO with phoebe</em>, you already built Northwind's charter, milestones, dependencies, risk register and tracker by hand. This track builds the same artifacts with Claude sitting next to you - faster, and with a rubric so you can tell a good one from a fluent one. Tonight is setup. b2 turns a vague mandate into a charter, b3-b5 build the plan, dependencies and risk register, b6 is the live status-report simulator, b7-b9 wire the weekly machine, b10 runs a whole delivery week end to end.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill peach">★ Try it now prompt</span>
+      <span class="pill inkpill">Official sources covered</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      An honest split of your PM week into what AI can draft and what only you can decide, a live Northwind workspace with a real context pack, a house-rules file you will reuse on every programme you ever run, and the three rails: context beats prompting, the dates come from the team, a named human signs it.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: WHAT CHANGES ============ -->
+  <section class="section" id="what-changes">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers PMI's AI standard + adoption reporting</span>
+      <h2>What AI does to the PM job <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Split your week into two piles. One pile is artifact labour - drafting the status report, reformatting the plan, chasing owners, collating four threads into one update, turning a meeting into actions. The other pile is judgment - what to escalate, what to trade away, whether that date is real, who to trust. AI collapses the first pile and cannot touch the second. Every session in this track lives on that line.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The PM week split into four: drafting artifacts and collating noise are where AI helps; judgment calls and accountability stay human">
+        <style>
+          .p1sT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .p1sI { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .p1sX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .p1sXi { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .p1sXm { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .p1sN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .p1sH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <text class="p1sH" x="30" y="32">AI DRAFTS THIS</text>
+        <text class="p1sH" x="450" y="32">YOU OWN THIS</text>
+        <rect x="30" y="46" width="195" height="96" rx="12" fill="#0E3A5C"/>
+        <text class="p1sT" x="52" y="82">Draft artifacts</text>
+        <text class="p1sX" x="52" y="104">charter, plan, report,</text>
+        <text class="p1sX" x="52" y="122">risk log - first pass</text>
+        <rect x="240" y="46" width="195" height="96" rx="12" fill="#2C6A99"/>
+        <text class="p1sT" x="262" y="82">Collate the noise</text>
+        <text class="p1sX" x="262" y="104">threads, tickets, notes</text>
+        <text class="p1sX" x="262" y="122">into one view</text>
+        <rect x="450" y="46" width="195" height="96" rx="12" fill="#9CC4DE"/>
+        <text class="p1sI" x="472" y="82">Judgment calls</text>
+        <text class="p1sXm" x="472" y="104">trade-offs, priority,</text>
+        <text class="p1sXm" x="472" y="122">what to escalate</text>
+        <rect x="660" y="46" width="195" height="96" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="p1sI" x="682" y="82">You sign it</text>
+        <text class="p1sXi" x="682" y="104">dates, commitments,</text>
+        <text class="p1sXi" x="682" y="122">the name on the page</text>
+        <rect x="30" y="176" width="825" height="58" rx="12" fill="#EAF2F8"/>
+        <text class="p1sXm" x="52" y="200">The pile on the left is most of your week and almost none of your value.</text>
+        <text class="p1sXm" x="52" y="220">The pile on the right is why they hired a person. Move the left pile, protect the right.</text>
+        <rect x="30" y="258" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="p1sN" x="54" y="270">PMI's 2026 AI standard says it plainly: human oversight needs real triggers, not a rubber stamp.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the line this whole course runs along: drafting moves, judgment does not</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The three places AI lands first in delivery<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Across surveyed delivery teams the same three uses show up before anything else, in this order. They are not a coincidence - they are the three jobs that are pure collation, done weekly, and hated.</p>
+        <ul>
+          <li><strong>Status reporting.</strong> A week of noise compressed into something a sponsor can read. Session b6 builds this with a live scoring simulator, because a bad AI status report is worse than none - it is fluent, confident, and empty.</li>
+          <li><strong>Task and owner suggestions.</strong> Turning a meeting into "who does what by when". Session b7.</li>
+          <li><strong>Early-warning signals.</strong> Spotting the slip or the risk trigger before it becomes an escalation. Sessions b4 and b5.</li>
+        </ul>
+        <p>Reporting on AI in project management puts practical experience low - roughly a fifth of project managers say they have real hands-on experience with it, about half say little or none - while adoption pressure from above is high. That gap is the opportunity this course is aimed at.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The Friday that disappeared.</strong> A delivery lead spent every Friday afternoon assembling one status report from Jira, three Slack channels and a spreadsheet. Same shape, every week, four hours. After a workspace like tonight's, the draft arrived in ninety seconds and the four hours went to the two things that actually needed her: a vendor who was quietly slipping, and an engineer who was about to resign. The report was never the job.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What does NOT change - the PMI line<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>PMI published the first edition of its AI standard for portfolio, program and project management in 2026. It is deliberately technology-agnostic - it names no vendor - and human-centered. Two things in it govern this whole course:</p>
+        <ul>
+          <li><strong>Human-in-the-loop is a value source, not a safety net.</strong> The human is not there to catch the machine's mistakes; the human is where the judgment lives. Reviewing is not the point - deciding is.</li>
+          <li><strong>Governance means "clear structures, roles, authority, and guardrails"</strong> inside your existing governance, with real intervention triggers and escalation paths. Not an IT side-project, and not a perfunctory review.</li>
+        </ul>
+        <p>Translated to your desk: nothing about accountability moved. The plan is still yours. The date you commit is still yours. The report with your name on it is still yours. What moved is how long the first draft takes.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: THE WORKSPACE ============ -->
+  <section class="section" id="workspace">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers Claude Projects, context, and house rules</span>
+      <h2>The workspace: one programme, one place, loaded <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">A chat window with no context can only give you generic project-management advice, which you do not need. A workspace that holds your charter, plan, risk register and glossary can tell you that milestone M3 is at risk because of the vendor in risk R-07 - which is the only kind of answer worth having. The whole skill is feeding it, not phrasing prompts cleverly.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workspace anatomy: the context pack and house rules feed one programme workspace, which produces drafts that a named human reviews and signs; confidential material never enters">
+        <style>
+          .p2wT { font: 700 14px Inter, sans-serif; fill: #FFFFFF; }
+          .p2wI { font: 700 14px Inter, sans-serif; fill: #16232E; }
+          .p2wX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .p2wXi { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .p2wXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .p2wN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+        </style>
+        <defs>
+          <marker id="p2wAh" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="#9CC4DE"/>
+          </marker>
+        </defs>
+        <rect x="26" y="40" width="190" height="112" rx="12" fill="#0E3A5C"/>
+        <text class="p2wT" x="46" y="70">The context pack</text>
+        <text class="p2wX" x="46" y="92">charter · plan · risks</text>
+        <text class="p2wX" x="46" y="110">RACI · glossary</text>
+        <text class="p2wX" x="46" y="128">last 4 status reports</text>
+        <rect x="26" y="168" width="190" height="88" rx="12" fill="#2C6A99"/>
+        <text class="p2wT" x="46" y="198">The house rules</text>
+        <text class="p2wX" x="46" y="220">how we write, what</text>
+        <text class="p2wX" x="46" y="238">is never invented</text>
+        <line x1="222" y1="96" x2="286" y2="130" stroke="#9CC4DE" stroke-width="2" marker-end="url(#p2wAh)"/>
+        <line x1="222" y1="212" x2="286" y2="176" stroke="#9CC4DE" stroke-width="2" marker-end="url(#p2wAh)"/>
+        <rect x="296" y="104" width="190" height="96" rx="12" fill="#072538"/>
+        <text class="p2wT" x="316" y="140">One workspace</text>
+        <text class="p2wX" x="316" y="162">per programme, kept</text>
+        <text class="p2wX" x="316" y="180">current every week</text>
+        <line x1="492" y1="152" x2="556" y2="152" stroke="#9CC4DE" stroke-width="2" marker-end="url(#p2wAh)"/>
+        <rect x="566" y="104" width="190" height="96" rx="12" fill="#9CC4DE"/>
+        <text class="p2wI" x="586" y="140">Drafts, not truth</text>
+        <text class="p2wXi" x="586" y="162">report, plan, actions,</text>
+        <text class="p2wXi" x="586" y="180">risk updates</text>
+        <line x1="762" y1="152" x2="812" y2="152" stroke="#9CC4DE" stroke-width="2" marker-end="url(#p2wAh)"/>
+        <text class="p2wI" x="790" y="220">You</text>
+        <text class="p2wXi" x="768" y="240">review</text>
+        <text class="p2wXi" x="770" y="258">+ sign</text>
+        <rect x="296" y="228" width="460" height="72" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="p2wI" x="316" y="256">Never in the pack</text>
+        <text class="p2wXw" x="316" y="278">personal data · client-confidential terms · anything under NDA</text>
+        <rect x="26" y="296" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="p2wN" x="50" y="308">Context is the whole job. A clever prompt over an empty workspace is still guesswork.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - context pack plus house rules in, reviewed drafts out, confidential material never in</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>What goes in the context pack<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Six documents. Not thirty - a bloated pack costs you attention and adds noise. These six answer almost every question a delivery week produces.</p>
+        <table class="clean">
+          <thead><tr><th>Document</th><th>What it unlocks</th></tr></thead>
+          <tbody>
+            <tr><td>The charter (or the mandate email, if that is all you have)</td><td>Scope, priorities, non-goals - so a draft stops proposing work you already cut</td></tr>
+            <tr><td>The milestone plan with gate criteria</td><td>Dates and definitions of done - so "on track" means something</td></tr>
+            <tr><td>The risk register (RAID)</td><td>Named risks with triggers - so an early warning cites R-07, not "some risk"</td></tr>
+            <tr><td>The RACI or owner list</td><td>Real names - so actions get an owner instead of "the team"</td></tr>
+            <tr><td>A one-page glossary of your acronyms</td><td>CDC, M3, DQ, steerco - so drafts speak your programme's language</td></tr>
+            <tr><td>The last three or four status reports</td><td>Your house voice and the week-on-week delta</td></tr>
+          </tbody>
+        </table>
+        <div class="callout tip">
+          <strong>The refresh habit</strong>
+          A context pack decays. Whatever workspace you use, replace the plan, risk register and latest report every week - five minutes, usually Monday. A stale pack produces confidently wrong answers about last month's programme, which is harder to catch than obvious nonsense.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Where to put it - Projects, files, connectors<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>A Project</strong> (Claude's persistent workspace) is the simplest home: it keeps its own instructions and files across conversations, so you stop re-explaining Northwind every Monday.</li>
+          <li><strong>Skills</strong> are reusable instruction files - your house rules and your report format, written once, applied every time. Session b9 turns tonight's house rules into one.</li>
+          <li><strong>Connectors (MCP)</strong> plug the workspace into Jira, Notion, Sheets and the rest, so the pack partly refreshes itself. Also session b9 - and the point where permissions stop being theoretical, which is why the leader session a2 covers it separately.</li>
+          <li><strong>Availability varies by plan and changes fast.</strong> If a feature named here has moved by the time you read it, the exercise still works: the artifact is the point, the button is not.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: THE RAILS ============ -->
+  <section class="section" id="rails">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the rails every later session assumes</span>
+      <h2>Three rails, and why each one exists <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">Techniques change every quarter. These three do not, because each one is scar tissue from a specific way AI-assisted delivery goes wrong.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Rail 1 - context beats prompting<span class="mini">1 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>An elaborate prompt over an empty workspace produces confident generic advice. A plain question over a loaded workspace produces your programme's answer. When a draft comes back weak, the fix is almost never a cleverer instruction - it is a missing document.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Rail 2 - the dates come from the team<span class="mini">1 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A model asked for a plan will produce dates. They will look reasonable, be evenly spaced, and mean nothing - nobody was asked, nothing was capacity-checked. Use AI to draft the <em>structure</em> of a plan: the milestones, the gate criteria, the dependencies, the questions to ask. Then get the dates from the people who will be held to them, and put those in.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The plan nobody had agreed to.</strong> A PM presented an AI-drafted schedule at a kickoff. It looked immaculate - clean phases, tidy two-week increments. The engineering lead asked one question: "who told you the migration takes three weeks?" Nobody had. The plan was fiction with good typography, and the credibility cost took a month to earn back.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Rail 3 - a named human signs it<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Every artifact that leaves your workspace - report, escalation, risk update, plan - has one accountable human name on it, and that human read it. This is not a formality: it is exactly what PMI's standard means by human oversight with real intervention triggers rather than a perfunctory review.</p>
+        <ul>
+          <li><strong>Read before you send</strong>, especially the numbers. Fluency is not accuracy, and a plausible number is the hardest error to catch.</li>
+          <li><strong>Never let a draft assert a fact you cannot source.</strong> If it says throughput improved, you should be able to point at the ticket or the metric.</li>
+          <li><strong>Own the consequence.</strong> "The AI wrote it" has never once worked as an answer at a steerco, and saying it costs more credibility than the error did.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>Say it once, out loud</strong>
+          "Context beats prompting. The dates come from the team. A named human signs it." That is the spine of the whole PM track.
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 2</span>
+      <h2>Build the Northwind workspace <span class="tag demo">★ 12 min · everyone builds</span></h2>
+    </div>
+    <p class="lede">You will build this for Northwind now and rebuild it for your own programme this week. It takes about fifteen minutes once and pays back every Monday after.</p>
+
+    <div class="steps">
+      <div class="step"><p>Create a Project (or a dedicated folder plus a fresh conversation, if your plan has no Projects). Name it for the programme, not the tool: <em>Northwind data platform</em>.</p></div>
+      <div class="step"><p>Add the context pack. For Northwind tonight: the mandate email, a six-milestone plan sketch, a five-row risk register, an owner list, and a glossary of the acronyms. For your real programme: whatever exists today, even if it is thin.</p></div>
+      <div class="step"><p>Write the workspace instructions - who you are, what the programme is, what state it is in, and what you want back. Use the prompt below as the skeleton.</p></div>
+      <div class="step"><p>Test it with a question that is impossible to answer without the pack: <em>"Which milestone is most at risk right now, and which named risk drives it?"</em> A good workspace names M3 and R-07. A bad one gives you generic advice about risk management.</p></div>
+      <div class="step"><p>If the answer was generic, do not rewrite the question. Find the missing document, add it, ask again. That is rail one in practice.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ Try it now - the workspace instructions</span>You are supporting me on one programme. Work only from the documents in this workspace.
+
+PROGRAMME: Northwind data platform. A retailer moving from a raw operational dump to a
+governed warehouse with production BI. Six milestones, M1-M6. Currently week 9, M3 (raw
+ingest signed off) is the live gate.
+
+ME: the delivery lead. I run the weekly report, the risk register, and the steerco.
+
+HOW TO WORK WITH ME
+- Answer from the attached charter, plan, risk register, owner list and past reports.
+  If something is not in them, say "not in the pack" - do not fill the gap from
+  general knowledge.
+- Never invent a date, a name, a number, or a decision. Dates come from the team.
+- Cite the source inside the pack for any claim: the milestone id, risk id, or report week.
+- When I ask for an artifact, match the format of the last one in the pack.
+- Ask me up to three questions when the pack is genuinely missing something material.</div>
+
+    <div class="prompt-box bad"><span class="label">The version that fails - no context, clever phrasing</span>You are an expert PMP-certified programme director with 20 years of experience. Think step by step and use best practices to produce a world-class status report for my data platform project.</div>
+
+    <div class="callout tip">
+      <strong>Why the second one fails</strong>
+      It has nothing to work from. Twenty imagined years of experience cannot tell it that Northwind's M3 gate is 10 August, that R-07 is a vendor SLA, or that your sponsor hates adjectives. Persona padding is not context. Every line of the first prompt is either a fact or a rule about how to handle missing facts - which is what makes it work.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 2</span>
+      <h2>Write your house rules - once, for every programme <span class="tag demo">★ 10 min · build your own</span></h2>
+    </div>
+    <p class="lede">The workspace instructions are programme-specific. The house rules are yours: how you write, what you never allow, what a good artifact looks like. Write them tonight, carry them for years. In b9 you will turn this file into a reusable skill.</p>
+
+    <div class="steps">
+      <div class="step"><p>Start from the three rails, then add your own hard "never" list - the things that have burned you.</p></div>
+      <div class="step"><p>Add your artifact standards: how long a status report is, whether actions always carry owner and date, what your RAG colours actually mean.</p></div>
+      <div class="step"><p>Add your voice rules. Yours might be: short sentences, no adjectives about progress, numbers or nothing.</p></div>
+      <div class="step"><p>Paste it into your workspace instructions under a HOUSE RULES heading, and keep the file somewhere you can reuse it on the next programme.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ The house rules starter - edit hard, then keep</span>HOUSE RULES (apply to every artifact you draft for me)
+
+NEVER
+- Invent a date, a headcount, a cost, a name, or a decision. If it is not in the pack,
+  write "TBC - ask [role]".
+- State a fact I cannot trace. Every claim carries a ticket id, a metric, or a report week.
+- Use "good progress", "on track" or "some delays" without the number behind them.
+- Put personal data, client-confidential terms, or anything under NDA into this workspace.
+
+ALWAYS
+- One accountable owner and one date per action. Never "the team".
+- RAG by our agreed rule, and restate the rule in the report.
+- Show the change since last week, not just the current state.
+- End anything going to a sponsor with the decision I need and by when.
+
+VOICE
+- Short sentences. No adjectives about progress. Numbers or nothing.
+- Match the format of the most recent example in the pack.</div>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The rule that saved a steerco.</strong> One PM added a single line to her house rules: any number in a draft must carry its source. The next week the draft claimed data-quality had "improved significantly" and could not produce a ticket or a metric for it - because it had smoothed a wobble in the numbers into a trend. She caught it in ten seconds, went back to the actual dashboard, and reported the truth: quality was flat and the gate was at risk. That is the difference between a rule and a hope.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Try it yourself - this week <span class="tag exercise">◐ 30-45 min total</span></h2>
+    </div>
+    <ul>
+      <li>Build the workspace for a real programme of yours - not Northwind. Six documents, even if three of them are thin.</li>
+      <li>Ask it the impossible-without-context question: which milestone is most at risk, and which named risk drives it. If the answer is generic, find the missing document.</li>
+      <li>Finish your house rules file. Add at least two "never" lines that come from something that has actually gone wrong on your programmes.</li>
+      <li>Write down the one PM task you spend the most hours on each week. That is your target artifact for the rest of the track - and probably the status report.</li>
+      <li>Check what your organisation allows before you put anything real in a workspace. If nobody knows, that is a genuine finding - leader session a2 is about exactly that gap.</li>
+    </ul>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">Taught from PMI's public standards and AI guidance, the delivery canon, and vendor documentation for the tooling. Certification (PMP, PMI-ACP) and the full normative text of the AI standard stay with PMI. This session covers:</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMI - Standard for AI in Portfolio, Program and Project Management (2026)</span><span class="note">Part 1 + 3 · human-in-the-loop, oversight with real triggers</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Anthropic docs - Projects, context, Skills (overview)</span><span class="note">Part 2 · the workspace and the pack; depth in b9</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">PMI - AI in project management, adoption reporting</span><span class="note">Part 1 · where AI lands first, the practitioner skill gap</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">learn-tech-project-pmo-with-phoebe - the Northwind case</span><span class="note">Part 0 · the artifacts this track drafts with AI</span></div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · Your draft status report comes back generic and could describe any programme. What is the fix?</p>
+      <button class="qopt" type="button">A · Write a longer, more detailed prompt with a stronger persona</button>
+      <button class="qopt" type="button">B · Accept it and edit the wording yourself</button>
+      <button class="qopt" type="button">C · Find the document missing from the context pack, add it, and ask again</button>
+      <p class="qwhy">Rail one: context beats prompting. Generic output is almost always a missing document, not a badly phrased question. A persona cannot know your M3 gate date.</p>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">2 · You ask for a milestone plan and get back a clean schedule with dates. What do you do with the dates?</p>
+      <button class="qopt" type="button">A · Present them - they are evenly spaced and look credible</button>
+      <button class="qopt" type="button">B · Keep the structure, throw the dates away, and get real ones from the people doing the work</button>
+      <button class="qopt" type="button">C · Ask the model to double-check them for feasibility</button>
+      <p class="qwhy">Rail two. Nobody was asked and nothing was capacity-checked, so the dates are fiction with good typography. Draft the structure with AI, source the dates from the team who will be held to them.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · An AI-drafted escalation goes to the sponsor and contains a wrong figure. Who is accountable?</p>
+      <button class="qopt" type="button">A · You - a named human reads and signs every artifact that leaves the workspace</button>
+      <button class="qopt" type="button">B · Nobody, if the source data was messy</button>
+      <button class="qopt" type="button">C · The tool vendor, under their terms</button>
+      <p class="qwhy">Rail three, and PMI's oversight requirement. Human-in-the-loop means real review with real intervention, not a rubber stamp. "The AI wrote it" has never worked at a steerco.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>PM session 1 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>The split</b><span>AI drafts artifacts and collates noise. You keep judgment, trade-offs, and the signature.</span></div>
+      <div class="cheat-item"><b>Lands first</b><span>status reporting, task and owner suggestions, early-warning signals. All three are in this track.</span></div>
+      <div class="cheat-item"><b>The context pack</b><span>charter, milestone plan, risk register, owner list, glossary, last 3-4 reports. Refresh weekly.</span></div>
+      <div class="cheat-item"><b>One workspace per programme</b><span>persistent, loaded, current. Not a fresh chat window every Monday.</span></div>
+      <div class="cheat-item"><b>Rail 1</b><span>context beats prompting. Weak draft = missing document, not a weak prompt.</span></div>
+      <div class="cheat-item"><b>Rail 2</b><span>the dates come from the team. Draft the structure, source the numbers.</span></div>
+      <div class="cheat-item"><b>Rail 3</b><span>a named human signs it. Read it, source every number, own the consequence.</span></div>
+      <div class="cheat-item"><b>Never in the pack</b><span>personal data, client-confidential terms, anything under NDA. Check your policy first.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>PM session 1 of 10 · learn-ai-project-management-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="../index.html">← All sessions</a> &nbsp;·&nbsp; <a href="b2-mandate-to-charter.html">Next: Mandate to charter →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

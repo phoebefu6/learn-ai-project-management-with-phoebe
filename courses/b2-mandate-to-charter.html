@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PM session 2 · Mandate to charter - learn AI + project management with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-project-management-with-phoebe</a> / PM session 2 of 10</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI + Project Management with Phoebe · PM track · Session 2 of 10</div>
+    <h1>Mandate to charter: <span class="accent">two paragraphs of email into a programme you can defend</span></h1>
+    <p class="sub">Northwind week 1. Your entire brief is an email from the COO that says "get all our data into one place" and "ideally before Christmas". Tonight you turn that into a charter with ordered priorities, written non-goals, and an honest list of everything the sponsor still has to tell you. The trick is not making the model write more. It is making it refuse to invent.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 PM track</span>
+      <span class="chip audience">PMs · TPMs · delivery leads</span>
+      <span class="chip audience">Charter draft</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Where we are</span>
+      <span class="a2" style="flex:4">3-15 · What a mandate leaves out</span>
+      <span class="a3" style="flex:5">15-40 · Build-along: charter + non-goals</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we are: Northwind, week 1</h2>
+    </div>
+    <p class="lede">Last session you built the workspace: one Project for the Northwind data platform, a six-document context pack, and a house-rules file. Tonight the pack is nearly empty, because week 1 is honest about how programmes actually start. You have one thing in it - a two-paragraph email from <strong>Elena V.</strong>, the COO and your sponsor. Nine source systems, 812,000 rows a night at steady state, a legacy warehouse someone wants switched off, and none of that is written down anywhere yet. It is in people's heads, and your job this week is to get it onto a page that Elena will put her name against.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill peach">★ Try it now prompt</span>
+      <span class="pill inkpill">Official sources covered</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      A Northwind charter draft with every invented fact stripped out and marked TBC, a GAPS list that turns into ten questions for your sponsor, five written non-goals that will stop scope arriving sideways in week 6, and the move that makes all of it work: asking the model for the questions instead of the answers.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: WHAT A MANDATE LEAVES OUT ============ -->
+  <section class="section" id="mandate">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers PMBOK 7 stewardship + planning</span>
+      <h2>What a mandate leaves out <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Here is the whole brief. Read it the way you would read it at 08:14 on a Monday, with the rest of your week already booked. It is not a bad email. Elena is describing an outcome she wants, which is exactly her job. Turning an outcome into a scoped, sequenced, owned programme is exactly yours.</p>
+
+    <div class="prompt-box good"><span class="label">📩 The mandate - Elena V. (COO), Monday 08:14</span>Subject: data project, can we finally get moving
+
+Hi - following up on the board session last week. We need to get all our data
+into one place so we can finally see sales properly,
+stores and online together. Right now every report I get tells me something
+different and I have stopped trusting the numbers. Ideally before the Christmas
+peak. Budget is tight this year so let us be sensible about it.
+
+Talk to Sofia, she has views on the technical side.
+
+Thanks, Elena</div>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 406" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The mandate email on the left gives two charter fields; the other six charter fields on the right must be asked for before anything is committed">
+        <style>
+          .b2mT { font: 700 14px Inter, sans-serif; fill: #FFFFFF; }
+          .b2mI { font: 700 14px Inter, sans-serif; fill: #16232E; }
+          .b2mX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .b2mXi { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .b2mXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .b2mXm { font: 400 12.5px Inter, sans-serif; fill: #5F7183; }
+          .b2mN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .b2mH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <defs>
+          <marker id="b2mAh" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="#9CC4DE"/>
+          </marker>
+        </defs>
+        <text class="b2mH" x="26" y="44">THE BRIEF YOU GOT</text>
+        <text class="b2mH" x="330" y="44">THE CHARTER FIELDS</text>
+        <rect x="26" y="60" width="210" height="150" rx="12" fill="#0E3A5C"/>
+        <text class="b2mT" x="46" y="88">The mandate email</text>
+        <text class="b2mX" x="46" y="112">"data in one place"</text>
+        <text class="b2mX" x="46" y="130">"see sales properly"</text>
+        <text class="b2mX" x="46" y="148">"before Christmas peak"</text>
+        <text class="b2mX" x="46" y="166">"budget is tight"</text>
+        <text class="b2mX" x="46" y="184">"talk to Sofia"</text>
+        <rect x="26" y="228" width="210" height="100" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="b2mI" x="46" y="256">What you must ask</text>
+        <text class="b2mXw" x="46" y="278">the other six fields,</text>
+        <text class="b2mXw" x="46" y="296">before anyone commits</text>
+        <line x1="240" y1="120" x2="322" y2="96" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b2mAh)"/>
+        <line x1="240" y1="278" x2="322" y2="300" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b2mAh)"/>
+        <rect x="330" y="60" width="250" height="62" rx="10" fill="#0E3A5C"/>
+        <text class="b2mT" x="348" y="86">Context</text>
+        <text class="b2mX" x="348" y="106">the retailer, the mess</text>
+        <rect x="600" y="60" width="250" height="62" rx="10" fill="#072538"/>
+        <text class="b2mT" x="618" y="86">Objective + measure</text>
+        <text class="b2mX" x="618" y="106">"see sales" is not one</text>
+        <rect x="330" y="134" width="250" height="62" rx="10" fill="#EAF2F8"/>
+        <text class="b2mI" x="348" y="160">In scope</text>
+        <text class="b2mXm" x="348" y="180">which of the 9 sources</text>
+        <rect x="600" y="134" width="250" height="62" rx="10" fill="#EAF2F8"/>
+        <text class="b2mI" x="618" y="160">Out of scope</text>
+        <text class="b2mXm" x="618" y="180">the field that saves you</text>
+        <rect x="330" y="208" width="250" height="62" rx="10" fill="#EAF2F8"/>
+        <text class="b2mI" x="348" y="234">Priorities P1 to P4</text>
+        <text class="b2mXm" x="348" y="254">ordered, not all urgent</text>
+        <rect x="600" y="208" width="250" height="62" rx="10" fill="#EAF2F8"/>
+        <text class="b2mI" x="618" y="234">Constraints</text>
+        <text class="b2mXm" x="618" y="254">budget? people? date?</text>
+        <rect x="330" y="282" width="250" height="62" rx="10" fill="#EAF2F8"/>
+        <text class="b2mI" x="348" y="308">Assumptions</text>
+        <text class="b2mXm" x="348" y="328">what we bet is true</text>
+        <rect x="600" y="282" width="250" height="62" rx="10" fill="#EAF2F8"/>
+        <text class="b2mI" x="618" y="308">Decision rights</text>
+        <text class="b2mXm" x="618" y="328">who signs, who is told</text>
+        <rect x="26" y="378" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="b2mN" x="50" y="390">The two dark fields are given. The six pale ones are questions you must ask.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the mandate gives you two charter fields and implies a third; the rest are questions</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Five things the email does not say<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Every one of these is a decision that will get made whether or not you make it deliberately. Left blank, they get made by whoever shouts on the day.</p>
+        <ul>
+          <li><strong>Success measure.</strong> "See sales properly" is a feeling, not a measure. Does success mean one agreed daily sales number across stores and online? Available by 07:00? Reconciling to finance within a stated tolerance? Until that sentence exists, nobody can tell you whether the programme worked.</li>
+          <li><strong>Scope boundary.</strong> "All our data" is nine source systems. Are all nine in the first phase, or three that carry the sales question and six that follow? "All" is the most expensive word in the email.</li>
+          <li><strong>Priority order.</strong> Speed, cost and completeness are all implied and they conflict. Christmas peak pulls one way, "budget is tight" pulls the other, "all our data" pulls a third. Something has to give and Elena has not said which.</li>
+          <li><strong>Constraint reality.</strong> "Budget is tight" is not a number. And nothing in the email mentions that you are one data engineer short, which is the constraint that will actually decide the date.</li>
+          <li><strong>Decision rights.</strong> "Talk to Sofia" could mean Sofia K. decides the architecture, or advises on it, or has to be consulted before you do. Those are three different programmes.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The word "all".</strong> A delivery lead took a near-identical mandate at a grocery chain and started scoping all fourteen source systems, because the email said "all". Six weeks of discovery later the sponsor saw the plan and said, honestly baffled, "I only ever cared about tills and online." Two of the fourteen systems answered the actual question. The other twelve were a phase-two conversation that nobody had ever had, because nobody had asked what "all" meant out loud.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why sponsors write it like this<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>It is tempting to read the email as vague or careless. It is neither. Elena is doing the thing a sponsor is supposed to do: naming an outcome and the pain behind it, then handing the how to someone whose job is the how. PMBOK 7 calls this stewardship, and the split is deliberate - the sponsor owns the why and the money, the delivery lead owns the shape of the work.</p>
+        <ul>
+          <li><strong>She has told you the real pain.</strong> "Every report tells me something different and I have stopped trusting the numbers." That is worth more than a spec. Trust in one number is the actual success measure hiding in the email.</li>
+          <li><strong>She has given you an ally and a lean.</strong> "Talk to Sofia" is a routing instruction, use it in week 1 rather than week 5. "Budget is tight" may not survive a business case, but it tells you which way she leans when speed and cost collide.</li>
+        </ul>
+        <p>Your job is not to complain that the brief is thin. It is to convert it into something specific enough that Elena can look at it and say "no, not that" - which is the only reliable way to find out what she actually meant.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: THE CHARTER FIELDS ============ -->
+  <section class="section" id="charter-fields">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers PMBOK 7 planning + the PMO prequel</span>
+      <h2>The charter fields that actually earn their place <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">A charter template can run to thirty fields and most of them are ceremony. Nine do the work. These nine are the ones that later stop an argument, and the reason they matter here is that they are also the exact structure you hand the model - a draft with no field list comes back as prose, and prose hides the gaps.</p>
+
+    <table class="clean">
+      <thead><tr><th>Field</th><th>What it settles later</th></tr></thead>
+      <tbody>
+        <tr><td>Context</td><td>Why now. Stops phase two re-litigating the whole premise</td></tr>
+        <tr><td>Objective + success measure</td><td>The number or condition that means "done and it worked"</td></tr>
+        <tr><td>In scope</td><td>Which of the 9 Northwind sources, in which phase</td></tr>
+        <tr><td>Out of scope (non-goals)</td><td>The request in week 6 that you can decline in one sentence</td></tr>
+        <tr><td>Priorities P1 to P4, ordered</td><td>What gives way when two good things collide</td></tr>
+        <tr><td>Constraints</td><td>Money, people, hard dates, systems you cannot touch</td></tr>
+        <tr><td>Assumptions</td><td>What you are betting on. Each one is a risk in waiting</td></tr>
+        <tr><td>Decision rights + named sponsor</td><td>Who signs, who is consulted, who is merely told. One human: Elena V., not "the business"</td></tr>
+      </tbody>
+    </table>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Priorities are only real when they are ordered<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Ask any sponsor to rate priorities and you get four P1s, because everything genuinely does matter to them. A priority list where everything is P1 contains no information. It cannot resolve a single trade-off, which is the only job it has.</p>
+        <p>For Northwind, the ordered version might read:</p>
+        <ul>
+          <li><strong>P1 - one trusted sales number</strong> across stores and online. This is the pain in the email.</li>
+          <li><strong>P2 - the Christmas peak date</strong> for that number, and nothing else needs to hit it.</li>
+          <li><strong>P3 - breadth</strong>, the remaining source systems, then <strong>P4 - decommissioning the legacy warehouse</strong>, which saves cost but changes nothing for Elena.</li>
+        </ul>
+        <p>Now the list does work. When the vendor extract slips, P3 gives way and P1 does not. When someone asks for a self-service model, it is not on the list at all. And notice what the order reveals: if Elena reorders P2 above P1, she is telling you she would rather have a date than a trustworthy number, which is a conversation you very much want to have in week 1 rather than week 14.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The reorder that changed the plan.</strong> A PM walked a sponsor through four priorities she had drafted as speed, coverage, cost, retirement. The sponsor moved cost from third to first without hesitating, then explained that a board commitment on run-rate landed in January. Nothing in the brief had mentioned it. That single drag-and-drop killed two workstreams, saved four months, and only happened because the list was ordered enough to be argued with.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Non-goals: the field that saves the programme<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Scope rarely arrives through the front door. Nobody sends a change request titled "please double the programme". It arrives sideways, in a corridor, as a reasonable-sounding sentence: "while you are in there, could you also...". The written non-goal is the only cheap way to answer that.</p>
+        <ul>
+          <li><strong>An unwritten non-goal is not a non-goal.</strong> If it lives in your head, the answer in the corridor is a negotiation. If it is in a charter Elena signed, the answer is a link.</li>
+          <li><strong>Non-goals are not refusals.</strong> "Not in this phase, revisit at M4" is a non-goal. It respects the request and dates the conversation, which is why they rarely cause offence.</li>
+          <li><strong>Write the ones people will actually ask for.</strong> A non-goal nobody would have requested is filler. The useful ones feel slightly uncomfortable to write down, which is how you know they were live.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>The test for a real non-goal</strong>
+          Read it out and ask: would anyone plausibly have asked for this in the next six months? If no, delete it. If yes, and you feel a flicker of "hmm, will Elena be annoyed" - keep it, that is the one that saves you.
+        </div>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The corridor request.</strong> Week 6 of a warehouse build, a regional director caught the delivery lead by the lifts and asked for live till data on his phone, "just for my stores, it should be easy now the pipes exist". It was not easy: nightly batch and real-time streaming are different architectures, different cost, different on-call. Because "real-time POS is not in this phase" was line two of a signed charter, the answer took nine seconds instead of three weeks of investigation the team would never have got back.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: THE QUESTIONS-BACK MOVE ============ -->
+  <section class="section" id="questions-back">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the highest-value move at this stage</span>
+      <h2>Ask the model for the questions, not the answers <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">Here is the counter-intuitive bit. At charter stage, the most valuable output is not a charter. It is the list of ten questions you must ask Elena before you commit to anything, generated by something that has read the email carefully and is not embarrassed to point out what is missing. Then you tell it explicitly not to answer them itself.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Why the questions beat the draft<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A model asked to write a charter from a thin email will produce a complete-looking charter, because completeness is what charters look like. It will quietly fill the gaps with the average of every data platform charter it has ever seen. That average is not wrong exactly - it is plausible, generic, and belongs to no one. Worse, it is <em>hard to see</em>: a gap filled with confident prose reads exactly like a fact.</p>
+        <p>Ask for the questions instead and the same reading ability works for you. It is genuinely good at noticing that "before Christmas peak" is not a date, that "all our data" has no boundary, and that nobody has been named as the person who signs off the model. That is rail one doing its job in reverse: a weak draft means a missing document, so the fastest route to a strong draft is finding out which documents are missing.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The question that moved a milestone.</strong> A TPM ran her mandate email through this move and got back a question she had not thought to ask: "who signs off that a data quality number is acceptable, and what is the threshold?" She took it to the sponsor, who did not know either, which forced a twenty-minute conversation with the finance lead. Out came the 99% figure that became the M3 gate. Without the question, "good enough quality" would have been discovered at the gate, in front of the steerco.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Taking ten questions to a sponsor without looking unprepared<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>There is a real fear here and it is worth naming: arriving at a COO's desk with ten questions can look like you have done nothing. Done well, it looks like the opposite. Four rules make the difference.</p>
+        <div class="steps">
+          <div class="step"><p><strong>Bring the draft, lead with the draft.</strong> Open with "here is the charter as I understand it" and let her read a page that is 70% filled in. The questions are the visible holes in something substantial, not a blank form.</p></div>
+          <div class="step"><p><strong>Propose an answer to every question.</strong> Never "what is the success measure?" Instead: "I have written the success measure as one agreed daily sales number, stores and online, available by 07:00. Is that what you meant?" It is far easier to correct a wrong answer than to produce a right one on the spot.</p></div>
+          <div class="step"><p><strong>Say what each answer unlocks.</strong> "I need the scope boundary because it changes the plan by about two months." A question with a consequence attached is a decision request. A question without one is homework you are handing back.</p></div>
+          <div class="step"><p><strong>Route the ones that are not hers.</strong> Of ten questions, maybe four are Elena's. The rest belong to Sofia K. on architecture, Priya N. on the vendor, Dan R. on reporting. Show her that you have already routed them - that is the move that reads as prepared.</p></div>
+        </div>
+        <div class="callout tip">
+          <strong>Ten is the ceiling, not the target</strong>
+          Take the four that change the plan. Park the rest in the GAPS list and answer them yourself during discovery. A sponsor who is asked four sharp questions answers them. A sponsor handed ten defers all of them to a follow-up that never gets booked.
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 2</span>
+      <h2>Mandate email to charter draft, plus a GAPS list <span class="tag demo">★ 12 min · everyone builds</span></h2>
+    </div>
+    <p class="lede">Open the Northwind workspace from b1, paste Elena's email in if it is not there already, and run this. The output you want is a charter that looks slightly unfinished, because it is. Every TBC in it is a question with a name attached.</p>
+
+    <div class="steps">
+      <div class="step"><p>Confirm the email is the only source in the workspace for this task, then run the prompt below. Read the charter first, then the GAPS list, then go back through the charter looking for anything asserted that the email never said.</p></div>
+      <div class="step"><p>Hunt for smuggled facts: a date, a budget figure, a team size, a technology choice, a phase-two plan. Each one is a place the model quietly averaged over your programme. Rewrite every one as TBC with the role who owns the answer.</p></div>
+      <div class="step"><p>Pick the four questions you take to Elena V. this week, and route the rest: architecture to Sofia K., the POS extract and the vendor Veridian to Priya N., reporting expectations to Dan R.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ Try it now - charter draft with the gaps left open</span>I am the delivery lead on Northwind. The only brief I have is the mandate email in
+this workspace. Draft a charter using exactly these fields, in this order:
+
+context · objective and success measure · in scope · out of scope · priorities
+P1 to P4 · constraints · assumptions · decision rights · named sponsor
+
+HOUSE RULES FOR THIS DRAFT
+- Use only what the email actually says. Do not infer a date, a budget, a headcount,
+  a technology, or a scope boundary.
+- Mark anything the email does not settle as "TBC - ask [role]", naming the role who
+  can answer: sponsor, data architect, vendor manager, BI lead.
+- Priorities must be an ordered list, P1 to P4, each with one line on what it means
+  to give way. Do not mark two items P1.
+- Where you propose wording for a TBC field, label it "PROPOSED" so I can see it is
+  yours and not Elena's.
+
+THEN, as a separate section, output GAPS: one line per TBC, in this shape -
+   [field] · the question I should ask · who to ask · what it changes if the
+   answer goes the other way
+
+Do not produce a timeline, a schedule, or a milestone date. I do not have one yet.
+Do not answer the GAPS questions yourself.</div>
+
+    <div class="prompt-box bad"><span class="label">The version that fails - fluent, complete, and quietly fictional</span>Write me a project charter for a data platform project. Make it professional and comprehensive, with clear objectives, scope, timeline and success criteria.</div>
+
+    <div class="callout tip">
+      <strong>Why the second one fails</strong>
+      It asks for "comprehensive", so every gap gets filled. You will get a twelve-week timeline nobody agreed, a success criterion of "improved data-driven decision making", and scope covering all nine systems because "comprehensive" implies it. Nothing in it is flagged as invented, so at first glance it reads better than the good one. That is precisely the danger: the honest draft looks worse and is worth ten times more, because you can see where the holes are.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 2</span>
+      <h2>The five non-goals, written down and agreed <span class="tag demo">★ 10 min · build your own</span></h2>
+    </div>
+    <p class="lede">Now the field that pays for the whole session. Five sentences, agreed by Elena V. in week 1, that will each save you a fortnight somewhere between now and M6. Here is the Northwind set - yours will differ, but the shape will not.</p>
+
+    <table class="clean">
+      <thead><tr><th>Non-goal</th><th>Who will ask, and what it costs to say yes</th></tr></thead>
+      <tbody>
+        <tr><td>No real-time POS data</td><td>Store operations, once the pipes exist. Streaming is a different architecture, cost and on-call rota. Revisit after M5</td></tr>
+        <tr><td>No self-service ML for every team</td><td>Anyone who has read an AI headline. M6 is one use case, deliberately. A platform for everyone is a programme of its own</td></tr>
+        <tr><td>We are not replacing the ERP</td><td>Finance, when they see the modelled warehouse. Reading from the ERP is not replacing it. Never in this programme</td></tr>
+        <tr><td>No new BI tool</td><td>Dan R.'s team, reasonably. A tool migration inside a data migration doubles the risk and hides which one failed</td></tr>
+        <tr><td>No migration of historical archives</td><td>Whoever remembers 2019. Two years of history, not ten. Archive migration is a phase-two business case</td></tr>
+      </tbody>
+    </table>
+
+    <div class="steps">
+      <div class="step"><p>Draft the five with the prompt below, using the charter and the mandate email as the only sources. Sharpen each into one sentence a sponsor can say yes or no to in ten seconds - if it needs a paragraph of caveats, it is not agreed, it is deferred.</p></div>
+      <div class="step"><p>Add the "instead" for each: later phase, another team, or never. A non-goal with no destination becomes a grudge.</p></div>
+      <div class="step"><p>Take all five to Elena V. in the same conversation as your four questions and ask her to strike any she disagrees with. Then put the survivors at the top of the charter, not in an appendix, and paste them into the workspace context pack so every later draft knows what you already cut.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ Try it now - draft the non-goals</span>From the charter draft and the mandate email in this workspace, propose five things
+this programme is explicitly NOT doing in this phase.
+
+For each one give me:
+- the non-goal, in one plain sentence a COO can agree or reject in ten seconds
+- who will realistically ask for it, and roughly when in the delivery
+- what saying yes would cost us: scope, architecture, risk, or people
+- where it goes instead: a later phase (say which), another team, or never
+
+Rules
+- Draw them from what the mandate email leaves open, not from generic data-platform
+  scope lists.
+- Do not soften them. "We may consider this later" is not a non-goal.
+- Do not invent a phase-two plan or a date to defer things to. If the destination is
+  not settled, write "TBC - ask sponsor".
+- Flag any that contradict something the email does ask for, so I catch it before
+  Elena does.</div>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The line in the appendix nobody read.</strong> One programme did write its non-goals - and buried them on page nine of a charter deck. In month four a director asked for the archive migration, the delivery lead said "that is out of scope", and the director said, genuinely, "since when?" Technically since week 1. Practically since never, because it had been agreed by silence rather than out loud. They lost the argument and six weeks. Non-goals belong on page one, read aloud, with a nod from the sponsor. The document is not the agreement - the conversation is, and the document is what you keep afterwards.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Try it yourself - this week <span class="tag exercise">◐ 30-45 min total</span></h2>
+    </div>
+    <ul>
+      <li>Find the thinnest brief you have ever been handed - a real one, an email or a slide - and run the charter-plus-GAPS prompt over it. Count the smuggled facts.</li>
+      <li>Write your own programme's priorities as an ordered P1 to P4 list, then send it to your sponsor with one question: "have I got the order right?" Watch what moves.</li>
+      <li>Write five non-goals for a live programme. At least two should make you slightly uncomfortable. Get them agreed out loud, not by silence, and take four questions rather than ten to your sponsor - each with a proposed answer and one line on what it changes.</li>
+      <li>Add the finished charter to your workspace context pack. Every session from b3 onward assumes it is there, and so does every draft you will ask for.</li>
+    </ul>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">Taught from the delivery canon plus the by-hand prequel course, with vendor documentation for the workspace mechanics. PMI certification and the full normative text of its standards stay with PMI. This session covers:</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMBOK Guide 7th ed. - planning performance domain + stewardship</span><span class="note">Parts 1-2 · charter fields, scope boundaries, sponsor and delivery-lead split</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">learn-tech-project-pmo-with-phoebe - the Northwind charter, by hand</span><span class="note">Parts 2-3 · the same artifact built without AI, for comparison</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Anthropic docs - Projects, workspace instructions, context</span><span class="note">Demos · where the charter and GAPS list live; depth in b1 and b9</span></div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Your charter draft says "delivery by mid-November". Elena's email said only "ideally before the Christmas peak". What do you do?</p>
+      <button class="qopt" type="button">A · Keep it, mid-November is a sensible reading of "before Christmas"</button>
+      <button class="qopt" type="button">B · Strike it and write "TBC - date comes from the team after the plan exists"</button>
+      <button class="qopt" type="button">C · Ask the model to justify how it arrived at mid-November</button>
+      <p class="qwhy">Rail two, and the most common smuggled fact of all. Nobody was asked and nothing was capacity-checked, so mid-November is invention with a professional font. AI drafts structure, never commitments.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · Your sponsor marks three of the four priorities as P1. Why does that break the charter?</p>
+      <button class="qopt" type="button">A · It looks untidy in the document</button>
+      <button class="qopt" type="button">B · P1 should be reserved for regulatory work</button>
+      <button class="qopt" type="button">C · An unordered list resolves no trade-off, so it cannot tell you what gives way when two good things collide</button>
+      <p class="qwhy">Priorities exist to settle collisions. Everything-is-P1 carries no information and quietly hands the decision to whoever escalates loudest on the day. Push for the order, even if it takes two attempts.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Week 6, a regional director asks for live till data on his phone. What makes that a nine-second conversation instead of a three-week investigation?</p>
+      <button class="qopt" type="button">A · A written, sponsor-agreed non-goal saying real-time POS is not in this phase</button>
+      <button class="qopt" type="button">B · A detailed risk register entry about scope creep</button>
+      <button class="qopt" type="button">C · A status report showing the team is already at capacity</button>
+      <p class="qwhy">Scope arrives sideways, in corridors, as reasonable requests. The only cheap defence is a non-goal that was written down and agreed out loud in week 1 - on page one, not in an appendix.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>PM session 2 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>A mandate is an outcome</b><span>The sponsor owns why and the money. You own the shape of the work. Convert, do not complain.</span></div>
+      <div class="cheat-item"><b>Five things it never says</b><span>success measure, scope boundary, priority order, constraint reality, decision rights.</span></div>
+      <div class="cheat-item"><b>Nine fields</b><span>context, objective + measure, in scope, out of scope, P1-P4, constraints, assumptions, decision rights, named sponsor.</span></div>
+      <div class="cheat-item"><b>Ordered or nothing</b><span>Everything cannot be P1. An unordered priority list resolves no trade-off.</span></div>
+      <div class="cheat-item"><b>Non-goals save you</b><span>Five sentences, agreed out loud, on page one. Scope arrives sideways, not by change request.</span></div>
+      <div class="cheat-item"><b>Ask for the questions</b><span>The best charter-stage output is the list of what you must ask, with the model refusing to answer it.</span></div>
+      <div class="cheat-item"><b>TBC - ask [role]</b><span>Every gap carries a name: sponsor, data architect, vendor manager, BI lead. Never a blank.</span></div>
+      <div class="cheat-item"><b>Four, not ten</b><span>Take four questions to the sponsor, each with a proposed answer and what it changes. Route the rest.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>PM session 2 of 10 · learn-ai-project-management-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="b1-workspace-setup.html">← Previous: Your programme workspace</a> &nbsp;·&nbsp; <a href="b3-milestones-wbs.html">Next: Milestone architecture and WBS →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

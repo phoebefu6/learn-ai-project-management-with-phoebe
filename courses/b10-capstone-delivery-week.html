@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PM session 10 · Capstone - one full delivery week - learn AI + project management with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-project-management-with-phoebe</a> / PM session 10 of 10</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI + Project Management with Phoebe · PM track · Session 10 of 10</div>
+    <h1>Capstone: <span class="accent">one full delivery week, end to end</span></h1>
+    <p class="sub">Week 18 of Northwind, and it is a recovery week. M3 signed off late, M4 started a person short, and Elena wants a straight answer about whether the Christmas date still holds. No new technique tonight. Everything you built across b1 to b9 gets used at once, in order, on a week that is genuinely difficult - and then you write the thirty-day plan that makes this your actual way of working rather than a course you once did.</p>
+    <div class="chip-row">
+      <span class="chip level">🔴 PM track</span>
+      <span class="chip audience">PMs · TPMs · delivery leads</span>
+      <span class="chip audience">Full week run</span>
+      <span class="chip time">Finale</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Where we are</span>
+      <span class="a2" style="flex:3">3-15 · The week map</span>
+      <span class="a3" style="flex:6">15-42 · Run the recovery week</span>
+      <span class="a4" style="flex:1">42-45 · Close</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we are - week 18, and it is not going well</h2>
+    </div>
+    <p class="lede">Here is the honest state of Northwind. M3, raw ingest signed off, cleared in week 13 - the gate was originally 10 August, moved to 24 August, and landed later still. M4, the modelled warehouse, is running with one data engineer instead of two: R-03 is half closed, one hire has accepted and one requisition is still open. R-11 is live, with data quality at 96.4% against a 99% gate, rising but not fast enough to be boring. R-07 is quiet, which with Veridian is not the same as fine. Nine source systems, 812k rows a night, and a sponsor who has stopped asking how it is going and started asking whether the Christmas date holds. That is a different question and it deserves a different kind of answer. Tonight you run the week Monday to Friday using everything at once: the workspace from b1, the charter from b2, the milestone architecture from b3, the dependencies from b4, the register from b5, the six checks from b6, the decision log from b7, the escalation craft from b8 and the connected pack from b9. Five real artifacts and one plan for yourself. Nothing new gets introduced, which is the point of a capstone.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill peach">★ Try it now prompt</span>
+      <span class="pill inkpill">Official sources covered</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      A complete week of Northwind run end to end: refreshed pack, updated risk register, the report with its gaps block filled from people, a decision log entry written the same day it was taken, and Friday's action list. A clear four-item list of what you never delegate and why. A thirty-day adoption plan for your own programme with a measure attached, so you can tell in a month whether any of this worked.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: THE WEEK MAP ============ -->
+  <section class="section" id="week-map">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · the shape of a delivery week</span>
+      <h2>Monday to Friday, and where you must be in the room <span class="tag concept">7 min live</span></h2>
+    </div>
+    <p class="lede">A delivery week has a shape whether or not you have named it. Most weeks go wrong in the same place: the report gets written on Thursday morning from whatever happened to be visible, so the gaps get filled by inference instead of by asking people. Moving the draft to Wednesday changes that, because it leaves you a day to go and get the real answers. That single shift is most of the value in this map.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 375" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Northwind week 18 Monday to Friday: what the machine drafts each day, what you do, and the two days where you must be present in person">
+        <style>
+          .b0wT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .b0wI { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .b0wX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .b0wXi { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .b0wXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .b0wIw { font: 700 15px Inter, sans-serif; fill: #45210A; }
+          .b0wN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .b0wH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <text class="b0wH" x="30" y="30">THE MACHINE DRAFTS</text>
+        <rect x="30" y="44" width="155" height="84" rx="12" fill="#072538"/>
+        <text class="b0wT" x="48" y="72">Monday</text>
+        <text class="b0wX" x="48" y="96">Refreshed pack</text>
+        <text class="b0wX" x="48" y="116">and the diff</text>
+        <rect x="198" y="44" width="155" height="84" rx="12" fill="#0E3A5C"/>
+        <text class="b0wT" x="216" y="72">Tuesday</text>
+        <text class="b0wX" x="216" y="96">Dependency and</text>
+        <text class="b0wX" x="216" y="116">risk sweep list</text>
+        <rect x="366" y="44" width="155" height="84" rx="12" fill="#2C6A99"/>
+        <text class="b0wT" x="384" y="72">Wednesday</text>
+        <text class="b0wX" x="384" y="96">Report draft plus</text>
+        <text class="b0wX" x="384" y="116">the GAPS block</text>
+        <rect x="534" y="44" width="155" height="84" rx="12" fill="#0E3A5C"/>
+        <text class="b0wT" x="552" y="72">Thursday</text>
+        <text class="b0wX" x="552" y="96">Steerco pack and</text>
+        <text class="b0wX" x="552" y="116">a decision form</text>
+        <rect x="702" y="44" width="155" height="84" rx="12" fill="#2C6A99"/>
+        <text class="b0wT" x="720" y="72">Friday</text>
+        <text class="b0wX" x="720" y="96">Action list and</text>
+        <text class="b0wX" x="720" y="116">the log update</text>
+        <text class="b0wH" x="30" y="168">YOU DO THIS - AND ON THE TWO ORANGE DAYS YOU ARE IN THE ROOM</text>
+        <rect x="30" y="182" width="155" height="84" rx="12" fill="#EAF2F8"/>
+        <text class="b0wI" x="48" y="210">Monday</text>
+        <text class="b0wXi" x="48" y="234">Confirm the diff</text>
+        <text class="b0wXi" x="48" y="254">is really true</text>
+        <rect x="198" y="182" width="155" height="84" rx="12" fill="#EAF2F8"/>
+        <text class="b0wI" x="216" y="210">Tuesday</text>
+        <text class="b0wXi" x="216" y="234">Ring Priya and</text>
+        <text class="b0wXi" x="216" y="254">Sofia. Verify.</text>
+        <rect x="366" y="182" width="155" height="84" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="b0wIw" x="384" y="210">Wednesday</text>
+        <text class="b0wXw" x="384" y="234">Fill the gaps</text>
+        <text class="b0wXw" x="384" y="254">from people</text>
+        <rect x="534" y="182" width="155" height="84" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="b0wIw" x="552" y="210">Thursday</text>
+        <text class="b0wXw" x="552" y="234">Run the steerco.</text>
+        <text class="b0wXw" x="552" y="254">Log it same day.</text>
+        <rect x="702" y="182" width="155" height="84" rx="12" fill="#EAF2F8"/>
+        <text class="b0wI" x="720" y="210">Friday</text>
+        <text class="b0wXi" x="720" y="234">Send. Park next</text>
+        <text class="b0wXi" x="720" y="254">week's questions</text>
+        <rect x="30" y="282" width="827" height="58" rx="12" fill="#EAF2F8"/>
+        <text class="b0wXi" x="52" y="306">Draft on Wednesday, not Thursday morning. The extra day is what lets you fill a gap</text>
+        <text class="b0wXi" x="52" y="326">by asking Marcus rather than by inferring it, which is the whole difference.</text>
+        <rect x="30" y="352" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="b0wN" x="54" y="364">Two days need your face, not your keyboard: the gap-filling and the steerco.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - five days, what is drafted, what is yours, and the two you cannot phone in</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The five days, one paragraph each<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Monday - refresh the pack and the register.</strong> The connected pack pulls the week's movement and diffs it. You read the diff and confirm it is true, because a diff can be technically correct and materially wrong: a ticket closed on Friday afternoon that was not really done is a lie the pack will happily repeat all week.</li>
+          <li><strong>Tuesday - dependency and risk sweep.</strong> What moved, what is now blocking what, and which risks changed state. For Northwind week 18 that is the M4 critical path with one engineer, R-03's open req, and whether R-11's 96.4% moved. Then you confirm the important ones with the people who own them. Ten minutes on the phone beats an hour of inference.</li>
+          <li><strong>Wednesday - draft the report and go and fill the gaps.</strong> The report drafts against the six checks with its GAPS block on top. Then you leave your desk. Every gap gets filled by a person: Marcus on the modelling estimate, Priya on Veridian, Sofia on the schema decision, Dan on BI readiness. This is the day that separates a report a steerco can act on from one it can only read.</li>
+          <li><strong>Thursday - steerco, and decisions logged the same day.</strong> You run it. The pack drafts the decision capture from your notes within the hour, while you still remember what was actually meant rather than what was said. Same-day logging is not tidiness - a decision recorded on Monday is a decision reconstructed.</li>
+          <li><strong>Friday - actions out, log updated, next week parked.</strong> Actions go out with one owner and one date each. The decision log is updated and visible. Anything you could not answer this week gets written down as next week's opening question rather than carried in your head over the weekend.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The Wednesday that saved the quarter.</strong> A delivery lead moved her draft from Thursday 7am to Wednesday 10am and did nothing else differently. That week the GAPS block asked who owned the migration cutover, and because it was Wednesday she had time to walk over and ask. The answer was that nobody did - the person everyone assumed owned it had moved teams in July. On the old schedule she would have written "platform team" at 7:40am on Thursday and it would have gone to the sponsor as a fact. One day of slack turned an invented owner into a real finding.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Adapting the map to your cadence<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The days are not sacred. The sequence is. Whatever your week looks like, keep these four properties and it works:</p>
+        <ul>
+          <li><strong>The refresh comes before anything is drafted.</strong> Drafting from a stale pack produces confident answers about last month.</li>
+          <li><strong>There is a full working day between the draft and the meeting.</strong> That day is not slack, it is the gap-filling day. Cut it and you have automated inference.</li>
+          <li><strong>Decisions are logged the same day they are taken.</strong> Not "by Friday". The same day.</li>
+          <li><strong>Actions leave the building with one owner and one date.</strong> If you cannot name the owner on Friday, that is the finding, and it goes in the report rather than being smoothed over.</li>
+        </ul>
+        <p>Fortnightly steerco? Run the same sequence on a two-week rhythm and keep the gap-filling day. Daily-ship team with no steerco at all? The report becomes a Friday summary and the decision log matters more, not less, because nobody is in a room together to remember.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: RUN IT ============ -->
+  <section class="section" id="run-it">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · the actual sequence</span>
+      <h2>Run the week: five prompts, all of them short <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Notice how small these are. That is the point, and it is rail one arriving at its destination: the workspace already knows Northwind, the skill already knows your format, the connector already has this week's state. There is nothing left to explain. A long prompt at this stage usually means something is missing from the workspace and you are trying to paper over it with words.</p>
+
+    <div class="steps">
+      <div class="step"><p><strong>Monday, 09:00.</strong> Refresh the pack and diff it. Read the diff yourself before anything else touches it, and challenge one line of it out loud.</p></div>
+      <div class="step"><p><strong>Tuesday, 09:00.</strong> Sweep dependencies and risks against the M4 critical path. Then call the two people whose answers would change the report.</p></div>
+      <div class="step"><p><strong>Wednesday, 10:00 and again at 16:00.</strong> Draft the report with the GAPS block on top, spend the afternoon away from your desk closing the gaps with humans, then re-run with them filled. Read every number. Send the pack to attendees the evening before, never in the meeting.</p></div>
+      <div class="step"><p><strong>Thursday, immediately after steerco.</strong> Capture decisions from your notes while the meaning is still fresh, and log them today.</p></div>
+      <div class="step"><p><strong>Friday, 14:00.</strong> Actions out with owners and dates, decision log published, next week's open questions parked in the workspace.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ Monday - refresh and diff</span>Refresh the pack from the connected board, then give me the week's diff only.
+
+Three lists, nothing else:
+1) Moved - id, what changed, and the date it changed.
+2) Did not move - anything open for 10 days or more on the M4 path.
+3) Changed risk state - R-03, R-07, R-11: what is different from last week's
+   register, with the evidence.
+Plus one throughput number, this week vs last. Cite an id or a metric on every
+line. Anything you cannot source goes under "not visible" - do not infer it.</div>
+
+    <div class="prompt-box good"><span class="label">★ Wednesday - the report and its gaps</span>Draft this week's steerco report using the weekly delivery report skill and the
+refreshed pack. Northwind week 18. Be strict about two things:
+- The delta must show M4's forecast against its gate, R-11's DQ number against
+  the 99% gate, and the R-03 resourcing position. This week vs last.
+- Elena has asked whether the Christmas date still holds. That is the ask. Give me
+  the decision, the options with their costs, and the date the choice expires.
+
+GAPS block first, as always. For each gap name the person I should ask, not the role,
+using the owner list in the pack.</div>
+
+    <div class="prompt-box good"><span class="label">★ Thursday - capture the decisions, same day</span>From my steerco notes below, extract decisions only. Not discussion, not actions.
+For each: id (continue our sequence), date, who took it, what was decided, what it
+costs or trades away, and what it now depends on.
+
+If something in my notes reads like a decision but nobody clearly took it, put it in a
+separate "not actually decided" list with who needs to confirm. Do not promote it.
+
+NOTES: [paste your raw steerco notes, unedited]</div>
+
+    <div class="callout tip">
+      <strong>Why "not actually decided" is the most valuable line in that prompt</strong>
+      Most steerco meetings produce two or three things that everyone leaves believing were agreed, and which nobody actually owned. They surface six weeks later as "I thought we said". Forcing the draft to separate real decisions from apparent ones gives you a short list to confirm by email on Thursday afternoon, which takes four minutes and prevents the most expensive argument in delivery.
+    </div>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>Two contract engineers, and the number that made the decision easy.</strong> The Northwind ask in week 18 came down to one option with a price: two contract engineers for four weeks, roughly £38k, to hold the M4 date while R-03's open req runs its course. The draft laid out three options with costs and an expiry date. Elena took ninety seconds. What made it fast was not the writing - it was that the number had a source, the date had come from Marcus, and the trade-off had been named rather than implied. A sponsor cannot decide quickly on a paragraph of texture.</p>
+    </div>
+  </section>
+
+  <!-- ============ PART 3: NEVER DELEGATE ============ -->
+  <section class="section" id="never-delegate">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the boundary, stated plainly</span>
+      <h2>Four things you never delegate, and why <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Ten sessions of moving work off your desk earns you the right to be precise about what stays on it. This is not a safety disclaimer and it is not modesty about the technology. Each of these four is a place where being accountable <em>is</em> the work, and the model has nothing at stake - no reputation to lose, no relationship to repair, nothing that happens to it if it is wrong.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 355" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Everything else can be drafted; commitments, bad news, people and the trade-off call stay with you because accountability is the point">
+        <style>
+          .b0nT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .b0nI { font: 700 15px Inter, sans-serif; fill: #45210A; }
+          .b0nX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .b0nXi { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .b0nXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .b0nN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .b0nH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <text class="b0nH" x="30" y="30">DRAFT ALL OF THIS</text>
+        <text class="b0nH" x="390" y="30">NEVER THESE FOUR</text>
+        <rect x="30" y="44" width="330" height="200" rx="12" fill="#072538"/>
+        <text class="b0nT" x="52" y="80">Everything else</text>
+        <text class="b0nX" x="52" y="110">the refreshed pack and the weekly diff</text>
+        <text class="b0nX" x="52" y="134">the risk register update</text>
+        <text class="b0nX" x="52" y="158">the report draft and its gaps block</text>
+        <text class="b0nX" x="52" y="182">the action list, the decision capture</text>
+        <text class="b0nX" x="52" y="206">the format, the structure, the first pass</text>
+        <text class="b0nX" x="52" y="230">roughly two hours of your week</text>
+        <rect x="390" y="44" width="225" height="94" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="b0nI" x="410" y="74">Commitments</text>
+        <text class="b0nXw" x="410" y="98">a date you promise on</text>
+        <text class="b0nXw" x="410" y="118">behalf of real people</text>
+        <rect x="630" y="44" width="225" height="94" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="b0nI" x="650" y="74">Bad news</text>
+        <text class="b0nXw" x="650" y="98">the message that costs</text>
+        <text class="b0nXw" x="650" y="118">you something to send</text>
+        <rect x="390" y="150" width="225" height="94" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="b0nI" x="410" y="180">People</text>
+        <text class="b0nXw" x="410" y="204">performance, morale,</text>
+        <text class="b0nXw" x="410" y="224">someone about to quit</text>
+        <rect x="630" y="150" width="225" height="94" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="b0nI" x="650" y="180">The trade-off call</text>
+        <text class="b0nXw" x="650" y="204">scope, cost or date -</text>
+        <text class="b0nXw" x="650" y="224">somebody has to choose</text>
+        <rect x="30" y="260" width="825" height="58" rx="12" fill="#EAF2F8"/>
+        <text class="b0nXi" x="52" y="284">In all four, being accountable is the whole point of the act, not a wrapper around it.</text>
+        <text class="b0nXi" x="52" y="304">The model has nothing at stake, so it cannot carry any of them for you.</text>
+        <rect x="30" y="330" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="b0nN" x="54" y="342">Draft the words if you like. The saying, the choosing and the owning are yours.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the boundary after ten sessions of moving work off your desk</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Why each one stays with you<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Commitments.</strong> A date is a promise made on behalf of people who will be held to it. Its value comes entirely from the fact that someone with something to lose checked with them and then said it. A generated date has the shape of a commitment and none of the substance, which is worse than no date, because it will be planned against. This is rail two, and it is the rail people break first when the pressure is on.</li>
+          <li><strong>Bad news.</strong> The message that costs you something to send is the one that buys trust. When you tell Elena the Christmas date is at risk and you are the one who says it, the relationship survives the news. Delegate the drafting of the words if it helps you find them - but the sending, the tone in the room, and the follow-up question you did not anticipate are yours. Session b8 was about doing this well; tonight is about not outsourcing it.</li>
+          <li><strong>People.</strong> Performance, morale, someone who is quietly about to resign. These are judgements about human beings made with incomplete and often deliberately private information, and the model is missing every signal that matters: how Marcus sounded on Tuesday, that Dan has stopped arguing in meetings, that Sofia asked an oddly specific question about handover. It is also the fastest way to do real harm with a tool. Do not put a person's name into a workspace attached to a judgement about them.</li>
+          <li><strong>The trade-off call.</strong> Scope, cost or date - one of them moves. You can and should have the options and their costs drafted; that is genuinely useful and this course has taught you how. Choosing is a different act. It requires knowing what your organisation will forgive, what your sponsor said in a corridor in March, and what you are willing to be wrong about in public. Somebody has to choose, and it has to be somebody who lives with it.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The polished escalation nobody believed.</strong> A PM sent a well-structured escalation about a slipping vendor - clear, evidenced, correctly formatted, entirely drafted and barely read. In the meeting the sponsor asked one follow-up: "how bad does this get if they miss again in October?" He did not know, because he had never sat with the question long enough to have a view. The escalation was correct and it landed as noise, because the person sending it had not paid the cost of thinking it through. The artifact was fine. The accountability had not happened.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The grey zone, and a test for it<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Plenty of work sits between "obviously draftable" and "obviously mine". A reasonable test: <em>if this turns out to be wrong, does someone need a person to be answerable for it?</em> Drafting the options and costs for a trade-off passes - draft it, you still choose. Writing the words of a hard message passes, as long as you rewrite it in your voice and send it yourself. Proposing a date from the plan structure does not: draft the structure, get the date from the team. Summarising a one-to-one with a struggling engineer does not go anywhere near a workspace at all.</p>
+        <p>When you genuinely cannot tell, assume it is yours. The cost of doing something manually that could have been drafted is twenty minutes. The cost of the reverse can be a programme.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 2</span>
+      <h2>Run Northwind's recovery week, end to end <span class="tag demo">★ 16 min · everyone builds</span></h2>
+    </div>
+    <p class="lede">Five artifacts, in order, on the hardest week this programme has had. Work in your Northwind workspace with the pack loaded. If you are running this solo after the session, give yourself the full sixteen minutes and do not skip the gap-filling step just because there is nobody to ring - write down who you would have called and what you would have asked.</p>
+
+    <div class="steps">
+      <div class="step"><p><strong>Artifact 1 - the refreshed pack.</strong> Run Monday's diff prompt. Output: three lists plus one throughput number, everything cited. Then challenge one line of it. On Northwind week 18 the line worth challenging is any ticket that closed without a linked test result, because M3's late sign-off came from exactly that pattern.</p></div>
+      <div class="step"><p><strong>Artifact 2 - the updated risk register.</strong> R-03: one engineer accepted, one req open, and it is still a hard gate before M4 completes. R-07: Veridian quiet, which needs a check with Priya rather than a green. R-11: 96.4% against 99%, rising - is the trend real or is it three good nights? Update states, triggers and owners, and note what would have to change for each to close.</p></div>
+      <div class="step"><p><strong>Artifact 3 - the report with its gaps block.</strong> Run Wednesday's prompt. Read the GAPS block before the report, as always. Expect gaps around the M4 modelling estimate with one engineer, the second hire's start date, and whether Dan's BI team can absorb a compressed M5 window. Assign each gap to a name from the owner list, then fill them - from people, not from the model.</p></div>
+      <div class="step"><p><strong>Artifact 4 - the decision log entry.</strong> Elena decides on the contract engineers: two for four weeks, roughly £38k, to hold the M4 date. Capture it same-day with id, date, who took it, what it costs, and what it now depends on. Then write the "not actually decided" list - on this week that is usually the Christmas date itself, which people will feel was confirmed and was not.</p></div>
+      <div class="step"><p><strong>Artifact 5 - Friday's action list.</strong> One owner, one date, each. Marcus on the revised M4 estimate with contractors landed. Priya on the Veridian check-in and VN-2291. Sofia on the schema decision that unblocks modelling. Dan on the M5 readiness view. If any owner is "the team", you have not finished.</p></div>
+      <div class="step"><p><strong>The last step, and it is not optional.</strong> Read all five as a set, as Elena would. Do they tell one consistent story? A common capstone finding: the register says amber, the report says the date holds, and the action list quietly assumes contractors who have not been approved yet. Fix the story, not the individual documents.</p></div>
+    </div>
+
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 2</span>
+      <h2>Your own thirty-day adoption plan <span class="tag demo">★ 8 min · build your own</span></h2>
+    </div>
+    <p class="lede">The failure mode after a course like this is doing all of it for one enthusiastic week and none of it by October. So: one thing per week, in an order where each week makes the next one easier, and one measure so you can tell in a month whether it worked rather than whether it felt good.</p>
+
+    <div class="steps">
+      <div class="step"><p><strong>Week 1 - the workspace.</strong> One programme, six documents, house rules written. Nothing clever. If you only ever do week 1, you have still moved the needle, because context is where the value is.</p></div>
+      <div class="step"><p><strong>Week 2 - one artifact.</strong> Pick the thing you dread most, which for most people is the status report. Draft it there every week for a fortnight. Do not add a second artifact until the first one is genuinely habit.</p></div>
+      <div class="step"><p><strong>Week 3 - the rubric.</strong> Score what comes out against the six checks from b6. This is the week you stop being impressed by fluent output and start being able to tell good from plausible, which is the actual skill this course teaches.</p></div>
+      <div class="step"><p><strong>Week 4 - the connected pack.</strong> One connector, read-only, scoped. The Thursday run if your plan allows it. By now you know exactly what you want it to produce, which is why this is week 4 and not week 1. And pick your measure before you start, written down where you will find it in a month.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ The four measures worth picking - choose one, maybe two</span>TIME - hours from "start assembling" to "report sent", this month vs last.
+   Easy to count, and the one your manager will ask about.
+
+QUALITY - your six-check score, self-marked, averaged over four reports.
+   Better signal than time. Most people start near 3 and reach 5 in a month.
+
+GAPS - items in the GAPS block each week, and how many are the same item repeating.
+   A gap that returns three weeks running is a structural hole in the programme.
+
+DECISION LATENCY - days from "I need a decision" to "a decision was taken".
+   Hardest to move, most valuable. If the ask is clear and the options are costed,
+   this falls - and it is the closest thing to proof that delivery changed, not
+   just the paperwork.
+
+NOT a measure: how impressive the output looks, or how much you enjoyed it.</div>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The PMO that measured the wrong thing for a quarter.</strong> A delivery function rolled this out and tracked hours saved. The number looked excellent and nobody's programme ran any better, because the hours saved went straight into more meetings. The following quarter they switched to decision latency: days from raising an ask to getting an answer. That number was ugly at first - eleven days - and it was the first metric anyone had ever produced that made a sponsor change their own behaviour. Measure the thing you actually want to move.</p>
+    </div>
+  </section>
+
+  <!-- ============ CLOSE ============ -->
+  <section class="section" id="close">
+    <div class="section-kicker">
+      <span class="klabel">The close</span>
+      <h2>Ten sessions, three rails, one job that is still yours <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">You started with a mandate email and a blank workspace. You now have a charter, a milestone architecture with gate criteria, a dependency map, a self-maintaining risk register, a report that survives a steerco, a decision log, an escalation you can defend, a connected weekly pack, and a full delivery week you have run end to end. Almost none of that was about prompting. Nearly all of it was about context, structure, and knowing what good looks like before you ask for it.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The three rails, restated for the last time<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Context beats prompting.</strong> When a draft comes back generic, the fix is a missing document, not a cleverer sentence. Every good week in this course started with a pack that was current.</li>
+          <li><strong>The dates come from the team.</strong> Draft the structure of a plan - the milestones, the gates, the dependencies, the questions to ask. Get the dates from the people who will be held to them. A generated date is fiction with good typography.</li>
+          <li><strong>A named human signs it.</strong> Nothing sends itself. Read it, source every number, own the consequence. "The AI wrote it" has never worked at a steerco and it never will.</li>
+        </ul>
+        <p>Techniques will change under you. The tooling layer in b9 will look different within a year. These three will not, because each one is about where accountability lives, and that has not moved at all.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Where to go next<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>If your next problem is organisational, take the leader track.</strong> Sessions a1 to a6 cover what AI changes about delivery at a function level, the governed setup and the permission policy that b9 kept handing off, a review rubric your PMO can apply to anyone's AI-drafted plan, escalation you can defend, the reporting cadence, and how to run a pilot with a real quality bar. It is written for heads of delivery and PMO leads - and for you, the week you are asked "should we roll this out".</li>
+          <li><strong>If you want the artifacts without any AI at all, take the prequel.</strong> <a href="https://phoebefu6.github.io/learn-tech-project-pmo-with-phoebe/">learn-tech-project-pmo-with-phoebe</a> builds the same Northwind programme by hand: charter, milestones, dependencies, RACI, risk register, tracker. Nothing generated, everything reasoned. It is the best possible companion to this course, and if you are teaching a junior PM, start them there - you cannot review a draft well if you have never built the thing yourself.</li>
+          <li><strong>If a rail broke this month, go back one session.</strong> Generic drafts means b1. Dates you cannot defend means b3 and b4. A report that gets nodded at means b6. An escalation that landed badly means b8. The track is designed to be re-entered, not just finished.</li>
+        </ul>
+        <p>One last thing. The reason this course spent ten sessions on artifacts rather than on prompting is that the artifacts were never the job either. The report was always a way of making a programme legible enough for someone to decide something. Now that the drafting is cheap, the question is what you do with the hours - and the honest answer, from every delivery lead who has actually made this stick, is: talk to more people. That is the part nothing has automated.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Try it yourself - the first thirty days <span class="tag exercise">◐ 30-45 min to set up</span></h2>
+    </div>
+    <ul>
+      <li>Run one full week on your own programme, not Northwind. Five artifacts, in order, with the gap-filling day protected in your calendar so it does not get eaten.</li>
+      <li>Write your thirty-day plan on one page: week 1 workspace, week 2 one artifact, week 3 the rubric, week 4 the connected pack. Put it somewhere you will see it, and record your measure's baseline today - decision latency if you are brave, six-check score if you want the most useful signal, hours if you need to show someone a number.</li>
+      <li>Write your own four never-delegate lines in your words, and share them with your team. Rolling this out without that list is how a team ends up with a generated commitment in front of a sponsor.</li>
+      <li>Book fifteen minutes with whoever governs tooling at your organisation before you scale any of this past yourself. Leader session a2 is the agenda for that meeting.</li>
+    </ul>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">The capstone draws on everything the track was built from: the delivery canon for the week's shape, PMI's AI standard for the accountability boundary, the by-hand prequel for the artifacts themselves, and vendor documentation for the tooling that assembles them. PMI certification and the full normative text of the standard stay with PMI. This session covers:</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMBOK Guide 7 - planning, uncertainty, measurement and stakeholder domains</span><span class="note">Parts 1-2 · the shape of a delivery week and what each artifact is for</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMI - Standard for AI in Portfolio, Program and Project Management (2026)</span><span class="note">Part 3 · human-in-the-loop as a value source, oversight with real triggers</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">learn-tech-project-pmo-with-phoebe - the full Northwind artifact set</span><span class="note">Demo 1 + close · the same week built entirely by hand</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Anthropic docs - Projects, Skills, connectors and scheduled tasks</span><span class="note">Part 2 · the assembly layer; working depth lives in b9</span></div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Why does the report get drafted on Wednesday rather than Thursday morning?</p>
+      <button class="qopt" type="button">A · Because Thursday mornings are usually full of meetings anyway</button>
+      <button class="qopt" type="button">B · Because it leaves a full day to fill the gaps by asking people instead of inferring them</button>
+      <button class="qopt" type="button">C · Because the connected pack runs more reliably mid-week</button>
+      <p class="qwhy">The gap-filling day is the whole point of the shift. Draft at 7am on the day of the steerco and every unknown gets smoothed over by inference, which is exactly the failure the GAPS block exists to expose.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · Marcus gives you a revised M4 estimate. The draft plan already contains a date two weeks earlier. Which goes in the report?</p>
+      <button class="qopt" type="button">A · The earlier one, with a note that it is under review</button>
+      <button class="qopt" type="button">B · The midpoint, since the truth is usually between the two</button>
+      <button class="qopt" type="button">C · Marcus's date - the dates come from the people who will be held to them</button>
+      <p class="qwhy">Rail two, at the moment it is hardest to hold. The drafted date was never checked with anyone and will be planned against as if it were. A midpoint is worse still: it belongs to nobody and nobody will defend it.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Which of these four is a genuine never-delegate, and what makes it one?</p>
+      <button class="qopt" type="button">A · Telling Elena the Christmas date is at risk - it costs you something to send, which is what makes it trusted</button>
+      <button class="qopt" type="button">B · Drafting the three options with their costs for the contractor decision</button>
+      <button class="qopt" type="button">C · Producing Friday's action list from the steerco notes</button>
+      <p class="qwhy">Options and action lists are draftable and should be drafted. Bad news is not: the value of the message comes from a person with something at stake choosing to say it, and from being in the room for the question you did not anticipate.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>PM session 10 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>The week map</b><span>Mon refresh · Tue sweep · Wed draft then fill gaps · Thu steerco and log · Fri actions out.</span></div>
+      <div class="cheat-item"><b>The gap-filling day</b><span>a full day between draft and meeting. Cut it and you have automated inference.</span></div>
+      <div class="cheat-item"><b>Same-day decisions</b><span>logged the day they are taken. A decision recorded Monday is a decision reconstructed.</span></div>
+      <div class="cheat-item"><b>Not actually decided</b><span>the list of things everyone believes was agreed. Confirm it Thursday afternoon.</span></div>
+      <div class="cheat-item"><b>Never delegate</b><span>commitments · bad news · people · the trade-off call. Accountability is the point.</span></div>
+      <div class="cheat-item"><b>Short prompts</b><span>if the prompt is long, the workspace is missing something. Fix the pack, not the words.</span></div>
+      <div class="cheat-item"><b>Read the five as a set</b><span>register, report and actions can each be right and still tell three different stories.</span></div>
+      <div class="cheat-item"><b>The three rails</b><span>context beats prompting · the dates come from the team · a named human signs it.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>PM session 10 of 10 · learn-ai-project-management-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="b9-connect-the-system.html">← Previous: Connect the system</a> &nbsp;·&nbsp; <a href="../index.html">All sessions →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

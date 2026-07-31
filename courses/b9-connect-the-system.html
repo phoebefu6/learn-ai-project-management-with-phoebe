@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PM session 9 · Connect the system - learn AI + project management with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-project-management-with-phoebe</a> / PM session 9 of 10</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI + Project Management with Phoebe · PM track · Session 9 of 10</div>
+    <h1>Connect the system: <span class="accent">stop pasting, start pulling</span></h1>
+    <p class="sub">Week 14 of Northwind. For eight sessions you have been the transport layer - copying tickets out of Jira, pasting threads, re-typing the risk register, remembering to start on Thursday. Tonight that job goes away. Connectors bring the state in, a skill holds your rules, a schedule fires the whole thing at 7am. What does not go away is the person who reads it and the person who sends it. Those are still you.</p>
+    <div class="chip-row">
+      <span class="chip level">🟠 PM track</span>
+      <span class="chip audience">PMs · TPMs · delivery leads</span>
+      <span class="chip audience">Weekly pack</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-20 · Layers and permissions</span>
+      <span class="a3" style="flex:5">20-42 · Build-along: connect it</span>
+      <span class="a4" style="flex:1">42-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we are - week 14</h2>
+    </div>
+    <p class="lede">Northwind has cleared its worst stretch. M3 - raw ingest signed off - finally went through in week 13, two weeks after the 24 August date it slipped to, and M4 (the modelled warehouse) is now the live gate. R-03, the data-engineer hiring gap, is half solved: one engineer has accepted, one req is still open. R-11 sits at 96.4% data quality against a 99% gate. Every artifact you have built for this programme has come from you pasting material into a workspace by hand: nine source systems, 812k rows a night, a ticket export, four Slack threads, your own notes. That has worked. It does not scale, it decays the moment you are on leave, and it means the pack is only as current as the last time you remembered. Tonight we remove the pasting.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill peach">★ Try it now prompt</span>
+      <span class="pill inkpill">Official sources covered</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      One connector wired to the tool your programme actually lives in, read-only, with a permission decision you can defend to your security team. Your house rules and the b6 report prompt turned into one reusable skill instead of a paragraph you keep re-pasting. A Thursday 7am weekly pack that assembles itself and then stops, deliberately, in front of a human. And the sentence you will repeat for the rest of your career: nothing sends itself.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: THE THREE LAYERS ============ -->
+  <section class="section" id="three-layers">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers connectors, skills and scheduled runs</span>
+      <h2>Three layers, three chores they remove <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">There are exactly three reasons your weekly pack still takes you two hours. You are moving data by hand, you are re-explaining your standards every time, and you are the alarm clock. Each one has its own layer, and you can add them in any order - though most people get the biggest relief from the last one first, because remembering is the part that follows you on holiday.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three layers: connectors replace copy-paste, skills replace re-explaining, scheduled runs replace remembering - and none of them replace the person who sends it">
+        <style>
+          .b9lT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .b9lI { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .b9lX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .b9lXi { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .b9lXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .b9lN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .b9lH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <text class="b9lH" x="30" y="30">THE LAYER YOU ADD</text>
+        <text class="b9lH" x="520" y="30">THE CHORE IT REMOVES</text>
+        <rect x="30" y="44" width="470" height="76" rx="12" fill="#072538"/>
+        <text class="b9lT" x="52" y="74">1 · Connectors bring the state in</text>
+        <text class="b9lX" x="52" y="98">Jira, Notion, Sheets, the calendar - read live, not pasted</text>
+        <rect x="520" y="44" width="330" height="76" rx="12" fill="#EAF2F8"/>
+        <text class="b9lI" x="542" y="74">The copy-paste hour</text>
+        <text class="b9lXi" x="542" y="98">exports, threads, screenshots</text>
+        <rect x="30" y="132" width="470" height="76" rx="12" fill="#0E3A5C"/>
+        <text class="b9lT" x="52" y="162">2 · Skills hold the rules and the format</text>
+        <text class="b9lX" x="52" y="186">your b1 house rules and the b6 six-check report prompt</text>
+        <rect x="520" y="132" width="330" height="76" rx="12" fill="#EAF2F8"/>
+        <text class="b9lI" x="542" y="162">Re-explaining yourself</text>
+        <text class="b9lXi" x="542" y="186">the paragraph you keep pasting</text>
+        <rect x="30" y="220" width="470" height="76" rx="12" fill="#2C6A99"/>
+        <text class="b9lT" x="52" y="250">3 · A schedule fires it</text>
+        <text class="b9lX" x="52" y="274">Thursday 07:00, whether you remembered or not</text>
+        <rect x="520" y="220" width="330" height="76" rx="12" fill="#EAF2F8"/>
+        <text class="b9lI" x="542" y="250">Being the alarm clock</text>
+        <text class="b9lXi" x="542" y="274">the Friday panic assembly</text>
+        <rect x="30" y="308" width="820" height="62" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="b9lI" x="52" y="336">The layer this does not add: a sender</text>
+        <text class="b9lXw" x="52" y="358">A scheduled job may draft. A person edits it, and a person sends it. Always.</text>
+        <rect x="30" y="378" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="b9lN" x="54" y="390">Names in this layer move fast. Check what your plan has before you promise it.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - each layer removes one chore, and none of them removes the person who signs</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>What each layer actually is<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Plain definitions, vendor-neutral where the idea allows, because the buttons will have moved by the time somebody runs this course again.</p>
+        <table class="clean">
+          <thead><tr><th>Layer</th><th>What it is</th><th>What you put in it</th></tr></thead>
+          <tbody>
+            <tr><td>The workspace (a Project)</td><td>A persistent place that holds its own instructions and files across conversations</td><td>Northwind's charter, plan, risk register, owner list, glossary, last four reports</td></tr>
+            <tr><td>A skill</td><td>A reusable instruction file, applied whenever it is relevant</td><td>Your house rules, your RAG rule, the six-check report format from b6</td></tr>
+            <tr><td>A connector (MCP)</td><td>A packaged remote server that lets the assistant read or act on a tool. MCP is the open standard underneath</td><td>Jira, Notion, Sheets, the calendar - the systems your programme's truth already lives in</td></tr>
+            <tr><td>A scheduled task</td><td>A saved instruction that runs on a recurring schedule</td><td>The Thursday 07:00 weekly pack run</td></tr>
+          </tbody>
+        </table>
+        <p>The important distinction is between the workspace and the skill, because people fill them the wrong way round. The workspace holds facts about <em>this programme</em>: Marcus is the data engineer, M4 is the live gate, 99% is the DQ threshold. The skill holds rules about <em>how you work</em>: never invent a date, one owner and one date per action, restate the RAG rule in every report. Facts change when the programme changes. Rules follow you to the next job.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The PM who wired the schedule first.</strong> A delivery lead on a regulated programme could not get connector approval for six weeks - security wanted a review, and rightly so. So she did the other two layers: rules into a skill, and a scheduled Thursday run that opened with "here is the checklist, paste this week's export". No live data at all. It still cut ninety minutes off her week, because the expensive part had never been the copying - it was the standing start. Add the layers in whatever order your organisation will actually let you.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why MCP being a standard matters to you<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The Model Context Protocol is an open standard for connecting an assistant to tools and data. You will never read the spec, and you do not need to. Two consequences reach your desk:</p>
+        <ul>
+          <li><strong>You are not betting your workflow on one vendor's integration list.</strong> The same protocol is implemented by multiple assistants and by the tool vendors themselves, so the plumbing you learn tonight transfers. The specific connector catalogue in your app will not.</li>
+          <li><strong>A connector is a server, not a magic trick.</strong> Someone hosts it, someone authorised it, and it does exactly the operations it exposes. That is why the permission conversation in Part 2 is a real engineering conversation and not paperwork.</li>
+        </ul>
+        <p>Be honest with your team about the shelf life here. The protocol is stable enough to build on; the product surfaces around it - what is called a connector, what your plan includes, what an admin has to enable - change month to month. Re-check before you promise anything to a sponsor.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: PERMISSIONS ============ -->
+  <section class="section" id="permissions">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers connector permissions and the audit trail</span>
+      <h2>What a connector can see, and who decided that <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Here is the sentence that matters most in this whole session: a connector acts with the permissions of whoever authorised it. Not the permissions of the programme, not some reduced safe subset - yours. If you can see forty-one projects in Jira, so can it. If your account happens to include the HR board because somebody added you to it in 2023 and never removed you, that board is now in scope too. Nothing has been escalated and nothing has been breached. Your own access just became the blast radius, and most people have never looked at how wide theirs is.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Read is one decision. Write is a completely different one<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Teams collapse these two into a single "should we connect Jira" conversation and then wonder why security says no to all of it. Separate them and both answers get easier.</p>
+        <table class="clean">
+          <thead><tr><th>The decision</th><th>What it actually means</th><th>Who should be in the room</th></tr></thead>
+          <tbody>
+            <tr><td>Read a project board</td><td>The assistant can see tickets, states, dates and comments you can already see</td><td>You, plus whoever owns the board</td></tr>
+            <tr><td>Read a shared drive or wiki</td><td>Every document in scope, including the ones nobody remembers filing there</td><td>You, plus the space owner. Scope it to a folder, not the drive</td></tr>
+            <tr><td>Read a calendar</td><td>Meeting titles and attendees, which is more revealing than people expect</td><td>You. Titles leak reorganisations and exits</td></tr>
+            <tr><td>Write back to a ticket</td><td>A change to your system of record, attributed to your account</td><td>You, the tool admin, and whoever audits delivery. A deliberate, separate yes</td></tr>
+            <tr><td>Post to a channel or send mail</td><td>A message from you that you did not write and may not have read</td><td>Nobody should say yes to this one yet. See the rail below</td></tr>
+          </tbody>
+        </table>
+        <p>Start read-only. Live there for a month. Writing back to tickets is genuinely useful - "set these six to blocked and add the dependency note" saves real time - but it changes the record other people report from, and it needs to be a decision somebody made on purpose rather than a checkbox you clicked while setting up.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Forty-one projects, one of them not ours.</strong> A TPM connected her board with default scope and asked for a cross-programme dependency summary. The answer came back beautifully organised and included two workstreams from a business unit she had been loaned to eighteen months earlier and never removed from. Nothing sensitive surfaced, and she caught it in the first read. But her honest reaction was the useful one: "I had no idea I still had that." The connector did not create the problem. It printed it out.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The audit question: where did that number come from<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Your report says data quality is 96.4% against a 99% gate and cites NWD-412. Three weeks later, in a gate review, someone asks where 96.4% came from. You need to be able to answer that, and "the connector pulled it" is not an answer - it is a shrug with extra steps.</p>
+        <ul>
+          <li><strong>Cite the object, not the tool.</strong> A claim traces to NWD-412 or VN-2291, not to "Jira". The ticket id is the thing a reviewer can open; the connector is just how it got in front of you.</li>
+          <li><strong>Keep the pulled state, not only the prose.</strong> When the Thursday job runs, keep the raw pull alongside the draft. If the number is challenged in October, you want the September snapshot, because the ticket has moved on since.</li>
+          <li><strong>Know what the connector cannot see.</strong> If your DQ number lives in a dashboard nobody connected, the draft will quietly reason around the gap. That is the same failure the GAPS block from b6 exists to catch, which is why the block stays in the prompt even after the plumbing is automatic.</li>
+        </ul>
+        <p>The policy side of this - what your organisation permits, who approves it, what your vendor terms say about data leaving the tenant - is not a PM decision and this session will not pretend otherwise. Leader session <strong>a2</strong> covers the governed setup: permissions, approval path, and what never goes in. Take that page to your security team rather than improvising in the setup wizard at 8pm.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: THE WEEKLY PACK ============ -->
+  <section class="section" id="weekly-pack">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the pack that assembles itself</span>
+      <h2>Thursday 07:00, and what waits for you at 08:00 <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">Put the three layers together and you get one job that runs while you are still asleep. Not a report that goes out - a report that is <em>ready</em>, with its gaps declared, sitting in front of you before your first meeting. The change is not that the writing got faster. It is that Thursday morning starts with editing rather than assembling, which is a different kind of day.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Thursday 7am pipeline: pull, diff, refresh the register, draft against the six checks, then stop and wait for a human who edits and sends">
+        <style>
+          .b9pT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .b9pI { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .b9pX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .b9pXi { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .b9pXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .b9pN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .b9pH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <defs>
+          <marker id="b9pAh" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="#9CC4DE"/>
+          </marker>
+        </defs>
+        <text class="b9pH" x="30" y="34">THE MACHINE DRAFTS, 07:00 THURSDAY</text>
+        <rect x="30" y="48" width="150" height="96" rx="12" fill="#072538"/>
+        <text class="b9pT" x="48" y="80">07:00 Pull</text>
+        <text class="b9pX" x="48" y="104">the week's ticket</text>
+        <text class="b9pX" x="48" y="122">movement</text>
+        <line x1="186" y1="96" x2="194" y2="96" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b9pAh)"/>
+        <rect x="198" y="48" width="150" height="96" rx="12" fill="#0E3A5C"/>
+        <text class="b9pT" x="216" y="80">07:02 Diff</text>
+        <text class="b9pX" x="216" y="104">against last</text>
+        <text class="b9pX" x="216" y="122">week's numbers</text>
+        <line x1="354" y1="96" x2="362" y2="96" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b9pAh)"/>
+        <rect x="366" y="48" width="150" height="96" rx="12" fill="#2C6A99"/>
+        <text class="b9pT" x="384" y="80">07:04 Refresh</text>
+        <text class="b9pX" x="384" y="104">the risk register</text>
+        <text class="b9pX" x="384" y="122">R-03, R-07, R-11</text>
+        <line x1="522" y1="96" x2="530" y2="96" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b9pAh)"/>
+        <rect x="534" y="48" width="150" height="96" rx="12" fill="#9CC4DE"/>
+        <text class="b9pI" x="552" y="80">07:06 Draft</text>
+        <text class="b9pXi" x="552" y="104">six checks, plus</text>
+        <text class="b9pXi" x="552" y="122">the GAPS block</text>
+        <line x1="690" y1="96" x2="698" y2="96" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b9pAh)"/>
+        <rect x="702" y="48" width="150" height="96" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="b9pI" x="720" y="80">07:08 Stops</text>
+        <text class="b9pXw" x="720" y="104">Nothing has left</text>
+        <text class="b9pXw" x="720" y="122">the building.</text>
+        <text class="b9pH" x="30" y="188">THE HUMAN GATE - BOTH OF THESE, EVERY WEEK</text>
+        <rect x="30" y="202" width="405" height="76" rx="12" fill="#EAF2F8"/>
+        <text class="b9pI" x="52" y="230">You fill the gaps, then you edit</text>
+        <text class="b9pXi" x="52" y="254">from Marcus, Priya and Sofia. Never by inference.</text>
+        <rect x="447" y="202" width="405" height="76" rx="12" fill="#EAF2F8"/>
+        <text class="b9pI" x="469" y="230">You press send</text>
+        <text class="b9pXi" x="469" y="254">Your name is on it. The job never sends.</text>
+        <rect x="30" y="292" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="b9pN" x="54" y="304">Eight minutes of assembly, then it waits. The waiting is the design.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the pipeline drafts in eight minutes and then stops in front of a person, on purpose</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The five steps of the Thursday run<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Pull the week's ticket movement.</strong> Everything that changed state, everything that did not move, everything newly blocked. For Northwind that is the M4 modelling stream plus the open ingest tail.</li>
+          <li><strong>Diff it against last week.</strong> This is the delta check from b6, and it is the one thing a human is worst at doing reliably at 8am. Forecast gate dates, open criticals, one throughput number: 812k rows a night, this week against last.</li>
+          <li><strong>Refresh the risk register.</strong> Not rewrite it - refresh the live ones. R-03 moves the day the second req is filled. R-07 moves when Veridian misses again. R-11 moves with the DQ number, currently 96.4% against the 99% gate.</li>
+          <li><strong>Draft against the six checks.</strong> Status by the written RAG rule, the delta, one owner and one date per action, decisions logged, evidence behind every claim, and the ask. The skill from Demo 2 is what enforces this.</li>
+          <li><strong>Produce the GAPS block and stop.</strong> Everything it could not source, and exactly who you should ask. Then nothing. No send, no post, no notification to a sponsor.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>The rail, first time: nothing sends itself</strong>
+          A scheduled job may draft. Only a person sends. Automating the assembly is a productivity decision; automating the send is an accountability decision, and it is the one that ends careers rather than saving hours. If your setup makes it possible to send without a human in the loop, that is a bug in your setup, not a feature you have not enabled yet.
+        </div>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The week the pipeline was right and useless.</strong> A delivery lead's Thursday run produced a flawless draft while she was on a plane. Every ticket cited, every date correct, RAG amber by the rule. It also could not know that the vendor's account manager had resigned on Wednesday evening, which was the only fact that mattered that week. The GAPS block did not flag it either, because the gap was not in the data - it was in the world. She landed, read it, rewrote the top section, and sent it two hours late. That is the system working exactly as designed.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What to do when the schedule is not available to you<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Scheduled runs vary by plan and by what your admin has enabled, and the answer changes month to month. If you cannot schedule anything, the pack still works with a calendar reminder and one saved prompt - you are the trigger, everything after that is identical. You lose the "it happened while I slept" benefit and keep about eighty percent of the time saving.</p>
+        <ul>
+          <li><strong>A run can fail quietly.</strong> If the connector's authorisation expires, the job may produce a thin draft rather than an error you notice. Build one check into your own Thursday: does the draft cite at least one ticket id from this week? If not, the plumbing broke, and the draft is fiction.</li>
+          <li><strong>A stale schedule is worse than no schedule.</strong> When the programme ends, turn the job off. A weekly pack for a closed programme, arriving in someone's inbox, is exactly the kind of small mess that makes governance people distrust the whole approach.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 2</span>
+      <h2>Wire one connector and pull real state <span class="tag demo">★ 14 min · everyone builds</span></h2>
+    </div>
+    <p class="lede">One connector. The tool your programme genuinely lives in - not the most impressive one, the one where the truth actually is. For most delivery leads that is the ticket system; for some it is a spreadsheet, and a spreadsheet is a perfectly respectable answer. Read-only, scoped, and tested with a question that is impossible to answer without live data.</p>
+
+    <div class="steps">
+      <div class="step"><p><strong>Permission check 1 - look at your own access first.</strong> Open the tool as yourself and read the list of projects, spaces or files you can reach. Write down anything you did not expect to still have. That is your blast radius, and it exists whether or not you connect anything.</p></div>
+      <div class="step"><p><strong>Permission check 2 - read-only, deliberately.</strong> Choose read access and nothing else. If the setup offers write in the same click, that is a click you should not make tonight. Write back to a system of record is a separate conversation with a separate yes.</p></div>
+      <div class="step"><p><strong>Permission check 3 - scope it down.</strong> One project, one board, one folder. Not the whole workspace because that was the default. Narrow scope also makes the answers better: less noise, fewer confident claims about workstreams you do not run.</p></div>
+      <div class="step"><p><strong>Permission check 4 - know who authorised it.</strong> It acts as you. Say that out loud to yourself before you approve, and if the honest answer is "I am not sure I am allowed to do this", stop and go and ask. Leader session a2 is the conversation to have.</p></div>
+      <div class="step"><p><strong>Connect it, then ask something impossible without it.</strong> The test question below cannot be answered from a stale pack, so it tells you instantly whether the plumbing works.</p></div>
+      <div class="step"><p><strong>Check the citations, not the prose.</strong> Open two of the ticket ids it names. If they are real and say what it claims, you have a connector. If the ids look plausible and do not exist, you have a very expensive autocomplete, and you stop right there.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ Try it now - the live-data test question</span>Using the connected board only, answer these four. Cite a ticket id for every claim,
+and if you cannot source something, say "not visible in the connected scope".
+
+1) Which of my open items has not changed state in 10 days or more? List id, title,
+   current owner, and days since last movement.
+2) What moved into blocked this week, and what is each one waiting on?
+3) Which items are on the M4 (modelled warehouse) path specifically?
+4) Anything referenced in a comment as a dependency but not linked as one.
+
+Do not summarise the board. Do not add advice. Four lists, ids on every line.</div>
+
+    <div class="prompt-box bad"><span class="label">The version that hides a broken connection</span>Now that you're connected to Jira, give me a summary of how the project is going this week and what I should worry about.</div>
+
+    <div class="callout tip">
+      <strong>Why the second one is dangerous rather than merely weak</strong>
+      A general summary request can be answered from the workspace pack alone, so a broken or empty connection produces a fluent, confident answer about last month's programme and you never find out. The first prompt cannot be faked: either it returns ticket ids that resolve, or it admits it cannot see. Always test a new connector with a question that has a checkable answer, not a question that has a nice answer.
+    </div>
+
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 2</span>
+      <h2>Turn your house rules into a reusable skill <span class="tag demo">★ 8 min · build your own</span></h2>
+    </div>
+    <p class="lede">In b1 you wrote house rules. In b6 you wrote the six-check report prompt. Both are currently paragraphs you keep re-pasting, which means they drift, and the version in last Thursday's chat is not quite the version in this Thursday's. A skill fixes that: one file, applied whenever it is relevant, edited in one place.</p>
+
+    <div class="steps">
+      <div class="step"><p>Sort every line you currently paste into two piles. Ask one question of each: <em>would this still be true on my next programme?</em> Yes goes in the skill. No stays in the workspace.</p></div>
+      <div class="step"><p>Skill pile, typically: never invent a date or a name, one owner and one date per action, restate the RAG rule, evidence behind every claim, GAPS block before the report, your voice rules, one page.</p></div>
+      <div class="step"><p>Workspace pile, typically: Northwind is a retailer building a governed data platform, M4 is the live gate, R-03 is the hiring gap, Elena is the sponsor, the DQ threshold is 99%, the format of the last four reports.</p></div>
+      <div class="step"><p>Write the skill, and name it for the job rather than the programme - "weekly delivery report" travels, "Northwind report" does not. Then test the split honestly: ask for a report with the skill on and the workspace pack deliberately empty. It should produce a correctly shaped report full of "TBC - ask [role]". If it produces confident Northwind facts, a fact has leaked into your skill. Take it out.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ The skill - rules only, no programme facts</span>NAME: weekly delivery report
+USE WHEN: I ask for a status report, a weekly update, or a steerco pack.
+
+FORMAT - in this order, one page:
+1) Status colour, by the written RAG rule in the workspace. Restate the rule in one line.
+2) The delta since last week's report: forecast gate dates, open criticals, one
+   throughput number. This week against last.
+3) Actions. Exactly one named owner and one date each. Unknown owner is
+   "TBC - ask [role]", never "the team".
+4) Decisions taken this week: id, date, who took it. If none, write "none this week".
+5) Evidence. Every claim carries a ticket id, a metric, or the document it came from.
+6) "What I need from you": the decision, the options with costs, the date it expires.
+
+BEFORE the report, always output a GAPS block: everything above I could not source
+from the workspace or the connected tools, and exactly who to ask. Never fill a gap
+by inference.
+
+NEVER: invent a date, a name, a number, a cost or a decision. Never write "good
+progress", "on track" or "some delays" without the number behind it.
+VOICE: short sentences, no adjectives about progress, numbers or nothing.
+CLOSE: end every draft with "Draft - not sent. Needs a named human."</div>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The leak that took a month to find.</strong> A PM built a beautiful reporting skill and reused it on a new programme. For four weeks the drafts kept referring to a "99% quality gate" that the new client had never agreed to, because the threshold had been written into the skill instead of the workspace. Nobody caught it: it was one plausible number in a wall of correct ones. The empty-workspace test in step five takes ninety seconds and would have found it on day one.</p>
+    </div>
+
+    <div class="callout tip">
+      <strong>The rail, second time: nothing sends itself</strong>
+      The last line of that skill is not decoration. Every draft ends with "Draft - not sent. Needs a named human." A connector can read your programme, a skill can shape the report, a schedule can fire at 07:00 - and the send is still a person deciding to put their name on it. Say it to your team when you roll this out, then say it again the week it starts working well, because that is the week somebody will suggest cutting out the middle step.
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Try it yourself - this week <span class="tag exercise">◐ 30-45 min total</span></h2>
+    </div>
+    <ul>
+      <li>Audit your own access in your main delivery tool before you connect anything. List what you can reach. If anything on that list surprises you, get yourself removed from it - that is worth doing whether or not you ever wire a connector.</li>
+      <li>Connect one tool, read-only, scoped to one project. Run the four-part live-data test question and open two of the ticket ids it cites.</li>
+      <li>Split your pasted paragraph into a skill and a workspace, then run the empty-workspace test. Move anything that leaks.</li>
+      <li>Set up the Thursday run if your plan allows it, or a Thursday calendar reminder plus a saved prompt if it does not. Same pack either way. Bring it to b10 - the capstone assumes you have this working.</li>
+      <li>Take the permission questions to whoever owns security or governance at your organisation. Leader session a2 is written for exactly that conversation.</li>
+    </ul>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">Taught from the vendor documentation for the tooling layer, the open protocol underneath it, and PMI's governance principle for the parts that must stay human. The tool half of this session ages fastest in the whole course - re-check the product surface before you deliver it. This session covers:</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Anthropic docs - Skills, Projects, connectors and scheduled tasks</span><span class="note">Parts 1-3 · the three layers and what each holds</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Model Context Protocol specification</span><span class="note">Parts 1-2 · what a connector is, and the authorisation posture</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">PMI - Standard for AI in Portfolio, Program and Project Management (2026)</span><span class="note">Parts 2-3 · governance with real guardrails, oversight that intervenes</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">learn-tech-project-pmo-with-phoebe - the weekly tracker cadence</span><span class="note">Part 3 · the by-hand version of the Thursday pack</span></div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · You authorise a connector to your project tracker. Whose access does it use?</p>
+      <button class="qopt" type="button">A · A reduced service-account subset chosen by the vendor</button>
+      <button class="qopt" type="button">B · Yours - it acts with the permissions of whoever authorised it</button>
+      <button class="qopt" type="button">C · Only the single project you were looking at when you connected</button>
+      <p class="qwhy">It inherits the access of the person who authorised it, which is why the first step is auditing your own. Scope it down deliberately; the default is rarely what you wanted, and forgotten spaces come along for the ride.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · Your Thursday 07:00 job produces a clean report with the GAPS block empty. What happens next?</p>
+      <button class="qopt" type="button">A · It sends to the distribution list, since there is nothing outstanding</button>
+      <button class="qopt" type="button">B · It posts to the steerco channel and flags you for information</button>
+      <button class="qopt" type="button">C · It waits. You read it, check the citations resolve, and you send it</button>
+      <p class="qwhy">Nothing sends itself. An empty GAPS block is not proof the week is understood - the plumbing may have failed quietly, or the fact that mattered may never have been in any system. A named human signs it, every time.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Your reporting skill keeps producing a "99% quality gate" on a new client's programme. What went wrong?</p>
+      <button class="qopt" type="button">A · A programme fact was written into the skill; the skill should hold rules only</button>
+      <button class="qopt" type="button">B · The connector is reading the old client's board</button>
+      <button class="qopt" type="button">C · The schedule is still pointed at the previous workspace</button>
+      <p class="qwhy">Rules travel, facts do not. Test the split by asking for a report with the skill on and the workspace empty - you should get a correctly shaped report full of "TBC - ask [role]", not confident numbers from a programme that ended.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>PM session 9 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Three layers</b><span>connectors replace copy-paste, skills replace re-explaining, schedules replace remembering.</span></div>
+      <div class="cheat-item"><b>Workspace vs skill</b><span>facts about this programme go in the workspace. Rules about how you work go in the skill.</span></div>
+      <div class="cheat-item"><b>The permission sentence</b><span>a connector acts with the access of whoever authorised it. Audit yours first.</span></div>
+      <div class="cheat-item"><b>Read then write</b><span>two separate decisions. Writing to a ticket changes your system of record - deliberate yes only.</span></div>
+      <div class="cheat-item"><b>The audit trail</b><span>cite the ticket id, not the tool. Keep the raw pull and the timestamp with the draft.</span></div>
+      <div class="cheat-item"><b>Thursday 07:00</b><span>pull, diff, refresh the register, draft against the six checks, emit GAPS, stop.</span></div>
+      <div class="cheat-item"><b>Test with checkable questions</b><span>a summary request hides a broken connection. Ticket ids that resolve do not.</span></div>
+      <div class="cheat-item"><b>The rail</b><span>nothing sends itself. A job may draft; a person edits and a person sends.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>PM session 9 of 10 · learn-ai-project-management-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="b8-stakeholder-comms.html">← Previous: Stakeholders, escalations and hard messages</a> &nbsp;·&nbsp; <a href="b10-capstone-delivery-week.html">Next: Capstone - one full delivery week →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

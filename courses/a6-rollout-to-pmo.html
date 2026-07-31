@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leader session 6 · Rolling it out to a PMO - learn AI + project management with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-project-management-with-phoebe</a> / Leader session 6 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI + Project Management with Phoebe · Leader track · Session 6 of 6</div>
+    <h1>Rolling it out to a PMO: <span class="accent">one programme, one artifact, six weeks, one volunteer</span></h1>
+    <p class="sub">Everything in this track works on one desk. Tonight you make it work on twenty, which is a different problem with different failure modes - most of them human. You will design a six-week pilot, set an acceptance bar you can sample rather than police, pick metrics your PMs cannot game in an afternoon, and handle the part nobody puts on a slide: adopting a new tool with people who have been burned by the last three.</p>
+    <div class="chip-row">
+      <span class="chip level">🟠 Leader track</span>
+      <span class="chip audience">Heads of delivery</span>
+      <span class="chip audience">PMO leads</span>
+      <span class="chip audience">Rollout plan</span>
+      <span class="chip time">Finale</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-20 · Pilot, quality bar, metrics</span>
+      <span class="a3" style="flex:5">20-42 · Charter + measurement plan</span>
+      <span class="a4" style="flex:1">42-45 · Close</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we are, and where this ends</h2>
+    </div>
+    <p class="lede">Five sessions in. a1 drew the line between drafting and judgment. a2 set the governed boundary - what goes in a workspace, what never does, who connects what. a3 gave you a review rubric for AI-drafted plans, a4 did the same for risk, dependencies and escalation, and a5 built the reporting cadence and the six checks. All of it has been about one programme, one desk, one PM. This is the finale, and it changes scale: how you take something that works for one person and put it into a function of fifteen or fifty without breaking trust, quality or anyone's Friday. The answer is not a rollout plan. It is a pilot with a stop condition.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill peach">★ Try it now prompt</span>
+      <span class="pill inkpill">Official sources covered</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      A six-week pilot charter you could start on Monday, an acceptance bar based on the six checks with a sampling rate instead of a police force, a metric set that is honest rather than flattering, an adoption approach that survives PMs who have been burned before, and one clear answer to "what do I do first".
+    </div>
+  </section>
+
+  <section class="section" id="pilot">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers PMI's governance principle + adoption reporting</span>
+      <h2>The pilot: one of everything <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">The instinct is to roll it out to everyone, because the value looks obvious and the licence is already paid for. Resist it. A wide rollout gives you twenty programmes changing at once, no baseline, no control, no way to tell whether anything improved, and a support load that lands entirely on you. Worse, it gives every sceptic in the function a story to tell by week three. One programme, one artifact, six weeks, one PM who volunteered.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 272" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The six-week pilot as a strip: baseline, load the pack and agree the rule, first drafted report, sampled review, a second PM, then the go or no-go at week six">
+        <style>
+          .a6pT { font: 700 14px Inter, sans-serif; fill: #FFFFFF; }
+          .a6pTi { font: 700 14px Inter, sans-serif; fill: #16232E; }
+          .a6pX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .a6pXi { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .a6pXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .a6pN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .a6pH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <defs>
+          <marker id="a6pAh" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="#9CC4DE"/>
+          </marker>
+        </defs>
+        <text class="a6pH" x="26" y="30">ONE PROGRAMME · ONE ARTIFACT · ONE VOLUNTEER · SIX WEEKS</text>
+        <rect x="26" y="46" width="132" height="92" rx="12" fill="#072538"/>
+        <text class="a6pT" x="42" y="76">Week 1</text>
+        <text class="a6pX" x="42" y="100">score today's</text>
+        <text class="a6pX" x="42" y="118">report, 3 of 6</text>
+        <rect x="166" y="46" width="132" height="92" rx="12" fill="#0E3A5C"/>
+        <text class="a6pT" x="182" y="76">Week 2</text>
+        <text class="a6pX" x="182" y="100">load the pack,</text>
+        <text class="a6pX" x="182" y="118">agree the rule</text>
+        <rect x="306" y="46" width="132" height="92" rx="12" fill="#2C6A99"/>
+        <text class="a6pT" x="322" y="76">Week 3</text>
+        <text class="a6pX" x="322" y="100">first drafted</text>
+        <text class="a6pX" x="322" y="118">report sent</text>
+        <rect x="446" y="46" width="132" height="92" rx="12" fill="#2C6A99"/>
+        <text class="a6pT" x="462" y="76">Week 4</text>
+        <text class="a6pX" x="462" y="100">sampled review,</text>
+        <text class="a6pX" x="462" y="118">fix what fails</text>
+        <rect x="586" y="46" width="132" height="92" rx="12" fill="#9CC4DE"/>
+        <text class="a6pTi" x="602" y="76">Week 5</text>
+        <text class="a6pXi" x="602" y="100">2nd PM joins</text>
+        <text class="a6pXi" x="602" y="118">if it works</text>
+        <rect x="726" y="46" width="132" height="92" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="a6pTi" x="742" y="76">Week 6</text>
+        <text class="a6pXw" x="742" y="100">score again,</text>
+        <text class="a6pXw" x="742" y="118">go or no-go</text>
+        <line x1="26" y1="156" x2="852" y2="156" stroke="#9CC4DE" stroke-width="2" marker-end="url(#a6pAh)"/>
+        <rect x="26" y="174" width="827" height="54" rx="12" fill="#EAF2F8"/>
+        <text class="a6pXi" x="46" y="198">Everything outside the pilot stays exactly as it was. That is what makes week 6 readable.</text>
+        <text class="a6pXi" x="46" y="218">If nothing moved by then you stop, and a clean stop is a real result, not a failure.</text>
+        <rect x="26" y="240" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="a6pN" x="50" y="252">Go means score up, hours down, and the volunteer wants to keep it. Two of three is a not yet.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - six weeks, one artifact, and a go/no-go that can honestly say no</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Why the status report is almost always the right first artifact<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>People reach for the exciting artifact - the plan, the business case, the risk model. Pick the boring one. The weekly status report wins on three properties that nothing else in the PM canon has at once.</p>
+        <ul>
+          <li><strong>Highest frequency.</strong> It happens every week on every programme, so six weeks gives you six real data points per PM instead of one. A charter pilot gives you one event and no trend.</li>
+          <li><strong>Clearest rubric.</strong> The six checks are objective enough that two reviewers agree: is the RAG rule written in the report, does every action have one name and one date, is there a traceable id behind each claim. You cannot score a charter that cleanly.</li>
+          <li><strong>Lowest blast radius.</strong> A bad drafted report is caught on Wednesday by the person who signs it on Friday. A bad drafted plan gets committed to and lives for a year. Start where the mistakes are cheap and visible.</li>
+        </ul>
+        <p>Public reporting says the same thing from the other direction: roughly half of project professionals say AI already touches their work, about a fifth have real hands-on experience, and status reporting is consistently the first place it lands. You are not choosing the frontier here. You are choosing the place your function is already drifting, and putting a rubric under it before it becomes habit.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The pilot that picked the wrong artifact.</strong> A PMO ran its first AI pilot on business cases, because that was where the executive attention was. Six weeks produced two business cases, both heavily edited, and no way to say whether anything had improved - the sample size was two and the quality bar was "the exec liked it". They restarted on the weekly report, got thirty-six reports in six weeks across three PMs, and could show a score moving from 3 of 6 to 5 of 6 with the exact check that lagged. Same six weeks, entirely different evidence.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Choosing the volunteer, and why it must be a volunteer<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The single most common pilot failure is a nominated participant. Nominated people produce compliant behaviour, compliant feedback, and no information. You want someone who put their hand up, because only they will tell you the part that did not work. Pick a credible PM rather than the keenest one - if it succeeds, the sceptics have to believe the result, which the department enthusiast cannot deliver.</p>
+        <p>Pick a programme that is mid-flight and slightly messy, because a pristine one proves nothing. Northwind at week 9 - a gate slipped from 10 August to 24 August, a vendor gone quiet, quality at 96.4% against a 99% gate - is exactly the sort of week worth testing on. Do not pick a programme in crisis: nobody learns anything in a fire, and the tool gets the blame for it. And protect your volunteer explicitly, out loud, in front of others: if the pilot produces nothing, that is a finding and not a performance issue. Otherwise they will find something, and you will have bought yourself a lie.</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="quality-bar">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · the acceptance test and how to sample it</span>
+      <h2>The quality bar, sampled not policed <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">You already have the acceptance test: the six checks from a5. What you need now is a way to apply it that does not turn your PMO into a review queue. Reviewing everything is how quality programmes die - it costs more than the thing it protects, it makes the reviewer the bottleneck, and it signals to every PM that you do not trust them. Sample instead.</p>
+
+    <table class="clean">
+      <thead><tr><th>The check</th><th>What passing looks like, concretely</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Status by a written RAG rule</strong></td><td>The colour and the rule appear on the same page, in the report itself</td></tr>
+        <tr><td><strong>The delta since last week</strong></td><td>At least one number stated twice: this week and last. "24 August, was 10 August"</td></tr>
+        <tr><td><strong>One named owner and one date per action</strong></td><td>A person's name, not a team. "Priya N., 6 August". Any TBC older than two weeks fails</td></tr>
+        <tr><td><strong>Decisions taken, logged</strong></td><td>An id, a date and a decider. "D-14, 29 July, Elena V." Or an explicit "none this week"</td></tr>
+        <tr><td><strong>Evidence behind every claim</strong></td><td>A ticket id, a metric with its target, or a named document. NWD-412. 96.4% against 99%</td></tr>
+        <tr><td><strong>The ask</strong></td><td>The decision, the options with costs, and the date after which the option lapses</td></tr>
+      </tbody>
+    </table>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>How to sample, and what to do when one fails<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Pick a fixed share of artifacts, review those properly, and leave the rest alone. The exact rate matters far less than the fact that it is fixed, published and unpredictable in its selection.</p>
+        <ul>
+          <li><strong>Start around one in five, chosen at random, for the first quarter.</strong> Then drop it as scores stabilise. A share that never falls is a police force wearing a sampling badge.</li>
+          <li><strong>Review the artifact, never the person, and publish only the aggregate.</strong> The finding is "this report scored 4 of 6, the ask and the delta are missing", not "this PM is weak on reporting". The function sees "we are averaging 4.6 and the ask is our weakest check", and nobody sees whose report was whose.</li>
+          <li><strong>Sample the gaps blocks too.</strong> A report that scores 6 of 6 with an empty gaps block every single week is not a triumph, it is a PM who has learned to stop declaring what they could not source.</li>
+        </ul>
+        <p>When a sampled artifact fails, the response is graded and it never starts with the PM:</p>
+        <ul>
+          <li><strong>First failure of a check:</strong> fix the shared prompt or the house rules. Most failures are systemic - if four PMs all miss the ask, the template is missing a section, not the people. Second time, same PM, same check: fifteen minutes with them, on the check, not on their competence.</li>
+          <li><strong>A failure that reached a sponsor with a wrong number in it:</strong> that is a real incident. Reconstruct how the number got in, whether the signing human read it, and whether the pack was stale. Almost always it is a stale pack or a claim with no id, and both are fixable in the cadence.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The check that was the template's fault.</strong> A PMO sampled twelve reports in month one and found the ask missing in nine of them. The obvious read was that PMs were avoiding hard conversations. The actual cause was that the shared report prompt listed the ask last, after a length limit, so it kept getting truncated. One line moved, and the next sample had the ask in eleven of twelve. Nobody had been avoiding anything, and if the lead had opened with a conversation about courage she would have insulted nine people for a formatting bug.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Where the bar sits inside your existing governance<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Do not build a parallel structure. PMI's 2026 standard asks for clear structures, roles, authority and guardrails inside existing governance, with real intervention triggers - not a separate AI committee with its own reporting line and no power. In practice that is four small amendments to documents you already have.</p>
+        <p>The <strong>house rules file</strong> gains the six checks and the RAG rule. The <strong>PMO assurance routine</strong> gains the sampling rate, as one more artifact type rather than a new process. The <strong>steerco pack</strong> gains one line: the aggregate report score and the weakest check this month, which makes quality visible without naming anyone. And the <strong>escalation path</strong> gains one trigger - a wrong figure reaching a sponsor is an incident and is logged like any other, which is what turns oversight from a claim into a mechanism. Four amendments beat a new framework nobody reads, and it is the version your risk and audit colleagues will actually accept.</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="metrics">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · measuring the thing, not the enthusiasm</span>
+      <h2>Metrics that are honest <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">Someone above you will ask for a number by week four. What you give them determines what your function optimises for the next two years, so choose it before you are asked. The test is simple: could a PM move this metric in one afternoon without the programme being any better run? If yes, it is a vanity metric and it will be gamed, not out of cynicism but because people move what you measure.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 288" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two lanes of metrics: honest measures like hours moved and report score against the rubric, versus vanity measures like prompts run, tokens and AI adoption percentage">
+        <style>
+          .a6mT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .a6mTi { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .a6mXi { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .a6mXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .a6mN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+        </style>
+        <rect x="26" y="40" width="400" height="52" rx="12" fill="#072538"/>
+        <text class="a6mT" x="46" y="72">Measure these</text>
+        <rect x="453" y="40" width="400" height="52" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="a6mTi" x="473" y="72">Never these</text>
+        <rect x="26" y="104" width="400" height="134" rx="12" fill="#EAF2F8"/>
+        <text class="a6mXi" x="46" y="132">· Hours moved off artifact labour, per PM per week</text>
+        <text class="a6mXi" x="46" y="158">· Report score against the six-check rubric</text>
+        <text class="a6mXi" x="46" y="184">· Findings that keep recurring in the gaps block</text>
+        <text class="a6mXi" x="46" y="210">· Decisions per steerco, and slip-to-escalation days</text>
+        <rect x="453" y="104" width="400" height="134" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="a6mXw" x="473" y="132">· Prompts run, messages sent, tokens burned</text>
+        <text class="a6mXw" x="473" y="158">· AI adoption %, however you define it</text>
+        <text class="a6mXw" x="473" y="184">· Seats licensed against seats logged in</text>
+        <text class="a6mXw" x="473" y="210">· Time saved, self-reported, with no baseline</text>
+        <rect x="26" y="258" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="a6mN" x="50" y="270">The left lane changes how the programme runs. The right lane changes only the slide about it.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - two lanes: metrics that move delivery, and metrics that move a slide</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The five honest metrics, and how to actually collect them<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Hours moved off artifact labour.</strong> Ask each pilot PM for one number in week 1: how long the weekly pack takes them, door to door. Ask again in week 6. It is self-reported and imperfect, and it is still the number your finance director will care about most. Be honest that it is an estimate, and never annualise it into a headcount saving unless you intend to make one.</li>
+          <li><strong>Report score against the rubric.</strong> Out of six, from your sample, averaged across the function. This is the quality half, and it is the number that stops the hours metric from turning into "fast and worse".</li>
+          <li><strong>Recurring findings in the gaps block.</strong> Count how often the same gap appears across three weeks. A gap that keeps returning is a structural hole in the programme - an unowned workstream, a metric nobody produces - and finding those is arguably the biggest prize in this whole track.</li>
+          <li><strong>Decisions reached per steerco, and days from slip detected to escalation raised.</strong> Count the decisions: if the ask is working, that number goes up and the meeting gets shorter. The escalation lag matters most and gets measured least - if your Tuesday sweep is working it shrinks, so baseline it from three past slips before you start or you will never be able to claim it.</li>
+          <li><strong>And two rules for whatever you report upward.</strong> Report the shape, not false precision: "the weekly pack went from about half a day to about an hour, across three PMs, over six weeks" is defensible, "41% efficiency gain" is not, and the first person who tests it will find that out in front of you. Always pair an hours number with the quality number in the same sentence, so nobody can quote half of it.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The adoption percentage that measured nothing.</strong> A delivery function reported "82% AI adoption" to its board, defined as PMs who had opened the tool that month. The board was delighted. Six months later someone asked what had improved and there was no answer, because nothing had been baselined and the metric had only ever measured logging in. The team quietly rebuilt around report score and days-to-escalation, both of which were worse than anyone had assumed and both of which then improved for real. The second set of numbers was smaller, later, and worth something.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="adoption">
+    <div class="section-kicker">
+      <span class="klabel">Part 4 · the human half</span>
+      <h2>Adoption with PMs who have been burned <span class="tag concept">3 min live</span></h2>
+    </div>
+    <p class="lede">Your PMs have survived a portfolio tool, a methodology change, a reorganisation and at least one thing that was going to transform delivery and then quietly disappeared. When you arrive with the next one, the resistance you meet is not irrational. It is memory. PMI's people-and-culture principle sits alongside the technical ones for exactly this reason, and it carries the same weight as governance and risk.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Three things to do, and one thing to say out loud<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Opt-in beats mandate, for longer than feels comfortable.</strong> Mandates produce compliance, and compliance produces artifacts that technically pass and teach you nothing. Keep it voluntary through the pilot and the first wave after it. If the thing works, the second wave asks to join.</li>
+          <li><strong>Show one PM's Friday afternoon coming back.</strong> Not a slide about productivity. A named colleague saying what they did instead: went home, or spent it on the vendor who had gone quiet. That story travels through a PMO faster than any number you will ever produce.</li>
+          <li><strong>Never measure individuals against each other, and make the failed pilot safe.</strong> The moment a leaderboard of report scores exists, the scores become the work and the gaps blocks go empty, so aggregate up, always. And say the stop condition before you start, then mean it - a pilot that can only succeed is not a pilot, and everyone in the room knows it.</li>
+        </ul>
+        <p>And the thing to say out loud, in the first session, in these words or close to them: <strong>nobody's accountability moved.</strong> The plan is still theirs. The date they commit is still theirs. The report with their name on it is still theirs. The only thing that changed is how long the first draft takes. That sentence does more for adoption than the demo, because the fear underneath the resistance is usually not about the tool. It is about whether the thing they are accountable for is about to be decided by something they cannot argue with.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The sceptic who became the proof.</strong> The most vocal doubter in one PMO refused the pilot and said so in a team meeting. The lead did not push, and did not exclude him either - he stayed on the review sample, reading other people's drafted reports and scoring them. Eight weeks later he asked to join, and his stated reason was that he had spent two months looking for the failure and had mostly found reports that were harder to argue with than his own. He then became the person other PMs asked, which no mandate would ever have produced. Being allowed to say no is what made his yes worth anything.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 2</span>
+      <h2>Write the pilot charter <span class="tag demo">★ 12 min · everyone builds</span></h2>
+    </div>
+    <p class="lede">One page. If it does not fit on one page you are piloting too much. Fill this in for your own function now, with real names in it, and you will leave tonight with something you could start on Monday.</p>
+
+    <div class="steps">
+      <div class="step"><p>Name the programme - one, mid-flight, slightly messy, not in crisis - and the artifact, which is the weekly status report unless you have a genuinely better reason: highest frequency, clearest rubric, lowest blast radius.</p></div>
+      <div class="step"><p>Name the volunteer, and the person covering them. If nobody volunteered, that is your first finding and the pilot has not started yet.</p></div>
+      <div class="step"><p>Write the quality bar - the six checks and a sampling rate you will actually sustain - then the go/no-go criteria, before week 1, including the version where you stop. Read them out to the volunteer.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ Try it now - the six-week pilot charter, one page</span>PILOT: AI-assisted weekly status reporting
+PROGRAMME: ..................    SPONSOR: ..................
+VOLUNTEER PM: ..................    COVER: ..................
+RUNS: week 1 to week 6, starting ..........
+IN SCOPE   one artifact: the weekly exec status report, drafted in the workspace,
+           on the a5 cadence - Mon refresh, Tue sweep, Wed draft + gaps, Thu decide, Fri sign
+OUT OF SCOPE   every other programme, artifact and PM. Nothing else changes.
+
+QUALITY BAR
+- The six checks: written RAG rule · delta since last week · one named owner and one
+  date per action · decisions logged · evidence behind every claim · the ask.
+- Sampling: 1 in 5 reports reviewed at random. Artifact reviewed, never the person.
+- Aggregate score published to the function. Individual scores published to nobody.
+
+GO / NO-GO AT WEEK 6 - all three, or it is a not yet
+1) Report score up from the week 1 baseline of ...... of 6.
+2) Time on the weekly pack down from ...... hours, self-reported, same PM.
+3) The volunteer wants to keep it, unprompted, in their own words.
+WE STOP IF score has not moved by week 6, or a wrong figure reached a sponsor twice.
+STOPPING IS A RESULT. It is written here so nobody has to be brave in week 6.</div>
+
+    <div class="prompt-box bad"><span class="label">The charter that guarantees an unreadable week 6</span>PILOT: roll out AI across the PMO
+SCOPE: all 14 PMs, all artifacts, from Monday
+SUCCESS: improved efficiency and better quality reporting
+REVIEW: at the end</div>
+
+    <div class="callout tip">
+      <strong>Why the second one cannot be evaluated</strong>
+      No baseline, no control, no artifact boundary, no named human, no stop condition, and a success criterion that cannot be false. At the end you will have opinions and a support queue, and whoever shouts loudest in week 5 will decide the outcome. The narrow charter is not caution - it is the only version that produces evidence.
+    </div>
+  </section>
+
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 2</span>
+      <h2>The six-week measurement plan <span class="tag demo">★ 10 min · build your own</span></h2>
+    </div>
+    <p class="lede">A measurement plan written in week 1 is evidence. The same numbers assembled in week 6 are a story you told yourself. The difference is entirely the baseline, and it takes about twenty minutes to capture before you start.</p>
+
+    <div class="steps">
+      <div class="step"><p>Capture the baseline this week, before anything changes. Score three recent reports out of six. Ask the PM how long the weekly pack takes, door to door. Pull three past slips and count the days from detection to escalation.</p></div>
+      <div class="step"><p>Write down what each number is, exactly, and who collects it. "Report score" means the six checks scored by the PMO lead from a random sample. "Hours" means one self-reported number from one PM, and you will say so when you report it. Then set the rhythm: score weekly, hours in weeks 1 and 6 only, decisions counted every steerco, escalation lag baselined once.</p></div>
+      <div class="step"><p>Write the result that would make you stop, in a number - not "if it does not work" but "if the score has not moved from 3 of 6 by week 6". Then write the honest sentence you will say upward, in advance: shape rather than false precision, always paired with the quality number.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ The measurement plan - fill it before week 1</span>METRIC                          BASELINE (wk 1)   COLLECTED BY      RHYTHM
+Report score, out of 6           ...... of 6       PMO lead          weekly, 1-in-5 sample
+Hours on the weekly pack         ...... hrs        the PM, self-rep  wk 1 and wk 6 only
+Recurring gaps-block findings    ...... repeats    PMO lead          counted at wk 3 and wk 6
+Decisions reached per steerco    ......            chair             every steerco
+Days, slip detected to escalated ...... days       PMO lead          baselined from 3 past slips
+
+WE STOP IF the score has not moved from the baseline by week 6, OR a wrong figure
+reaches a sponsor twice, OR the volunteer would rather go back and says so.
+
+WHAT I WILL SAY UPWARD AT WEEK 6 - shape, not false precision
+"Across three PMs over six weeks the weekly pack went from about half a day to about
+an hour, and the report score went from 3 of 6 to 5 of 6 on a 1-in-5 sample. The
+hours figure is self-reported. The weakest check is still the ask."
+WHAT I WILL NOT SAY: a percentage efficiency gain, an annualised saving, an adoption rate.</div>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The twenty minutes that made the case.</strong> A PMO lead spent week 1 doing nothing but baselining: three reports scored, one PM's honest estimate of the pack, three past slips counted back to detection. It felt like wasted time and one person said so. At week 6 she had a before and an after for every claim, including one that got worse - the gaps blocks got longer, because the PMs were finally declaring what they could not source. She reported that too, and it was the number the sponsor found most convincing, because nobody presents their own bad number unless the rest is real.</p>
+    </div>
+  </section>
+
+  <section class="section" id="close">
+    <div class="section-kicker">
+      <span class="klabel">Closing the leader track</span>
+      <h2>What to do on Monday <span class="tag concept">2 min live</span></h2>
+    </div>
+    <p class="lede">Six sessions, and the whole track collapses into a short list. None of it needs a budget, a business case or a vendor conversation to start.</p>
+    <ul>
+      <li><strong>Book the fifteen minutes with your sponsor</strong> and take the drafted RAG rule in with you. Highest value per minute in the entire track, and it needs nobody's permission.</li>
+      <li><strong>Score three reports from your portfolio out of six</strong> - that is your baseline, and it takes about twenty minutes - then ask who wants to volunteer, saying the stop condition in the same breath. Do not nominate anyone.</li>
+      <li><strong>Check the a2 boundary is actually written down</strong> before real programme material goes anywhere. If nobody in your organisation can tell you what is allowed, that is the finding, and it is yours to escalate.</li>
+      <li><strong>Amend the four documents you already have</strong> - house rules, assurance routine, steerco pack, escalation triggers - rather than writing a new framework.</li>
+    </ul>
+    <div class="callout tip">
+      <strong>Where to go next, and who to send</strong>
+      This track deliberately stopped at the leadership half. If you want to build the artifacts yourself - the workspace, the charter, the milestone architecture, the dependency map, the self-maintaining risk register, the scored status report - the PM track starts at <a href="b1-workspace-setup.html">b1, your programme workspace</a>, and runs ten sessions on the same Northwind programme. Send your volunteer to b1 and b6 before the pilot starts. If you do one of the two, do b6: it scores the same six checks live, and watching a report climb from 24 to 100 as each check goes in does more for belief than any policy you could write.
+    </div>
+    <p class="lede">The three rails have not changed since a1, and they will outlast every product name in this course. Context beats prompting. The dates come from the team. A named human signs it. Everything else is technique, and technique ages in months.</p>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Try it yourself - this week <span class="tag exercise">◐ 30-45 min total</span></h2>
+    </div>
+    <ul>
+      <li>Finish the pilot charter on one page with real names in it, including the cover person and the stop condition.</li>
+      <li>Capture the baseline before anything changes: three reports scored out of six, one honest hours number, three past slips counted from detection to escalation.</li>
+      <li>Ask for volunteers in your next team meeting and say the stop condition out loud in the same conversation. Notice who does not put their hand up, and ask them privately what would have to be true.</li>
+      <li>Choose your sampling rate and write it down. One in five is a fine place to start; the number matters less than publishing it.</li>
+      <li>Draft the sentence you will say upward at week 6, tonight, before you have any data. If you cannot write an honest version of it now, your metrics are wrong. Then send your volunteer to PM track b1 and b6, and if they only do one, make it b6.</li>
+    </ul>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">Taught from PMI's public standards and AI guidance, and the Northwind case carried through both tracks. Certification, the full normative text of the AI standard, and vendor product training stay with their official providers. This session covers:</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMI - Standard for AI in Portfolio, Program and Project Management (2026)</span><span class="note">Parts 2 + 4 · people and culture, and governance inside existing structures</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMI - AI in project management, adoption reporting</span><span class="note">Parts 1 + 3 · where AI lands first, and the practitioner experience gap</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">PM track b9-b10 - connectors, skills, and the full delivery week</span><span class="note">Part 1 · what a PM builds once the pilot goes past one artifact</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">PMBOK Guide 7 - measurement performance domain</span><span class="note">Part 3 · baselines, and why a metric without one is a story</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Why is the weekly status report almost always the right first artifact for a pilot?</p>
+      <button class="qopt" type="button">A · It is the artifact executives care about most, so the pilot gets attention</button>
+      <button class="qopt" type="button">B · Highest frequency, clearest rubric, lowest blast radius - six weeks gives you real data points and cheap mistakes</button>
+      <button class="qopt" type="button">C · It is the hardest artifact, so success there proves everything else works</button>
+      <p class="qwhy">A charter pilot gives you one event and no trend. Thirty-six reports over six weeks gives you a score that moves, scored against six objective checks, with errors caught on Wednesday by the person signing on Friday.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · Your sample finds nine of twelve reports are missing the ask. What do you do first?</p>
+      <button class="qopt" type="button">A · Coach the nine PMs individually on escalation confidence</button>
+      <button class="qopt" type="button">B · Publish the individual scores so the pattern is visible to everyone</button>
+      <button class="qopt" type="button">C · Look at the shared prompt and the house rules - a failure that common is systemic, not personal</button>
+      <p class="qwhy">Review the artifact, never the person, and fix the system before the people. Nine out of twelve is a template problem. Publishing individual scores would also empty every gaps block in the function within a month.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Your director asks for one number at week 4. Which of these is worth giving them?</p>
+      <button class="qopt" type="button">A · Report score against the six-check rubric, paired with the hours number in the same sentence</button>
+      <button class="qopt" type="button">B · AI adoption percentage across the PMO this month</button>
+      <button class="qopt" type="button">C · Prompts run and seats logged in, which are already collected automatically</button>
+      <p class="qwhy">Adoption rate, prompts and seats measure logging in, not delivery, and any PM could move them in an afternoon. Score plus hours, quoted together and as a shape rather than false precision, is the pair nobody can quote half of.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Leader session 6 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>The pilot shape</b><span>one programme, one artifact, six weeks, one PM who volunteered. Nothing else changes.</span></div>
+      <div class="cheat-item"><b>Why the status report</b><span>highest frequency, clearest rubric, lowest blast radius. Boring beats exciting.</span></div>
+      <div class="cheat-item"><b>Baseline in week 1</b><span>three reports scored, one hours estimate, three slips counted. Twenty minutes, and it makes the case.</span></div>
+      <div class="cheat-item"><b>Sample, do not police</b><span>1 in 5 at random. Artifact reviewed, never the person. Aggregate published, individuals never.</span></div>
+      <div class="cheat-item"><b>Fix the system first</b><span>a check that fails across four PMs is a template bug, not a competence problem.</span></div>
+      <div class="cheat-item"><b>Honest metrics</b><span>hours moved · report score · recurring gaps · decisions per steerco · slip-to-escalation days.</span></div>
+      <div class="cheat-item"><b>Vanity metrics</b><span>prompts, tokens, adoption %, seats, unbaselined time saved. All gameable in an afternoon.</span></div>
+      <div class="cheat-item"><b>Say it out loud</b><span>opt-in, never a leaderboard, stopping is a result, and nobody's accountability moved.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Leader session 6 of 6 · learn-ai-project-management-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="a5-reporting-cadence.html">← Previous: The reporting cadence</a> &nbsp;·&nbsp; <a href="b1-workspace-setup.html">Next: start the PM track →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

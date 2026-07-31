@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PM session 5 · A risk register that maintains itself - learn AI + project management with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-project-management-with-phoebe</a> / PM session 5 of 10</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI + Project Management with Phoebe · PM track · Session 5 of 10</div>
+    <h1>A risk register that maintains itself: <span class="accent">triggers, not adjectives</span></h1>
+    <p class="sub">Every programme you have ever worked on had a risk register. Most of them died in week 6, because refreshing them is the single most boring recurring task in delivery and nobody protects an hour for boredom. Tonight you build Northwind's register with AI doing the tedious half - phrasing, deduplicating, diffing - and you write the field everyone skips: the trigger. A risk without a trigger is a worry with a reference number.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 PM track</span>
+      <span class="chip audience">PMs · TPMs · delivery leads</span>
+      <span class="chip audience">Live RAID log</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Where we are</span>
+      <span class="a2" style="flex:4">3-16 · Anatomy of a risk row</span>
+      <span class="a3" style="flex:5">16-30 · Build the register</span>
+      <span class="a4" style="flex:3">30-45 · Triggers + Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we are: week 5, the map exists, now what breaks it</h2>
+    </div>
+    <p class="lede">Northwind has a charter (b2), six milestones with gate criteria (b3), and as of last week a dependency map with a hard gate drawn across the critical path (b4). You know that <strong>M3</strong> raw ingest has to sign off by 10 August, that <strong>M4</strong> modelled warehouse cannot start until two data engineers exist, and that Veridian - the POS extract vendor - sits on an unconfirmed external arrow. The plan is now good enough to be worth defending, and that is exactly what a risk register is: the list of things that could break the plan you just built, written so specifically that you would notice them starting. Not a compliance annex, not a wall of amber. A short list of named futures with a named human watching each one and a written signal for when to act.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill peach">★ Try it now prompt</span>
+      <span class="pill inkpill">Official sources covered</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      A five-row Northwind register in proper cause-effect form with owners and testable triggers, a drafting prompt that refuses to invent probabilities, a weekly refresh prompt that returns a short "what moved" list instead of a re-read, and the trigger-writing drill that turns "the vendor might be slow" into something a calendar can check.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: ANATOMY ============ -->
+  <section class="section" id="anatomy">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers PMBOK 7 uncertainty domain</span>
+      <h2>The anatomy of a risk row <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Nine fields. You already know eight of them and half your registers are missing the ninth. Take them one at a time, because each field has a specific failure mode and the failures compound: a vague description makes probability meaningless, a missing owner makes mitigation optional, and a missing trigger makes the whole row decorative.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 426" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One Northwind risk row broken into nine fields: id, description, probability, impact, severity, owner, trigger, mitigation and review date, with the trigger field highlighted">
+        <style>
+          .b5rT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .b5rI { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .b5rX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .b5rXm { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .b5rXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .b5rLw { font: 700 11px Inter, sans-serif; fill: #45210A; letter-spacing: .08em; }
+          .b5rH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+          .b5rN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+        </style>
+        <text class="b5rH" x="26" y="28">ONE ROW OF THE NORTHWIND REGISTER, TAKEN APART</text>
+        <rect x="26" y="44" width="268" height="96" rx="12" fill="#0E3A5C"/>
+        <text class="b5rT" x="46" y="76">1 · ID</text>
+        <text class="b5rX" x="46" y="102">R-07</text>
+        <text class="b5rX" x="46" y="122">Stable, unique, never reused.</text>
+        <rect x="306" y="44" width="268" height="96" rx="12" fill="#0E3A5C"/>
+        <text class="b5rT" x="326" y="76">2 · Description</text>
+        <text class="b5rX" x="326" y="102">Because X, Y may happen,</text>
+        <text class="b5rX" x="326" y="122">leading to Z. Never a noun.</text>
+        <rect x="586" y="44" width="268" height="96" rx="12" fill="#2C6A99"/>
+        <text class="b5rT" x="606" y="76">3 · Probability</text>
+        <text class="b5rX" x="606" y="102">Medium - your judgement</text>
+        <text class="b5rX" x="606" y="122">and the team's. Not a model's.</text>
+        <rect x="26" y="152" width="268" height="96" rx="12" fill="#2C6A99"/>
+        <text class="b5rT" x="46" y="184">4 · Impact</text>
+        <text class="b5rX" x="46" y="210">High - M3 slips past the</text>
+        <text class="b5rX" x="46" y="230">10 Aug gate, M4 moves too.</text>
+        <rect x="306" y="152" width="268" height="96" rx="12" fill="#9CC4DE"/>
+        <text class="b5rI" x="326" y="184">5 · Severity</text>
+        <text class="b5rXm" x="326" y="210">P x I, one written rule,</text>
+        <text class="b5rXm" x="326" y="230">applied to every row.</text>
+        <rect x="586" y="152" width="268" height="96" rx="12" fill="#9CC4DE"/>
+        <text class="b5rI" x="606" y="184">6 · Owner</text>
+        <text class="b5rXm" x="606" y="210">Priya N. A person who can</text>
+        <text class="b5rXm" x="606" y="230">act, never "the team".</text>
+        <rect x="26" y="262" width="10" height="10" rx="2" fill="#F97316"/>
+        <text class="b5rLw" x="44" y="271">THE FIELD EVERYONE SKIPS</text>
+        <rect x="26" y="280" width="268" height="96" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="b5rI" x="46" y="312">7 · Trigger</text>
+        <text class="b5rXw" x="46" y="338">No SLA reply on VN-2291</text>
+        <text class="b5rXw" x="46" y="358">by 6 Aug. Dated, checkable.</text>
+        <rect x="306" y="280" width="268" height="96" rx="12" fill="#EAF2F8"/>
+        <text class="b5rI" x="326" y="312">8 · Mitigation</text>
+        <text class="b5rXm" x="326" y="338">Contract engineer option</text>
+        <text class="b5rXm" x="326" y="358">priced, not just described.</text>
+        <rect x="586" y="280" width="268" height="96" rx="12" fill="#EAF2F8"/>
+        <text class="b5rI" x="606" y="312">9 · Review date</text>
+        <text class="b5rXm" x="606" y="338">Every Tuesday, 15 minutes.</text>
+        <text class="b5rXm" x="606" y="358">Undated rows die in week 6.</text>
+        <rect x="26" y="394" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="b5rN" x="50" y="406">Without field 7, a risk row is just a worry that has been given a reference number.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - nine fields, and the one in orange is the one your current register is missing</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Cause, effect, and why nouns are useless<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Most registers are lists of nouns. "Vendor risk." "Resourcing." "Data quality." A noun cannot be mitigated, triggered or closed, because nobody can tell what would have to change for it to go away. The fix is a sentence with three parts, and written that way the row tells you where to look for the trigger, what mitigation would even mean, and when to close it:</p>
+        <ul>
+          <li><strong>Because [cause that is true today]</strong> - the condition that already exists. "Because Veridian has no signed SLA on the POS extract..."</li>
+          <li><strong>[effect] may happen</strong> - the uncertain event, stated once, singular. "...the field spec may arrive after our build window..."</li>
+          <li><strong>leading to [consequence on the plan]</strong> - the damage, in the currency of your programme. "...leading to M3 missing the 10 August gate and M4 moving with it."</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Eleven rows that said "integration".</strong> A programme review found a 40-row register where eleven rows were one-word nouns and four of those eleven were the same risk described by four different workstreams. Nobody had noticed, because you cannot spot a duplicate between "integration" and "interface complexity". Rewritten as cause-effect sentences, the eleven collapsed into three real risks - and one of the three turned out to have no owner at all, which is how it had survived for seven months.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The trigger: the field that turns watching into acting<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A trigger is the observable, dated fact that means "act now". Not "if things look bad". Not "if the vendor seems slow". Something a person could check on a Tuesday morning in thirty seconds and answer yes or no without any judgement at all. Three tests:</p>
+        <div class="steps">
+          <div class="step"><p><strong>Could a colleague check it without asking you what you meant?</strong> "No written response on VN-2291 by 6 August" passes. "Vendor engagement deteriorates" fails.</p></div>
+          <div class="step"><p><strong>Does it have a date or a threshold, and does it say what happens next and who does it?</strong> A trigger without a deadline never fires, it just gets more true slowly until it is an issue. "Escalate to Elena V. and start the contract-engineer option" is a trigger; "review" is not an action, it is a way of deferring one.</p></div>
+        </div>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The risk everyone was watching and nobody acted on.</strong> A vendor-dependency risk sat amber on a register for four months. It was discussed at every weekly. Everyone agreed it was concerning. Then it became an issue, cost six weeks, and the post-mortem asked the only useful question: at what point should we have acted? Nobody could answer, because no point had ever been defined. Four months of attention with no decision rule is not risk management. It is a group of professionals worrying together on a schedule.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Severity, RAID hygiene, and the rule you write once<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Use a coarse scale</strong> - low, medium, high on both axes. Five-point scales invite an hour of debate about whether something is a 3 or a 4, which is an hour not spent on the trigger. Decide the rule once, put it in your house rules, and stop renegotiating it per row.</li>
+          <li><strong>Severity ranks the register, it does not manage it.</strong> Its only job is to say which eight rows get read at the steerco. And a hard gate outranks its score: R-03 could compute as medium and still be the most important row on the page.</li>
+          <li><strong>A risk has not happened yet.</strong> If it has, it is an issue - different list, different cadence, and an owner acting today rather than watching. "Read this register and tell me which rows have already happened" is a thirty-second prompt that usually finds two.</li>
+          <li><strong>An assumption is a risk you decided not to test</strong>, and every unconfirmed external dependency from b4 becomes a row here. Keep all four in one document with four tabs, or nothing gets reviewed.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: GOOD AND BAD ============ -->
+  <section class="section" id="good-bad">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · the honest split for this artifact</span>
+      <h2>What AI is genuinely good and bad at here <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">Risk is the place where AI assistance is most tempting and most dangerous, because the output looks like analysis. It will hand you a register with a probability column full of confident percentages, and every one of them is a language model producing a plausible-looking number. Here is the split, and it is sharper than in any other session of this track.</p>
+
+    <table class="clean">
+      <thead><tr><th>Genuinely good at</th><th>Genuinely bad at, and do not let it try</th></tr></thead>
+      <tbody>
+        <tr><td>Turning a vague worry into a cause-effect risk statement. "I'm nervous about the vendor" becomes a three-part sentence in seconds, and it will be a better sentence than the one you would have typed at 6pm.</td><td><strong>Probability.</strong> It will produce "30%" with total confidence and it means nothing. There is no base rate, no data, no history - just a plausible-shaped number. Probability is your judgement and the team's.</td></tr>
+        <tr><td>Drafting a testable trigger. Ask for the observable dated fact and it will propose three candidates. You pick, and picking is much easier than inventing.</td><td><strong>Whether a vendor will actually deliver.</strong> That lives in Priya N.'s relationship with Veridian, in how the last two deliveries went, and in a tone of voice on a call. None of it is in your workspace.</td></tr>
+        <tr><td>Spotting duplicates and near-duplicates across a 40-row register, and diffing this week against last week - what is new, what moved, what has not changed in six weeks. Reading at scale, and the single reason registers stay alive.</td><td><strong>Anything about people,</strong> and <strong>deciding what to escalate.</strong> Whether Marcus L. is about to resign or the sponsor has lost interest is invisible to the pack, and escalation is a political act priced by what your sponsor tolerates and what you spent last time.</td></tr>
+      </tbody>
+    </table>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Why the probability column is the trap<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Ask for a risk register and you will get probabilities. They will be varied, they will look considered, and they will be produced by the same process that produces fluent prose - which is to say, by what a probability usually looks like in a document of this kind. Two things go wrong immediately. First, <strong>the number gets treated as analysis</strong>: a sponsor reads "35%" and assumes somebody computed something, nobody did, and being unable to defend a number in front of a steerco costs more credibility than the risk itself. Second, <strong>it stops the conversation that matters</strong> - the value of assigning probability is the five-minute argument between you, Sofia K. and Marcus L. about how likely this really is, and a pre-filled number ends that argument before it starts.</p>
+        <p>So the rule in the drafting prompt is blunt: leave probability and impact <em>blank</em>, and hand back a list of who should fill each one in. That is rail two - the dates come from the team - applied to the risk register. Put it in your house rules file from b1 as one line, "never fill probability or impact, leave them blank and name the person who should set them", and you never have to catch it again.</p>
+      </div>
+    </details>
+
+  </section>
+
+  <!-- ============ PART 3: THE REFRESH ============ -->
+  <section class="section" id="refresh">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the habit that keeps it alive</span>
+      <h2>The weekly refresh, in fifteen minutes <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">Registers do not die because people stop caring about risk. They die because the refresh is boring and undated, so it loses every week to something urgent. The way out is to make the refresh mechanical - four questions of every row, always the same four - and to make the output short enough that someone actually reads it.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 326" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The weekly refresh loop: four questions asked of every row - trigger, severity, mitigation, close - looping every Tuesday, producing a short what-moved list rather than a full re-read">
+        <style>
+          .b5fT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .b5fI { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .b5fX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .b5fXm { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .b5fXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .b5fH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+          .b5fN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+        </style>
+        <defs>
+          <marker id="b5fAh" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="#9CC4DE"/>
+          </marker>
+        </defs>
+        <text class="b5fH" x="26" y="30">FOUR QUESTIONS, ASKED OF EVERY ROW, EVERY TUESDAY</text>
+        <rect x="26" y="48" width="190" height="92" rx="12" fill="#0E3A5C"/>
+        <text class="b5fT" x="46" y="80">1 · The trigger</text>
+        <text class="b5fX" x="46" y="104">Has it fired since</text>
+        <text class="b5fX" x="46" y="122">last week? Yes or no.</text>
+        <line x1="220" y1="94" x2="234" y2="94" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b5fAh)"/>
+        <rect x="238" y="48" width="190" height="92" rx="12" fill="#2C6A99"/>
+        <text class="b5fT" x="258" y="80">2 · The severity</text>
+        <text class="b5fX" x="258" y="104">Has P or I moved,</text>
+        <text class="b5fX" x="258" y="122">and on what news?</text>
+        <line x1="432" y1="94" x2="446" y2="94" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b5fAh)"/>
+        <rect x="450" y="48" width="190" height="92" rx="12" fill="#2C6A99"/>
+        <text class="b5fT" x="470" y="80">3 · Mitigation</text>
+        <text class="b5fX" x="470" y="104">Is it happening, or</text>
+        <text class="b5fX" x="470" y="122">just written down?</text>
+        <line x1="644" y1="94" x2="658" y2="94" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b5fAh)"/>
+        <rect x="662" y="48" width="190" height="92" rx="12" fill="#9CC4DE"/>
+        <text class="b5fI" x="682" y="80">4 · Close it?</text>
+        <text class="b5fXm" x="682" y="104">Dead rows make a</text>
+        <text class="b5fXm" x="682" y="122">register unreadable.</text>
+        <path d="M 757,140 C 757,182 121,182 121,140" fill="none" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b5fAh)"/>
+        <rect x="26" y="216" width="826" height="66" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="b5fI" x="48" y="244">The output is a "what moved" list - three to six lines.</text>
+        <text class="b5fXw" x="48" y="266">Not a re-read of all 40 rows. Nobody reads a re-read, which is how registers die.</text>
+        <rect x="26" y="298" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="b5fN" x="50" y="310">If the refresh takes an hour, it will be skipped. Fifteen minutes survives a bad week.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - four questions, one loop, and an output short enough that someone reads it</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The refresh prompt, and why the output must be short<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Feed it last week's register and this week's evidence - stand-up notes, ticket updates, the vendor thread - and ask the four questions. The critical instruction is about the <em>output</em>, not the analysis: a delta, not a document.</p>
+        <div class="prompt-box good"><span class="label">★ Try it now - the Tuesday refresh</span>Attached: last week's Northwind risk register, this week's stand-up notes, the
+Jira export, and Priya N.'s vendor thread.
+
+Ask these four questions of EVERY row, then give me the answer as a DELTA only.
+
+1. Has the trigger fired? Quote the evidence line that shows it, or say "not fired".
+2. Has severity moved, and only on NEW evidence? Name the evidence. If probability or
+   impact should change, say who makes that call - do not change the number yourself.
+3. Is the mitigation actually happening? Look for a ticket, a meeting, a message, a
+   name. "Planned" is not happening. If you find nothing, say "no evidence".
+4. Should this row close? A row closes when the cause is gone, or when the event has
+   happened and it is now an issue. Say which.
+
+OUTPUT
+- A "what moved" list, maximum eight lines. Nothing that did not move.
+- Then rows with no evidence of movement for 3+ weeks, as "stale, review or close".
+- Then any NEW risk implied by this week's evidence, in cause-effect form, with a
+  suggested trigger and owner left as "TBC - ask [role]".
+- Do not restate the register. I have read it.</div>
+        <p>The "do not restate the register" line does more work than any other instruction on this page. Without it you get a beautifully formatted forty-row table every week, which nobody reads, which means the refresh has technically happened and practically has not. Put the fifteen minutes in the calendar on the same morning every week, just before the status report goes out - a refresh with no downstream consumer is the first thing dropped in a bad week - and bring the "what moved" list <em>to</em> the meeting rather than editing the register live in it. Session b9 automates the evidence-gathering half; the four questions stay yours forever.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The stale-row question that found the real problem.</strong> A delivery lead ran the refresh and the "no evidence of movement for 3+ weeks" section came back with five rows. Four were genuinely dead and got closed. The fifth was the biggest risk on the register - and it had shown no movement for six weeks because its owner had quietly left the programme in March and nobody had reassigned it. The register said it was being managed. Nobody was managing it. That one line of the prompt is worth the whole habit.</p>
+        </div>
+      </div>
+    </details>
+
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 2</span>
+      <h2>Build the Northwind register <span class="tag demo">★ 14 min · everyone builds</span></h2>
+    </div>
+    <p class="lede">Five rows. R-03 the hiring hard gate, R-05 the legacy warehouse decommission, R-07 the Veridian SLA, R-09 sponsor availability, R-11 data quality below the 99% gate. Draft them with the prompt, then spend the real time on owners and triggers - that is the part only you can do.</p>
+
+    <div class="prompt-box good"><span class="label">★ Try it now - draft the register</span>Using the Northwind charter, the b3 milestone plan and the b4 dependency map in this
+workspace, draft a risk register. Cover at minimum: the data-engineer hiring gap on
+the critical path, the legacy warehouse decommission, the Veridian POS extract SLA,
+sponsor availability, and data quality against the 99% gate. Add any others the pack
+clearly implies.
+
+FORMAT - one row each, with these fields:
+id | description | probability | impact | severity | owner | trigger | mitigation | review
+
+RULES, all of them non-negotiable
+- DESCRIPTION must be cause and effect: "Because [condition true today], [event] may
+  happen, leading to [effect on a named milestone or gate]." Never a noun phrase.
+- Leave PROBABILITY, IMPACT and SEVERITY BLANK. Do not estimate them. At the end,
+  list who should set each one and what they would need to know.
+- Every row needs a TRIGGER: an observable, dated, checkable fact. If you cannot make
+  it checkable, write "trigger TBC" - do not write a feeling.
+- OWNER is a named person from the pack, or "TBC - ask [role]". Never "the team".
+- MITIGATION is a specific action with a cost or an effort attached, not "monitor
+  closely" and not "engage stakeholders".
+- Use the real ids from the pack: milestones M1-M6, tickets NWD-412 and VN-2291.
+- If two rows are the same risk in different words, merge them and say what you merged.</div>
+
+    <p>Here is what the five core rows look like after the team has argued with the draft for ten minutes and filled in the columns the model was forbidden to touch. Read the R-09 owner column especially: sponsor availability is a real risk on almost every programme and almost never on a register, because the owner would have to be you and the mitigation would have to be an uncomfortable conversation. Put it on anyway. A risk you are too polite to write down is still there, and it will still cost you the quarter.</p>
+
+    <table class="clean">
+      <thead><tr><th>ID</th><th>Because... may happen... leading to</th><th>Owner</th><th>Trigger</th></tr></thead>
+      <tbody>
+        <tr><td>R-03</td><td>Because two data-engineer roles are unfilled, the M4 build may have nobody to start it, leading to M4, M5 and M6 sliding one week per week of delay. Hard gate on the critical path.</td><td>Elena V.</td><td>No accepted offer by 24 Aug, or fewer than 3 candidates at final stage on 10 Aug</td></tr>
+        <tr><td>R-05</td><td>Because the legacy warehouse decommission window is owned by IT ops and unscheduled, the M5 cutover may have no slot, leading to governed BI going live behind a system it was meant to replace.</td><td>Elena V. (sponsor to broker)</td><td>No written decommission window agreed by 31 Aug</td></tr>
+        <tr><td>R-07</td><td>Because Veridian has no signed SLA on the POS extract, the field spec may arrive after our build window, leading to M3 missing the 10 Aug gate.</td><td>Priya N.</td><td>No written response on VN-2291 by 6 Aug</td></tr>
+        <tr><td>R-09</td><td>Because the sponsor has three competing programmes this quarter, gate decisions may wait more than five working days, leading to every milestone inheriting the delay.</td><td>The delivery lead (you)</td><td>Any gate decision open more than 5 working days</td></tr>
+        <tr><td>R-11</td><td>Because 3 of 9 sources have no upstream validation, nightly loads of 812k rows may fall below the 99% DQ gate, leading to M3 sign-off being refused. NWD-412 is the current instance.</td><td>Marcus L.</td><td>DQ below 99% on any two consecutive nights</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The blank column that started the best meeting of the month.</strong> A PM brought a register with probability and impact deliberately empty and one question: "you three tell me." Twenty minutes later Marcus L. and Sofia K. were arguing about whether the DQ risk was high or medium, and in the argument Marcus mentioned that three of the nine sources had no upstream validation at all - a fact that had never appeared in any document. The empty column bought that fact. A pre-filled number would have bought silence.</p>
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 2</span>
+      <h2>The trigger-writing drill <span class="tag demo">★ 8 min · turn worries into tripwires</span></h2>
+    </div>
+    <p class="lede">Take three vague risks - yours, or the three below - and convert each into a tripwire. This is the highest-value eight minutes in the session, because a register full of good descriptions and bad triggers is still a register nobody acts on. And a trigger has one more job on an AI-assisted programme: a model can watch a register and tell you what changed, but only if the rows contain checkable facts. Hedged risk prose is unwatchable by humans and machines alike.</p>
+
+    <div class="prompt-box bad"><span class="label">The vague versions - all three are real lines from real registers</span>The vendor might be slow.
+
+Data quality could become an issue as we scale.
+
+Resourcing is a concern for the build phase.</div>
+
+    <p>Every one of them is unfalsifiable. There is no Tuesday on which you could look at any of them and say "yes, that has happened, act now", so nobody ever does and each one sits amber until it becomes an issue. Converted:</p>
+    <table class="clean">
+      <thead><tr><th>Vague worry</th><th>Tripwire: observable, dated, with the action attached</th></tr></thead>
+      <tbody>
+        <tr><td>The vendor might be slow</td><td>If VN-2291 has no written SLA response by 6 Aug, escalate to Elena V. and start the contract-engineer option for the POS ingest.</td></tr>
+        <tr><td>Data quality could become an issue as we scale</td><td>If the nightly DQ score falls below 99% on any two consecutive nights, Marcus L. stops new source onboarding and raises it at the Wednesday gate review.</td></tr>
+        <tr><td>Resourcing is a concern for the build phase</td><td>If fewer than 3 candidates are at final stage on 10 Aug, or no offer is accepted by 24 Aug, Elena V. approves two contract engineers that week.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="steps">
+      <div class="step"><p>Take your three vaguest rows and ask: what would I see on a Tuesday morning that means this has started? Write that sentence, then put a date or a threshold in it - no date means it never fires, and "two consecutive nights" is a threshold where "occasionally" is not.</p></div>
+      <div class="step"><p>Attach the action and the person - if the action is "review", you have not finished, because review is how you defer a decision while feeling productive. Then read it to the owner and ask: "if I sent you this on the day it fired, would you know what to do?" If they hesitate, the trigger is not done.</p></div>
+    </div>
+
+    <div class="callout tip">
+      <strong>Next week: it all has to fit on one page</strong>
+      In b6 the plan, the map and this register have to become a status report that Elena V. reads in two minutes - including the bad news that M3 is slipping. Bring your register. A row with a fired trigger writes its own paragraph in the report; a row with a vague worry writes nothing and takes up space. That is the whole reason we did tonight before next week.
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Try it yourself - this week <span class="tag exercise">◐ 40-60 min total</span></h2>
+    </div>
+    <ul>
+      <li>Rewrite every row of your real register into cause-effect form, and count the ones that collapse into each other - that number is how much of your register was dialect rather than risk. Then write a real trigger for your top eight rows: observable, dated, with an action and a name. If a row resists having a trigger written, that is usually a sign it is an assumption, not a risk.</li>
+      <li>Delete or close every row that has not moved in six weeks and has no trigger, then put the fifteen-minute refresh in your calendar, weekly, before your status report goes out. Run it once this week and keep the "what moved" list.</li>
+      <li>Take every UNCONFIRMED external dependency from your b4 map and add it as a risk row, with the confirmation message as the mitigation and a date as the trigger.</li>
+      <li>Add the one risk you have been too polite to write down. Every programme has one. Yours is probably about a person, a sponsor, or a promise somebody made that nobody wrote in.</li>
+    </ul>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">Risk practice comes from the delivery canon; the human-oversight rule that keeps probabilities out of a model's hands comes from PMI's AI standard. This session covers:</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMBOK Guide 7th ed. - uncertainty performance domain</span><span class="note">Parts 1 + 3 · risk anatomy, cause-effect statements, triggers, review cadence</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMI - Standard for AI in Portfolio, Program and Project Management (2026)</span><span class="note">Part 2 · human oversight with real intervention triggers, judgement stays human</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">learn-tech-project-pmo-with-phoebe - the risk register</span><span class="note">Demos 1 + 2 · the same Northwind register, built by hand there and with AI here</span></div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · Your drafted register comes back with a probability column full of confident percentages. What do you do?</p>
+      <button class="qopt" type="button">A · Keep them as a starting point and adjust the ones that look wrong</button>
+      <button class="qopt" type="button">B · Ask it to recalculate them more carefully using the data in the pack</button>
+      <button class="qopt" type="button">C · Blank the column and have the team set it, because the numbers have no basis and the argument is the value</button>
+      <p class="qwhy">There is no base rate behind those numbers - they are plausible-shaped, not computed. Worse, a pre-filled number ends the five-minute team argument that surfaces facts like "three sources have no upstream validation".</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · Which of these is a real trigger for R-07, the Veridian SLA risk?</p>
+      <button class="qopt" type="button">A · No written response on VN-2291 by 6 Aug, then escalate to Elena V. and start the contract-engineer option</button>
+      <button class="qopt" type="button">B · Vendor engagement deteriorates or the relationship becomes strained</button>
+      <button class="qopt" type="button">C · Keep monitoring the vendor closely throughout the M3 build window</button>
+      <p class="qwhy">A trigger is observable, dated, checkable by a colleague in thirty seconds, and attached to an action and a name. B needs judgement to evaluate, so it never fires. C is monitoring, which is not a decision rule.</p>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">3 · Your weekly refresh returns a beautifully formatted 40-row table every Tuesday. What is wrong?</p>
+      <button class="qopt" type="button">A · Nothing - completeness is the point of a register refresh</button>
+      <button class="qopt" type="button">B · The output should be a delta: what moved, what is stale, what is new. Nobody reads a re-read</button>
+      <button class="qopt" type="button">C · Forty rows is too many, so the register should be cut to eight</button>
+      <p class="qwhy">The refresh has technically happened and practically has not. Ask for a "what moved" list of at most eight lines plus stale rows and new risks, and add "do not restate the register" - it is the highest-value line in the prompt.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>PM session 5 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Nine fields</b><span>id, description, probability, impact, severity, owner, trigger, mitigation, review date.</span></div>
+      <div class="cheat-item"><b>Cause and effect</b><span>"Because X, Y may happen, leading to Z." Nouns cannot be mitigated, triggered, or closed.</span></div>
+      <div class="cheat-item"><b>The trigger</b><span>observable, dated, checkable in 30 seconds, with an action and a name attached.</span></div>
+      <div class="cheat-item"><b>AI is good at</b><span>phrasing, drafting triggers, deduplicating 40 rows, diffing week on week.</span></div>
+      <div class="cheat-item"><b>AI is bad at</b><span>probability, whether a vendor delivers, anything about people, what to escalate.</span></div>
+      <div class="cheat-item"><b>Blank the number</b><span>leave probability and impact empty and name who sets them. The argument is the value.</span></div>
+      <div class="cheat-item"><b>The Tuesday refresh</b><span>trigger fired? severity moved? mitigation happening? close it? Fifteen minutes.</span></div>
+      <div class="cheat-item"><b>Delta, not document</b><span>"what moved" in eight lines, plus stale rows and new risks. Do not restate the register.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>PM session 5 of 10 · learn-ai-project-management-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="b4-dependencies-critical-path.html">← Previous: Dependencies and critical path</a> &nbsp;·&nbsp; <a href="b6-status-report-simulator.html">Next: The status report →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

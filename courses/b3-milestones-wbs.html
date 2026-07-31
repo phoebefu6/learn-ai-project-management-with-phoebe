@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PM session 3 · Milestone architecture and WBS - learn AI + project management with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-project-management-with-phoebe</a> / PM session 3 of 10</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI + Project Management with Phoebe · PM track · Session 3 of 10</div>
+    <h1>Milestone architecture: <span class="accent">six states, six gates, and not one invented date</span></h1>
+    <p class="sub">Northwind week 2. The charter is agreed, the non-goals are on page one, and now Elena wants to know what happens when. Tonight you build the M1 to M6 ladder with gate criteria you could actually test in front of a sceptic - and you get the dates from Marcus L. and Sofia K., not from a model that has never met them. The structure is drafted in four minutes. The dates take a week, and that is correct.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 PM track</span>
+      <span class="chip audience">PMs · TPMs · delivery leads</span>
+      <span class="chip audience">Milestone table</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Where we are</span>
+      <span class="a2" style="flex:4">3-16 · Milestone, gate, task</span>
+      <span class="a3" style="flex:5">16-42 · Build-along: the M1-M6 table</span>
+      <span class="a4" style="flex:1">42-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we are: Northwind, week 2</h2>
+    </div>
+    <p class="lede">Last week you turned Elena V.'s two-paragraph mandate into a charter: one trusted sales number as P1, the Christmas peak as P2, five written non-goals, and a GAPS list that sent four questions to Elena and the rest to Sofia K., Priya N. and Dan R. Some answers are in. Nine source systems confirmed. Around 812,000 rows a night at steady state. A data-quality threshold of 99% that came out of the finance conversation. And one thing everybody now knows and nobody has written down: the legacy warehouse gets switched off after the modelled layer is signed, not before. Tonight that becomes a shape.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill peach">★ Try it now prompt</span>
+      <span class="pill inkpill">Official sources covered</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      The Northwind M1 to M6 ladder with a testable gate criterion on every rung, a work breakdown that includes the four things every data programme forgets, a rule you can apply to any gate criterion in ten seconds, and a four-question script for getting a date out of an engineer that you can actually stand behind at a steerco.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: MILESTONE VS TASK VS GATE ============ -->
+  <section class="section" id="milestone-gate-task">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers PMBOK 7 planning + the PMO prequel</span>
+      <h2>Milestone, gate, task: three different things <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Most plans that fall apart do so because these three got mixed together. A <strong>milestone</strong> is a state the programme has reached. A <strong>gate</strong> is the testable criterion that says it truly has. A <strong>task</strong> is how somebody got it there. Milestones go to the sponsor, gates go in the plan, tasks stay with the team - and if you present tasks to a steerco you will spend the hour discussing engineering rather than decisions.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 432" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Northwind milestone ladder ascending from M1 discovery to M6 first AI use case, each rung labelled with its gate criterion">
+        <style>
+          .b3lT { font: 700 14px Inter, sans-serif; fill: #FFFFFF; }
+          .b3lI { font: 700 14px Inter, sans-serif; fill: #16232E; }
+          .b3lX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .b3lXi { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .b3lXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .b3lN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .b3lH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <text class="b3lH" x="340" y="44">EACH RUNG IS A STATE, EACH LINE UNDER IT IS THE GATE</text>
+
+        <rect x="26" y="60" width="280" height="104" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="b3lI" x="46" y="88">A gate is testable</text>
+        <text class="b3lXw" x="46" y="110">it names a measure, a threshold,</text>
+        <text class="b3lXw" x="46" y="128">a duration, and a person.</text>
+        <text class="b3lXw" x="46" y="146">Miss one and it is an opinion.</text>
+
+        <rect x="526" y="60" width="250" height="50" rx="10" fill="#9CC4DE"/>
+        <text class="b3lI" x="544" y="81">M6 · first AI use case</text>
+        <text class="b3lXi" x="544" y="99">one model live and measured</text>
+
+        <rect x="426" y="116" width="250" height="50" rx="10" fill="#2C6A99"/>
+        <text class="b3lT" x="444" y="137">M5 · governed BI</text>
+        <text class="b3lX" x="444" y="155">reports in prod, owners named</text>
+
+        <rect x="326" y="172" width="250" height="50" rx="10" fill="#0E3A5C"/>
+        <text class="b3lT" x="344" y="193">M4 · modelled warehouse</text>
+        <text class="b3lX" x="344" y="211">model signed, legacy off</text>
+
+        <rect x="226" y="228" width="250" height="50" rx="10" fill="#2C6A99" stroke="#F97316" stroke-width="2"/>
+        <text class="b3lT" x="244" y="249">M3 · raw ingest</text>
+        <text class="b3lX" x="244" y="267">5 nights at 99% DQ, 10 Aug</text>
+
+        <rect x="126" y="284" width="250" height="50" rx="10" fill="#0E3A5C"/>
+        <text class="b3lT" x="144" y="305">M2 · landing zone</text>
+        <text class="b3lX" x="144" y="323">platform up, access granted</text>
+
+        <rect x="26" y="340" width="250" height="50" rx="10" fill="#072538"/>
+        <text class="b3lT" x="44" y="361">M1 · discovery</text>
+        <text class="b3lX" x="44" y="379">9 sources inventoried, signed</text>
+
+        <rect x="26" y="402" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="b3lN" x="50" y="414">M3 is the live gate, 10 Aug. It is orange because that is where the plan bites.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the Northwind ladder: six states, each with the gate that proves it was reached</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The difference, in one Northwind example<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Take M3, raw ingest. Same piece of the programme, three different sentences:</p>
+        <ul>
+          <li><strong>Task:</strong> "Marcus L. writes the extract job for the POS feed." That is work. It has an owner and an estimate and it belongs in a backlog, not in front of a COO.</li>
+          <li><strong>Milestone:</strong> "Raw ingest signed off." That is a state. The programme is either in it or it is not, and you cannot be 70% in it.</li>
+          <li><strong>Gate:</strong> "All 9 source systems landing nightly for 5 consecutive nights at 99% data-quality pass, signed off by Sofia K." That is the test that settles the argument about whether the state was reached.</li>
+        </ul>
+        <p>Notice what the gate does to the conversation. Without it, "are we done with ingest?" is a matter of temperament: the optimist says yes because data is arriving, the pessimist says no because two feeds wobbled on Tuesday. With it, you count nights. Nobody has to be brave.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The milestone that was 90% done for eleven weeks.</strong> A migration programme reported "data load 90% complete" every week for nearly three months. It was true every time: 90% of tables had loaded at least once. There was no gate, so nobody could say what the remaining 10% was, and the number never moved because it was measuring effort, not state. The week they replaced it with "all tables loaded and reconciled to source for 3 consecutive runs, signed by the data lead", the report went from 90% to 41%, and everyone finally knew where they were. Honest and lower beats fluent and flat.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why task lists dress up as plans<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A task list feels like a plan because it is long, specific and full of verbs. It is also the easiest artifact for a model to generate, which means you will be offered one constantly. Three tells:</p>
+        <ul>
+          <li><strong>Every line starts with a verb.</strong> "Build", "configure", "extract", "validate". Milestones are nouns and states: "raw ingest signed off", "landing zone stood up".</li>
+          <li><strong>Nothing can fail.</strong> A task list has no criteria, so it has no failure mode - it just has items that are not done yet. A gate can be failed, which is exactly why it is useful.</li>
+          <li><strong>It is proportional to the technology, not the risk.</strong> Forty lines about pipelines, none about the fact that R-03, the data-engineer hiring gap, is a hard gate before M4.</li>
+        </ul>
+        <p>Keep both. The milestone ladder is the sponsor's view and the contract. The work breakdown underneath it is the team's view and it changes weekly. What you never do is present the second and call it the first.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: TESTABLE GATE CRITERIA ============ -->
+  <section class="section" id="gate-criteria">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · the rule that makes a plan defensible</span>
+      <h2>Gate criteria you could actually test <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Compare two sentences. "Ingest working well." Versus: "All 9 source systems landing nightly for 5 consecutive nights at 99% DQ pass, signed off by Sofia K." The first cannot be failed, so it cannot be passed either - it can only be argued about, usually in the meeting where you most need it to be settled.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The four parts of a gate criterion<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Every gate criterion worth writing names four things. Miss one and you have an opinion with a date attached.</p>
+        <ul>
+          <li><strong>A measure.</strong> What is counted. Source systems landing, DQ pass rate, reports in production. Not "quality" or "stability" - the specific thing you can point at.</li>
+          <li><strong>A threshold.</strong> The number that separates pass from fail. 9 of 9. 99%. Zero P1 defects. If you cannot put a number here, ask harder - somebody has one in their head.</li>
+          <li><strong>A duration.</strong> How long it has to hold. This is the part everyone forgets, and it is what stops a single lucky night counting as a milestone. Five consecutive nights is a very different claim from "it worked last night".</li>
+          <li><strong>A person.</strong> One named human who signs that it passed. Sofia K. for the technical gates, Dan R. for the reporting gate, Elena V. for the ones that change the business case. Rail three, applied to plans.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The duration nobody wrote down.</strong> A team declared ingest complete on the strength of one clean overnight run and moved the engineers onto modelling. Four nights later a vendor feed arrived late and empty, and nobody noticed for a week because the people who would have noticed had moved on. Adding two words to the criterion - "5 consecutive" - would have kept two engineers on ingest for four more days and saved a fortnight of rework. Duration is the cheapest word in a gate and the one most often missing.</p>
+        </div>
+      </div>
+    </details>
+
+    <p class="lede">Here is the Northwind ladder with the criterion written out. This is the table you take to Elena. Note what is not in it: dates. Those come in demo 1, from people.</p>
+
+    <table class="clean">
+      <thead><tr><th>Milestone</th><th>Gate criterion - measure, threshold, duration, person</th></tr></thead>
+      <tbody>
+        <tr><td>M1 · Discovery and source inventory</td><td>All 9 source systems documented with owner, refresh frequency, row volume and access route; inventory signed by Sofia K.</td></tr>
+        <tr><td>M2 · Landing zone and platform stood up</td><td>Platform provisioned, access granted to the named team, one test feed landing end to end for 3 consecutive nights; signed by Sofia K.</td></tr>
+        <tr><td>M3 · Raw ingest signed off</td><td>All 9 sources landing nightly for 5 consecutive nights at 99% DQ pass, around 812k rows at steady state; signed by Sofia K. Gate date 10 Aug</td></tr>
+        <tr><td>M4 · Modelled warehouse signed off</td><td>Core sales model reconciles to source within agreed tolerance for 3 consecutive runs; legacy warehouse decommissioning approved; signed by Sofia K. and Elena V.</td></tr>
+        <tr><td>M5 · Governed BI in production</td><td>Agreed report set live in production with a named owner per report, one certified daily sales number, zero P1 defects for 10 working days; signed by Dan R.</td></tr>
+        <tr><td>M6 · First AI or ML use case live</td><td>One use case in production with a measured baseline and a stated business metric, monitoring and a rollback path in place; signed by Elena V.</td></tr>
+      </tbody>
+    </table>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Gate criteria that cannot be tested<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Learn to spot these on sight. Each one below has appeared, word for word, in a real plan.</p>
+        <table class="clean">
+          <thead><tr><th>Untestable</th><th>What is missing</th></tr></thead>
+          <tbody>
+            <tr><td>"Ingest working well"</td><td>All four. Measure, threshold, duration, person</td></tr>
+            <tr><td>"Data quality is acceptable"</td><td>Threshold and person. Acceptable to whom, at what number</td></tr>
+            <tr><td>"Warehouse is stable"</td><td>Measure and duration. Stable over what, for how long</td></tr>
+            <tr><td>"Business is happy with the reports"</td><td>Measure and person. "The business" is not a human who can sign</td></tr>
+            <tr><td>"Testing complete"</td><td>Threshold. Complete with how many open defects, at what severity</td></tr>
+          </tbody>
+        </table>
+        <div class="callout tip">
+          <strong>The ten-second check</strong>
+          Read any gate criterion and ask: could two reasonable people who both want this programme to succeed disagree about whether it passed? If yes, a part is missing. Find which of the four it is.
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: DECOMPOSITION AND DATES ============ -->
+  <section class="section" id="decomposition">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · rail 2 in full</span>
+      <h2>Decompose with AI, take the dates from the team <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">This is the session where rail two stops being a slogan. AI drafts structure, never commitments. The model has read thousands of data programmes and is genuinely good at telling you what work exists. It has read exactly zero about Marcus L., who is also on the loyalty migration until August, or about your change-approval board that meets fortnightly. Structure is transferable. Duration is not.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>What it is good at: the work everyone forgets<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The strongest use of a model at this stage is not producing the obvious branches of the WBS - you already know you need ingest and modelling. It is the pass where you ask what a plan like this usually leaves out. Four items surface almost every time, and every one of them has sunk a data programme somewhere:</p>
+        <ul>
+          <li><strong>Migration of historical data.</strong> Two years of history has to land somewhere, be reconciled, and be explained when the numbers differ from the old warehouse. It is never in the first draft of anyone's plan. At Northwind it is also bounded by a non-goal: two years, not ten.</li>
+          <li><strong>Cutover rehearsal.</strong> Not the cutover. The rehearsal of the cutover, with the rollback, timed, on a weekend nobody wants to give up. Teams that skip it discover their rollback plan is a paragraph rather than a procedure.</li>
+          <li><strong>Decommissioning the legacy warehouse.</strong> Northwind switches it off after M4. That means finding every report, script and spreadsheet pointed at it, which is always more than the inventory says. Turning something off is a project, not a cleanup task.</li>
+          <li><strong>Training the BI users.</strong> M5 is not done when reports exist. It is done when Dan R.'s users trust them enough to stop maintaining the shadow spreadsheet, and that takes sessions, office hours and a certified-number story.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The shadow spreadsheet that outlived the programme.</strong> A retailer shipped a beautiful governed warehouse and a clean set of reports, then discovered eight months later that regional managers were still running the Monday meeting off a spreadsheet one of them maintained by hand. Nobody had budgeted a single hour for training or for the conversation about why the new number differed from the old one. The platform was done. The change was not, and the difference cost more than the platform.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>What it cannot know: how long anything takes here<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Ask for durations and you will get them, confidently, evenly spaced, and wrong in a very specific way: they describe a well-staffed team with no other commitments, no procurement, and no holidays. At Northwind the things that actually set the dates are these, and none of them are in any training corpus:</p>
+        <ul>
+          <li><strong>R-03, the data-engineer hiring gap.</strong> A hard gate before M4. One engineer cannot model nine sources and keep ingest alive. The date for M4 is not an engineering estimate, it is a recruitment date.</li>
+          <li><strong>R-07, the vendor SLA.</strong> Veridian supplies the POS extract. Priya N. knows what their turnaround actually looks like versus what the contract says. That gap is weeks, and it lands squarely on M3.</li>
+          <li><strong>R-11, data quality below the 99% gate.</strong> Nobody can tell you how long remediation takes until the first real profile run. Until then the M3 date carries a range, and you should say so.</li>
+          <li><strong>Everything unglamorous.</strong> Change board cadence, security review queues, the fortnight in December when nothing ships in a retailer.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>Say it in the meeting</strong>
+          "The structure is drafted. The dates are blank on purpose, and I will have them on Friday once I have spoken to Marcus, Sofia and Priya." That sentence buys you more credibility than any complete-looking plan, because everyone in the room has been burned by a plan that was complete and fictional.
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 2</span>
+      <h2>Build the Northwind milestone table <span class="tag demo">★ 14 min · everyone builds</span></h2>
+    </div>
+    <p class="lede">Charter in the workspace, non-goals included. You are drafting the ladder, the gate criteria and the work breakdown - and deliberately refusing dates until people have been asked. The prompt does most of the refusing for you.</p>
+
+    <div class="steps">
+      <div class="step"><p>Run the prompt below. You should get six milestones, a criterion with all four parts on each, owners as TBC, and no dates anywhere.</p></div>
+      <div class="step"><p>Audit every criterion against the four-part rule. In practice one or two will be missing a duration - that is the part models drop most often. Add it yourself.</p></div>
+      <div class="step"><p>Read the "commonly forgotten" section and argue with it. Some items will not apply to Northwind. Two or three will, and one will be genuinely uncomfortable.</p></div>
+      <div class="step"><p>Now go and get the dates, in this order: Sofia K. for the architecture sequence, Marcus L. for ingest and modelling effort, Priya N. for the Veridian lead time, Dan R. for report build and user training.</p></div>
+      <div class="step"><p>Put their numbers in yourself, then hand the filled table back to the workspace as an updated document. From here on, every draft in this programme reads dates that came from people.</p></div>
+      <div class="step"><p>Where a date depends on a risk - M4 on the R-03 hire - record it as a range with the trigger, not a single day. Session b4 turns those into the critical path.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ Try it now - the milestone ladder, deliberately dateless</span>Using the Northwind charter and non-goals in this workspace, draft the milestone
+architecture. Six milestones, M1 to M6.
+
+For each milestone give me:
+- the milestone as a STATE, phrased as a noun, not a task ("raw ingest signed off",
+  not "build the ingest")
+- a gate criterion containing all four of: a measure, a numeric threshold, a duration
+  it must hold for, and a named role who signs it
+- the 4 to 7 work items underneath it, at the level a team lead would recognise
+- what makes it fail: the one thing most likely to stop this gate passing
+
+HARD RULES
+- No dates. No durations in days or weeks. No start or finish. If I ask again, still no.
+- Owners as "TBC - [role]" unless the charter names a person.
+- Use the 9 source systems, the 99% DQ gate and the two-year history boundary from the
+  charter. Do not invent other numbers.
+- Do not mark anything "quick win" or "low effort". You cannot know that.
+
+THEN a separate section: COMMONLY FORGOTTEN. What does a programme of this shape
+usually leave out of its plan? Give me 6 candidates with one line each on the
+consequence of missing it. Flag any that our non-goals already exclude.</div>
+
+    <div class="prompt-box bad"><span class="label">The version that fails - a schedule made of guesses</span>Create a detailed project plan with milestones, timeline and dates for a retail data platform. Assume a 6 month delivery and show the phases week by week.</div>
+
+    <div class="callout tip">
+      <strong>Why the second one fails</strong>
+      You handed it the six months, so it will build backwards from six months and every phase will fit, beautifully. Discovery gets three weeks because plans usually give discovery three weeks. Nothing in that schedule knows that Marcus L. is half on the loyalty migration until August, or that Veridian takes a fortnight to answer an email. It is a shape with dates painted on, and the first person to ask "who agreed this?" will collapse it.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 2</span>
+      <h2>The capacity conversation: getting a date you can stand behind <span class="tag demo">★ 8 min · pair up and try it</span></h2>
+    </div>
+    <p class="lede">You have a dateless table. Now you need a number from Marcus L. that will survive being read out at a steerco. "How long will ingest take?" gets you a number he invented in four seconds to end the conversation. These four questions get you one he has actually thought about.</p>
+
+    <div class="steps">
+      <div class="step"><p><strong>"What is in your way?"</strong> Ask this first, always. It surfaces the blockers before he has committed to anything, which means he can name them without it sounding like an excuse. Access, environments, the Veridian extract, the thing he is waiting on from Sofia.</p></div>
+      <div class="step"><p><strong>"What else are you on?"</strong> The single most useful question and the one PMs skip because they are afraid of the answer. Half of Marcus until August is a completely different plan from all of Marcus, and the difference is R-03 in the risk register.</p></div>
+      <div class="step"><p><strong>"What would make this two weeks instead of four?"</strong> This is where the trade is. Sometimes it is a decision only you can make, sometimes it is a person, sometimes it is scope you can cut against a non-goal. You are not haggling, you are buying the difference.</p></div>
+      <div class="step"><p><strong>"How confident are you in that number?"</strong> Ask for high, medium or low, and write it down next to the date. A low-confidence four weeks and a high-confidence four weeks are different plans and you report them differently.</p></div>
+      <div class="step"><p>Repeat the number back with its assumptions attached: "four weeks, assuming the Veridian extract lands by the 5th and you are off loyalty from August, medium confidence." If he corrects any part of that, you just avoided an escalation.</p></div>
+    </div>
+
+    <div class="prompt-box bad"><span class="label">Never do this - the anchoring trap</span>Marcus, I've drafted the plan and it has ingest at two weeks. Can you do it in two weeks?</div>
+
+    <div class="callout tip">
+      <strong>Why anchoring is the worst thing you can do with an AI-drafted plan</strong>
+      The moment a number is on the table, it becomes the thing being negotiated rather than estimated. Marcus now has to argue you up from two weeks, which costs him social capital, so he will shave his real answer to something closer to yours. You have not got his estimate - you have got the model's estimate, laundered through a colleague who was too polite to fight you. Ask blind, write down what he says, and only then compare it to the draft. If they differ a lot, that difference is the most interesting information you have all week.
+    </div>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The gap that was a risk, not an error.</strong> A delivery lead had an AI-drafted plan showing three weeks for a warehouse model build. She asked her engineer blind and got seven, medium confidence. Her instinct was that he was padding. She asked the two-weeks-instead-of-four question and found the reason: the source system had four undocumented feed variants and someone would have to reverse-engineer them. The gap was not padding and it was not a bad estimate. It was an unlogged risk that the plan had silently assumed away, and it went straight into the register.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Try it yourself - this week <span class="tag exercise">◐ 30-45 min total</span></h2>
+    </div>
+    <ul>
+      <li>Take the milestone list from a live programme of yours and rewrite every milestone as a state, phrased as a noun. Anything that will not convert was a task pretending.</li>
+      <li>Run the four-part rule over your existing gate criteria: measure, threshold, duration, person. Count how many are missing a duration. It is usually most of them.</li>
+      <li>Ask a model what your kind of programme typically forgets. Keep the two or three that make you wince and add them to the plan.</li>
+      <li>Run the four-question capacity conversation with one engineer this week. Ask blind. Write down the confidence level next to the date.</li>
+      <li>Add the dated milestone table to your workspace context pack. Session b4 builds the dependency map on top of it, and b6 reports against these exact gates.</li>
+    </ul>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">Taught from the delivery canon plus the by-hand prequel course, with PMI's AI standard behind the human-oversight rule. Certification and the full normative text of the standards stay with PMI. This session covers:</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMBOK Guide 7th ed. - planning performance domain</span><span class="note">Parts 1-3 · decomposition, milestones, estimating and its limits</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">learn-tech-project-pmo-with-phoebe - milestone architecture, by hand</span><span class="note">Parts 1-2 · the same M1-M6 ladder built without AI</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">PMI - Standard for AI in Portfolio, Program and Project Management (2026)</span><span class="note">Part 3 · human oversight with real intervention triggers, applied to dates</span></div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Which of these is a milestone rather than a task or a gate?</p>
+      <button class="qopt" type="button">A · Marcus L. writes the extract job for the POS feed</button>
+      <button class="qopt" type="button">B · Raw ingest signed off</button>
+      <button class="qopt" type="button">C · All 9 sources landing nightly for 5 nights at 99% DQ, signed by Sofia K.</button>
+      <p class="qwhy">B is a state the programme reaches, phrased as a noun. A is a task - it starts with a verb and belongs in the backlog. C is the gate: the testable criterion that proves B was actually reached.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · A gate reads "all 9 sources landing nightly at 99% DQ, signed by Sofia K." What is missing?</p>
+      <button class="qopt" type="button">A · Nothing, it names a measure, a threshold and a person</button>
+      <button class="qopt" type="button">B · The task list underneath it</button>
+      <button class="qopt" type="button">C · A duration - how long it has to hold, so one lucky night cannot pass the gate</button>
+      <p class="qwhy">Duration is the fourth part and the one dropped most often. "5 consecutive nights" is what stops a single clean run being declared a milestone and the engineers being moved on too early.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Your AI-drafted breakdown suggests three weeks for the model build. What do you do before talking to Marcus L.?</p>
+      <button class="qopt" type="button">A · Hide the number, ask him the four capacity questions blind, then compare</button>
+      <button class="qopt" type="button">B · Open with the three weeks and ask if he can commit to it</button>
+      <button class="qopt" type="button">C · Split the difference and put four weeks in the plan</button>
+      <p class="qwhy">Anchoring. Show the number first and you get the model's estimate agreed by a polite colleague, not his. Ask blind, capture confidence, then treat any large gap as an unlogged risk worth investigating.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>PM session 3 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Three different things</b><span>Milestone = a state. Gate = the testable criterion. Task = how. Only the first two go to the sponsor.</span></div>
+      <div class="cheat-item"><b>Milestones are nouns</b><span>"Raw ingest signed off", not "build the ingest". If it starts with a verb it is a task.</span></div>
+      <div class="cheat-item"><b>The four-part rule</b><span>A gate names a measure, a threshold, a duration, and a person. Miss one and it is an opinion.</span></div>
+      <div class="cheat-item"><b>Duration is the forgotten part</b><span>5 consecutive nights, 3 consecutive runs, 10 working days. One lucky night is not a milestone.</span></div>
+      <div class="cheat-item"><b>Northwind ladder</b><span>M1 discovery · M2 landing zone · M3 raw ingest (10 Aug) · M4 modelled warehouse · M5 governed BI · M6 first AI use case.</span></div>
+      <div class="cheat-item"><b>Ask what gets forgotten</b><span>History migration, cutover rehearsal, legacy decommissioning, BI user training. Every time.</span></div>
+      <div class="cheat-item"><b>Rail 2</b><span>AI drafts structure, never commitments. Dates come from Marcus, Sofia, Priya and Dan.</span></div>
+      <div class="cheat-item"><b>Ask blind</b><span>What is in your way · what else are you on · what makes this two weeks not four · how confident.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>PM session 3 of 10 · learn-ai-project-management-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="b2-mandate-to-charter.html">← Previous: Mandate to charter</a> &nbsp;·&nbsp; <a href="b4-dependencies-critical-path.html">Next: Dependencies and critical path →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

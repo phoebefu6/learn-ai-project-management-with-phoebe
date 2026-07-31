@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PM session 8 · Stakeholders, escalations and hard messages - learn AI + project management with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-project-management-with-phoebe</a> / PM session 8 of 10</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI + Project Management with Phoebe · PM track · Session 8 of 10</div>
+    <h1>Stakeholders, escalations and hard messages: <span class="accent">one truth, three audiences</span></h1>
+    <p class="sub">Week 12 of Northwind. The hiring gap has stopped being a risk and become the blocker: R-03 has been open nine weeks with no accepted offer, and M4 cannot start without it. Three different people need to hear about that today and none of them need the same message. Tonight you build the escalation that gets a decision instead of a discussion, then rewrite the same truth twice without changing a single fact.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 PM track</span>
+      <span class="chip audience">PMs · TPMs · delivery leads</span>
+      <span class="chip audience">Escalation draft</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-16 · One truth, three audiences</span>
+      <span class="a3" style="flex:6">16-42 · The escalation and the rewrite</span>
+      <span class="a4" style="flex:1">42-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we are</h2>
+    </div>
+    <p class="lede">Twelve weeks in. M3 signed off on the second date, 24 August, and the modelled warehouse is next. But R-03 - the data-engineer hiring gap - is a hard gate before M4, and it has not moved: the requisition has been open nine weeks and there is still no accepted offer. This is no longer a risk you monitor. It is a blocker, it belongs to somebody above you, and the only useful thing you can do today is put a decision in front of the person who can take it. Meanwhile Marcus L. needs to know what changes about his week, and Dan R.'s BI team needs to stop planning around a date that is about to move.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill peach">★ Try it now prompt</span>
+      <span class="pill inkpill">Official sources covered</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      The five-part escalation structure that forces a decision rather than a conversation, a working escalation to your sponsor on R-03 with real options and real costs, the same truth rewritten for the delivery team and a dependent team without a single fact changing, and the hard-message structure - what happened, what it means, what you are doing, what you need - with no adjectives in it anywhere.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: ONE TRUTH, THREE AUDIENCES ============ -->
+  <section class="section" id="three-audiences">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the stakeholder performance domain</span>
+      <h2>One truth, three audiences <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">The same nine-week hiring gap means three different things depending on where you sit. Your sponsor needs the decision and what it costs. Your delivery team needs to know what changes about their week. The team downstream needs their date and, more importantly, what they should stop assuming. Three framings of one fact set. And if the facts themselves differ between the three, that is not tailoring - that is lying, and it takes exactly one comparison of notes to find out.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One fact set about the hiring gap fans out to three audiences: the sponsor needs the decision and cost, the delivery team needs what changes this week, the dependent team needs their date">
+        <style>
+          .b8sT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .b8sI { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .b8sX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .b8sXi { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .b8sN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .b8sH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <defs>
+          <marker id="b8sAh" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="#9CC4DE"/>
+          </marker>
+        </defs>
+        <text class="b8sH" x="30" y="28">THE WEEK</text>
+        <text class="b8sH" x="604" y="28">THREE FRAMINGS, SAME FACTS</text>
+        <rect x="26" y="140" width="190" height="100" rx="12" fill="#2C6A99"/>
+        <text class="b8sT" x="46" y="172">R-03, week 12</text>
+        <text class="b8sX" x="46" y="196">req open 9 weeks</text>
+        <text class="b8sX" x="46" y="214">no accepted offer</text>
+        <text class="b8sX" x="46" y="232">M4 cannot start</text>
+        <line x1="220" y1="190" x2="268" y2="190" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b8sAh)"/>
+        <rect x="274" y="130" width="230" height="120" rx="12" fill="#072538"/>
+        <text class="b8sT" x="296" y="168">One fact set</text>
+        <text class="b8sX" x="296" y="194">same numbers, same</text>
+        <text class="b8sX" x="296" y="214">dates, same risk id</text>
+        <text class="b8sX" x="296" y="234">for all three readers</text>
+        <line x1="508" y1="184" x2="598" y2="76" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b8sAh)"/>
+        <line x1="508" y1="190" x2="598" y2="188" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b8sAh)"/>
+        <line x1="508" y1="196" x2="598" y2="298" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b8sAh)"/>
+        <rect x="604" y="30" width="250" height="88" rx="12" fill="#0E3A5C"/>
+        <text class="b8sT" x="624" y="60">Sponsor · Elena V.</text>
+        <text class="b8sX" x="624" y="84">the decision and the cost</text>
+        <text class="b8sX" x="624" y="104">and the date it expires</text>
+        <rect x="604" y="142" width="250" height="88" rx="12" fill="#2C6A99"/>
+        <text class="b8sT" x="624" y="172">Delivery · Marcus L.</text>
+        <text class="b8sX" x="624" y="196">what changes this week</text>
+        <text class="b8sX" x="624" y="216">and what to stop doing</text>
+        <rect x="604" y="254" width="250" height="88" rx="12" fill="#9CC4DE"/>
+        <text class="b8sI" x="624" y="284">Dependent BI · Dan R.</text>
+        <text class="b8sXi" x="624" y="308">their date, and what to</text>
+        <text class="b8sXi" x="624" y="328">stop assuming today</text>
+        <rect x="26" y="360" width="828" height="54" rx="12" fill="#EAF2F8"/>
+        <text class="b8sXi" x="48" y="384">Tailoring is choosing what each reader has to do next. It is not choosing which</text>
+        <text class="b8sXi" x="48" y="404">numbers they get - if the dates differ between the three, that is not tailoring, it is lying.</text>
+        <rect x="26" y="424" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="b8sN" x="50" y="436">Send all three the same day. People compare notes, and they should be able to.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - one fact set, three framings, and the line where tailoring stops being honest</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>What each audience is actually asking<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Behind every stakeholder message is one unspoken question. Answer it in the first two lines and the rest of the message gets read. Miss it and you have written a broadcast.</p>
+        <table class="clean">
+          <thead><tr><th>Audience</th><th>The unspoken question</th><th>What they need from you</th></tr></thead>
+          <tbody>
+            <tr><td>Sponsor - Elena V.</td><td>"What do you need me to do, and what will it cost me?"</td><td>The decision, the options with numbers, your recommendation, the expiry date</td></tr>
+            <tr><td>Delivery - Marcus L., Sofia K.</td><td>"What changes about my week?"</td><td>What to start, what to stop, what stays the same, and what is not their problem</td></tr>
+            <tr><td>Dependent - Dan R.'s BI team</td><td>"Can I still plan around the date you gave me?"</td><td>Their date, the confidence in it, and what they should stop assuming today</td></tr>
+          </tbody>
+        </table>
+        <p>Note what the delivery team gets that the sponsor does not: reassurance about what is <em>not</em> changing. And what the dependent team gets that nobody else needs: an explicit instruction to stop assuming something. Those are the two lines people leave out, and they are the two that stop a message generating four follow-up conversations.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Two versions of the same slip.</strong> A delivery lead told her sponsor a migration would land "late October, worst case mid-November" and told the dependent product team "end of October". Both were honest as she said them. Six days later the two teams compared notes in a corridor, and what the product lead heard was not a range - it was that she had a version for executives and a version for everyone else. The date turned out to be fine. The trust took a quarter to rebuild, and she never got the benefit of the doubt on a date again.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The audience map, and who you are forgetting<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>PMBOK's stakeholder performance domain is really one instruction: know who is affected, and engage them at the level their stake deserves. In practice PMs remember the loud stakeholders and forget the quiet dependent ones - and it is always a quiet dependent team that gets hurt.</p>
+        <ul>
+          <li><strong>List everyone whose plan changes if your date changes,</strong> not everyone who attends your steerco. On Northwind that is Dan R.'s BI team, the store operations group waiting on POS visibility after D-14, and whoever is holding the AI use case at M6. Mark who needs a decision, who needs an instruction and who needs a heads-up: three different messages, three different lengths.</li>
+          <li><strong>Write down who you last told what,</strong> and keep the map in your context pack. The commonest escalation failure is not a wrong message, it is a second message that contradicts a first one you have forgotten sending - and the map is also what lets a drafted message say "Dan R., BI lead" instead of "the downstream team".</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: THE ESCALATION ============ -->
+  <section class="section" id="escalation">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · the escalation anatomy</span>
+      <h2>The escalation that gets a decision, not a discussion <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Most escalations fail in the same way: they describe a problem beautifully and ask for nothing. The sponsor reads it, feels concerned, says "keep me posted", and now the problem is still yours and you have spent your credibility describing it. Five parts fix that. Each one is there to remove one of the ways a sponsor can respond without deciding anything.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The five parts of an escalation: the decision needed, options with costs, your recommendation, the expiry date, and what happens if nothing is decided">
+        <style>
+          .b8eT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .b8eI { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .b8eX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .b8eXi { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .b8eXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .b8eN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .b8eH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <text class="b8eH" x="30" y="30">FIVE PARTS, IN THIS ORDER</text>
+        <rect x="30" y="44" width="265" height="76" rx="12" fill="#072538"/>
+        <text class="b8eT" x="52" y="72">1 · The decision needed</text>
+        <text class="b8eX" x="52" y="96">one sentence, no preamble</text>
+        <rect x="307" y="44" width="265" height="76" rx="12" fill="#0E3A5C"/>
+        <text class="b8eT" x="329" y="72">2 · Two or three options</text>
+        <text class="b8eX" x="329" y="96">each with its real cost</text>
+        <rect x="584" y="44" width="265" height="76" rx="12" fill="#2C6A99"/>
+        <text class="b8eT" x="606" y="72">3 · Your recommendation</text>
+        <text class="b8eX" x="606" y="96">you are the delivery lead</text>
+        <rect x="30" y="132" width="265" height="76" rx="12" fill="#9CC4DE"/>
+        <text class="b8eI" x="52" y="160">4 · The expiry date</text>
+        <text class="b8eXi" x="52" y="184">after it, the option is gone</text>
+        <rect x="307" y="132" width="265" height="76" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="b8eI" x="329" y="160">5 · If nothing is decided</text>
+        <text class="b8eXw" x="329" y="184">M4 moves, and M5 and M6</text>
+        <rect x="584" y="132" width="265" height="76" rx="12" fill="#EAF2F8"/>
+        <text class="b8eI" x="606" y="160">Not in it</text>
+        <text class="b8eXi" x="606" y="184">adjectives, hedges, blame</text>
+        <rect x="30" y="228" width="819" height="52" rx="12" fill="#EAF2F8"/>
+        <text class="b8eXi" x="52" y="250">An escalation with no options is a complaint. An escalation with no expiry date is a</text>
+        <text class="b8eXi" x="52" y="270">conversation. Give them something to say yes or no to, and a date to say it by.</text>
+        <rect x="30" y="292" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="b8eN" x="54" y="304">A sponsor can decide in ninety seconds if you did the thinking first.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the five parts, and the three things that never belong in an escalation</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The Northwind escalation, part by part<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>The decision needed, in the first line.</strong> "I need you to either approve moving the M4 start, or fund two contract data engineers for four weeks." One sentence, not paragraph four after the background.</li>
+          <li><strong>Two or three options, with real costs.</strong> Option A: move the M4 start and accept that M5 and M6 move with it. Option B: fund two contract engineers for four weeks, roughly £38k, and hold the dates. Option C, always worth naming: change what M4 has to include. Three options with numbers beats one option with feeling.</li>
+          <li><strong>Your recommendation, and the expiry date.</strong> You have been living with R-03 for nine weeks, so if you do not say what you would do you have handed your sponsor homework, and she will either do it badly or hand it back. Then give her a real date rather than "as soon as possible", with the reason attached: contract engineers need lead time to onboard, so a decision after that date stops buying you anything. And finally, what happens if nothing is decided - the part people cut because it feels aggressive. It is not aggressive, it is the cost of the default, and the default is always a real option somebody is choosing by not choosing. Write it flatly: M4 does not start, and everything behind it moves.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Nine weeks of "keep me posted".</strong> A hiring gap on an analytics platform was reported as amber in eight consecutive status reports, each time with a line about recruitment being difficult. The sponsor read all eight and did nothing, correctly, because he was never asked to. In week nine the PM sent four lines instead: here is the decision, here are two options with numbers, here is what I recommend, here is the date after which the second option disappears. He replied in forty minutes and approved the contractors. Nothing about the situation had changed except that somebody had finally asked him a question.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Escalating without it reading as blame<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Escalation feels like telling on someone, which is why PMs delay it until the options have expired. Two habits remove the sting entirely.</p>
+        <ul>
+          <li><strong>Escalate the decision, not the person.</strong> "R-03 is unresolved and M4 is gated on it" is a fact about the programme. "HR has not filled the req" is a fact about a department, and it starts a different meeting - one where nothing gets decided because somebody is defending themselves. And tell the person you are escalating past first, the same day, before the message goes up.</li>
+          <li><strong>Escalate early, when options still exist,</strong> and never without a recommendation. The value of an escalation decays fast - at week four there were three options, at week twelve there are two and one of them costs £38k - and an escalation with no recommendation reads as "this is now yours", which is exactly the thing sponsors have learned to deflect.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: THE HARD MESSAGE ============ -->
+  <section class="section" id="hard-message">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the message you do not want to write</span>
+      <h2>The hard message, and what AI does to it <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">Bad news. A commitment you missed. A slip that is yours, not the vendor's. The structure is four parts and it is short: what happened, what it means, what you are doing about it, what you need. And no adjectives - not one. "Significant", "challenging", "unfortunately" and "somewhat" are the words people reach for when they want the sentence to hurt less, and every one of them makes the reader trust the message less.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Four parts, no adjectives<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>What happened, and what it means.</strong> The fact, dated, with an id: "R-03 has been open nine weeks. No accepted offer." Not "we have continued to face headwinds in recruitment." Then the consequence in the reader's terms - for Elena, M4 cannot start; for Dan, his reporting date moves. Consequence, not context.</li>
+          <li><strong>What you are doing, and what you need.</strong> What you already did without being asked - it keeps you credible, and it must be true, so if you did nothing say what you are doing from today. Then the ask: a decision, a name, a budget, or nothing. "Nothing from you, this is for visibility" is a legitimate and underused ending.</li>
+          <li><strong>Own it plainly if it is yours.</strong> "I should have escalated this in week six" is one sentence, it costs you nothing you had not already lost, and it buys you the right to be believed about everything else in the message. Hedging costs far more, because a reader who spots one softened sentence starts re-reading the rest for the other ones.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>The specific AI risk in this session</strong>
+          Models flatten tone toward the corporate average. A genuinely apologetic message comes back polite and hollow; a genuinely urgent one comes back measured and hedged. It is not a bug you can prompt away completely - it is what "write this professionally" means to a system trained on a billion professional emails. So: the model drafts the middle, and you write the first line and the last line yourself, in your own words, every single time. Those two lines carry the tone, and the tone is the part that is actually yours.
+        </div>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The apology that made it worse.</strong> A delivery lead missed a committed date for a regulatory report and asked a model to draft the apology. What came back was immaculate: it acknowledged the impact, expressed regret, outlined next steps, and thanked the reader for their patience. Her stakeholder replied with one line - "did you write this?" - and the answer was no, and they both knew it. The rewrite took four minutes and started "I missed the date I gave you on the 14th, and here is why." That version got a phone call and a plan. Fluency reads as distance when the subject is your own mistake.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Words to delete before you send<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Run a find on these. Every one is a place where a fact went missing.</p>
+        <table class="clean">
+          <thead><tr><th>Delete</th><th>Replace with</th></tr></thead>
+          <tbody>
+            <tr><td>"significant delay", "material impact", "proving challenging"</td><td>The number of weeks, the milestone id, and what you tried</td></tr>
+            <tr><td>"may impact timelines"</td><td>"M4 cannot start" - or delete the sentence, if it might not</td></tr>
+            <tr><td>"wanted to flag", "as you may be aware"</td><td>"I need a decision by [date]". Then say the thing</td></tr>
+          </tbody>
+        </table>
+        <p>The test: read the message and ask what a reader could argue with. If the answer is nothing, you have written something unfalsifiable, which is the b6 failure wearing a different suit. Facts can be argued with. That is what makes them useful.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 2</span>
+      <h2>Draft the R-03 escalation to Elena V. <span class="tag demo">★ 14 min · everyone builds</span></h2>
+    </div>
+    <p class="lede">Nine weeks, no offer, M4 gated. Build the escalation with your Northwind pack loaded, then compare it to the version most people actually send - which is at the bottom of this section, and which has never once produced a decision.</p>
+
+    <div class="steps">
+      <div class="step"><p>Confirm the facts before you draft: nine weeks open, no accepted offer, R-03 is a hard gate before M4, two contract engineers for four weeks is roughly £38k. Numbers come from the team and from procurement, not from the model.</p></div>
+      <div class="step"><p>Tell whoever owns the hiring req that this is going up today, before you send it - one sentence, and it is the whole difference between escalation and ambush. Then run the prompt, and check that every option carries a cost and the expiry date has a reason attached.</p></div>
+      <div class="step"><p>Rewrite the first and last lines in your own words, then read the whole thing out loud. If you would not say it in the room, it does not go in the message.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ Try it now - the escalation prompt</span>Draft an escalation to Elena V., COO and programme sponsor, using the pack in this workspace.
+Maximum 200 words. She reads on a phone between meetings.
+
+STRUCTURE, in this order, no preamble before it:
+1) The decision I need, in one sentence, as the first line.
+2) Two or three options, each with its real cost in money, time or scope. An option with
+   no number is not an option.
+3) My recommendation, stated plainly, with one line of reasoning.
+4) The date the decision is needed by, and why it is that date.
+5) What happens if nothing is decided by then. Flatly, no threat, no softening.
+
+RULES
+- No adjectives about difficulty. Not "significant", "challenging", "complex",
+  "unfortunately". Facts and numbers only, and no blame: escalate the decision, never
+  the department.
+- Every claim carries an id or a number from the pack - R-03, M4, the weeks open, the
+  cost - and if it is not in the pack, write "TBC - ask [role]".
+- Do not thank her for her time, do not offer to discuss further, and leave the first
+  and last lines simple: I will rewrite both myself.
+
+FACTS: R-03 data-engineer hiring gap, hard gate before M4. Req open 9 weeks, no accepted
+offer. Option: 2 contract data engineers, 4 weeks, ~£38k. M3 signed off 24 Aug, DQ 96.4%
+against the 99% gate, 6 of 9 sources landing.</div>
+
+    <div class="prompt-box bad"><span class="label">The version most people send - and what it gets back</span>Hi Elena,
+
+Just wanted to flag that hiring is proving challenging and may impact timelines. We are working hard to resolve it and I will keep you posted.
+
+Happy to discuss if helpful.</div>
+
+    <div class="callout tip">
+      <strong>Why the second one always gets "thanks, keep me posted"</strong>
+      Count what it contains: no id, no number, no weeks, no cost, no option, no date, and no question. Four sentences and not one thing a sponsor could act on - so the entirely rational reply is to acknowledge it. Worse, it is now on the record that she was informed, which means when M4 slips the conversation starts with "you never told me this was blocking". She is right. Flagging is not escalating. Escalating means somebody has a decision in front of them with a date on it.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 2</span>
+      <h2>The same truth, twice more <span class="tag demo">★ 8 min · build your own</span></h2>
+    </div>
+    <p class="lede">Now the other two audiences, from the identical fact set. Nine weeks, no offer, M4 gated, a decision pending with Elena. Nothing you are about to write may contradict anything in the escalation - and all three go out the same day.</p>
+
+    <div class="steps">
+      <div class="step"><p>Write the delivery-team version - what changes this week, what does not change, what is explicitly not their problem - and then the dependent-team version: their date, your confidence in it, and the thing they should stop assuming today.</p></div>
+      <div class="step"><p>Put all three side by side and check the numbers match exactly - different framings, identical facts. Then read both out loud, rewrite the opening line of each in your own voice, and send them yourself.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ To the delivery team - Marcus L. and Sofia K.</span>R-03 update, and what it means for this week.
+Where it is: the data-engineer req has been open 9 weeks with no accepted offer. R-03 is a
+hard gate before M4, so M4 does not start until it is resolved. I escalated to Elena V. this
+morning with two options - move the M4 start, or fund 2 contract engineers for 4 weeks.
+Decision expected by Friday.
+
+What changes this week: nothing in your plan. Do not start M4 prep work you would throw
+away if the start moves. What does not change: M3 is signed off and stays signed off, the
+DQ work continues, 96.4% against a 99% gate is still the number to close, and NWD-412
+stays with Marcus.
+
+What is not your problem: the hiring. You have both been asked about interview panels three
+times. Say no. It is mine, it is escalated, and I will tell you Friday which way it went.</div>
+
+    <div class="prompt-box good"><span class="label">★ To the dependent BI team - Dan R.</span>Dan - a date change you need to plan around, not a surprise later.
+R-03, the data-engineer gap, has been open 9 weeks and it gates M4. M4 is what your
+governed BI layer at M5 sits on, so your date moves with it. A decision on how we cover
+the gap sits with Elena V. and is expected Friday.
+
+Stop assuming: the M5 date currently in your plan. Do not commit it to your business
+stakeholders this week, and if you already have, tell them today that it is under review.
+That conversation is much cheaper now than in three weeks.
+
+What I can commit to: a firm M5 date within 48 hours of Elena's decision, and if the answer
+is contract engineers it most likely holds. Either way you hear it from me on Friday, not
+from the status report.
+
+What I need from you: the lead time between an M4 sign-off and an M5 go live. I have been
+working from 3 weeks and I never confirmed that with you.</div>
+
+    <div class="callout tip">
+      <strong>The rail: never let anything send itself</strong>
+      This is where connectors and automation get genuinely dangerous, and it is worth saying before b9 wires any of it up. A model can draft all three of these in twenty seconds. It must not send any of them. You read it out loud, you rewrite the first and last lines, and you press send. Anything going to a person carries your name and your judgment about tone - and tone is the entire content of a hard message. An automated escalation is not a faster escalation; it is an escalation nobody signed.
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Try it yourself - this week <span class="tag exercise">◐ 30-45 min total</span></h2>
+    </div>
+    <ul>
+      <li>Take the thing you have been not-escalating for three weeks and write the five parts. Options with numbers, a recommendation, an expiry date. Send it. Then find your last "wanted to flag" message and rewrite it as a decision request - note how much shorter it gets.</li>
+      <li>Write one truth for three audiences: sponsor, delivery team, dependent team. Put them side by side and check the numbers are identical. Then run the adjective test on the next thing you send - delete every word in the table and see whether the sentence still has a fact in it. Sometimes it does not.</li>
+      <li>Ask a model to draft a hard message you have already sent. Compare its version to yours, and specifically compare the first lines. That gap is the thing you must keep writing yourself.</li>
+    </ul>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">Taught from PMI's stakeholder canon, the escalation practice in the PMO course, and the Northwind case carried through this track. This session covers:</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMBOK Guide 7 - stakeholder performance domain</span><span class="note">Part 1 · audience mapping, engagement at the level the stake deserves</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMI - The Standard for Project Management, stakeholder engagement principle</span><span class="note">Part 1-2 · effective engagement and the duty to communicate honestly</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">learn-tech-project-pmo-with-phoebe - escalation paths</span><span class="note">Part 2 · the by-hand escalation and the risk register it draws on</span></div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · You give your sponsor a range for a date and your dependent team the optimistic end of it. What have you done?</p>
+      <button class="qopt" type="button">A · Tailored the message correctly - the sponsor needs uncertainty, the team needs a date</button>
+      <button class="qopt" type="button">B · Changed the facts between audiences, which is not tailoring - the two will compare notes</button>
+      <button class="qopt" type="button">C · Nothing wrong, as long as the optimistic date is achievable</button>
+      <p class="qwhy">Tailoring is choosing what each reader must do next, not which numbers they get. Same facts, three framings. The moment the dates differ, somebody finds out and you have a version problem, not a date problem.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · Your escalation gets back "thanks, keep me posted". What was most likely missing?</p>
+      <button class="qopt" type="button">A · Enough background on how the situation developed</button>
+      <button class="qopt" type="button">B · A more urgent tone and stronger language about the impact</button>
+      <button class="qopt" type="button">C · A decision to make, options with costs, and a date after which the options expire</button>
+      <p class="qwhy">Acknowledging is the rational reply to a message with no question in it. An escalation with no options is a complaint and one with no expiry date is a conversation. Give them something to say yes or no to, by a date.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · A model drafts your apology for a missed commitment and it reads polished and neutral. What do you do?</p>
+      <button class="qopt" type="button">A · Rewrite the first and last lines yourself - models flatten tone toward the corporate average</button>
+      <button class="qopt" type="button">B · Send it - neutral is safer than emotional in a written apology</button>
+      <button class="qopt" type="button">C · Ask the model to make it sound more sincere</button>
+      <p class="qwhy">Fluency reads as distance when the subject is your own mistake. Asking for "more sincere" gets you a more decorated average. The opening and closing lines carry the tone, and the tone is the only part that was ever yours.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>PM session 8 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>One truth, three audiences</b><span>sponsor: decision and cost. Delivery: what changes this week. Dependent: their date.</span></div>
+      <div class="cheat-item"><b>The honesty line</b><span>if the facts differ between audiences, that is not tailoring, it is lying. Send all three the same day.</span></div>
+      <div class="cheat-item"><b>Five-part escalation</b><span>decision needed · options with costs · your recommendation · expiry date · cost of no decision.</span></div>
+      <div class="cheat-item"><b>Options need numbers</b><span>move M4, or 2 contract engineers for 4 weeks at ~£38k. An option with no cost is not an option.</span></div>
+      <div class="cheat-item"><b>Escalate the decision</b><span>never the department. And tell whoever you are escalating past, the same day, first.</span></div>
+      <div class="cheat-item"><b>The hard message</b><span>what happened · what it means · what you are doing · what you need. No adjectives.</span></div>
+      <div class="cheat-item"><b>The AI tone risk</b><span>models flatten toward the corporate average. Write the first and last lines yourself, always.</span></div>
+      <div class="cheat-item"><b>The rail</b><span>nothing sends itself. The model drafts, you read it out loud, you press send.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>PM session 8 of 10 · learn-ai-project-management-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="b7-meetings-to-actions.html">← Previous: Meetings to actions</a> &nbsp;·&nbsp; <a href="b9-connect-the-system.html">Next: Connect the system →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

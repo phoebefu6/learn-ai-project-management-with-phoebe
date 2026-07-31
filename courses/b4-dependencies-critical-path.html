@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PM session 4 · Dependencies and critical path - learn AI + project management with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-project-management-with-phoebe</a> / PM session 4 of 10</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI + Project Management with Phoebe · PM track · Session 4 of 10</div>
+    <h1>Dependencies and critical path: <span class="accent">the arrow that quietly owns your date</span></h1>
+    <p class="sub">Northwind is in week 3. The milestones are laddered, the gate criteria are written, and the plan looks reassuringly tidy. Tonight you find out what actually blocks what - and you find the one dependency nobody wrote down, the one that will eat four weeks in October if you meet it in October. AI is genuinely excellent at pulling dependencies out of three weeks of messy notes. It is genuinely terrible at knowing whether the other side agreed.</p>
+    <div class="chip-row">
+      <span class="chip level">🟠 PM track</span>
+      <span class="chip audience">PMs · TPMs · delivery leads</span>
+      <span class="chip audience">Dependency map</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Where we are</span>
+      <span class="a2" style="flex:4">3-16 · Types and hard gates</span>
+      <span class="a3" style="flex:6">16-38 · Build-along: the map</span>
+      <span class="a4" style="flex:2">38-45 · Gate hunt + Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we are: week 3, and the plan still looks perfect</h2>
+    </div>
+    <p class="lede">In b2 you turned Elena V.'s mandate email into a charter. In b3 you laddered six milestones with gate criteria: <strong>M1</strong> discovery and source inventory, <strong>M2</strong> landing zone and platform stood up, <strong>M3</strong> raw ingest signed off with a gate on 10 August, <strong>M4</strong> modelled warehouse signed off, <strong>M5</strong> governed BI in production, <strong>M6</strong> first AI/ML use case live. Nine source systems, 812k rows a night, a 99% data-quality gate, every milestone with a definition of done, nothing red. That is exactly when a programme is most dangerous. A milestone ladder tells you the <em>order</em> you would like things to happen in. It says nothing about what physically cannot start until something else finishes, who outside your programme controls one of those arrows, and which arrow no amount of overtime can shorten.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill peach">★ Try it now prompt</span>
+      <span class="pill inkpill">Official sources covered</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      A dependency table extracted from raw meeting notes with owners named on both sides, a Mermaid diagram of the Northwind critical path with the R-03 hiring gate drawn on it, a five-question interrogation you can run on any map to find the dependency everyone forgot, and one rule that will save you a quarter: an unconfirmed dependency is a rumour with an arrow drawn on it.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: TYPES ============ -->
+  <section class="section" id="types">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers PMBOK 7 planning and uncertainty</span>
+      <h2>Three relationship types, and the label that actually matters <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Textbooks spend a lot of pages on the three logical relationships and about a paragraph on the distinction that decides whether you keep your job. Learn the three quickly - they are genuinely useful shorthand - then spend your real attention on the second row: is this arrow inside my control, outside it, or a hard gate that no amount of parallel effort can shorten?</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 348" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Top row: finish-to-start, start-to-start and finish-to-finish relationships. Bottom row: internal, external and hard-gate dependencies with a Northwind example for each">
+        <style>
+          .b4dT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .b4dI { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .b4dX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .b4dXm { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .b4dXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .b4dH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+          .b4dN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+        </style>
+        <text class="b4dH" x="30" y="30">THE THREE RELATIONSHIP TYPES</text>
+        <rect x="30" y="44" width="265" height="92" rx="12" fill="#0E3A5C"/>
+        <text class="b4dT" x="52" y="78">Finish to start</text>
+        <text class="b4dX" x="52" y="100">B cannot start until</text>
+        <text class="b4dX" x="52" y="118">A has finished</text>
+        <rect x="308" y="44" width="265" height="92" rx="12" fill="#2C6A99"/>
+        <text class="b4dT" x="330" y="78">Start to start</text>
+        <text class="b4dX" x="330" y="100">B starts once A has</text>
+        <text class="b4dX" x="330" y="118">started, then overlaps</text>
+        <rect x="586" y="44" width="265" height="92" rx="12" fill="#9CC4DE"/>
+        <text class="b4dI" x="608" y="78">Finish to finish</text>
+        <text class="b4dXm" x="608" y="100">B cannot finish until</text>
+        <text class="b4dXm" x="608" y="118">A has finished</text>
+        <text class="b4dH" x="30" y="172">THE LABEL THAT DECIDES YOUR DATE</text>
+        <rect x="30" y="186" width="265" height="112" rx="12" fill="#EAF2F8"/>
+        <text class="b4dI" x="52" y="216">Internal</text>
+        <text class="b4dXm" x="52" y="240">Sofia K. cannot model</text>
+        <text class="b4dXm" x="52" y="258">until Marcus L. lands</text>
+        <text class="b4dXm" x="52" y="276">the raw ingest</text>
+        <rect x="308" y="186" width="265" height="112" rx="12" fill="#EAF2F8"/>
+        <text class="b4dI" x="330" y="216">External</text>
+        <text class="b4dXm" x="330" y="240">Veridian must ship the</text>
+        <text class="b4dXm" x="330" y="258">POS extract spec. We</text>
+        <text class="b4dXm" x="330" y="276">cannot pull it forward</text>
+        <rect x="586" y="186" width="265" height="112" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="b4dI" x="608" y="216">Hard gate</text>
+        <text class="b4dXw" x="608" y="240">R-03: two engineers</text>
+        <text class="b4dXw" x="608" y="258">not hired, so M4</text>
+        <text class="b4dXw" x="608" y="276">cannot start at all</text>
+        <rect x="30" y="316" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="b4dN" x="54" y="328">Parallel work fixes a slow dependency. Nothing fixes a hard gate except closing it.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - three relationship types on top, and the three labels that actually change what you can promise</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The three types, in about ninety seconds<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Finish to start.</strong> The default. Marcus L. finishes the raw ingest, then Sofia K. starts modelling. If you can only remember one, remember this one.</li>
+          <li><strong>Start to start.</strong> Dan R. can start building the BI semantic layer once modelling has <em>started</em>, working off the agreed model rather than the finished tables. He does not need Sofia to be done, he needs her to be underway. This is where you find compression.</li>
+          <li><strong>Finish to finish.</strong> Data-quality certification cannot finish until ingest finishes, because the last table has to pass the 99% gate too. Very common at gates, and very often mislabelled as finish-to-start, which makes your plan look four weeks longer than it is.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Six weeks that were never really there.</strong> A delivery lead inherited a plan where BI development sat entirely after warehouse sign-off, finish to start, six clean weeks of it. In the first walkthrough Dan R. said the thing that had never made it into a document: "I only need the agreed model, not the built tables - I have been waiting on paper, not on data." Relabel one arrow to start-to-start and the programme got four weeks back without anyone working a weekend. Nobody had been lying. Nobody had ever asked.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Internal, external, and the hard gate<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>Label</th><th>Who controls it</th><th>What you actually do about it</th></tr></thead>
+          <tbody>
+            <tr><td>Internal</td><td>You, through your own team</td><td>Resequence, resource, overlap. This is the pile you can genuinely manage your way out of.</td></tr>
+            <tr><td>External</td><td>Somebody who does not report to you and has other priorities</td><td>Confirm in writing, name their owner, agree a date, and put it on the risk register the day it is unconfirmed.</td></tr>
+            <tr><td>Hard gate</td><td>Physics, law, contract, or hiring reality</td><td>Nothing shortens it. Make it visible, start it early, and stop pretending the plan absorbs it.</td></tr>
+          </tbody>
+        </table>
+        <p>A hard gate is the one that kills programmes, because it behaves so politely until it does not. Everything upstream of it can be green. Everyone can be busy. The burndown can look healthy. And then you reach the gate and discover that no amount of parallel work, overtime, or clever resequencing helps, because the thing you need is a signed contract, a legal approval, a decommissioned legacy system, or two people who do not work here yet.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The green programme that stopped dead.</strong> A platform migration ran green for eleven weeks. Every workstream on track, every demo good. In week twelve it hit a security review that could only start after the penetration test, which could only be booked once the environment was frozen. Nine weeks of gate, none of it on the plan, none of it compressible. The retro finding was not "we were late". It was "we drew our arrows only between our own tasks."</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Lead, lag, and why they are not slack<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Lag</strong> is enforced waiting. Northwind's DQ certification has a three-day lag after each ingest cut, because the checks run over three nightly batches of 812k rows. That is not padding, it is how long the machine takes.</li>
+          <li><strong>Lead</strong> is deliberate overlap: starting the successor before the predecessor is done. Dan R. starting on the agreed model is a lead of about two weeks.</li>
+          <li><strong>Neither is slack.</strong> Slack is how long an activity can slip without moving the end date. Write lag only where you can name the mechanism - three nightly batches is a mechanism, "buffer for issues" is a feeling, and feelings belong on the risk register.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: EXTRACTION ============ -->
+  <section class="section" id="extraction">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the extraction job AI is genuinely good at</span>
+      <h2>Pulling dependencies out of three weeks of notes <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">Here is the honest split. Reading twenty pages of stand-up notes, workshop scribbles and call summaries and surfacing every instance of "X said they need Y before Z" is a mechanical, tedious, high-recall reading task. That is one of the very few things AI does better than a tired human at 6pm on a Thursday. Deciding whether Veridian actually agreed is a phone call, and no model can make it.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Why extraction beats a workshop whiteboard<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The traditional way to build a dependency map is to get everyone in a room and ask "what are you waiting on?". It works, and you should still do it. But it has two known failure modes, and extraction covers both.</p>
+        <ul>
+          <li><strong>People only report what they are currently blocked by.</strong> Nobody says "in nine weeks I will need the legacy warehouse decommissioned" because it is not hurting yet. Notes from three weeks ago remember it. R-05 lives in exactly that gap.</li>
+          <li><strong>The quiet person in the room stays quiet.</strong> The vendor manager who mentioned the Veridian spec lead time once, in passing, in a call summary, will not repeat it in a workshop where the architect is talking.</li>
+        </ul>
+        <p>So run both. Extract from the notes first, bring the table to the workshop, and let people argue with rows instead of staring at a blank wall. Feed it stand-up notes, workshop outputs, call summaries, ticket comments and the b3 plan, raw and messy - cleaning it first is how you accidentally delete the sentence that mattered.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The non-negotiable follow-up: confirm every external arrow<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Extraction gives you candidates, not commitments. The follow-up is not optional and it is not a nicety: <strong>every external dependency must be confirmed by the other side, in writing, with a named owner and a date.</strong> Until then it is not a dependency. It is a rumour with an arrow drawn on it.</p>
+        <p>The confirmation message is four lines and takes two minutes to send:</p>
+        <div class="steps">
+          <div class="step"><p>State the dependency in one sentence, in their language. "We need the POS extract field spec from Veridian before we can build the ingest."</p></div>
+          <div class="step"><p>Name the owner on their side. Not the company - the person. "Priya N. tells me this sits with your integration lead."</p></div>
+          <div class="step"><p>Ask for a date and say what it feeds. "Can you confirm a date? It feeds our 10 August M3 gate."</p></div>
+          <div class="step"><p>Say what you will do with the answer, then mark the row confirmed only when the reply exists - not when you sent the message, and not when someone nodded on a call.</p></div>
+        </div>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The dependency that was one person's assumption.</strong> A programme carried an arrow that said the finance system team would provide a nightly reconciliation feed by a certain date. It had been in the plan for four months, dark green, never questioned. When someone finally asked the finance team, the answer was: "we have never heard of this, and we do not have a feed like that." The whole arrow had come from one architect saying "finance can probably give us that" in a workshop nine months earlier. Four months of a plan built on the word "probably".</p>
+        </div>
+      </div>
+    </details>
+
+  </section>
+
+  <!-- ============ PART 3: CRITICAL PATH ============ -->
+  <section class="section" id="critical-path">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the Northwind chain and the hiring gate</span>
+      <h2>The critical path, and the gate sitting in the middle of it <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">The critical path is the longest chain of dependent work through your programme. Everything on it moves your end date one day for every day it slips. Everything off it has slack. Which means the only genuinely important question about any dependency is: is it on the path? At Northwind the path runs straight through R-03, and R-03 is not a task.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 302" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Northwind critical path: M3 raw ingest to model design to the R-03 hiring hard gate to M4 modelled warehouse, with a note that nothing right of the gate can start">
+        <style>
+          .b4cT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .b4cI { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .b4cX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .b4cXm { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .b4cXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .b4cH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+          .b4cN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+        </style>
+        <defs>
+          <marker id="b4cAh" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="#9CC4DE"/>
+          </marker>
+        </defs>
+        <text class="b4cH" x="26" y="34">THE NORTHWIND CRITICAL PATH, WEEK 3</text>
+        <rect x="26" y="52" width="177" height="104" rx="12" fill="#0E3A5C"/>
+        <text class="b4cT" x="46" y="84">M3 raw ingest</text>
+        <text class="b4cX" x="46" y="108">gate 10 Aug, 9</text>
+        <text class="b4cX" x="46" y="126">sources, DQ 99%</text>
+        <line x1="207" y1="104" x2="239" y2="104" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b4cAh)"/>
+        <rect x="243" y="52" width="177" height="104" rx="12" fill="#2C6A99"/>
+        <text class="b4cT" x="263" y="84">Model design</text>
+        <text class="b4cX" x="263" y="108">Sofia K. - can run</text>
+        <text class="b4cX" x="263" y="126">before the hire</text>
+        <line x1="424" y1="104" x2="456" y2="104" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b4cAh)"/>
+        <rect x="460" y="52" width="177" height="104" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="b4cI" x="480" y="84">R-03 hard gate</text>
+        <text class="b4cXw" x="480" y="108">2 data engineers</text>
+        <text class="b4cXw" x="480" y="126">not hired yet</text>
+        <line x1="641" y1="104" x2="673" y2="104" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b4cAh)"/>
+        <rect x="677" y="52" width="177" height="104" rx="12" fill="#9CC4DE"/>
+        <text class="b4cI" x="697" y="84">M4 warehouse</text>
+        <text class="b4cXm" x="697" y="108">cannot start until</text>
+        <text class="b4cXm" x="697" y="126">the gate closes</text>
+        <rect x="26" y="190" width="828" height="62" rx="12" fill="#EAF2F8"/>
+        <text class="b4cXm" x="48" y="216">Everything left of the gate can run in parallel and land on time.</text>
+        <text class="b4cXm" x="48" y="236">Nothing right of it can start. Two engineers is not a task, it is a hiring cycle.</text>
+        <rect x="26" y="268" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="b4cN" x="50" y="280">The earliest honest M4 date is offer accepted plus notice plus onboarding.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the chain reads smoothly right up to the gate, which is exactly the problem</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Walking the Northwind chain out loud<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>M3 raw ingest signs off on 10 August.</strong> Nine source systems landing 812k rows a night, all passing the 99% DQ gate. Marcus L. owns it, and NWD-412 (the failed CDC load) is the live blocker.</li>
+          <li><strong>Model design can start now.</strong> Sofia K. does not need the data to design the model, she needs the source inventory from M1. This is a start-to-start, not a finish-to-start, and it buys you weeks.</li>
+          <li><strong>M4 modelled warehouse cannot start.</strong> Not "will be slow". Cannot start. Sofia designs; two data engineers build. Northwind has hired neither. R-03.</li>
+          <li><strong>Therefore M5 governed BI and M6 the first AI use case both move</strong> day for day with the hiring, not with anything Dan R. or Sofia K. do.</li>
+        </ul>
+        <p>Notice what happened. R-03 was on your risk register as a resourcing risk, medium-ish, the kind of row people skim. Drawn on the dependency map it is a wall across the critical path, and every week it stays open is a week added to M4, M5 and M6 simultaneously. So make it impossible to skim: <strong>give it its own shape on the diagram</strong> (in the Mermaid below the gate is a hexagon, not a box); <strong>write the arithmetic underneath it</strong> - offer accepted plus four weeks notice plus two weeks onboarding is the earliest possible M4 start, and sponsors argue with adjectives but concede to arithmetic; <strong>give it a decision date rather than a status</strong> - "if no accepted offer by 24 August we switch to contract engineers", which is a trigger, and next week builds a register full of them; and <strong>put it on page one of the status report</strong>, not in the risk annex, every week until it closes.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>"We will backfill in Q3."</strong> A data programme carried a two-headcount gap as an amber risk for five months. Every status report said recruitment was underway. Nobody ever drew it on the plan, so nobody ever computed what it meant: the build phase could not start, so the whole back half of the programme was sliding one week per week, silently, while the front half stayed green. The day someone finally drew the arrow, the sponsor approved two contractors in an afternoon. Five months of the plan had been fiction because a risk row is easy to skim and an arrow across the critical path is not.</p>
+        </div>
+      </div>
+    </details>
+
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 2</span>
+      <h2>Notes to table to diagram <span class="tag demo">★ 14 min · everyone builds</span></h2>
+    </div>
+    <p class="lede">Three moves. Extract to a table with sources you can check, argue with the table, then render the confirmed map as a diagram. Do not skip straight to the diagram - a pretty graph of unverified arrows is the most persuasive wrong artifact in delivery.</p>
+
+    <div class="steps">
+      <div class="step"><p>Load the raw notes into your Northwind workspace: three weeks of stand-ups, the M2 workshop output, and Priya N.'s summary of the Veridian call. Then run the extraction prompt below. Expect twelve to twenty candidate rows, several of them wrong - that is the correct outcome.</p></div>
+      <div class="step"><p>Walk the table with the team for ten minutes. Delete the inventions, merge the genuine duplicates, split the fake ones, mark what is truly confirmed, and send the confirmation messages for every external row today.</p></div>
+      <div class="step"><p>Render the confirmed map as a diagram, with unconfirmed arrows visibly marked, and bring it to the next steerco.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ Try it now - dependency extraction from raw notes</span>Read the attached notes: three weeks of Northwind stand-ups, the M2 workshop output,
+and Priya N.'s summary of the Veridian call.
+
+Find every DEPENDENCY that someone stated or implied. For each one, give me a table row:
+- id, D-01 upward
+- predecessor (what must happen first) and successor (what is waiting), each with
+  its owner BY NAME on that side
+- type: finish-to-start, start-to-start, or finish-to-finish
+- internal or external, and if external, which organisation
+- the exact quote or note line it came from, so I can check it in eight seconds
+- confirmed or UNCONFIRMED. Confirmed ONLY if the notes show the OTHER side agreeing.
+
+RULES
+- Never invent a date. If no date was stated, write "no date stated".
+- Never invent an owner. If the notes say "the team", write "owner TBC - ask [role]".
+- Keep hedged statements hedged. Do not turn "might need" into "needs".
+- If two notes contradict each other, give me both rows and flag the conflict, and
+  do not merge rows unless the quotes describe the same thing. When unsure, split.
+- Sort so every UNCONFIRMED EXTERNAL row is at the top.</div>
+
+    <table class="clean">
+      <thead><tr><th>ID</th><th>Predecessor → successor</th><th>Type</th><th>Class</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>D-01</td><td>Veridian POS extract spec (Veridian integration lead) → build POS ingest (Marcus L.)</td><td>Finish to start</td><td>External</td><td>UNCONFIRMED - no date stated, VN-2291 open</td></tr>
+        <tr><td>D-02</td><td>Legacy warehouse decommission window (Elena V.) → M5 governed BI cutover (Dan R.)</td><td>Finish to start</td><td>External - IT ops</td><td>UNCONFIRMED - surfaced from a week-1 note, R-05</td></tr>
+        <tr><td>D-03</td><td>NWD-412 CDC load fix (Marcus L.) → M3 raw ingest sign-off (Marcus L.)</td><td>Finish to start</td><td>Internal</td><td>Confirmed - 10 Aug gate</td></tr>
+        <tr><td>D-05</td><td>Two data engineers hired (Elena V.) → M4 warehouse build (Sofia K.)</td><td>Finish to start</td><td>HARD GATE - R-03</td><td>Open, no accepted offer</td></tr>
+      </tbody>
+    </table>
+
+    <p>Read D-02 again. That row came out of a single sentence in a week-1 note nobody remembered, and nobody would have raised it in a workshop, because in week 3 the legacy warehouse is not hurting anyone. It hurts in week 22, when it is a nine-week external gate on M5. Now render the map. Mermaid is the fastest way to get a dependency graph into a document, a wiki or a pull request without opening a drawing tool, and it diffs in version control like text because it is text. The syntax itself is taught properly in <em>learn-mermaid-with-phoebe</em> - here you just need enough to draw a map.</p>
+
+    <div class="prompt-box"><span class="label">The confirmed map as Mermaid - paste into any Mermaid renderer</span>graph LR
+  VEN[Veridian POS extract spec - UNCONFIRMED] --&gt; M3[M3 raw ingest signed off 10 Aug]
+  CDC[NWD-412 CDC load fix - Marcus L.] --&gt; M3
+  M3 --&gt; DM[Model design - Sofia K.]
+  DM --&gt; GATE{{R-03 two data engineers hired}}
+  GATE --&gt; M4[M4 modelled warehouse]
+  M4 --&gt; M5[M5 governed BI in production]
+  M5 --&gt; M6[M6 first AI use case live]</div>
+
+    <div class="callout tip">
+      <strong>Three habits that make a Mermaid map useful rather than decorative</strong>
+      Give every node a short id (M3, GATE, VEN) so you can rewire the graph without retyping labels. Give the hard gate a different shape - the double braces make a hexagon - so it cannot be skimmed past. And write UNCONFIRMED into the node label, not into a legend: legends get cropped when someone pastes the picture into a deck.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 2</span>
+      <h2>Find the gate everyone forgot <span class="tag demo">★ 8 min · interrogate your map</span></h2>
+    </div>
+    <p class="lede">You now have a map. A map is a claim, and claims should be attacked. Five questions, asked of any dependency map, will find the missing arrow more reliably than another workshop. Run them on Northwind now, then run them on your own programme this week.</p>
+
+    <div class="prompt-box good"><span class="label">★ Try it now - the five-question interrogation</span>Here is our Northwind dependency table and the Mermaid map built from it.
+Interrogate them. Answer these five questions one at a time, and where you are
+guessing, say so explicitly instead of asserting.
+
+1. What in this map has NO predecessor but obviously should have one? Look for
+   anything needing an environment, an approval, a licence, a contract, a
+   security review, a data-sharing agreement, or a person who does not work
+   here yet.
+2. Who OUTSIDE this programme sits on the critical path? Name the organisation
+   and the role. For each one, is there a written commitment or only a note?
+3. Which arrow is UNCONFIRMED, and what exactly would confirmation look like -
+   who sends what to whom, and what reply makes it confirmed?
+4. If the hard gate R-03 slips by two weeks, which milestones move and by how
+   much? Show the arithmetic, do not summarise it.
+5. What is the EARLIEST DATE we would know that R-03 has slipped? If the honest
+   answer is "when M4 fails to start", say that plainly - that is the finding.
+
+Do not propose mitigations yet. Just find the holes.</div>
+
+    <div class="steps">
+      <div class="step"><p>Run it, and read question 1's answer with real suspicion - this is where the missing environment, the unbooked security review and the undiscussed data-sharing agreement show up.</p></div>
+      <div class="step"><p>Take question 5 seriously. "When M4 fails to start" is a terrible answer and it is the true answer on most programmes. The fix is a leading indicator: offers out, interviews booked, agency briefed. Then turn every hole into a new dependency row or a risk row - next week you build the register that holds them.</p></div>
+    </div>
+
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Try it yourself - this week <span class="tag exercise">◐ 40-60 min total</span></h2>
+    </div>
+    <ul>
+      <li>Run the extraction prompt over three weeks of your own real notes. Do not clean them first. Count how many rows come back that you had genuinely forgotten - that number is your case for doing this every quarter.</li>
+      <li>Classify every row internal, external, or hard gate, and be honest about the third column: if you have zero hard gates on a programme of any size, you have not found them yet. Then send confirmation messages for every external row today, four lines each.</li>
+      <li>Draw your critical path as a Mermaid graph, about eight nodes, with any hard gate in a different shape. Paste it into your next status pack.</li>
+      <li>Run the five-question interrogation on it. Write down the answer to question 5 - the earliest date you would know - for your single biggest gate. If the answer is "when it fails", design a leading indicator this week.</li>
+    </ul>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">Dependency logic, critical path and gates come from the delivery canon, which has not moved in decades and will not. The AI half is the extraction step. This session covers:</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMBOK Guide 7th ed. - planning and uncertainty performance domains</span><span class="note">Parts 1 + 3 · relationship types, lead and lag, critical path, gates</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">learn-tech-project-pmo-with-phoebe - dependencies and hard gates</span><span class="note">Parts 1-3 · the Northwind map, built by hand there and with AI here</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">learn-mermaid-with-phoebe - graph syntax</span><span class="note">Demo 1 · enough Mermaid to draw a map; the language itself lives there</span></div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · AI extracts a dependency from your notes: Veridian must ship the POS spec before ingest can be built. What is it until Veridian replies?</p>
+      <button class="qopt" type="button">A · A confirmed external dependency, since it came from a real call summary</button>
+      <button class="qopt" type="button">B · A rumour with an arrow drawn on it - a candidate, not a commitment</button>
+      <button class="qopt" type="button">C · A risk, which is a different artifact and belongs only in the register</button>
+      <p class="qwhy">Extraction produces candidates. An external dependency is confirmed only when a named person on the other side agrees in writing, with a date. Until then it is one architect's assumption wearing an arrow.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · R-03 means two data engineers are not hired, and M4 cannot start without them. Your sponsor asks you to run things in parallel to catch up. What is the honest answer?</p>
+      <button class="qopt" type="button">A · Yes - overlap the design and build workstreams to absorb the delay</button>
+      <button class="qopt" type="button">B · Yes - reduce the DQ gate from 99% to buy time on M3 instead</button>
+      <button class="qopt" type="button">C · No - a hard gate is not compressible by parallel work, so show the arithmetic and the decision date</button>
+      <p class="qwhy">Parallel work fixes a slow dependency. A hard gate has no task to overlap: offer accepted plus notice plus onboarding is the floor. Show the arithmetic and give it a trigger date for switching to contract engineers.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Dan R. says he only needs the agreed model, not the built tables, to start the BI semantic layer. What changes on your map?</p>
+      <button class="qopt" type="button">A · The arrow becomes start-to-start, which uncovers real overlap the plan was hiding</button>
+      <button class="qopt" type="button">B · Nothing - it is still finish-to-start, just with a shorter successor</button>
+      <button class="qopt" type="button">C · The dependency is removed entirely, since he is no longer blocked</button>
+      <p class="qwhy">He is still dependent, so the arrow stays - but the relationship is start-to-start, not finish-to-start. Mislabelling this makes a parallel workstream look sequential and adds weeks that were never really there.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>PM session 4 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Three types</b><span>finish-to-start (the default), start-to-start (where compression hides), finish-to-finish (common at gates).</span></div>
+      <div class="cheat-item"><b>Three labels</b><span>internal you can manage, external you must confirm, hard gate you can only start earlier.</span></div>
+      <div class="cheat-item"><b>Extraction is the AI job</b><span>reading three weeks of notes for "X needs Y before Z" is high-recall drudgery. Feed it messy.</span></div>
+      <div class="cheat-item"><b>Confirmation is the human job</b><span>named owner on the other side, in writing, with a date. Otherwise it is a rumour with an arrow.</span></div>
+      <div class="cheat-item"><b>Quote the source</b><span>every row carries the note line it came from, so you can check it in eight seconds.</span></div>
+      <div class="cheat-item"><b>The critical path</b><span>longest chain of dependent work. On it, one day slipped is one day lost. Off it, you have slack.</span></div>
+      <div class="cheat-item"><b>Northwind's gate</b><span>M3 → model design → R-03 hiring → M4. Everything left is green, nothing right can start.</span></div>
+      <div class="cheat-item"><b>Make the gate visible</b><span>own shape on the diagram, arithmetic underneath, a decision date, and page one of the report.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>PM session 4 of 10 · learn-ai-project-management-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="b3-milestones-wbs.html">← Previous: Milestone architecture and WBS</a> &nbsp;·&nbsp; <a href="b5-risk-register.html">Next: A risk register that maintains itself →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

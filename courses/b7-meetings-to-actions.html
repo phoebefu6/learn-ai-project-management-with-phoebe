@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PM session 7 · Meetings to actions - learn AI + project management with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-project-management-with-phoebe</a> / PM session 7 of 10</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI + Project Management with Phoebe · PM track · Session 7 of 10</div>
+    <h1>Meetings to actions: <span class="accent">three things worth keeping, one worth deleting</span></h1>
+    <p class="sub">Week 10 of Northwind. The steerco has happened, it ran long, and you are holding forty minutes of notes or a transcript. Tonight you turn that pile into a decision log, an action list where every line has one name and one date, and a short list of the questions nobody answered. Then you learn to spot the most expensive line in any set of minutes: the decision the room never actually took.</p>
+    <div class="chip-row">
+      <span class="chip level">🟢 PM track</span>
+      <span class="chip audience">PMs · TPMs · delivery leads</span>
+      <span class="chip audience">Decision log</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-16 · What a meeting produces</span>
+      <span class="a3" style="flex:6">16-42 · Transcript to actions</span>
+      <span class="a4" style="flex:1">42-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we are</h2>
+    </div>
+    <p class="lede">Northwind is ten weeks in. M3, raw ingest signed off, has moved from 10 August to 24 August. Six of nine sources are landing, data quality sits at 96.4% against a 99% gate, and the POS extract vendor Veridian has had ticket VN-2291 open for eleven days. Last week's steerco decided two things and half-decided a third. You were in the room, you took notes, and by Thursday nobody will remember which was which. That gap - between what was said and what was recorded - is where programmes quietly lose weeks.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill peach">★ Try it now prompt</span>
+      <span class="pill inkpill">Official sources covered</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      A decision log with six fields you will keep for the life of the programme, a transcript-to-actions prompt that refuses to write "the team", the decided / recommended / parked test that catches the decision nobody actually took, and the same-day follow-up message that closes ambiguity before it hardens.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: WHAT A MEETING PRODUCES ============ -->
+  <section class="section" id="three-outputs">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the meeting-to-artifact loop</span>
+      <h2>Every meeting produces exactly four things <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Three of them are worth keeping: the decisions, the actions, and the open questions. The fourth is the discussion - the forty minutes of argument, context-setting, tangents and re-explaining that got the room to those three - and it is worth deleting. Nobody has ever gone back to a transcript to find out what was agreed. They go to the decision log, or they ask you, or they guess.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A meeting funnel: the raw record is sorted into decisions, actions and open questions, while the discussion falls away and is deleted">
+        <style>
+          .b7mT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .b7mI { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .b7mX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .b7mXi { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .b7mXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .b7mN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .b7mH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <defs>
+          <marker id="b7mAh" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="#9CC4DE"/>
+          </marker>
+        </defs>
+        <text class="b7mH" x="30" y="28">WHAT GOES IN</text>
+        <text class="b7mH" x="604" y="28">WHAT YOU KEEP</text>
+        <rect x="26" y="48" width="210" height="104" rx="12" fill="#072538"/>
+        <text class="b7mT" x="48" y="84">The raw record</text>
+        <text class="b7mX" x="48" y="108">40 min of talking,</text>
+        <text class="b7mX" x="48" y="126">notes or transcript</text>
+        <line x1="240" y1="100" x2="294" y2="100" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b7mAh)"/>
+        <rect x="300" y="66" width="170" height="68" rx="12" fill="#2C6A99"/>
+        <text class="b7mT" x="320" y="98">Sort each line</text>
+        <text class="b7mX" x="320" y="120">into one of four</text>
+        <line x1="474" y1="98" x2="598" y2="72" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b7mAh)"/>
+        <line x1="474" y1="102" x2="598" y2="145" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b7mAh)"/>
+        <line x1="474" y1="106" x2="598" y2="219" stroke="#9CC4DE" stroke-width="2" marker-end="url(#b7mAh)"/>
+        <line x1="385" y1="138" x2="385" y2="256" stroke="#9CC4DE" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#b7mAh)"/>
+        <rect x="604" y="40" width="250" height="62" rx="12" fill="#0E3A5C"/>
+        <text class="b7mT" x="624" y="68">1 · Decisions</text>
+        <text class="b7mX" x="624" y="90">what was settled, by whom</text>
+        <rect x="604" y="114" width="250" height="62" rx="12" fill="#2C6A99"/>
+        <text class="b7mT" x="624" y="142">2 · Actions</text>
+        <text class="b7mX" x="624" y="164">one owner, one date, each</text>
+        <rect x="604" y="188" width="250" height="62" rx="12" fill="#9CC4DE"/>
+        <text class="b7mI" x="624" y="216">3 · Open questions</text>
+        <text class="b7mXi" x="624" y="238">who must answer, by when</text>
+        <rect x="26" y="262" width="444" height="62" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="b7mI" x="48" y="290">4 · The discussion - delete it</text>
+        <text class="b7mXw" x="48" y="312">the argument that got you there. Nobody re-reads it.</text>
+        <rect x="26" y="340" width="828" height="54" rx="12" fill="#EAF2F8"/>
+        <text class="b7mXi" x="48" y="364">Keep three, delete the fourth. The forty minutes of debate were the process,</text>
+        <text class="b7mXi" x="48" y="384">not the product - and a transcript nobody opens is not a record of anything.</text>
+        <rect x="26" y="404" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="b7mN" x="50" y="416">An undocumented decision gets relitigated in eight weeks, from zero.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the funnel from a raw record to the three things worth keeping</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Why this is the second thing AI lands on<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Status reporting is the first place delivery teams point AI. Turning a meeting into "who does what by when" is the second, and for the same reason: it is pure collation, it happens every week, and everyone hates it. It is also the job where a model is genuinely strong - it does not get bored at minute thirty-four, and it does not quietly drop the action that was assigned to you.</p>
+        <ul>
+          <li><strong>It reads all of it.</strong> You stopped taking notes when the vendor conversation started, because you were arguing in it. The transcript did not.</li>
+          <li><strong>It has no stake.</strong> A model has no reason to soften the action assigned to the loudest person in the room, and it is fast enough to be same-day - which matters more than polish, because an action list that arrives Thursday is a historical document.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The action that was assigned to nobody, twice.</strong> On a platform programme, "someone needs to chase the vendor on the extract SLA" appeared in three consecutive sets of minutes, reworded each time, owned by no one. In week four the vendor missed the SLA and the sponsor asked who had been chasing it. Three people said they thought it was someone else, and all three were reading the same minutes. The minutes were accurate. They just recorded a wish.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The one-hour rule<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Process the meeting within an hour of it ending, before the next one starts overwriting your memory. Not because the model needs your memory - it does not - but because you are the only person who can tell whether what the transcript says happened is what actually happened. That check gets harder every hour.</p>
+        <p><strong>Within the hour</strong> you can still hear the tone: when Elena V. said "fine, let us do that" it closed the topic, and when Marcus L. said "sure" he had stopped arguing rather than agreed. <strong>By tomorrow</strong> you have only the words, which is exactly what the model has, so you have lost the thing you were adding. <strong>By next week</strong> the action list is archaeology and you will write it from what should have happened.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: THE DECISION LOG ============ -->
+  <section class="section" id="decision-log">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · the artifact that outlives the programme</span>
+      <h2>The decision log, and the six fields it needs <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">A decision log is not minutes. Minutes are a record of a meeting; a decision log is a record of the programme's direction, and it should be readable by someone who attended none of the meetings. Six fields, one row per decision, never deleted - superseded decisions stay in and get marked, because "why did we do it that way" is asked far more often than "what did we do".</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The six fields, and the one everybody skips<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>Field</th><th>Why it is there</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Id</strong> - D-14, D-15, sequential</td><td>So the status report, the plan and the escalation can all point at the same thing in three characters</td></tr>
+            <tr><td><strong>Date</strong> - when it was taken</td><td>So you can see what was known at the time. A decision is judged on the day it was made, not on what happened after</td></tr>
+            <tr><td><strong>Who decided</strong> - a person, not a forum</td><td>"The steerco decided" means nobody decided. A forum cannot be asked to reconsider; Elena V. can</td></tr>
+            <tr><td><strong>What was decided</strong> - one sentence</td><td>If it takes a paragraph, it is two decisions or it is not a decision</td></tr>
+            <tr><td><strong>Rationale</strong> - one line</td><td>The reason, not the argument. This is the field that saves you in eight weeks</td></tr>
+            <tr><td><strong>What it cost</strong> - what was traded away</td><td>The field everybody skips, and the only one that stops the decision being reopened as if it were free</td></tr>
+          </tbody>
+        </table>
+        <p>Northwind's log has two live rows, both taken in the last week of July. Read them as a pair - the first is a scope trade, the second is a cost trade, and both were made by a named human who can be asked about them.</p>
+        <p><strong>D-14 · 31 Jul · Elena V., COO and sponsor.</strong> Descope real-time POS to nightly batch until M5. Rationale: the real-time path depends on Veridian, and R-07 makes that date unsafe. Cost: store operations lose intraday sales visibility for roughly two milestones.</p>
+        <p><strong>D-15 · 30 Jul · Sofia K., data architect.</strong> Keep the legacy warehouse running in parallel until M4 sign-off. Rationale: there is no rollback path otherwise. Cost: two platforms to run and reconcile, and the team carries double support until M4.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Eight weeks later, from zero.</strong> A new regional director joined a retail data programme and asked, reasonably, why the POS feed was nightly instead of real-time. Nobody in the room had been in the meeting where it was traded away. The delivery lead spent two weeks re-running an argument that had already been settled, lost it the second time, and the team rebuilt a real-time path they did not need - at the cost of the milestone behind it. One row in a log, with the cost field filled in, would have ended that conversation in ninety seconds.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Where the log lives, and who writes it<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>One log per programme, not per meeting.</strong> Decisions taken in a corridor, on a call or in a thread go in the same place as steerco decisions. The forum is not the point; the direction change is.</li>
+          <li><strong>It goes in your context pack.</strong> From b1, alongside the charter, plan, risk register and owner list, refreshed weekly. It is what lets a draft say "as agreed in D-14" instead of proposing work you already cut.</li>
+          <li><strong>You write it, the model drafts it.</strong> The model proposes rows from the transcript; you confirm the room actually decided, and your name is on the log. And never delete a row - mark it superseded by D-nn, because what you changed your mind about is a programme asset and the first thing a post-mortem asks for.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: RAID HYGIENE AND THE NOT-DECIDED TRAP ============ -->
+  <section class="section" id="not-decided">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · RAID hygiene</span>
+      <h2>The most dangerous line in any minutes <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">It is not an error. It is a decision that was never actually taken. The room drifted toward something, nobody objected, the meeting ran out of time, and the notes record agreement. Six weeks later the plan depends on it and the person who would have objected says, truthfully, that they never agreed to that. A model makes this failure worse, not better: asked to extract decisions, it will find decisions, because that is what you asked for.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three labels for anything that came out of a meeting: decided, recommended, or discussed and parked - each with what it needs next">
+        <style>
+          .b7dT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .b7dI { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .b7dX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .b7dXi { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .b7dXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .b7dN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .b7dH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <text class="b7dH" x="30" y="28">LABEL IT BEFORE YOU WRITE IT DOWN</text>
+        <rect x="30" y="44" width="265" height="110" rx="12" fill="#072538"/>
+        <text class="b7dT" x="52" y="76">Decided</text>
+        <text class="b7dX" x="52" y="100">someone with authority</text>
+        <text class="b7dX" x="52" y="118">said yes, out loud</text>
+        <text class="b7dX" x="52" y="140">→ a row in the log</text>
+        <rect x="307" y="44" width="265" height="110" rx="12" fill="#2C6A99"/>
+        <text class="b7dT" x="329" y="76">Recommended</text>
+        <text class="b7dX" x="329" y="100">a proposal the room</text>
+        <text class="b7dX" x="329" y="118">liked, not approved</text>
+        <text class="b7dX" x="329" y="140">→ needs a decider + date</text>
+        <rect x="584" y="44" width="265" height="110" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="b7dI" x="606" y="76">Discussed and parked</text>
+        <text class="b7dXw" x="606" y="100">no conclusion reached,</text>
+        <text class="b7dXw" x="606" y="118">and that is fine</text>
+        <text class="b7dXw" x="606" y="140">→ still needs an owner</text>
+        <rect x="30" y="176" width="819" height="54" rx="12" fill="#EAF2F8"/>
+        <text class="b7dXi" x="52" y="200">The room drifted, nobody objected, and the notes recorded agreement. Six weeks later</text>
+        <text class="b7dXi" x="52" y="220">the plan depends on it, and the person who would have objected never agreed to it.</text>
+        <rect x="30" y="250" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="b7dN" x="54" y="262">No named decider means it is not a decision. Write "recommended" and move on.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - decided, recommended, or parked: three labels that stop a drift becoming a commitment</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>How to force the distinction<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Two moves, one in the room and one in the write-up.</p>
+        <ul>
+          <li><strong>In the room, say it back.</strong> "So the decision is nightly batch until M5, Elena, and you are taking that?" It takes seven seconds and it either confirms the decision or reveals that there was not one. Both outcomes are wins; the second is the bigger one.</li>
+          <li><strong>In the write-up, make the model produce a fourth list.</strong> Not just decisions, actions and open questions, but everything that <em>sounded</em> like a decision and was never confirmed. That list is where your next escalation is hiding.</li>
+        </ul>
+        <p>Then keep RAID hygiene tight. Anything parked gets an owner even though it has no decision - a parked item with no owner is a risk with no risk id. Anything recommended gets a named decider and a date by which they will decide, or it is not a recommendation, it is a hope. And anything that turns out to be a risk goes into the register with an id, the way R-03, R-07 and R-11 did, rather than living in a set of minutes where nobody will look for it.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>"We agreed the contractors, didn't we?"</strong> In a Northwind-shaped programme, a steerco spent ten minutes on contract engineers for the hiring gap, ran out of time, and moved on. The notes said "agreed to bring in contract support". Nobody had approved a budget, and the sponsor had said "let us look at that" - which the note-taker heard as yes. Four weeks later the hiring gap was still open, no contractors had been engaged because no one had funded them, and the milestone behind it moved. The word "agreed" did all that damage.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Before you record anything - consent and policy<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The practical bit, and it is not optional. A transcript is a recording of people who may not have expected one.</p>
+        <ul>
+          <li><strong>Get consent before recording</strong>, at the start of the meeting, out loud, and let people say no. In some jurisdictions this is a legal requirement rather than a courtesy; in all of them it is the difference between a tool and a trust problem.</li>
+          <li><strong>Check what your organisation allows</strong> before a transcript goes anywhere near an AI workspace. Some permit the meeting tool but not the export, some permit neither, some have a policy nobody has read. Finding out is a fifteen-minute job and it is yours.</li>
+          <li><strong>Watch what is in the room.</strong> Steercos wander into people, performance, vendors and commercial terms, and the b1 house rules were clear: no personal data, no client-confidential terms, nothing under NDA. A transcript is exactly where all three arrive by accident. If in doubt, work from your own notes - everything tonight works on notes, and the transcript is faster rather than necessary.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 2</span>
+      <h2>Transcript to decisions, actions and open questions <span class="tag demo">★ 14 min · everyone builds</span></h2>
+    </div>
+    <p class="lede">Here is a genuine forty-second slice of the Northwind steerco - people talking over each other about the ingest slip. Read it first and try to extract the decisions yourself. Then run the prompt and compare. The interesting part is not what you both found; it is the fourth list.</p>
+
+    <div class="prompt-box"><span class="label">The raw material - Northwind steerco, week 10, extract</span>PRIYA: ...so Veridian came back on VN-2291, open eleven days now, and their line is that
+the SLA clock starts when the extract spec is signed, which we -
+MARCUS: which we signed in June.
+PRIYA: which we think we signed in June, yes.
+ELENA: How many sources are landing?
+MARCUS: Six of nine, the three POS ones are the problem, that is all Veridian. NWD-412
+failed three nights running on the CDC load, I have got it stable now but -
+ELENA: Stable meaning fixed, or stable meaning watched?
+MARCUS: Watched.
+SOFIA: We should keep legacy up until M4 signs off either way, I raised that last week.
+ELENA: Fine, that is sensible.
+DAN: Can I ask about quality, my BI team is building on top of this. 96.4?
+MARCUS: 96.4 against a 99 gate, and most of the gap is those same three POS sources.
+ELENA: OK, so M3 goes to the 24th and we are not moving it again. What leverage does the
+contract give us - Priya, can you - sorry, we are at time. Same call next week.
+DAN: I still do not have a date I can give my team.</div>
+
+    <div class="steps">
+      <div class="step"><p>Paste the notes or transcript into your Northwind workspace, with the context pack loaded. The pack is what lets the model turn "Priya" into Priya N., vendor manager, and "the 24th" into the M3 gate date.</p></div>
+      <div class="step"><p>Run the prompt below and read the fourth list first - the things that only sounded like decisions. Then take every "TBC - ask" line to the actual people. That is rail two: the dates come from the team.</p></div>
+      <div class="step"><p>Add the confirmed decisions to the log with ids, and only then write the follow-up message in Demo 2.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ Try it now - the meeting extraction prompt</span>Extract this meeting into four separate lists, using the pack in this workspace.
+Do not summarise the discussion. I do not want a narrative.
+
+1) DECISIONS - only where someone with authority explicitly agreed. For each: what was
+   decided in one sentence, who decided (a named person, never a forum), the date, the
+   rationale in one line, and what it cost or traded away.
+
+2) ACTIONS - each with exactly one named owner and exactly one date. Never "the team",
+   never two owners, never "ongoing". If the owner or the date was not stated, write
+   "TBC - ask [role]" and leave it for me to fill.
+
+3) OPEN QUESTIONS - anything raised and not answered, with who must answer it.
+
+4) SOUNDED LIKE A DECISION, BUT WAS NOT - anything the room drifted toward without an
+   explicit yes from a named decider. Quote the line that made it ambiguous. This list
+   is the point of the exercise; do not leave it empty to be helpful.
+
+RULES
+- Work only from the material. Do not infer an owner, a date, or an agreement.
+- Cite the milestone, risk or ticket id from the pack wherever one applies. If someone
+  said "fine" or "sure", that is list 4 until I confirm otherwise.
+
+MATERIAL: [paste the notes or transcript]</div>
+
+    <div class="callout tip">
+      <strong>What the fourth list should catch here</strong>
+      Sofia's parallel-warehouse point got "fine, that is sensible" from Elena - which is close to a decision and became D-15 only because someone confirmed it afterwards. The June spec signature is disputed, not decided. Elena's leverage question was cut off at time and belongs to nobody. And Dan still has no date, which is not an open question so much as a commitment you owe him - see b8. Four things a summary would have smoothed into "the team discussed the ingest slip".
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 2</span>
+      <h2>The same-day message that closes ambiguity <span class="tag demo">★ 8 min · build your own</span></h2>
+    </div>
+    <p class="lede">Extraction is half the job. The other half is a short message, sent the same day, that turns your reading of the meeting into the room's reading of the meeting. It works because of one line: if you disagree, say so by a stated time. Silence after that is agreement, and everybody knows it.</p>
+
+    <div class="steps">
+      <div class="step"><p>Send it the same day. Tomorrow it is a summary; today it is a correction window.</p></div>
+      <div class="step"><p>Keep it to one screen. Decisions, actions, open questions, and the deadline to object. No preamble, no thank-yous, no recap of the discussion.</p></div>
+      <div class="step"><p>Name the objection deadline explicitly and make it real - end of the next working day is usually right. Then send it to everyone who was in the room and everyone whose week it changes. Dan R. was in the room; his BI team was not.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ The draft - edit the first and last lines yourself</span>Subject: Northwind steerco, 10 Sep - decisions and actions, corrections by 5pm tomorrow
+
+Short version: M3 moves to 24 Aug and is not moving again. Two decisions logged, four
+actions out, two questions still open.
+
+DECIDED
+D-15 · 30 Jul · Sofia K. · Keep the legacy warehouse in parallel until M4 sign-off.
+       Cost: two platforms to run and reconcile until M4.
+D-16 · 10 Sep · Elena V. · M3 gate confirmed at 24 Aug, no further movement.
+       Cost: the M4 start compresses, absorbed in the modelling window not the gate.
+
+ACTIONS
+1. Priya N. · by 17 Sep · One page on the contractual leverage we hold on Veridian.
+2. Marcus L. · by 13 Sep · Confirm in writing whether NWD-412 is fixed or watched.
+3. Me · by 12 Sep · Circulate the DQ gap by source, so "96.4 against 99" is three numbers.
+
+STILL OPEN
+- Was the extract spec signed in June? Priya N. and Marcus L. disagree. Priya to confirm
+  from the contract file by 17 Sep.
+- Dan R. has no date he can give his BI team. Mine, by 17 Sep.
+
+NOT DECIDED, despite how it sounded
+- Nothing was agreed about contract engineers for the hiring gap (R-03). We ran out of
+  time on it, and I am escalating it separately.
+
+If anything above is wrong or missing, reply by 5pm tomorrow. After that it is the record.
+- [your name], delivery lead</div>
+
+    <div class="callout tip">
+      <strong>Why the "not decided" section is in the message, not just your notes</strong>
+      Putting it in front of the room is what converts a private suspicion into a shared fact. If somebody thought the contract engineers were agreed, they will say so tomorrow, cheaply. If you leave it out, they will say so in six weeks, expensively, in front of your sponsor. The section costs you three lines and buys you the entire class of argument that starts "but we agreed that".
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Try it yourself - this week <span class="tag exercise">◐ 30-45 min total</span></h2>
+    </div>
+    <ul>
+      <li>Start a decision log for a real programme, six fields, and backfill the last five decisions from memory. The cost field will be the hard one, which is the point. Then run your next meeting through the four-list prompt within an hour of it ending, and keep the fourth list even if it is uncomfortable.</li>
+      <li>Send the same-day message with a stated objection deadline, once, and look at what came back. Then say one decision back out loud in your next meeting: "so the decision is X, and you are taking it?" About a third of the time there was no decision.</li>
+      <li>Check your organisation's policy on meeting recordings and transcripts before you export one. If nobody can tell you, that is a finding worth raising.</li>
+    </ul>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">Taught from the PMI delivery canon, the by-hand versions of these artifacts in the PMO course, and PMI's guidance on human oversight of AI-assisted work. This session covers:</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMBOK Guide 7 - stakeholder performance domain</span><span class="note">Part 1-3 · engagement, agreement, and what counts as a decision</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">learn-tech-project-pmo-with-phoebe - RACI and tracking</span><span class="note">Part 2-3 · one owner per action, the by-hand decision log</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">PMI - Standard for AI in Portfolio, Program and Project Management (2026)</span><span class="note">Demo 1 · oversight with real intervention, not a rubber stamp</span></div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · Your extraction returns a decision recorded as "the steerco agreed to keep legacy running". What is wrong with it?</p>
+      <button class="qopt" type="button">A · Nothing - the steerco is the decision-making forum</button>
+      <button class="qopt" type="button">B · It is missing the date, which you can add later</button>
+      <button class="qopt" type="button">C · A forum cannot decide - it needs a named person, so it goes back as recommended until you confirm who</button>
+      <p class="qwhy">"The steerco decided" means nobody decided. A forum cannot be asked to reconsider or explain itself in eight weeks; Sofia K. can. D-15 has a name on it for exactly that reason.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · The model returns an action with no stated owner. What should it have written?</p>
+      <button class="qopt" type="button">A · "TBC - ask [role]", left for you to fill from the team</button>
+      <button class="qopt" type="button">B · The most likely owner, inferred from who spoke about it</button>
+      <button class="qopt" type="button">C · "The team", so it is at least assigned to somebody</button>
+      <p class="qwhy">An inferred owner is an invented commitment, and "the team" is how an action survives three sets of minutes untouched. The gap is the finding - go and get a real name.</p>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">3 · Why does the extraction prompt demand a fourth list of things that only sounded like decisions?</p>
+      <button class="qopt" type="button">A · To make the minutes look more thorough to the sponsor</button>
+      <button class="qopt" type="button">B · Because a model asked for decisions will find decisions, and the room's drift is where the next escalation is hiding</button>
+      <button class="qopt" type="button">C · Because transcripts are usually inaccurate about who said what</button>
+      <p class="qwhy">Ask for decisions and you get decisions - fluently. Forcing a separate list of unconfirmed agreements turns a smoothing machine into a check on the room, and it is the cheapest escalation you will ever run.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>PM session 7 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Three things worth keeping</b><span>decisions, actions, open questions. The discussion is the fourth, and you delete it.</span></div>
+      <div class="cheat-item"><b>Six log fields</b><span>id · date · who decided · what · rationale · what it cost. The cost field is the one everybody skips.</span></div>
+      <div class="cheat-item"><b>A forum cannot decide</b><span>"the steerco agreed" means nobody agreed. Put a person's name in the row.</span></div>
+      <div class="cheat-item"><b>The payoff</b><span>an undocumented decision gets relitigated in eight weeks by someone who was not there, from zero.</span></div>
+      <div class="cheat-item"><b>The not-decided trap</b><span>the room drifted, nobody objected, the notes said agreement. Always demand the fourth list.</span></div>
+      <div class="cheat-item"><b>Three labels</b><span>decided / recommended / discussed and parked. Anything parked still gets an owner.</span></div>
+      <div class="cheat-item"><b>One owner, one date</b><span>never "the team", never two names. Unknown means "TBC - ask [role]", filled from people.</span></div>
+      <div class="cheat-item"><b>Consent first</b><span>ask before recording, and check what your organisation allows before a transcript travels.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>PM session 7 of 10 · learn-ai-project-management-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="b6-status-report-simulator.html">← Previous: The status report</a> &nbsp;·&nbsp; <a href="b8-stakeholder-comms.html">Next: Stakeholders, escalations and hard messages →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

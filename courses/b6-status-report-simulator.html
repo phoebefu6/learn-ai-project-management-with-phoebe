@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PM session 6 · The status report - learn AI + project management with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+<style>
+  /* ---- pm-live simulator (scoped pmw-*) ---- */
+  .pmw-shell { display: grid; grid-template-columns: 15.5rem 1fr; gap: 1rem; border: 1px solid var(--hairline); border-radius: var(--radius); background: linear-gradient(180deg,#fff,#E9F1F7); padding: 1rem; margin: 1.2rem 0 .4rem; }
+  @media (max-width: 720px) { .pmw-shell { grid-template-columns: 1fr; } }
+  .pmw-ctitle { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: var(--indigo); margin-bottom: .5rem; }
+  .pmw-q { font-size: .8rem; color: var(--muted); line-height: 1.5; margin-bottom: .7rem; }
+  .pmw-q b { color: var(--ink); }
+  .pmw-levers { display: flex; flex-direction: column; gap: .5rem; }
+  .pmw-lever { display: flex; align-items: center; gap: .6rem; text-align: left; border: 1px solid var(--hairline); background: #fff; border-radius: 12px; padding: .55rem .7rem; cursor: pointer; transition: all .14s ease; font: inherit; color: var(--ink); }
+  .pmw-lever:hover { border-color: var(--indigo-soft); }
+  .pmw-lever.pmw-active { border-color: var(--indigo); background: var(--indigo-50); }
+  .pmw-sw { flex: none; width: 2rem; height: 1.15rem; border-radius: 999px; background: var(--faint); position: relative; transition: background .14s ease; }
+  .pmw-sw::after { content: ""; position: absolute; top: 2px; left: 2px; width: calc(1.15rem - 4px); height: calc(1.15rem - 4px); border-radius: 50%; background: #fff; transition: transform .14s ease; box-shadow: 0 1px 2px rgba(22,35,46,.3); }
+  .pmw-lever.pmw-active .pmw-sw { background: var(--indigo); }
+  .pmw-lever.pmw-active .pmw-sw::after { transform: translateX(.85rem); }
+  .pmw-ltext { display: flex; flex-direction: column; line-height: 1.25; }
+  .pmw-ltext b { font-size: .84rem; font-weight: 700; }
+  .pmw-ltext span { font-size: .72rem; color: var(--muted); }
+  .pmw-modes { display: flex; gap: .4rem; margin-top: .9rem; }
+  .pmw-mode { flex: 1; border: 1px solid var(--hairline); background: #fff; border-radius: 999px; padding: .38rem .5rem; font-size: .72rem; font-weight: 700; cursor: pointer; color: var(--muted); transition: all .14s ease; }
+  .pmw-mode.pmw-on { background: var(--indigo); color: #fff; border-color: var(--indigo); }
+  .pmw-stage { min-width: 0; }
+  .pmw-meters { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: .8rem; }
+  .pmw-meter { flex: 1; min-width: 9rem; border: 1px solid var(--hairline); border-radius: 12px; background: #fff; padding: .6rem .8rem; }
+  .pmw-mlabel { display: block; font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; color: var(--muted); }
+  .pmw-mval { font-size: 1.7rem; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1.2; color: var(--ink); }
+  .pmw-mval.pmw-good { color: var(--indigo); }
+  .pmw-bar { height: 7px; border-radius: 999px; background: var(--hairline); margin-top: .35rem; overflow: hidden; }
+  .pmw-bar i { display: block; height: 100%; background: linear-gradient(90deg,var(--indigo-mid),var(--indigo)); transition: width .3s ease; }
+  .pmw-draftlabel, .pmw-scorehead { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--indigo); margin-bottom: .4rem; }
+  .pmw-scorehead { text-transform: none; font-size: .95rem; letter-spacing: 0; color: var(--ink); }
+  .pmw-draft { border: 1px solid var(--hairline); border-left: 3px solid var(--indigo); border-radius: 10px; background: #fff; padding: .8rem 1rem; }
+  .pmw-line { font-size: .89rem; margin: 0 0 .55rem; line-height: 1.6; }
+  .pmw-line:last-child { margin-bottom: 0; }
+  .pmw-line.pmw-warn { color: var(--amber-ink); background: var(--amber-50); border-radius: 8px; padding: .5rem .65rem; }
+  .pmw-tag { display: inline-block; font-size: .62rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--indigo); background: var(--indigo-50); border-radius: 5px; padding: .1rem .4rem; margin-right: .3rem; vertical-align: middle; }
+  .pmw-table { width: 100%; border-collapse: collapse; margin: .3rem 0 .5rem; font-size: .86rem; }
+  .pmw-table th { text-align: left; text-transform: uppercase; font-size: .66rem; letter-spacing: .07em; color: var(--muted); padding: .35rem .5rem; border-bottom: 1px solid var(--hairline); }
+  .pmw-table td { padding: .4rem .5rem; border-bottom: .5px solid var(--hairline); }
+  .pmw-rmark { font-weight: 800; text-align: center; }
+  .pmw-r-ok .pmw-rmark { color: var(--indigo); }
+  .pmw-r-no .pmw-rmark { color: var(--faint); }
+  .pmw-note, .pmw-rail { font-size: .78rem; color: var(--muted); line-height: 1.55; }
+  .pmw-rail { margin-top: .8rem; border-top: 1px dashed var(--hairline); padding-top: .6rem; font-style: italic; }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-project-management-with-phoebe</a> / PM session 6 of 10</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI + Project Management with Phoebe · PM track · Session 6 of 10</div>
+    <h1>The status report: <span class="accent">from fluent and empty to steerco-ready</span></h1>
+    <p class="sub">Week 9 of Northwind. The ingest slipped 14 days, a vendor has gone quiet, and you have forty Slack messages, a ticket export and two half-written notes. Tonight you build the report that carries that week honestly - and you watch, live, what each thing you supply is worth. The simulator scores the report as you feed it: 24 out of 100 with nothing, 100 with everything.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 PM track</span>
+      <span class="chip audience">PMs · TPMs · delivery leads</span>
+      <span class="chip audience">Live simulator on this page</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-15 · Why reports fail</span>
+      <span class="a3" style="flex:6">15-42 · The simulator + your own week</span>
+      <span class="a4" style="flex:1">42-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we are</h2>
+    </div>
+    <p class="lede">You have a workspace (b1), a charter (b2), a milestone architecture (b3), a dependency map (b4) and a live risk register (b5). Northwind is now nine weeks in and M3 - raw ingest signed off - has slipped from 10 August to 24 August. This is the week the reporting either earns trust or quietly loses it. Status reporting is also the single most common first use of AI in delivery teams, which makes it the most common place to go fluently, confidently wrong.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill peach">★ Try it now prompt</span>
+      <span class="pill inkpill">Official sources covered</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      A six-check rubric that separates a report a steerco can act on from one it can only nod at, first-hand experience of what each check is worth (the simulator scores it), your own week run through the same rubric, and a reusable report prompt that refuses to write "good progress".
+    </div>
+  </section>
+
+  <!-- ============ PART 1: WHY REPORTS FAIL ============ -->
+  <section class="section" id="why-fail">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the reporting canon + the AI failure mode</span>
+      <h2>Why the AI-drafted status report fails <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Ask any model to "write a weekly status report" from a pile of programme noise and you get something readable, well-structured, and useless. Not because it is stupid - because you asked it to compress ambiguity, and compression without a rule produces the average of everything. "Amber. Good progress, some blockers." Nobody can act on that, and worse, nobody can argue with it.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anatomy of a status report: status by an agreed rule, the delta, actions with owners and dates, decisions, evidence, and the ask - the six parts that make it actionable">
+        <style>
+          .b6aT { font: 700 14px Inter, sans-serif; fill: #FFFFFF; }
+          .b6aI { font: 700 14px Inter, sans-serif; fill: #16232E; }
+          .b6aX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .b6aXi { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .b6aXw { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .b6aN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .b6aH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <text class="b6aH" x="30" y="30">SIX PARTS, IN THIS ORDER</text>
+        <rect x="30" y="44" width="265" height="76" rx="12" fill="#072538"/>
+        <text class="b6aT" x="50" y="72">1 · Status, by the rule</text>
+        <text class="b6aX" x="50" y="96">amber means what we agreed</text>
+        <rect x="307" y="44" width="265" height="76" rx="12" fill="#0E3A5C"/>
+        <text class="b6aT" x="327" y="72">2 · What changed</text>
+        <text class="b6aX" x="327" y="96">since last week, with numbers</text>
+        <rect x="584" y="44" width="265" height="76" rx="12" fill="#2C6A99"/>
+        <text class="b6aT" x="604" y="72">3 · Actions</text>
+        <text class="b6aX" x="604" y="96">one owner, one date, each</text>
+        <rect x="30" y="132" width="265" height="76" rx="12" fill="#9CC4DE"/>
+        <text class="b6aI" x="50" y="160">4 · Decisions taken</text>
+        <text class="b6aXi" x="50" y="184">what, when, by whom</text>
+        <rect x="307" y="132" width="265" height="76" rx="12" fill="#9CC4DE"/>
+        <text class="b6aI" x="327" y="160">5 · Evidence</text>
+        <text class="b6aXi" x="327" y="184">ticket ids and real numbers</text>
+        <rect x="584" y="132" width="265" height="76" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="b6aI" x="604" y="160">6 · The ask</text>
+        <text class="b6aXw" x="604" y="184">the decision you need, by when</text>
+        <rect x="30" y="226" width="819" height="52" rx="12" fill="#EAF2F8"/>
+        <text class="b6aXi" x="50" y="248">Drop any one and the report degrades in a specific way: no rule and the colour is a mood,</text>
+        <text class="b6aXi" x="50" y="268">no delta and a 14-day slip reads like a stable plan, no ask and it is a broadcast.</text>
+        <rect x="30" y="296" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="b6aN" x="54" y="308">A report a sponsor cannot challenge is not a safe report. It is an unfalsifiable one.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the six parts, and the specific failure each missing part causes</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The four fluent failures<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Every weak AI status report fails in one of four recognisable ways. Learn to spot them and you can review a draft in thirty seconds.</p>
+        <ul>
+          <li><strong>The mood ring.</strong> A RAG colour with no rule behind it. Two readers disagree about whether the programme is in trouble, so nobody acts.</li>
+          <li><strong>The flat photograph.</strong> A picture of this week with no comparison to last week. A 14-day slip and a stable plan look identical.</li>
+          <li><strong>The orphan actions.</strong> "Follow up on the data-quality issue." Owned by nobody, dated never, and it will appear again next week, reworded.</li>
+          <li><strong>The unfalsifiable claim.</strong> "Quality is looking reasonable." No ticket, no number, nothing to challenge - and nothing to trust.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Amber for eleven weeks.</strong> A programme reported amber for eleven consecutive weeks with no agreed definition of amber. Every week the steerco nodded. In week twelve it went red and the sponsor asked why nobody had flagged it - and the honest answer was that everybody had, in a colour nobody had defined. The report was not lying. It just could not carry information.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Agreeing the RAG rule before you need it<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Write the rule at kickoff, when nothing is on fire and nobody is defending anything. A workable default:</p>
+        <table class="clean">
+          <thead><tr><th>Colour</th><th>Means</th></tr></thead>
+          <tbody>
+            <tr><td>Green</td><td>Every live gate forecasts on or before its date, no critical risk open above the agreed threshold</td></tr>
+            <tr><td>Amber</td><td>A gate forecasts 2 or more weeks late, and there is a credible recovery plan attached</td></tr>
+            <tr><td>Red</td><td>A gate is unrecoverable without a decision from the steerco: scope, money, or the date moves</td></tr>
+          </tbody>
+        </table>
+        <p>Then restate the rule inside every report. It costs one line and removes the entire "what does amber mean here" conversation - which is the conversation that eats the first ten minutes of a steerco that should be spent deciding something.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: THE SIMULATOR ============ -->
+  <section class="section" id="simulator">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · the live simulator</span>
+      <h2>Watch the report climb: 24 to 100 <span class="tag demo">★ 12 min · everyone plays</span></h2>
+    </div>
+    <p class="lede">Below is Northwind week 9, fed to a model with everything switched off. Read the report first - it is fluent and it is worthless. Then turn on one lever at a time and watch two things: the score, and the specific failure that disappears. Turn on the scorecard to see which of five real programme weeks come out steerco-ready with your current setup.</p>
+
+    <div id="pm-live"></div>
+
+    <div class="callout tip">
+      <strong>How to play it in session</strong>
+      Go one lever at a time, in this order: the RAG rule (17 points - the biggest single jump), owners and dates (17), the decision log (14), evidence (13), the ask (9), the delta (6). After each, read only the paragraph that changed. Then flip to the scorecard: with only the RAG rule and owners on, exactly one of the five weeks passes - the quiet one. The slip week needs the delta, the blocked week needs the ask, the steerco week needs decisions plus evidence. The lesson is not "do everything" - it is that the week tells you what it needs.
+    </div>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>What each lever actually is, on your desk<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>The RAG rule</strong> - one line in your house rules and one line restated in every report. Agreed once at kickoff.</li>
+          <li><strong>Owner and date per action</strong> - comes from your owner list (b1) and your RACI. If the model cannot find an owner, it must write "TBC - ask [role]", never "the team".</li>
+          <li><strong>The decision log</strong> - a running list with ids: D-14, 31 Jul, sponsor, what was decided, what it cost. Session b7 builds it from meeting transcripts.</li>
+          <li><strong>Evidence</strong> - ticket ids, dates, and the actual metric. This is the lever that makes the report challengeable, which is what makes it trustworthy.</li>
+          <li><strong>The ask</strong> - the decision you need, the options, the cost of each, and the date after which it stops being available.</li>
+          <li><strong>The delta</strong> - forecast dates, open criticals, and one throughput number, this week against last week.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>The honesty rail</strong>
+          The report prose in the simulator is a scripted teaching simulation - a real model words it differently every time. The rubric is real, and so is the rule underneath it: the dates came from the team, the model only drafted, and a named human signs it before it goes out.
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 2</span>
+      <h2>Run your own last week through the rubric <span class="tag demo">★ 8 min · everyone builds</span></h2>
+    </div>
+    <p class="lede">Open the last status report you actually sent - not a good one, the real most recent one. Score it against the same six checks. Most people land between 40 and 60 the first time, and the missing points are always the same two.</p>
+
+    <div class="steps">
+      <div class="step"><p>Check 1 - is the status colour defined by a written rule that appears in the report? If the rule lives only in your head, score zero.</p></div>
+      <div class="step"><p>Check 2 - can a reader see what changed since last week, with at least one number?</p></div>
+      <div class="step"><p>Check 3 - does every action carry exactly one named owner and one date?</p></div>
+      <div class="step"><p>Check 4 - are the week's decisions recorded with who took them and when?</p></div>
+      <div class="step"><p>Check 5 - can every claim be traced to a ticket, a metric, or a document?</p></div>
+      <div class="step"><p>Check 6 - is there a clear ask, with a deadline and the cost of not deciding?</p></div>
+      <div class="step"><p>Total your score out of six. Whatever you scored, fix the single cheapest gap this week rather than all of them. Usually it is the RAG rule, which takes one meeting.</p></div>
+    </div>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>Four out of six, and the two missing were the expensive ones.</strong> A senior PM scored her own reports and found she was strong on actions, decisions, evidence and the delta - and had never once written the ask or defined amber. Nine months of reports, and not one had told the sponsor what decision she needed. She had been escalating in the corridor instead, which worked until the sponsor changed. Two lines fixed it permanently.</p>
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 2</span>
+      <h2>The report prompt that refuses to write "good progress" <span class="tag demo">★ 10 min · build your own</span></h2>
+    </div>
+    <p class="lede">Now encode the rubric so you never grade by hand again. This prompt lives in your workspace; in b9 it becomes a skill that runs every Thursday against your real tools.</p>
+
+    <div class="steps">
+      <div class="step"><p>Paste the prompt below into your programme workspace, with your context pack loaded.</p></div>
+      <div class="step"><p>Feed it a genuinely messy week - raw notes, exported tickets, unedited threads. Do not tidy the input first; tidying it is the job you are trying to move.</p></div>
+      <div class="step"><p>Read the "gaps" block it returns before the report itself. That block is the model telling you what your week is actually missing - usually an owner or a real number.</p></div>
+      <div class="step"><p>Fill the gaps from the team, not from the model. Then re-run and send.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ Try it now - the weekly status report prompt</span>Draft this week's exec status report from the material below, using the pack in this workspace.
+
+RULES - a draft that breaks any of these is rejected:
+1) Status colour must follow our written RAG rule, and restate the rule in one line.
+2) Show the delta: forecast gate dates, open criticals, and one throughput number,
+   this week vs last week's report in the pack.
+3) Every action: exactly one named owner and one date. If unknown, write
+   "TBC - ask [role]". Never "the team".
+4) List decisions taken with id, date and who took them. If none, say "none this week".
+5) Every claim carries a ticket id, a metric, or the document it came from.
+   No adjectives about progress - numbers or nothing.
+6) End with "What I need from you": the decision, the options with costs, and the date
+   after which it is no longer available.
+
+Then, BEFORE the report, output a GAPS block: everything above you could not fill from
+the material, and exactly who I should ask. Do not fill a gap by inference.
+
+Length: one page. Match the format of the most recent report in the pack.
+MATERIAL: [paste the week - notes, tickets, threads, unedited]</div>
+
+    <div class="prompt-box bad"><span class="label">The version that produces the mood ring</span>Here are my notes from this week. Please write a professional weekly status update for senior stakeholders, summarizing progress, highlights and any blockers.</div>
+
+    <div class="callout tip">
+      <strong>Why the GAPS block matters more than the report</strong>
+      A model asked to summarize will always produce something - that is the whole failure mode. Forcing it to declare what it could not source turns a smoothing machine into a checklist that audits your week. Most PMs find the same gap twice a month: an action with no real owner. That was always true; the report just used to hide it.
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Try it yourself - this week <span class="tag exercise">◐ 30-45 min total</span></h2>
+    </div>
+    <ul>
+      <li>Write your RAG rule in one sentence per colour and get it agreed by your sponsor. This is the highest-value fifteen minutes in the whole track.</li>
+      <li>Run this week's real report through the prompt. Send the version you fixed, not the version it drafted.</li>
+      <li>Keep the GAPS block. After three weeks, look at what keeps appearing - that is a structural hole in your programme, not a reporting problem.</li>
+      <li>Score three of your past reports out of six and note the pattern. Most people are missing the same two checks every time.</li>
+      <li>Optional: bring your worst-scoring report to session b8, where the escalation and the hard message get built.</li>
+    </ul>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">Taught from the delivery reporting canon, PMI's AI guidance on oversight, and the Northwind case carried from the PMO course. This session covers:</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMBOK Guide 7 - measurement and stakeholder performance domains</span><span class="note">Part 1 · what a report is for and who it serves</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMI - AI in project management: status reporting as first adoption</span><span class="note">Part 0-1 · why this is the highest-risk first use</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">PMI - Standard for AI in Portfolio, Program and Project Management (2026)</span><span class="note">Part 2 · human oversight with real intervention, not a rubber stamp</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">learn-tech-project-pmo-with-phoebe - tracker and RAG status</span><span class="note">Part 1 · the by-hand version of this artifact</span></div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · In the simulator, which single lever is worth the most points - and why?</p>
+      <button class="qopt" type="button">A · Evidence, because ticket ids make the report look rigorous</button>
+      <button class="qopt" type="button">B · The RAG rule, because without it the status colour carries no information at all</button>
+      <button class="qopt" type="button">C · The delta, because executives only care about trends</button>
+      <p class="qwhy">The RAG rule and owners tie at 17 points, and the rule is the floor: an undefined amber is the PM's mood, so two readers disagree about whether the programme is in trouble and nobody acts.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · Your draft says data quality is "looking reasonable". What is wrong with it?</p>
+      <button class="qopt" type="button">A · Nothing - it is honest about uncertainty</button>
+      <button class="qopt" type="button">B · It is too informal for a steerco audience</button>
+      <button class="qopt" type="button">C · It is unfalsifiable - with no metric or ticket, nobody can challenge or trust it</button>
+      <p class="qwhy">A claim nobody can check is not a safe claim. The evidence lever exists to make the report challengeable; 96.4% against a 99% gate is a fact, "reasonable" is a feeling with a suit on.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · The GAPS block says an action has no owner. What do you do?</p>
+      <button class="qopt" type="button">A · Go and get a real owner from the team, then re-run</button>
+      <button class="qopt" type="button">B · Ask the model to infer the most likely owner from the notes</button>
+      <button class="qopt" type="button">C · Send it as "the team" and sort it out next week</button>
+      <p class="qwhy">The gap is the finding. An inferred owner is an invented commitment, and "the team" is how an action survives untouched for a month. Fill gaps from people, never by inference.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>PM session 6 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>The six checks</b><span>rule-based status · delta · owner+date · decisions · evidence · the ask.</span></div>
+      <div class="cheat-item"><b>The mood ring</b><span>a RAG colour with no written rule. Fix it once at kickoff, restate it every report.</span></div>
+      <div class="cheat-item"><b>The flat photograph</b><span>no week-on-week comparison, so a 14-day slip reads like a stable plan.</span></div>
+      <div class="cheat-item"><b>Orphan actions</b><span>"the team will follow up" survives untouched for months. One name, one date.</span></div>
+      <div class="cheat-item"><b>Unfalsifiable claims</b><span>"looking reasonable" cannot be challenged, so it cannot be trusted. Numbers or nothing.</span></div>
+      <div class="cheat-item"><b>The ask</b><span>decision needed, options with costs, and the date it expires. No ask = a broadcast.</span></div>
+      <div class="cheat-item"><b>The GAPS block</b><span>make the draft declare what it could not source. The gaps are your real findings.</span></div>
+      <div class="cheat-item"><b>The rail</b><span>the model drafts, the dates come from the team, a named human signs it.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>PM session 6 of 10 · learn-ai-project-management-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="b5-risk-register.html">← Previous: The risk register</a> &nbsp;·&nbsp; <a href="b7-meetings-to-actions.html">Next: Meetings to actions →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/pm-live.js?v=1"></script>
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

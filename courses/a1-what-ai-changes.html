@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leader session 1 · What AI changes about delivery - learn AI + project management with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-project-management-with-phoebe</a> / Leader session 1 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI + Project Management with Phoebe · Leader track · Session 1 of 6</div>
+    <h1>What AI changes about delivery: <span class="accent">the labour moves, the accountability does not</span></h1>
+    <p class="sub">Somebody above you wants an AI number in the PMO plan. Somebody below you has tried it twice and gone quiet. This session gives you the one distinction that survives both conversations: artifact labour versus judgment. By the end you have split your own function's week into those two piles and drafted the one-pager that tells your PMs what AI drafts here, what it never touches, and who signs.</p>
+    <div class="chip-row">
+      <span class="chip level">🟢 Leader track</span>
+      <span class="chip audience">Heads of delivery · PMO leads · sponsors</span>
+      <span class="chip audience">No tooling required</span>
+      <span class="chip time">Start here</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:5">3-20 · What changes, what does not</span>
+      <span class="a3" style="flex:6">20-42 · Two exercises you run</span>
+      <span class="a4" style="flex:1">42-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>How the leader track works</h2>
+    </div>
+    <p class="lede">Six sessions, forty-five minutes each, and you never have to open a tool. This is thinking mode: the decisions a head of delivery has to make before a single PM types a prompt. Every session ends the same way, with the questions to ask your PMs on Monday - because your job here is not to build the artifacts, it is to know a good one from a fluent one and to say out loud where the line sits. Running underneath is <strong>Northwind</strong>, a fictional retailer building a governed data platform: six milestones, a slipping ingest gate, a vendor going quiet, and a sponsor who wants a date. The PM track (ten sessions, b1-b10) builds Northwind's charter, plan, risk register and status pack with AI sitting next to them. You are learning to govern that work, not to do it.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill peach">★ Try it now prompt</span>
+      <span class="pill inkpill">Official sources covered</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      An honest split of your function's week into artifact labour and judgment, the top three artifacts worth moving first, a drafted "we will / we will not" one-pager for your delivery function, and the three rails you will repeat until your PMs are sick of hearing them: context beats prompting, the dates come from the team, a named human signs it.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: THE WORK SPLIT ============ -->
+  <section class="section" id="work-split">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers PMI's 2026 AI standard</span>
+      <h2>The split: artifact labour and judgment <span class="tag concept">7 min live</span></h2>
+    </div>
+    <p class="lede">Take your function's week and cut it in two. One pile is artifact labour: drafting the status pack, collating four threads into one update, chasing owners for a date, reformatting the plan for a different audience, turning ninety minutes of steerco into actions. The other pile is judgment: which trade-off to take, what to escalate and to whom, whether a date is real, which quiet person to go and talk to. AI collapses the first pile. It cannot touch the second, and the whole of this track lives on that line.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A delivery function's week split into four boxes: drafting artifacts and chasing or collating are where AI helps, while judgment calls and signing stay human">
+        <style>
+          .a1sT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .a1sI { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .a1sX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .a1sXi { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .a1sXm { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .a1sN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .a1sH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <text class="a1sH" x="30" y="32">AI DRAFTS THIS</text>
+        <text class="a1sH" x="450" y="32">YOU OWN THIS</text>
+        <rect x="30" y="46" width="195" height="96" rx="12" fill="#0E3A5C"/>
+        <text class="a1sT" x="52" y="82">Draft the artifacts</text>
+        <text class="a1sX" x="52" y="104">status packs, plans,</text>
+        <text class="a1sX" x="52" y="122">minutes, reformatting</text>
+        <rect x="240" y="46" width="195" height="96" rx="12" fill="#2C6A99"/>
+        <text class="a1sT" x="262" y="82">Chase and collate</text>
+        <text class="a1sX" x="262" y="104">threads, tickets and</text>
+        <text class="a1sX" x="262" y="122">notes into one view</text>
+        <rect x="450" y="46" width="195" height="96" rx="12" fill="#9CC4DE"/>
+        <text class="a1sI" x="472" y="82">Judgment calls</text>
+        <text class="a1sXm" x="472" y="104">trade-offs, priority,</text>
+        <text class="a1sXm" x="472" y="122">what to escalate</text>
+        <rect x="660" y="46" width="195" height="96" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="a1sI" x="682" y="82">A person signs</text>
+        <text class="a1sXi" x="682" y="104">is that date real?</text>
+        <text class="a1sXi" x="682" y="122">your name, your call</text>
+        <rect x="30" y="176" width="825" height="58" rx="12" fill="#EAF2F8"/>
+        <text class="a1sXm" x="52" y="200">Left pile: most of the calendar, almost none of the value your function is judged on.</text>
+        <text class="a1sXm" x="52" y="220">Right pile is the job. Your PMs cannot move the left pile until you name the artifacts.</text>
+        <rect x="30" y="258" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="a1sN" x="54" y="270">PMI's 2026 standard: human-in-the-loop is a value source, not a safety net.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the line the whole course runs along: drafting moves, judgment does not</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Why leaders get this backwards<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The instinct in most PMOs is to point AI at the visible pain: the status report is late, so automate the status report. That is the right pile but usually the wrong first step, because the status report is the artifact with the most political weight in your function. Get it wrong once in front of a sponsor and the whole idea is dead for a year.</p>
+        <p>The better read is to sort the labour pile by two things only: how many hours it eats across the whole function, and how much damage a bad first draft can do. Start where the hours are high and the blast radius is low. Meeting notes into actions. Reformatting the same plan for three audiences. Collating four tools into one view. Those are unglamorous, they are also where a delivery function quietly loses a day a week per PM.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The Friday that disappeared.</strong> A Northwind delivery lead spent every Friday afternoon assembling one status pack: 812k rows a night from the ingest dashboard, ticket NWD-412 sitting failed in Jira, a vendor thread with Priya N., and a spreadsheet Sofia K. kept separately. Same shape, every week, about four hours. Once the collation moved, the draft landed in under two minutes and the four hours went somewhere far more useful: a proper conversation with Priya about why VN-2291 had been open eleven days, and a quiet check on Marcus L., the only data engineer who understood the CDC job. Neither of those was ever going to come out of a template.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The four questions that sort any task<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>When your PMs argue about whether something belongs in the labour pile, these four questions settle it faster than a framework:</p>
+        <ul>
+          <li><strong>Does it produce a document, or a decision?</strong> Documents move. Decisions do not.</li>
+          <li><strong>Is the input already written down somewhere?</strong> If the raw material lives in tickets, threads and past reports, it is collation. If it lives in someone's head or in a corridor conversation, it is judgment.</li>
+          <li><strong>Would a competent stranger produce roughly the same thing?</strong> If yes, it is labour. If the answer depends on knowing that Elena V. hates adjectives and Dan R. always under-promises, it is not.</li>
+          <li><strong>What happens if the first draft is wrong?</strong> A wrong draft of meeting notes costs five minutes. A wrong committed date costs a quarter.</li>
+        </ul>
+        <p>Then give them the boundary in one sentence: "AI drafts the artifact, the team supplies the facts, a named person signs it." If your PMs can repeat that back to you, most of the adoption arguments in the next six months resolve themselves without you in the room.</p>
+      </div>
+    </details>
+
+    <div class="callout tip">
+      <strong>Three misreadings to head off early</strong>
+      This is not a headcount argument - sell it upward as a cut and you will get the cut and lose the judgment with it. It is not a tool rollout: a licence with no context, no policy and no named owner produces generic project-management advice nobody needs. And it is not optional to be specific, because "use AI more" is not a mandate, it is a mood.
+    </div>
+  </section>
+
+  <!-- ============ PART 2: WHERE IT LANDS ============ -->
+  <section class="section" id="where-it-lands">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers PMI adoption reporting</span>
+      <h2>Where AI lands first in delivery, and the gap underneath <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Across delivery teams the same three uses show up before anything else, and in roughly the same order. They are not fashion. They are the three jobs that are pure collation, done weekly, and quietly hated by everyone who does them.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The three that arrive first<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>Use</th><th>What it actually replaces</th><th>Where your PMs build it</th></tr></thead>
+          <tbody>
+            <tr><td>Automated status reporting</td><td>A week of tickets, threads and dashboards compressed into something Elena V. can read in four minutes</td><td>PM session b6, with a live scoring simulator</td></tr>
+            <tr><td>Task and owner suggestions</td><td>Turning ninety minutes of steerco into "who does what by when", before everyone forgets</td><td>PM session b7</td></tr>
+            <tr><td>Early-warning signals</td><td>Spotting that M3 has drifted from a 10 Aug gate to a 24 Aug forecast before it becomes an escalation</td><td>PM sessions b4 and b5</td></tr>
+          </tbody>
+        </table>
+        <p>Notice what is missing from that list: nothing decides anything. No date is committed, no message is sent, no risk is closed. That is not caution for its own sake - it is the same boundary PMI's standard draws, and it is the boundary that keeps the first three uses safe enough to actually adopt.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The adoption gap, and what it costs a PMO<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Public reporting on AI in project management points at a squeeze that most heads of delivery will recognise from their own week. Roughly half of respondents say AI already has an impact on how projects get managed. But only about a fifth of project managers claim good practical experience with it, and about half claim little or none.</p>
+        <p>Read the shape of that, not the decimals: high pressure from above, thin practical skill below, and nothing written down in the middle. That middle is you.</p>
+        <ul>
+          <li><strong>Shadow adoption.</strong> With no policy, the keen PMs use it anyway, on whatever account they have, with whatever data is on their screen. You find out during an audit.</li>
+          <li><strong>Uneven quality.</strong> Two PMs, same programme, wildly different artifacts. One pastes raw output, one rewrites everything. Neither can tell you which is which, because there is no rubric.</li>
+          <li><strong>The credibility tax.</strong> One fluent, empty status report at a steerco and your sponsor stops trusting the whole reporting line, including the reports that were fine.</li>
+          <li><strong>Wasted licences.</strong> The most common outcome of a tool-first rollout is a per-seat spend with a usage chart that dies after week three.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Two Northwind PMs, one Monday.</strong> Both drafted the same weekly update. The first pasted it as it came: "data quality is improving and the team is making good progress toward M3." The second forced every claim to carry a source and got something usable: DQ pass rate 96.4% against a 99% gate, 6 of 9 source systems landing, NWD-412 still failed, so the M3 gate of 10 August now forecasts 24 August. Same tool, same week, same programme. The difference was not skill with prompts. It was that one of them had been told what a good artifact looks like, and the other had not.</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="callout tip">
+      <strong>It is not a training problem</strong>
+      The reflex is to book a course. Training helps, but what your PMs are missing is not technique - it is permission and a standard. They do not know whether they may put the risk register in, they do not know who carries it if a number is wrong, and they have no agreed definition of a good draft. All three are yours to issue, all three fit on one page, and that page is what Demo 2 produces.
+    </div>
+  </section>
+
+  <!-- ============ PART 3: WHAT DOES NOT CHANGE ============ -->
+  <section class="section" id="unchanged">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers PMI's 2026 standard in depth</span>
+      <h2>What does not change: the accountability chain <span class="tag concept">7 min live</span></h2>
+    </div>
+    <p class="lede">PMI published the first edition of <em>The Standard for Artificial Intelligence in Portfolio, Program, and Project Management</em> in 2026. It is deliberately technology-agnostic - it names no vendor - and it is human-centered in a way that is genuinely useful to a head of delivery, because it tells you where to put the human rather than just insisting there is one.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The accountability chain: a draft goes to a named reviewer, becomes a signed artifact, and then goes to steerco. The excuse the AI wrote it is crossed out as a defence">
+        <style>
+          .a1cT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .a1cI { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .a1cX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .a1cXi { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .a1cXm { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .a1cN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .a1cH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <defs>
+          <marker id="a1cAh" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="#9CC4DE"/>
+          </marker>
+        </defs>
+        <text class="a1cH" x="26" y="32">THE CHAIN THAT DOES NOT MOVE</text>
+        <rect x="26" y="46" width="185" height="96" rx="12" fill="#0E3A5C"/>
+        <text class="a1cT" x="46" y="82">The draft</text>
+        <text class="a1cX" x="46" y="104">a first pass, made</text>
+        <text class="a1cX" x="46" y="122">in minutes</text>
+        <line x1="215" y1="94" x2="233" y2="94" stroke="#9CC4DE" stroke-width="2" marker-end="url(#a1cAh)"/>
+        <rect x="239" y="46" width="185" height="96" rx="12" fill="#2C6A99"/>
+        <text class="a1cT" x="259" y="82">A named reviewer</text>
+        <text class="a1cX" x="259" y="104">one person, not</text>
+        <text class="a1cX" x="259" y="122">"the team"</text>
+        <line x1="428" y1="94" x2="446" y2="94" stroke="#9CC4DE" stroke-width="2" marker-end="url(#a1cAh)"/>
+        <rect x="452" y="46" width="185" height="96" rx="12" fill="#9CC4DE"/>
+        <text class="a1cI" x="472" y="82">A signed artifact</text>
+        <text class="a1cXm" x="472" y="104">their name on it,</text>
+        <text class="a1cXm" x="472" y="122">numbers sourced</text>
+        <line x1="641" y1="94" x2="659" y2="94" stroke="#9CC4DE" stroke-width="2" marker-end="url(#a1cAh)"/>
+        <rect x="665" y="46" width="185" height="96" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="a1cI" x="685" y="82">Steerco</text>
+        <text class="a1cXi" x="685" y="104">asks who decided,</text>
+        <text class="a1cXi" x="685" y="122">and on what basis</text>
+        <rect x="26" y="176" width="824" height="64" rx="12" fill="#EAF2F8"/>
+        <rect x="48" y="190" width="196" height="34" rx="8" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="a1cXi" x="62" y="213">"The AI wrote it"</text>
+        <line x1="56" y1="208" x2="182" y2="208" stroke="#F97316" stroke-width="2"/>
+        <text class="a1cXm" x="266" y="203">Not a defence. It has never worked at a steerco, and using it</text>
+        <text class="a1cXm" x="266" y="223">costs more credibility than the original error did.</text>
+        <rect x="26" y="258" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="a1cN" x="50" y="270">Oversight means real intervention triggers and an escalation path, not a glance.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the chain PMI's standard protects: draft, named reviewer, signed artifact, steerco</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The principles that actually bite in delivery<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The standard sets out eight equally weighted principles. Reciting all eight in a leadership session is a good way to lose the room, so take the four that change what you do on Monday.</p>
+        <ul>
+          <li><strong>Governance and compliance.</strong> AI governance belongs inside your existing governance, not beside it. The standard asks for "clear structures, roles, authority, and guardrails" - which is a description of a RACI and a policy, not a new committee.</li>
+          <li><strong>Data quality.</strong> A principle in its own right, and the one your PMs will feel first. A status pack drawn from a stale context pack is confidently wrong about last month's programme, which is far harder to catch than obvious nonsense.</li>
+          <li><strong>People and culture, and ethics.</strong> If your PMs think this is a headcount exercise, the artifacts get quietly worse and nobody tells you why. And the accountable name does not move to a vendor. Ever.</li>
+        </ul>
+        <p>The other four - strategic value, risk, stakeholder engagement, optimization and innovation - matter, and they are where sessions a4 to a6 land. Equal weighting is the point: there is no principle you get to trade away because the quarter is tight.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Human-in-the-loop as a value source, not a safety net<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>This is the single most useful line in the standard for a head of delivery, and it is worth reading twice. The human is not in the loop to catch the machine's mistakes. The human is in the loop because that is where the judgment lives. Reviewing is not the point. Deciding is.</p>
+        <p>The practical test is whether your reviewer has anything to intervene <em>with</em>. A reviewer who can only say yes or no is a rubber stamp. A reviewer who knows Marcus L. is the single point of failure on the CDC job, who was in the room when decision D-14 descoped real-time POS to nightly batch, and who has the authority to move the M3 gate - that person is adding something the draft could never contain.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The review that was really a signature.</strong> A PMO put a review step in front of every AI-drafted report and called it governance. In practice one person approved eleven reports in nine minutes on a Thursday afternoon. When a wrong figure reached the sponsor, the process was technically followed and nobody could say who had actually read it. The fix was not more process: it was naming one reviewer per programme, giving them the authority to hold the report back, and writing down the two triggers that mean stop - a number with no source, and a date nobody on the team had confirmed.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The three rails, in leader language<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Context beats prompting.</strong> When a draft comes back generic, the fix is almost never a cleverer instruction. It is a missing document. If your PMs are trading prompt tricks instead of loading the charter, plan and risk register, they are optimising the wrong thing - and session a2 is about what they are allowed to load.</li>
+          <li><strong>The dates come from the team.</strong> Ask for a plan and you will get dates. They will be evenly spaced, plausible, and entirely fictional, because nobody was asked and nothing was capacity-checked. AI drafts the structure of a plan: milestones, gate criteria, dependencies, the questions to ask. The commitments come from the people who will be held to them.</li>
+          <li><strong>A named human signs it.</strong> One accountable name per artifact, and that person read it. This is not a formality; it is exactly what PMI means by oversight with real triggers.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>Repeat these until they are boring</strong>
+          You will say these three lines in every session of this track, and you should say them in every PMO meeting for the next two quarters. Rails only work if everybody can recite them without looking.
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 2</span>
+      <h2>Split your own function's week <span class="tag demo">★ 12 min · everyone fills this in</span></h2>
+    </div>
+    <p class="lede">Not Northwind. Your function, your PMs, this quarter. The output is a shortlist of three artifacts worth moving first, and you will use it in every remaining session of this track.</p>
+
+    <div class="steps">
+      <div class="step"><p>List every recurring artifact or activity your delivery function produces in a normal week. Aim for ten to fifteen lines, including the ones nobody admits to, like reformatting the same update for three audiences. Estimate hours a week <em>across the function</em>, not per person - six PMs at ninety minutes each is a day and a half, and that is the number that gets attention.</p></div>
+      <div class="step"><p>Mark each line labour or judgment using the four questions from Part 1, then score blast radius - what a bad first draft costs. Where you cannot decide, split the line: most real activities are eighty percent collation with a judgment call at the end.</p></div>
+      <div class="step"><p>Pick your three: highest hours, lowest blast radius. Write the names down. Those are your pilot artifacts for session a6.</p></div>
+    </div>
+
+    <table class="clean">
+      <thead><tr><th>Artifact or activity</th><th>Hours a week, whole function</th><th>Labour or judgment</th><th>Blast radius</th><th>Move it?</th></tr></thead>
+      <tbody>
+        <tr><td>Weekly status pack per programme</td><td>9</td><td>Labour, with a judgment call on the RAG</td><td>High - the sponsor reads it</td><td>Yes, but not first</td></tr>
+        <tr><td>Steerco minutes into actions</td><td>5</td><td>Labour</td><td>Low</td><td>Yes - start here</td></tr>
+        <tr><td>Deciding what to escalate and to whom</td><td>3</td><td>Judgment</td><td>High</td><td>No, and say so out loud</td></tr>
+        <tr><td>Chasing owners for dates</td><td>6</td><td>Labour to chase, judgment to accept</td><td>Medium</td><td>Chase yes, accept no</td></tr>
+        <tr><td>Your lines, from here down</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout tip">
+      <strong>The row that teaches the most</strong>
+      "Chasing owners for dates" is the row worth arguing about in the room. Chasing is pure labour and should move tomorrow. Accepting the date that comes back is judgment and never moves. If your table has that distinction on it, your PMs will understand rail two without you explaining it again.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 2</span>
+      <h2>Draft the "we will / we will not" one-pager <span class="tag demo">★ 10 min · build your own</span></h2>
+    </div>
+    <p class="lede">One page, three headings, your name at the bottom. This is the instruction your function has been missing, and it does more for quality than any amount of tool training. Session a2 hardens it into a governed setup with permissions and a red list; today you get the shape down while the split from Demo 1 is fresh.</p>
+
+    <div class="steps">
+      <div class="step"><p>Write the three artifacts from Demo 1 under "we will". Name them specifically - "the weekly status pack" beats "reporting".</p></div>
+      <div class="step"><p>Write "we will not" from the judgment pile, and be blunt. Anything that commits a date, closes a risk, or sends a message to a human outside the team belongs here.</p></div>
+      <div class="step"><p>Name the signer: one accountable person per artifact type, by role and by name. If you cannot name them, the artifact is not ready to move.</p></div>
+      <div class="step"><p>Add the two intervention triggers that mean stop and escalate, then circulate it as a draft and ask your PMs what is missing. The ones already using AI quietly will tell you more in ten minutes than a survey will.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ The one-pager skeleton - edit hard, then sign it</span>AI IN DELIVERY - [your function], v0.1, [date]
+Owner: [your name, head of delivery]
+
+WE WILL use AI to draft
+- Meeting notes into actions with an owner and a date on every line
+- The first pass of the weekly status pack, from the programme's own documents
+- Reformatting an approved plan for a different audience
+- Early-warning flags on slip and risk, raised to a human, never actioned alone
+
+WE WILL NOT use AI to
+- Commit or change a date. Dates come from the team who will be held to them.
+- Open, close or downgrade a risk
+- Send anything to a client, a vendor or a sponsor without a named human sending it
+- Decide scope, priority or what gets escalated
+
+WHO SIGNS
+- Status pack: the programme PM, by name, every week
+- Escalation or anything to a sponsor: me
+- Anything a client or auditor reads: me, and only after I have read it
+
+STOP AND ESCALATE IF
+- A draft contains a number with no traceable source
+- A draft contains a date nobody on the delivery team has confirmed
+
+WHAT WE LOG
+Which artifacts were AI-drafted, who reviewed, who signed. Reviewed at the monthly PMO.</div>
+
+    <div class="prompt-box bad"><span class="label">The version that changes nothing</span>Our PMO is committed to embracing AI to drive efficiency and innovation across delivery. Teams are encouraged to use AI responsibly and in line with company policy, with appropriate human oversight at all times. We will review as the technology matures.</div>
+
+    <div class="callout tip">
+      <strong>Why the second one fails</strong>
+      Read it as a PM on Monday morning. Can you put the risk register in? Unclear. Can you send an AI-drafted note to the vendor? Unclear. Who carries it if a number is wrong? Unclear. "Appropriate human oversight" is exactly the perfunctory review PMI's standard warns against, dressed up as a policy. Every line of the first one either permits something, forbids something, or names somebody - which is what makes it usable.
+    </div>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The line that saved a steerco.</strong> One head of delivery added a single rule: any number in a draft must carry its source. The next week a Northwind draft claimed data quality had "improved significantly" and could not produce a ticket or a metric behind it - it had smoothed a wobble into a trend. The PM caught it in about ten seconds, went back to the actual dashboard, and reported the truth: 96.4% against a 99% gate, flat for three weeks, so the M3 gate was at risk and R-11 needed raising. Elena V. got a worse number and a better relationship. That is the difference between a rule and a hope.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session a2 <span class="tag exercise">◐ 30-45 min total</span></h2>
+    </div>
+    <ul>
+      <li>Finish the split table for your real function, and get at least two of your PMs to challenge the hours - your estimate is probably low.</li>
+      <li>Circulate the one-pager as an explicit draft. Ask one question with it: "what is on this list that you have already been doing anyway?" Expect an uncomfortable answer, and treat it as data rather than a disciplinary matter.</li>
+      <li>Find out who in your organisation actually owns the answer to "what may we put into an AI tool". If nobody knows, that is a genuine finding, and it is exactly where a2 starts. Then ask your PMs these three on Monday: which artifact eats your week? What would you need before you trusted an AI-drafted version of it? Who do you think signs it today?</li>
+    </ul>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">Taught from PMI's public standards and AI guidance plus the delivery canon. Certification (PMP, PMI-ACP) and the full normative text of the AI standard stay with PMI. This session covers:</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMI - Standard for AI in Portfolio, Program and Project Management (2026)</span><span class="note">Part 3 · principles, governance inside GRC, human-in-the-loop as a value source</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMI - AI in project management, adoption reporting</span><span class="note">Part 2 · where AI lands first, the practitioner skill gap and what it costs</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">PMBOK Guide 7th edition - principles and performance domains</span><span class="note">Part 1 · stewardship and measurement under the labour / judgment split</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">PM session b1 - the programme workspace and context pack</span><span class="note">Part 0 · what your PMs build behind this track</span></div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · You have hours-per-week and blast-radius scores for every artifact your function produces. Which three do you move first?</p>
+      <button class="qopt" type="button">A · The three the sponsor complains about most, because that is where the political pressure is</button>
+      <button class="qopt" type="button">B · The three with the highest hours and the lowest blast radius, so a bad first draft is cheap</button>
+      <button class="qopt" type="button">C · The three your keenest PM volunteers for, since enthusiasm predicts success</button>
+      <p class="qwhy">High hours prove the value, low blast radius keeps the first mistake survivable. The sponsor-facing status pack is the right pile but a risky first step: get it wrong once in front of Elena V. and the idea is dead for a year.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · A PMO puts a review step in front of every AI-drafted report. One person approved eleven reports in nine minutes. What did PMI's standard actually ask for?</p>
+      <button class="qopt" type="button">A · Nothing more - a review step existed and was followed, so governance held</button>
+      <button class="qopt" type="button">B · A second reviewer, so two people approve every artifact</button>
+      <button class="qopt" type="button">C · Oversight with real intervention triggers and authority to stop, not a perfunctory review</button>
+      <p class="qwhy">Human-in-the-loop is framed as a value source, not a safety net. A reviewer who can only say yes is a rubber stamp. Name one reviewer, give them authority to hold the artifact back, and write down the triggers that mean stop.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Your PMs ask for a plan and get back a clean six-milestone schedule with dates. What is the leader instruction?</p>
+      <button class="qopt" type="button">A · Keep the structure, throw the dates away, and get real ones from the people doing the work</button>
+      <button class="qopt" type="button">B · Present them, since evenly spaced milestones are a sign of a well-formed plan</button>
+      <button class="qopt" type="button">C · Ask for the dates to be re-checked for feasibility before circulating</button>
+      <p class="qwhy">Rail two. Nobody was asked and nothing was capacity-checked, so the dates are fiction with good typography. AI drafts the structure - milestones, gate criteria, dependencies, the questions to ask. Commitments come from the team who will be held to them.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Leader session 1 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>The split</b><span>Artifact labour moves. Judgment does not. Everything else in this track sits on that line.</span></div>
+      <div class="cheat-item"><b>Sorting test</b><span>Document or decision? Is the input written down? Would a stranger produce the same? What if the draft is wrong?</span></div>
+      <div class="cheat-item"><b>Move first</b><span>High hours across the function, low blast radius. Not the sponsor-facing pack on day one.</span></div>
+      <div class="cheat-item"><b>Lands first everywhere</b><span>status reporting, task and owner suggestions, early-warning signals. None of them decide anything.</span></div>
+      <div class="cheat-item"><b>The gap</b><span>Roughly half say AI already affects PM. About a fifth of PMs have real experience. The middle is you.</span></div>
+      <div class="cheat-item"><b>PMI 2026</b><span>Eight equal principles, five performance domains. Governance inside existing GRC, not beside it.</span></div>
+      <div class="cheat-item"><b>Oversight</b><span>Real intervention triggers and authority to stop. Human-in-the-loop is a value source, not a safety net.</span></div>
+      <div class="cheat-item"><b>The three rails</b><span>Context beats prompting. The dates come from the team. A named human signs it.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Leader session 1 of 6 · learn-ai-project-management-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="../index.html">← All sessions</a> &nbsp;·&nbsp; <a href="a2-governed-setup.html">Next: The governed setup →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

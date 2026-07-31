@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leader session 3 · Plans you can trust - learn AI + project management with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-project-management-with-phoebe</a> / Leader session 3 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI + Project Management with Phoebe · Leader track · Session 3 of 6</div>
+    <h1>Plans you can trust: <span class="accent">a five-minute review that catches a fluent lie</span></h1>
+    <p class="sub">An AI-drafted plan arrives beautiful. Even spacing, tidy phases, confident dates, not one typo. That polish is exactly what makes the four standard defects invisible. Tonight you get the tells, a seven-point rubric you can run without reading every line, and the reframe that makes this easy: you are not reviewing the model's work, you are reviewing your PM's.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Leader track</span>
+      <span class="chip audience">Heads of delivery</span>
+      <span class="chip audience">PMO leads</span>
+      <span class="chip audience">Review rubric</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Where we are</span>
+      <span class="a2" style="flex:4">3-20 · Four failure modes + the rubric</span>
+      <span class="a3" style="flex:5">20-42 · Review a real flawed plan</span>
+      <span class="a4" style="flex:1">42-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we are</h2>
+    </div>
+    <p class="lede">Session a1 drew the line: AI drafts artifacts and collates noise, you keep judgment and the signature. Session a2 built the governed setup - what goes into a workspace, who is allowed to connect what, and the material that never goes in at all. Tonight we stop talking about the system and pick up the single artifact you sign off more than any other: <strong>the plan</strong>. Northwind, our fictional retailer building a governed data platform, has a six-milestone plan and a slipping M3 gate. Its plan is the one you will pull apart.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill peach">★ Try it now prompt</span>
+      <span class="pill inkpill">Official sources covered</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      The four failure modes of an AI-drafted plan and the tell for each, a seven-point rubric that takes five minutes and does not require reading every line, live practice finding five planted defects in a Northwind plan, and your own PMO plan-review checklist with a named sign-off authority written on it.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: FOUR FAILURE MODES ============ -->
+  <section class="section" id="failure-modes">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers PMBOK 7 planning domain</span>
+      <h2>The four ways an AI-drafted plan goes wrong <span class="tag concept">7 min live</span></h2>
+    </div>
+    <p class="lede">These are not random errors. They are structural, they show up in roughly the same order every time, and each one has a visual tell you can spot before you have read a single line of detail. Once you can see them, a bad plan announces itself from across the room.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 322" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four failure modes of an AI-drafted plan: invented dates, orphan owners, missing gates and phantom dependencies, each with the tell it leaves on the page">
+        <style>
+          .a3pT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .a3pI { font: 700 15px Inter, sans-serif; fill: #16232E; }
+          .a3pX { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .a3pXi { font: 400 12.5px Inter, sans-serif; fill: #45210A; }
+          .a3pXm { font: 400 12.5px Inter, sans-serif; fill: #16232E; }
+          .a3pN { font: 600 14px Inter, sans-serif; fill: #45210A; }
+          .a3pH { font: 700 12px Inter, sans-serif; fill: #5F7183; letter-spacing: .08em; }
+        </style>
+        <text class="a3pH" x="30" y="32">FOUR FAILURE MODES, AND THE TELL EACH ONE LEAVES</text>
+        <rect x="30" y="46" width="195" height="118" rx="12" fill="#0E3A5C"/>
+        <text class="a3pT" x="52" y="80">Invented dates</text>
+        <text class="a3pX" x="52" y="104">every milestone lands</text>
+        <text class="a3pX" x="52" y="122">on a tidy Friday</text>
+        <text class="a3pX" x="52" y="140">nobody was asked</text>
+        <rect x="240" y="46" width="195" height="118" rx="12" fill="#2C6A99"/>
+        <text class="a3pT" x="262" y="80">Orphan owners</text>
+        <text class="a3pX" x="262" y="104">owner says "the team"</text>
+        <text class="a3pX" x="262" y="122">or "engineering", or</text>
+        <text class="a3pX" x="262" y="140">a role, never a person</text>
+        <rect x="450" y="46" width="195" height="118" rx="12" fill="#9CC4DE"/>
+        <text class="a3pI" x="472" y="80">Missing gates</text>
+        <text class="a3pXm" x="472" y="104">phases flow into each</text>
+        <text class="a3pXm" x="472" y="122">other with nothing</text>
+        <text class="a3pXm" x="472" y="140">testable in between</text>
+        <rect x="660" y="46" width="195" height="118" rx="12" fill="#FEEEE0" stroke="#F97316" stroke-width="1.5"/>
+        <text class="a3pI" x="682" y="80">Phantom deps</text>
+        <text class="a3pXi" x="682" y="104">a link nobody agreed</text>
+        <text class="a3pXi" x="682" y="122">with the other team,</text>
+        <text class="a3pXi" x="682" y="140">or a real one dropped</text>
+        <rect x="30" y="196" width="825" height="58" rx="12" fill="#EAF2F8"/>
+        <text class="a3pXm" x="52" y="220">All four read beautifully. That is the problem - fluency is what makes them hard to see.</text>
+        <text class="a3pXm" x="52" y="240">So do not read a plan for quality. Interrogate it for provenance: where did this come from?</text>
+        <rect x="30" y="278" width="14" height="14" rx="3" fill="#F97316"/>
+        <text class="a3pN" x="54" y="290">A plan is a set of promises. A model cannot make a promise on your team's behalf.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the four failure modes and what each one actually looks like on the page</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>1 and 2 - invented dates and orphan owners<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Invented dates.</strong> Ask a model for a plan and it will give you dates, because a plan without dates looks unfinished and the model is optimising for looking finished. The tell is rhythm: everything is two weeks or four weeks apart, everything lands on a Friday, nothing sits awkwardly around a holiday or a hiring gap or the one week your architect is on leave. Real schedules are lumpy. Smooth is suspicious.</p>
+        <p><strong>Orphan owners.</strong> The second tell is in the owner column. "The team", "engineering", "the data function", "the vendor" - these are not owners, they are places where an owner should have been. A model does this honestly: it does not know your people, so it writes the category. The damage is that an action with no name is an action nobody does, and the plan still looks complete on the page.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The Friday that was not there.</strong> A programme director reviewed a plan where nine of eleven milestones landed on a Friday and the tenth was a Thursday only because of a bank holiday. She asked one question in the review: "which of these dates did someone commit to out loud?" The answer was two. The other nine were the model's rhythm, dressed as a schedule. The plan went back the same afternoon.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>3 and 4 - missing gates and phantom dependencies<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Missing gates.</strong> Discovery flows into build, build flows into test, test flows into go-live, and at no point is there a sentence you could hold up and say "this is true" or "this is not true yet". Gate criteria that read "ingest working well", "quality acceptable" or "design complete" are not gates. A gate is testable by someone who was not in the room: <em>DQ pass rate at or above 99% on three consecutive nightly runs</em>. That either happened or it did not.</p>
+        <p><strong>Phantom dependencies.</strong> Two versions of the same defect. The first is a dependency the plan asserts but nobody confirmed with the other side - Veridian will deliver the POS extract by the 29th, says a document Veridian has never seen. The second is quieter and worse: a real dependency the draft dropped because keeping it made the schedule impossible. Models smooth. A constraint that breaks the story tends to leave the story.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The gate that meant nothing.</strong> A steerco approved a plan whose M3 exit criterion was "ingest working well across sources". Six weeks later two people were arguing in front of the sponsor about whether it had been met: 6 of 9 source systems were landing and 812k rows a night were flowing, which one person called working and the other called two-thirds done. Nobody was lying. The criterion had simply never been testable, and the argument was baked in from the day it was signed.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why these four, and not others<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>All four come from the same root: a model can produce structure but has no access to commitment. Dates, owners, gate thresholds and cross-team agreements are all <em>social facts</em>. They exist because named humans agreed to them in a room, and no amount of text in a workspace contains that agreement unless someone wrote it down.</p>
+        <ul>
+          <li><strong>Structure is knowledge.</strong> What phases a data platform programme usually has, what typically depends on what, what questions to ask - genuinely useful, and genuinely available to a model.</li>
+          <li><strong>Commitment is not.</strong> Who will do it, by when, and what "done" means to your sponsor. That comes from your team and nowhere else.</li>
+          <li><strong>The failure is always at the seam.</strong> Every one of the four defects is the draft quietly filling a commitment-shaped hole with structure-shaped material.</li>
+        </ul>
+        <p>This is rail two of the course stated precisely: <strong>the dates come from the team.</strong> AI drafts structure, never commitments.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: THE RUBRIC ============ -->
+  <section class="section" id="rubric">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · the leader's review instrument</span>
+      <h2>The seven-point rubric, run in five minutes <span class="tag concept">7 min live</span></h2>
+    </div>
+    <p class="lede">You are a head of delivery with four programmes and forty minutes. You cannot read every line of every plan, and you should not - that is your PM's job. What you can do is run seven questions that are cheap to ask and expensive to fake. Every one of them is answered by looking at the shape of the document, not by understanding the work.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The seven questions<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Run them in order. Two or more failures and the plan goes back - not because it is wrong, but because it is not yet reviewable.</p>
+        <table class="clean">
+          <thead><tr><th>#</th><th>Ask</th><th>You are looking for</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Does every milestone have a testable gate criterion?</td><td>A sentence a stranger could mark true or false. "DQ at or above 99% for three nights", not "quality good".</td></tr>
+            <tr><td>2</td><td>Does every action have one named owner and one date?</td><td>A person, not a function. One name, not two. If it says "the team", it has no owner.</td></tr>
+            <tr><td>3</td><td>Is every external dependency confirmed by the other side?</td><td>A name and a date on the other team, plus when they said it. Unconfirmed is a risk, not a dependency.</td></tr>
+            <tr><td>4</td><td>Where did each date come from?</td><td>A person, a capacity calculation, or a contract. "It looked about right" is the failure state.</td></tr>
+            <tr><td>5</td><td>What is explicitly out of scope?</td><td>A non-goals list. A plan with no exclusions has not been negotiated with anybody yet.</td></tr>
+            <tr><td>6</td><td>What happens if the hard gate slips?</td><td>Named knock-on milestones and the decision that would be needed. Not "we would replan".</td></tr>
+            <tr><td>7</td><td>What is this plan's single biggest assumption?</td><td>One sentence, and whether it is being actively watched. If your PM cannot name it, nobody is watching it.</td></tr>
+          </tbody>
+        </table>
+        <div class="callout tip">
+          <strong>Question 7 does most of the work</strong>
+          It is the only one that cannot be answered by tidying the document. A PM who can say "we are assuming two data engineers are hired by mid-August, and if they are not, M4 cannot start" has actually thought about the programme. A PM who says "no major assumptions" has just told you the most important thing you will learn all week.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Running it on Northwind, out loud<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Northwind is week nine. M3 (raw ingest signed off) was gated for 10 August and now forecasts 24 August. Six of nine source systems are landing, 812k rows a night, DQ pass rate 96.4% against a 99% gate. Here is the rubric on that plan in about ninety seconds:</p>
+        <ul>
+          <li><strong>Q1 gates.</strong> M3's criterion is numeric and dated - good. M4's is "modelled warehouse reviewed", which fails.</li>
+          <li><strong>Q2 owners.</strong> Marcus L. on ingest, Sofia K. on modelling, Dan R. on BI. Named, single, real.</li>
+          <li><strong>Q3 dependencies.</strong> The Veridian POS extract is the live one. Has Priya N. got it in writing? Ticket VN-2291 has been open eleven days, so the honest answer is no.</li>
+          <li><strong>Q4 provenance.</strong> The new 24 August forecast came from Marcus and the nightly throughput, not from a model. Good.</li>
+          <li><strong>Q5 out of scope.</strong> Decision D-14 descoped real-time POS to nightly batch until M5. It is written down, which is why nobody is arguing about it.</li>
+          <li><strong>Q6 slip.</strong> If M3 moves to 24 August, does M4 move? What is the compression plan? This is the escalation session a4 builds.</li>
+          <li><strong>Q7 assumption.</strong> Risk R-03: two data engineers hired before M4 starts. Nobody has been hired. That is the whole programme in one line.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Ninety seconds, one finding.</strong> A PMO lead ran exactly this pass on a plan she had already skimmed twice. Questions one through six were fine. Question seven produced a five-second silence, then: "I suppose we are assuming the contractors get approved." Nobody had raised it, no risk existed for it, and it was four weeks from being the thing that stopped the programme. The rubric did not find a mistake. It found the thing nobody had said out loud.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What the rubric deliberately does not ask<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>It does not ask whether the estimates are right.</strong> You cannot tell from a document, and pretending you can is how leaders become the bottleneck on their own programmes.</li>
+          <li><strong>It does not ask whether the sequencing is optimal.</strong> That is a working session with the architect and the delivery lead, not a review question.</li>
+          <li><strong>It does not ask whether AI was used.</strong> Irrelevant. A weak plan written by hand fails the same seven questions, and a strong plan drafted with AI passes them.</li>
+        </ul>
+        <p>PMBOK's planning performance domain frames it well: a plan is not a prediction, it is a coordination device. It only works if the people it coordinates recognise their own commitments in it. Every rubric question is really the same question - <em>is this document connected to real people, or is it just internally consistent?</em></p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: WHAT GOOD LOOKS LIKE ============ -->
+  <section class="section" id="what-good">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the reframe</span>
+      <h2>What a good AI-drafted plan actually looks like <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">None of this means the answer is "do not use AI on plans". A good AI-drafted plan is genuinely better than the hand-written one it replaced, because the effort moved from formatting to thinking. The rule is simple: <strong>structure and questions from the model, numbers and commitments from the people.</strong></p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The division of labour that works<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>From the model</th><th>From the people</th></tr></thead>
+          <tbody>
+            <tr><td>The milestone skeleton for this kind of programme</td><td>Which milestones your sponsor will actually gate</td></tr>
+            <tr><td>Candidate gate criteria, written testably</td><td>The threshold number, and who signs it off</td></tr>
+            <tr><td>The dependencies this shape of work usually has</td><td>Confirmation from the other team, with a name and a date</td></tr>
+            <tr><td>The questions you have not asked yet</td><td>The answers, and the awkward one nobody wants to give</td></tr>
+            <tr><td>Consistent formatting across every artifact</td><td>Every date, every owner, every commitment</td></tr>
+          </tbody>
+        </table>
+        <p>Notice what the left column is worth. "The questions you have not asked yet" is the most under-rated output in this entire course. A model that has your charter, your risk register and your owner list will produce a list of unresolved items faster than any human review, and it has no political reason to leave the embarrassing ones out.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Fourteen questions, one that mattered.</strong> A delivery lead asked her loaded workspace for the questions her plan could not answer. She got fourteen. Eleven were obvious, two were pedantic, and one read: "M4 assumes modelling capacity that no named person in the owner list currently has." That was risk R-03 before anyone had written it as a risk. The model did not know the team was short. It knew the plan referenced work with nobody attached to it, and unlike the humans in the room it had no reason to be tactful about it.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The reframe: you are reviewing your PM, not the model<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>This is the sentence to take into your next plan review. <strong>You are not reviewing the model's work. You are reviewing your PM's. The model just made producing it cheap.</strong></p>
+        <p>It resolves almost every awkward conversation leaders are currently having about this:</p>
+        <ul>
+          <li><strong>"Is it allowed?"</strong> becomes "is the artifact good, and did a named human sign it?" Which is the standard you already had.</li>
+          <li><strong>"Did AI write this?"</strong> becomes a question you do not need to ask. It changes nothing about your review and it makes your PM defensive.</li>
+          <li><strong>"The AI got it wrong"</strong> stops being available as an answer. The accountable name on the plan is a person, and PMI's 2026 AI standard is explicit that oversight means real intervention triggers, not perfunctory review.</li>
+        </ul>
+        <p>The one thing that genuinely changes is your expectation of throughput. If a first-draft plan now takes ninety minutes instead of two days, then a plan that fails the rubric is not a tragedy, it is a Tuesday. Send it back. The cost of a rework loop has collapsed, so use the loop.</p>
+        <div class="callout tip">
+          <strong>Say this in the review</strong>
+          "I am not asking whether you used AI. I am asking where each of these dates came from." That single reframe moves the conversation from tooling politics to provenance, which is the only thing you actually need.
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 2</span>
+      <h2>Find the five defects in Northwind's plan <span class="tag demo">★ 12 min · everyone reviews</span></h2>
+    </div>
+    <p class="lede">Below is a real-shaped extract from Northwind's draft plan. It reads well. It contains exactly five planted defects, one per failure mode plus one extra. Give yourself four minutes on your own, write down what you find, then compare with the table below.</p>
+
+    <div class="prompt-box bad"><span class="label">The draft that came back - find five defects</span>NORTHWIND DATA PLATFORM - MILESTONE PLAN (extract, draft 3)
+
+M3 · Raw ingest signed off
+     due 24 Aug   owner: Marcus L. (data engineer)
+     exit criteria: ingest working well across the in-scope source systems
+
+M4 · Modelled warehouse signed off
+     due 12 Sep   owner: the team
+     exit criteria: core dimensional model built and reviewed
+     depends on: Veridian POS extract delivered by 29 Aug
+
+M5 · Governed BI in production
+     due 3 Oct    owner: Dan R. (BI lead)
+     exit criteria: 6 governed dashboards live, DQ pass rate at or above 99%
+
+Note: M4 build begins immediately on M3 sign-off with no gap.</div>
+
+    <div class="steps">
+      <div class="step"><p>Run rubric question 1 down the exit criteria column. One of the three is not testable by a stranger. Which?</p></div>
+      <div class="step"><p>Run question 2 down the owner column. One owner is not a person.</p></div>
+      <div class="step"><p>Run question 3 on the dependency. Who on the Northwind side has confirmation from the other party, and does anything in this document tell you that?</p></div>
+      <div class="step"><p>Run question 4 on the dates. M3's 24 August came from Marcus and the nightly throughput. Where did 12 September come from?</p></div>
+      <div class="step"><p>Run question 7. What must be true for M4 to start at all - and is it anywhere on this page?</p></div>
+    </div>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The answer key - open after you have found yours<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>#</th><th>Defect</th><th>Failure mode</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>M4 due 12 Sep. Nobody produced this date. It is exactly nineteen days after M3, which is the model's rhythm, not Sofia K.'s estimate.</td><td>Invented date</td></tr>
+            <tr><td>2</td><td>M4 owner is "the team". Sofia K. is the data architect and is nowhere on the page.</td><td>Orphan owner</td></tr>
+            <tr><td>3</td><td>M3 exits on "ingest working well". Today that is 6 of 9 systems and 812k rows a night at 96.4% DQ. Working, or not working? The criterion cannot answer.</td><td>Missing gate</td></tr>
+            <tr><td>4</td><td>"Veridian POS extract delivered by 29 Aug" is asserted as fact. Ticket VN-2291 has been open with the vendor for eleven days and Priya N. has no written commitment. That is risk R-07, not a dependency.</td><td>Phantom dependency</td></tr>
+            <tr><td>5</td><td>The hiring gate is absent entirely. Risk R-03 says there is no data engineer to build the model. "M4 begins immediately on M3 sign-off" quietly assumes two people who do not exist.</td><td>Dropped hard gate</td></tr>
+          </tbody>
+        </table>
+        <p>Defect five is the one that matters, and it is the one most groups miss, because it is not on the page. The other four are things the plan says wrongly. This one is a thing the plan does not say - and a smooth document is exactly where an absence hides best.</p>
+        <div class="callout tip">
+          <strong>The habit this builds</strong>
+          Read the plan once for what it claims, and once for what is missing. The second pass is where the programme-stoppers live, and it is the pass a fluent draft trains you out of doing.
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 2</span>
+      <h2>Write your PMO's plan-review checklist <span class="tag demo">★ 10 min · build your own</span></h2>
+    </div>
+    <p class="lede">Seven questions is the teaching version. What you take back to your PMO is five, in your own words, on one side of paper, with a name against the sign-off. A checklist nobody can remember is a checklist nobody runs.</p>
+
+    <div class="steps">
+      <div class="step"><p>Pick your five from the seven. Most PMOs keep gates, owners, dependency confirmation and provenance of dates, then choose between out-of-scope and the biggest assumption. Keep assumption if you can only keep one.</p></div>
+      <div class="step"><p>Rewrite each in the language your organisation actually uses. If you call them stage gates, say stage gates. If your RAG rules are written down, cite them by name.</p></div>
+      <div class="step"><p>Add the sign-off line. Who is allowed to approve a plan at each value or risk tier, and what they are attesting to. This is the "clear structures, roles, authority and guardrails" that PMI's standard asks for, written in one sentence rather than a policy.</p></div>
+      <div class="step"><p>Add your two-strike rule: how many failed points send a plan back, and how fast the loop is expected to be. Publish the number so it is not a judgement call in the moment.</p></div>
+      <div class="step"><p>Test it this week on a plan you have already approved. If it finds nothing, your checklist is too soft. If it fails everything, it is too strict for a first draft. Tune once, then leave it alone for a quarter.</p></div>
+    </div>
+
+    <div class="prompt-box good"><span class="label">★ The starter checklist - cut it to five, then make it yours</span>NORTHWIND PMO - PLAN REVIEW CHECKLIST v1
+
+Before any milestone plan goes to steerco, the delivery lead confirms:
+
+1. GATES     Every milestone exits on a criterion a stranger could mark
+             true or false. No "working well", "acceptable", "complete".
+2. OWNERS    Every action has one named person and one date. Never a
+             function, a team, or two names sharing accountability.
+3. LINKS     Every external dependency names who confirmed it, on which
+             date. Unconfirmed items move to the risk register, not the plan.
+4. DATES     Each milestone date traces to a person, a capacity calculation,
+             or a contract. Write the source next to the date.
+5. ASSUMPTION  One sentence: what must be true for this plan to hold, and
+             who is watching it weekly.
+
+SEND BACK if two or more fail. Target turnaround: 48 hours.
+
+SIGN-OFF  Delivery lead drafts. PMO lead reviews against this checklist.
+          Sponsor (Elena V.) approves any change to a gate date.
+          The name on the approved plan is a person, not a team.</div>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>Five lines, one quarter.</strong> A PMO lead replaced an eleven-page plan-quality standard nobody had opened in two years with five questions on one page. Reviews went from a day of reading to twenty minutes across four programmes, and the send-back rate went up in month one, then fell below the old baseline by month three - because the PMs had learned the five questions and started answering them before submitting. The checklist did not improve reviews. It improved drafts, which is the only place quality was ever going to come from.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Try it yourself - this week <span class="tag exercise">◐ 30-45 min total</span></h2>
+    </div>
+    <ul>
+      <li>Run the seven questions on one live plan you have already approved. Not a draft - one that is in flight and that you signed. Write down what you find and resist the urge to fix it silently.</li>
+      <li>Ask each of your delivery leads question seven, verbally, this week: what is your plan's biggest assumption and who is watching it? Note who answers in one sentence and who cannot answer at all.</li>
+      <li>Cut your checklist to five questions and circulate it. Include the sign-off line and the send-back threshold.</li>
+      <li>Find one gate criterion in your portfolio that is not testable and rewrite it with a number, a threshold and a signer. Just one. It is a surprisingly hard hour.</li>
+      <li>Check whether any dependency in your top programme is asserted rather than confirmed. If you find one, that is not a plan defect, it is an open risk - which is exactly where session a4 starts.</li>
+    </ul>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">Taught from the delivery canon and PMI's public AI guidance. Certification (PMP, PMI-ACP) and the full normative text of the AI standard stay with PMI. This session covers:</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">PMBOK Guide 7th ed. - planning performance domain</span><span class="note">Parts 1-3 · gates, provenance, a plan as a coordination device</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">PMI - Standard for AI in Portfolio, Program and Project Management (2026)</span><span class="note">Part 3 + demo 2 · oversight with real triggers, roles and authority</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">This course, PM track b3 - milestone architecture and the WBS</span><span class="note">Part 1 · how the plan gets drafted in the first place</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">This course, PM track b4 - dependencies, gates and the critical path</span><span class="note">Part 2 · rubric questions 3, 6 and 7 in working depth</span></div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · A plan lands with every milestone exactly four weeks apart, all on a Friday. What is the tell?</p>
+      <button class="qopt" type="button">A · Nothing - regular cadence is a sign of a well-run programme</button>
+      <button class="qopt" type="button">B · Invented dates - real schedules are lumpy, and smooth spacing means nobody was asked</button>
+      <button class="qopt" type="button">C · The plan was probably copied from a previous programme</button>
+      <p class="qwhy">Failure mode one. Even spacing is the model's rhythm, not your team's capacity. Ask rubric question four: where did each date come from? A person, a calculation, or a contract - or it is fiction with good typography.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · Northwind's M3 exits on "ingest working well across the in-scope sources". Why does that fail the rubric?</p>
+      <button class="qopt" type="button">A · It names no owner</button>
+      <button class="qopt" type="button">B · It is too ambitious for the current throughput</button>
+      <button class="qopt" type="button">C · It is not testable - at 6 of 9 systems and 96.4% DQ, two reasonable people can disagree about whether it is met</button>
+      <p class="qwhy">Failure mode three. A gate must be markable true or false by someone who was not in the room. "DQ at or above 99% on three consecutive nightly runs, all 9 sources landing" is a gate. "Working well" is an argument waiting for a steerco.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Your PM submits a plan that fails three rubric points. What is the right reaction?</p>
+      <button class="qopt" type="button">A · Send it back with the failed points named - the draft loop is cheap now, so use it</button>
+      <button class="qopt" type="button">B · Fix the three points yourself so the programme is not delayed</button>
+      <button class="qopt" type="button">C · Ask whether AI was used and require a hand-written version next time</button>
+      <p class="qwhy">You are reviewing your PM's work, not the model's. Fixing it yourself removes the accountability the plan depends on, and banning the tool fixes nothing - a weak hand-written plan fails the same seven questions. Name the gaps, set a 48-hour loop.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Leader session 3 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Failure mode 1</b><span>Invented dates. Tell: even spacing, tidy Fridays, nothing capacity-checked.</span></div>
+      <div class="cheat-item"><b>Failure mode 2</b><span>Orphan owners. Tell: "the team", "engineering", a role where a person should be.</span></div>
+      <div class="cheat-item"><b>Failure mode 3</b><span>Missing gates. Tell: phases flow on with nothing testable between them.</span></div>
+      <div class="cheat-item"><b>Failure mode 4</b><span>Phantom dependencies. Tell: a link nobody confirmed, or a real one quietly dropped.</span></div>
+      <div class="cheat-item"><b>The five-minute rubric</b><span>gates · owners · confirmed dependencies · provenance of dates · out of scope · what if the gate slips · biggest assumption.</span></div>
+      <div class="cheat-item"><b>Question 7 first if rushed</b><span>"What is your biggest assumption and who is watching it?" No document can fake the answer.</span></div>
+      <div class="cheat-item"><b>The division of labour</b><span>Structure and questions from the model. Numbers and commitments from the people.</span></div>
+      <div class="cheat-item"><b>The reframe</b><span>You are reviewing your PM, not the model. The model just made producing it cheap.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Leader session 3 of 6 · learn-ai-project-management-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="a2-governed-setup.html">← Previous: The governed setup</a> &nbsp;·&nbsp; <a href="a4-risk-deps-escalation.html">Next: Risk, dependencies and escalation →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>
