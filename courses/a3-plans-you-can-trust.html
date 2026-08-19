@@ -180,6 +180,58 @@
       <summary><span class="mode live">Live</span>Running it on Northwind, out loud<span class="mini">3 min</span><span class="caret">▶</span></summary>
       <div class="body">
         <p>Northwind is week nine. M3 (raw ingest signed off) was gated for 10 August and now forecasts 24 August. Six of nine source systems are landing, 812k rows a night, DQ pass rate 96.4% against a 99% gate. Here is the rubric on that plan in about ninety seconds:</p>
+<figure class="zoomable">
+  <svg viewBox="0 0 880 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Five small status cards showing how Northwind's plan scores against the seven point rubric: gate criteria and the Veridian dependency both fail, while named owners, date provenance and out of scope pass, meeting the two-failure threshold that sends a plan back.">
+    <style>
+      .a3rbT { font: 700 13px Inter, sans-serif; fill: #16232E; }
+      .a3rbC { font: 700 11px Inter, sans-serif; fill: #16232E; }
+      .a3rbV { font: 400 10.5px Inter, sans-serif; fill: #16232E; }
+      .a3rbB { font: 700 9.5px Inter, sans-serif; fill: #FFFFFF; letter-spacing: .03em; }
+      .a3rbN { font: 400 12px Inter, sans-serif; fill: #5F7183; }
+    </style>
+    <rect x="0" y="0" width="880" height="260" fill="#FFFFFF"/>
+    <text class="a3rbT" x="40" y="28">Two failures is the line: the rubric run on Northwind's plan</text>
+
+    <text class="a3rbC" x="134" y="48" text-anchor="middle">Q1 - gates</text>
+    <rect x="60" y="60" width="148" height="100" rx="10" fill="#FEF2F2" stroke="#991B1B" stroke-width="1.5"/>
+    <text class="a3rbV" x="134" y="92" text-anchor="middle">M4: not</text>
+    <text class="a3rbV" x="134" y="110" text-anchor="middle">testable</text>
+    <rect x="102" y="128" width="64" height="18" rx="9" fill="#991B1B"/>
+    <text class="a3rbB" x="134" y="141" text-anchor="middle">FAIL</text>
+
+    <text class="a3rbC" x="292" y="48" text-anchor="middle">Q2 - owners</text>
+    <rect x="218" y="60" width="148" height="100" rx="10" fill="#EAF2F8" stroke="#2C6A99" stroke-width="1.5"/>
+    <text class="a3rbV" x="292" y="92" text-anchor="middle">Named and</text>
+    <text class="a3rbV" x="292" y="110" text-anchor="middle">real</text>
+    <rect x="260" y="128" width="64" height="18" rx="9" fill="#2C6A99"/>
+    <text class="a3rbB" x="292" y="141" text-anchor="middle">PASS</text>
+
+    <text class="a3rbC" x="450" y="48" text-anchor="middle">Q3 - dependency</text>
+    <rect x="376" y="60" width="148" height="100" rx="10" fill="#FEF2F2" stroke="#991B1B" stroke-width="1.5"/>
+    <text class="a3rbV" x="450" y="92" text-anchor="middle">Unconfirmed</text>
+    <text class="a3rbV" x="450" y="110" text-anchor="middle">11 days</text>
+    <rect x="418" y="128" width="64" height="18" rx="9" fill="#991B1B"/>
+    <text class="a3rbB" x="450" y="141" text-anchor="middle">FAIL</text>
+
+    <text class="a3rbC" x="608" y="48" text-anchor="middle">Q4 - provenance</text>
+    <rect x="534" y="60" width="148" height="100" rx="10" fill="#EAF2F8" stroke="#2C6A99" stroke-width="1.5"/>
+    <text class="a3rbV" x="608" y="92" text-anchor="middle">Marcus +</text>
+    <text class="a3rbV" x="608" y="110" text-anchor="middle">throughput</text>
+    <rect x="576" y="128" width="64" height="18" rx="9" fill="#2C6A99"/>
+    <text class="a3rbB" x="608" y="141" text-anchor="middle">PASS</text>
+
+    <text class="a3rbC" x="766" y="48" text-anchor="middle">Q5 - out of scope</text>
+    <rect x="692" y="60" width="148" height="100" rx="10" fill="#EAF2F8" stroke="#2C6A99" stroke-width="1.5"/>
+    <text class="a3rbV" x="766" y="92" text-anchor="middle">D-14, written</text>
+    <text class="a3rbV" x="766" y="110" text-anchor="middle">down</text>
+    <rect x="734" y="128" width="64" height="18" rx="9" fill="#2C6A99"/>
+    <text class="a3rbB" x="766" y="141" text-anchor="middle">PASS</text>
+
+    <text class="a3rbN" x="40" y="236">Two failures, gates and the dependency, are enough to send this plan back for rework.</text>
+  </svg>
+  <figcaption>🔍 Click to zoom - two failures is exactly the line that sends a plan back</figcaption>
+</figure>
+
         <ul>
           <li><strong>Q1 gates.</strong> M3's criterion is numeric and dated - good. M4's is "modelled warehouse reviewed", which fails.</li>
           <li><strong>Q2 owners.</strong> Marcus L. on ingest, Sofia K. on modelling, Dan R. on BI. Named, single, real.</li>
@@ -220,7 +272,51 @@
     <details class="card">
       <summary><span class="mode live">Live</span>The division of labour that works<span class="mini">2 min</span><span class="caret">▶</span></summary>
       <div class="body">
-        <table class="clean">
+        
+<figure class="zoomable">
+  <svg viewBox="0 0 880 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A two-column comparison of what an AI-drafted plan should provide from the model, such as the milestone skeleton and candidate gate criteria, against what must come from the people, such as the threshold number and confirmation from the other team.">
+    <style>
+      .a3dlT { font: 700 13px Inter, sans-serif; fill: #16232E; }
+      .a3dlH { font: 700 12px Inter, sans-serif; fill: #FFFFFF; }
+      .a3dlHa { font: 700 12px Inter, sans-serif; fill: #45210A; }
+      .a3dlL { font: 400 11.5px Inter, sans-serif; fill: #16232E; }
+      .a3dlN { font: 400 12px Inter, sans-serif; fill: #5F7183; }
+    </style>
+    <rect x="0" y="0" width="880" height="310" fill="#FFFFFF"/>
+    <text class="a3dlT" x="40" y="28">The division of labour that works, row by row</text>
+
+    <rect x="40" y="44" width="380" height="30" rx="8" fill="#2C6A99"/>
+    <text class="a3dlH" x="230" y="64" text-anchor="middle">FROM THE MODEL</text>
+    <rect x="460" y="44" width="380" height="30" rx="8" fill="#F97316"/>
+    <text class="a3dlHa" x="650" y="64" text-anchor="middle">FROM THE PEOPLE</text>
+    <line x1="440" y1="44" x2="440" y2="272" stroke="#E4EDF3" stroke-width="1.5"/>
+
+    <line x1="40" y1="92" x2="840" y2="92" stroke="#E4EDF3" stroke-width="1"/>
+    <text class="a3dlL" x="54" y="116">The milestone skeleton for this kind of programme</text>
+    <text class="a3dlL" x="474" y="116">Which milestones your sponsor will actually gate</text>
+
+    <line x1="40" y1="128" x2="840" y2="128" stroke="#E4EDF3" stroke-width="1"/>
+    <text class="a3dlL" x="54" y="152">Candidate gate criteria, written testably</text>
+    <text class="a3dlL" x="474" y="152">The threshold number, and who signs it off</text>
+
+    <line x1="40" y1="164" x2="840" y2="164" stroke="#E4EDF3" stroke-width="1"/>
+    <text class="a3dlL" x="54" y="188">The dependencies this shape of work usually has</text>
+    <text class="a3dlL" x="474" y="188">Confirmation from the other team, name and date</text>
+
+    <line x1="40" y1="200" x2="840" y2="200" stroke="#E4EDF3" stroke-width="1"/>
+    <text class="a3dlL" x="54" y="224">The questions you have not asked yet</text>
+    <text class="a3dlL" x="474" y="224">The answers, and the awkward one nobody wants</text>
+
+    <line x1="40" y1="236" x2="840" y2="236" stroke="#E4EDF3" stroke-width="1"/>
+    <text class="a3dlL" x="54" y="260">Consistent formatting across every artifact</text>
+    <text class="a3dlL" x="474" y="260">Every date, every owner, every commitment</text>
+
+    <line x1="40" y1="272" x2="840" y2="272" stroke="#E4EDF3" stroke-width="1"/>
+    <text class="a3dlN" x="40" y="294">The rule: structure and questions from the model, numbers and commitments from the people.</text>
+  </svg>
+  <figcaption>🔍 Click to zoom - structure comes from the model, commitments come from the people</figcaption>
+</figure>
+<table class="clean">
           <thead><tr><th>From the model</th><th>From the people</th></tr></thead>
           <tbody>
             <tr><td>The milestone skeleton for this kind of programme</td><td>Which milestones your sponsor will actually gate</td></tr>
